@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Wahrscheinlichkeitsverteilungen | Leitfaden Statistik</title>
+  <meta name="description" content="<p>Leitfaden Statstik für den Unterricht am BSc Physiotherapie
+der Berner Fachhochschule BFH. The HTML output format for this example is
+bookdown::gitbook, set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Wahrscheinlichkeitsverteilungen | Leitfaden Statistik" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Leitfaden Statstik für den Unterricht am BSc Physiotherapie
+der Berner Fachhochschule BFH. The HTML output format for this example is
+bookdown::gitbook, set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Wahrscheinlichkeitsverteilungen | Leitfaden Statistik" />
+  
+  <meta name="twitter:description" content="<p>Leitfaden Statstik für den Unterricht am BSc Physiotherapie
+der Berner Fachhochschule BFH. The HTML output format for this example is
+bookdown::gitbook, set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Lukas Stammler" />
+
+
+<meta name="date" content="2021-11-29" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="deskriptive-statistik.html"/>
+<link rel="next" href="grundlagen-der-inferenzstatistik.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Leitfaden Statistik</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Über diesen Leitfaden</a></li>
+<li class="chapter" data-level="2" data-path="einführung.html"><a href="einführung.html"><i class="fa fa-check"></i><b>2</b> Einführung</a></li>
+<li class="chapter" data-level="3" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptive Statistik</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#lernziele"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
+<li class="chapter" data-level="3.2" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#grundbegriffe"><i class="fa fa-check"></i><b>3.2</b> Grundbegriffe</a></li>
+<li class="chapter" data-level="3.3" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#quantitative-und-qualitative-daten"><i class="fa fa-check"></i><b>3.3</b> Quantitative und qualitative Daten</a></li>
+<li class="chapter" data-level="3.4" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#quantitative-daten-zusammenfassen"><i class="fa fa-check"></i><b>3.4</b> Quantitative Daten zusammenfassen</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#kennzahlen-der-zentralen-tendenz-lagemasse"><i class="fa fa-check"></i><b>3.4.1</b> Kennzahlen der zentralen Tendenz (Lagemasse)</a></li>
+<li class="chapter" data-level="3.4.2" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#exkurs-der-mittelwert-als-kleinst-quadrat-modell"><i class="fa fa-check"></i><b>3.4.2</b> Exkurs: Der Mittelwert als Kleinst-Quadrat-Modell</a></li>
+<li class="chapter" data-level="3.4.3" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#kennzahlen-der-streuung-streuungsmasse"><i class="fa fa-check"></i><b>3.4.3</b> Kennzahlen der Streuung (Streuungsmasse)</a></li>
+<li class="chapter" data-level="3.4.4" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#grafiken-für-quantitative-daten"><i class="fa fa-check"></i><b>3.4.4</b> Grafiken für quantitative Daten</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#qualitative-daten-zusammenfassen"><i class="fa fa-check"></i><b>3.5</b> Qualitative Daten zusammenfassen</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#kreuztabellen"><i class="fa fa-check"></i><b>3.5.1</b> Kreuztabellen</a></li>
+<li class="chapter" data-level="3.5.2" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#balkendiagramme"><i class="fa fa-check"></i><b>3.5.2</b> Balkendiagramme</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#grundregeln-für-die-erstellung-von-grafiken"><i class="fa fa-check"></i><b>3.6</b> Grundregeln für die Erstellung von Grafiken</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html"><i class="fa fa-check"></i><b>4</b> Wahrscheinlichkeitsverteilungen</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#lernziele-1"><i class="fa fa-check"></i><b>4.1</b> Lernziele</a></li>
+<li class="chapter" data-level="4.2" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#zufallsvariablen"><i class="fa fa-check"></i><b>4.2</b> Zufallsvariablen</a></li>
+<li class="chapter" data-level="4.3" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#wahrscheinlichkeitsverteilungen-1"><i class="fa fa-check"></i><b>4.3</b> Wahrscheinlichkeitsverteilungen</a></li>
+<li class="chapter" data-level="4.4" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-normalverteilung"><i class="fa fa-check"></i><b>4.4</b> Die Normalverteilung</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#wahrscheinlichkeiten-für-kontinuierliche-daten"><i class="fa fa-check"></i><b>4.4.1</b> Wahrscheinlichkeiten für kontinuierliche Daten?</a></li>
+<li class="chapter" data-level="4.4.2" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#anwendung-der-normalverteilung"><i class="fa fa-check"></i><b>4.4.2</b> Anwendung der Normalverteilung</a></li>
+<li class="chapter" data-level="4.4.3" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#normalverteilung-vertiefung"><i class="fa fa-check"></i><b>4.4.3</b> Normalverteilung Vertiefung</a></li>
+<li class="chapter" data-level="4.4.4" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#parameter-der-normalverteilung"><i class="fa fa-check"></i><b>4.4.4</b> Parameter der Normalverteilung</a></li>
+<li class="chapter" data-level="4.4.5" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#kennzahlen-der-population-vs.-kennzahlen-von-stichproben"><i class="fa fa-check"></i><b>4.4.5</b> Kennzahlen der Population vs. Kennzahlen von Stichproben</a></li>
+<li class="chapter" data-level="4.4.6" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#eigenschaften-von-normalverteilungen"><i class="fa fa-check"></i><b>4.4.6</b> Eigenschaften von Normalverteilungen</a></li>
+<li class="chapter" data-level="4.4.7" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-68-95-99.7-regel"><i class="fa fa-check"></i><b>4.4.7</b> Die 68 – 95 – 99.7 – Regel</a></li>
+<li class="chapter" data-level="4.4.8" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-standardnormalverteilung"><i class="fa fa-check"></i><b>4.4.8</b> Die Standardnormalverteilung</a></li>
+<li class="chapter" data-level="4.4.9" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#berechnung-von-z-werten-z-transformation"><i class="fa fa-check"></i><b>4.4.9</b> Berechnung von <span class="math inline">\(z\)</span>-Werten (<span class="math inline">\(z\)</span>-Transformation)</a></li>
+<li class="chapter" data-level="4.4.10" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#interpretation-von-z-werten"><i class="fa fa-check"></i><b>4.4.10</b> Interpretation von z-Werten</a></li>
+<li class="chapter" data-level="4.4.11" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#prüfung-auf-normalverteilung"><i class="fa fa-check"></i><b>4.4.11</b> Prüfung auf Normalverteilung</a></li>
+<li class="chapter" data-level="" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#qq-plot"><i class="fa fa-check"></i>QQ-Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-t-verteilung"><i class="fa fa-check"></i><b>4.5</b> Die <span class="math inline">\(t\)</span>-Verteilung</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html"><i class="fa fa-check"></i><b>5</b> Grundlagen der Inferenzstatistik</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einleitung"><i class="fa fa-check"></i><b>5.1</b> Einleitung</a></li>
+<li class="chapter" data-level="5.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#lernziele-2"><i class="fa fa-check"></i><b>5.2</b> Lernziele</a></li>
+<li class="chapter" data-level="5.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#grundbegriffe-1"><i class="fa fa-check"></i><b>5.3</b> Grundbegriffe</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#population"><i class="fa fa-check"></i><b>5.3.1</b> Population</a></li>
+<li class="chapter" data-level="5.3.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#populationsparameter-vs.-stichprobenkennzahl"><i class="fa fa-check"></i><b>5.3.2</b> Populationsparameter vs. Stichprobenkennzahl</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#methoden-der-inferenzstatistik"><i class="fa fa-check"></i><b>5.4</b> Methoden der Inferenzstatistik</a></li>
+<li class="chapter" data-level="5.5" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#stichprobenumfang-und-fehlergrenze"><i class="fa fa-check"></i><b>5.5</b> Stichprobenumfang und Fehlergrenze</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#verteilung-von-stichprobenkennzahlen"><i class="fa fa-check"></i><b>5.5.1</b> Verteilung von Stichprobenkennzahlen</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#standardfehler-engl.-standard-error-abk.-se"><i class="fa fa-check"></i><b>5.6</b> Standardfehler (engl. standard error, Abk. SE)</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#das-wurzel-n-gesetz"><i class="fa fa-check"></i><b>5.6.1</b> Das Wurzel-n-Gesetz</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#konfidenzintervalle-auch-vertrauensintervalle-engl.-confidence-intervalls-abk.-ci"><i class="fa fa-check"></i><b>5.7</b> Konfidenzintervalle (auch Vertrauensintervalle, engl. confidence intervalls, Abk. <span class="math inline">\(CI\)</span>)</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#anpassung-des-konfidenzniveaus"><i class="fa fa-check"></i><b>5.7.1</b> Anpassung des Konfidenzniveaus</a></li>
+<li class="chapter" data-level="5.7.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#präzision-versus-sicherheit"><i class="fa fa-check"></i><b>5.7.2</b> Präzision versus Sicherheit</a></li>
+<li class="chapter" data-level="5.7.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#voraussetzungen"><i class="fa fa-check"></i><b>5.7.3</b> Voraussetzungen</a></li>
+<li class="chapter" data-level="5.7.4" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#interpretation-von-konfidenzintervallen"><i class="fa fa-check"></i><b>5.7.4</b> Interpretation von Konfidenzintervallen</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#hypothesen-in-der-statistik"><i class="fa fa-check"></i><b>5.8</b> Hypothesen in der Statistik</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#mathematische-formulierung-von-hypothesen"><i class="fa fa-check"></i><b>5.8.1</b> Mathematische Formulierung von Hypothesen</a></li>
+<li class="chapter" data-level="5.8.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#hypothesen-mittels-konfidenzintervallen-prüfen"><i class="fa fa-check"></i><b>5.8.2</b> Hypothesen mittels Konfidenzintervallen prüfen</a></li>
+<li class="chapter" data-level="5.8.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#entscheidungsfehler"><i class="fa fa-check"></i><b>5.8.3</b> Entscheidungsfehler</a></li>
+<li class="chapter" data-level="5.8.4" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#signifkanzniveau"><i class="fa fa-check"></i><b>5.8.4</b> Signifkanzniveau</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#der-p-wert"><i class="fa fa-check"></i><b>5.9</b> Der p-Wert</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#statistische-macht-power"><i class="fa fa-check"></i><b>5.9.1</b> Statistische Macht (Power)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einseitige-und-zweiseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10</b> Einseitige und zweiseitige Hypothesentests</a>
+<ul>
+<li class="chapter" data-level="5.10.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10.1</b> Einseitige Hypothesentests</a></li>
+<li class="chapter" data-level="5.10.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#zweiseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10.2</b> Zweiseitige Hypothesentests</a></li>
+<li class="chapter" data-level="5.10.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einseitige-vs.-zweiseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10.3</b> Einseitige vs. zweiseitige Hypothesentests</a></li>
+<li class="chapter" data-level="5.10.4" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einseitige-vs.-zweiseitige-hypothesentests-1"><i class="fa fa-check"></i><b>5.10.4</b> Einseitige vs. zweiseitige Hypothesentests</a></li>
+</ul></li>
+<li class="chapter" data-level="5.11" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#hypothesentests-schritt-für-schritt"><i class="fa fa-check"></i><b>5.11</b> Hypothesentests Schritt für Schritt</a></li>
+<li class="chapter" data-level="5.12" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#statistische-signifikanz-versus-praktische-relevanz"><i class="fa fa-check"></i><b>5.12</b> Statistische Signifikanz versus praktische Relevanz</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html"><i class="fa fa-check"></i><b>6</b> Korrelation und linearer Zusammenhang</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#einleitung-1"><i class="fa fa-check"></i><b>6.1</b> Einleitung</a></li>
+<li class="chapter" data-level="6.2" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#lernziele-3"><i class="fa fa-check"></i><b>6.2</b> Lernziele</a></li>
+<li class="chapter" data-level="6.3" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#korrelation"><i class="fa fa-check"></i><b>6.3</b> Korrelation</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#eigenschaften-von-zusammenhängen"><i class="fa fa-check"></i><b>6.3.1</b> Eigenschaften von Zusammenhängen</a></li>
+<li class="chapter" data-level="6.3.2" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#korrelationskoeffizient-r"><i class="fa fa-check"></i><b>6.3.2</b> Korrelationskoeffizient <span class="math inline">\(r\)</span></a></li>
+<li class="chapter" data-level="6.3.3" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#berechnung-von-r"><i class="fa fa-check"></i><b>6.3.3</b> Berechnung von <span class="math inline">\(r\)</span></a></li>
+<li class="chapter" data-level="6.3.4" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#hypothesentest-für-r"><i class="fa fa-check"></i><b>6.3.4</b> Hypothesentest für <span class="math inline">\(r\)</span></a></li>
+<li class="chapter" data-level="6.3.5" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#interpretation-des-beispiels-für-laufgeschwindigkeit-und-kalorienverbrauch"><i class="fa fa-check"></i><b>6.3.5</b> Interpretation des Beispiels für Laufgeschwindigkeit und Kalorienverbrauch</a></li>
+<li class="chapter" data-level="6.3.6" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#datenmuster-und-r"><i class="fa fa-check"></i><b>6.3.6</b> Datenmuster und <span class="math inline">\(r\)</span></a></li>
+<li class="chapter" data-level="6.3.7" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#rangkorrelationskoeffizient-nach-spearman"><i class="fa fa-check"></i><b>6.3.7</b> Rangkorrelationskoeffizient nach Spearman</a></li>
+<li class="chapter" data-level="6.3.8" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#scheinkorrelationen"><i class="fa fa-check"></i><b>6.3.8</b> Scheinkorrelationen</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#zusammenfassung"><i class="fa fa-check"></i><b>6.4</b> Zusammenfassung</a></li>
+<li class="chapter" data-level="6.5" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#korrelation-in-rjamovi"><i class="fa fa-check"></i><b>6.5</b> Korrelation in R/jamovi</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#r-code-und-output"><i class="fa fa-check"></i><b>6.5.1</b> <code>R</code> Code und Output</a></li>
+<li class="chapter" data-level="6.5.2" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#jamovi-output"><i class="fa fa-check"></i><b>6.5.2</b> <code>jamovi</code> Output</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html"><i class="fa fa-check"></i><b>7</b> Einfache lineare Regression</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#lernziele-4"><i class="fa fa-check"></i><b>7.1</b> Lernziele</a></li>
+<li class="chapter" data-level="7.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#eine-bücherbestellung"><i class="fa fa-check"></i><b>7.2</b> Eine Bücherbestellung</a></li>
+<li class="chapter" data-level="7.3" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#unabhängige-und-abhängige-variable"><i class="fa fa-check"></i><b>7.3</b> Unabhängige und abhängige Variable</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#zusammenhang-zwischen-den-variablen"><i class="fa fa-check"></i><b>7.3.1</b> Zusammenhang zwischen den Variablen</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#einfache-lineare-regression-1"><i class="fa fa-check"></i><b>7.4</b> Einfache lineare Regression</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#die-regressionsgerade"><i class="fa fa-check"></i><b>7.4.1</b> Die Regressionsgerade</a></li>
+<li class="chapter" data-level="7.4.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#lineares-modell"><i class="fa fa-check"></i><b>7.4.2</b> Lineares Modell</a></li>
+<li class="chapter" data-level="7.4.3" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#die-kleinst-quadrat-linie"><i class="fa fa-check"></i><b>7.4.3</b> Die Kleinst-Quadrat-Linie</a></li>
+<li class="chapter" data-level="7.4.4" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#warum-man-nicht-über-die-gemessenen-daten-hinaus-extrapolieren-sollte"><i class="fa fa-check"></i><b>7.4.4</b> Warum man nicht über die gemessenen Daten hinaus extrapolieren sollte</a></li>
+<li class="chapter" data-level="7.4.5" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#das-bestimmtheitsmass-r2"><i class="fa fa-check"></i><b>7.4.5</b> Das Bestimmtheitsmass <span class="math inline">\(R^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#einfache-lineare-regression-in-rjamovi"><i class="fa fa-check"></i><b>7.5</b> Einfache lineare Regression in <code>R/jamovi</code></a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#r-modell-erstellen-und-output-interpretieren"><i class="fa fa-check"></i><b>7.5.1</b> <code>R</code> Modell erstellen und Output interpretieren</a></li>
+<li class="chapter" data-level="7.5.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#jamovi-modell-erstellen-und-output-interpretieren"><i class="fa fa-check"></i><b>7.5.2</b> <code>jamovi</code> Modell erstellen und Output interpretieren</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#voraussetzungen-für-die-gültigkeit-des-linearen-modells"><i class="fa fa-check"></i><b>7.6</b> Voraussetzungen für die Gültigkeit des linearen Modells</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#diagnostische-plots"><i class="fa fa-check"></i><b>7.6.1</b> Diagnostische Plots</a></li>
+<li class="chapter" data-level="7.6.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#interpretation-der-plots"><i class="fa fa-check"></i><b>7.6.2</b> Interpretation der Plots:</a></li>
+<li class="chapter" data-level="7.6.3" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#was-bedeutet-es-wenn-die-voraussetzungen-nicht-erfüllt-sind"><i class="fa fa-check"></i><b>7.6.3</b> Was bedeutet es, wenn die Voraussetzungen nicht erfüllt sind?</a></li>
+<li class="chapter" data-level="7.6.4" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#beispielplots-zu-homo--und-heteroskedastizität"><i class="fa fa-check"></i><b>7.6.4</b> Beispielplots zu Homo- und Heteroskedastizität</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html"><i class="fa fa-check"></i><b>8</b> Vergleich von Mittelwerten</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#lernziele-5"><i class="fa fa-check"></i><b>8.1</b> Lernziele</a></li>
+<li class="chapter" data-level="8.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-tests"><i class="fa fa-check"></i><b>8.2</b> T-Tests</a></li>
+<li class="chapter" data-level="8.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-verteilung-versus-normalverteilung"><i class="fa fa-check"></i><b>8.3</b> T-Verteilung versus Normalverteilung</a></li>
+<li class="chapter" data-level="8.4" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-test-für-eine-einfache-stichprobe"><i class="fa fa-check"></i><b>8.4</b> T-Test für eine einfache Stichprobe</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vorgehen"><i class="fa fa-check"></i><b>8.4.1</b> Vorgehen</a></li>
+<li class="chapter" data-level="8.4.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vertrauensintervall-für-einen-mittelwert-schritt-für-schritt"><i class="fa fa-check"></i><b>8.4.2</b> Vertrauensintervall für einen Mittelwert Schritt-für-Schritt:</a></li>
+<li class="chapter" data-level="8.4.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#ein-stichproben-t-test-schritt-für-schritt"><i class="fa fa-check"></i><b>8.4.3</b> Ein-Stichproben-T-Test Schritt-für-Schritt:</a></li>
+<li class="chapter" data-level="8.4.4" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi"><i class="fa fa-check"></i><b>8.4.4</b> R/jamovi</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-test-für-verbundene-stichproben"><i class="fa fa-check"></i><b>8.5</b> T-Test für verbundene Stichproben</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vorgehen-1"><i class="fa fa-check"></i><b>8.5.1</b> Vorgehen</a></li>
+<li class="chapter" data-level="8.5.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi-1"><i class="fa fa-check"></i><b>8.5.2</b> R/jamovi</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#zweistichproben-t-test-für-unabhängige-stichproben"><i class="fa fa-check"></i><b>8.6</b> Zweistichproben-T-Test für unabhängige Stichproben</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#konfidenzintervall-für-einen-mittelwertsunterschied"><i class="fa fa-check"></i><b>8.6.1</b> Konfidenzintervall für einen Mittelwertsunterschied</a></li>
+<li class="chapter" data-level="8.6.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#der-zweistichproben-t-test-für-unabhängige-stichproben-schritt-für-schritt"><i class="fa fa-check"></i><b>8.6.2</b> Der Zweistichproben-T-Test für unabhängige Stichproben Schritt-für-Schritt</a></li>
+<li class="chapter" data-level="8.6.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi-2"><i class="fa fa-check"></i><b>8.6.3</b> R/jamovi</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#nicht-parametrische-tests"><i class="fa fa-check"></i><b>8.7</b> Nicht-parametrische Tests</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rang-methoden-rank-tests"><i class="fa fa-check"></i><b>8.7.1</b> Rang-Methoden (rank tests)</a></li>
+<li class="chapter" data-level="8.7.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#wilcoxon-vorzeichenrangtest"><i class="fa fa-check"></i><b>8.7.2</b> Wilcoxon-Vorzeichenrangtest</a></li>
+<li class="chapter" data-level="8.7.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#wilcoxon-rangsummentest"><i class="fa fa-check"></i><b>8.7.3</b> Wilcoxon-Rangsummentest</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html"><i class="fa fa-check"></i><b>9</b> Inferenz für nominale Daten</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#lernziele-6"><i class="fa fa-check"></i><b>9.1</b> Lernziele</a></li>
+<li class="chapter" data-level="9.2" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#der-chi2-test"><i class="fa fa-check"></i><b>9.2</b> Der <span class="math inline">\(\chi^2\)</span>-Test</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#hypothesen-und-signifikanzniveau"><i class="fa fa-check"></i><b>9.2.1</b> Hypothesen und Signifikanzniveau</a></li>
+<li class="chapter" data-level="9.2.2" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#berechnen-der-erwarteten-werte-unter-der-nullhypothese"><i class="fa fa-check"></i><b>9.2.2</b> Berechnen der erwarteten Werte unter der Nullhypothese</a></li>
+<li class="chapter" data-level="9.2.3" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#voraussetzungen-1"><i class="fa fa-check"></i><b>9.2.3</b> Voraussetzungen</a></li>
+<li class="chapter" data-level="9.2.4" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#interpretation-des-chi2-tests"><i class="fa fa-check"></i><b>9.2.4</b> Interpretation des <span class="math inline">\(\chi^2\)</span>-Tests</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#referenzen"><i class="fa fa-check"></i><b>9.3</b> Referenzen</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Leitfaden Statistik</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="wahrscheinlichkeitsverteilungen" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Wahrscheinlichkeitsverteilungen</h1>
+<div id="lernziele-1" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Lernziele</h2>
+<ol style="list-style-type: decimal">
+<li><p>Definiere <strong>Zufallsvariable</strong> als Beobachtungsmerkmal, dessen Ausprägung variiert
+und daher nicht exakt vorhergesagt werden kann.</p></li>
+<li><p>Interpretiere die <strong>Wahrscheinlichkeitsverteilung</strong> einer Variable als Modell,
+das sich auf eine Grundpopulation bezieht.</p></li>
+<li><p>Beachte, dass die <strong>Wahrscheinlichkeit <span class="math inline">\(P\)</span></strong> für ein Ereignis stets zwischen
+0% und 100% liegt. <span class="math inline">\(P\)</span> kann daher nur Werte zwischen 0 und 1 annehmen.</p></li>
+<li><p>Interpretiere die <strong>Normalverteilung</strong> als eine kontinuierliche Verteilung.</p></li>
+</ol>
+<ul>
+<li><p>In kontinuierlichen Verteilungen ist die Wahrscheinlichkeit für ein ganz
+bestimmtes Ereignis stets Null. Es ist aber möglich Wahrscheinlichkeiten für
+Wertebereiche (Intervalle) zu berechnen.</p></li>
+<li><p>Die Normalverteilung ist symmetrisch um den Mittelwert und kann durch die
+Parameter Mittelwert <span class="math inline">\(\mu\)</span> und Standardabweichung <span class="math inline">\(\sigma\)</span> vollständig beschrieben
+werden. Mittelwert und Median sind in diesem Fall annähernd identisch.</p></li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>Interpretiere die <strong>Standardnormalverteilung</strong> als eine Normalverteilung mit
+dem Mittelwert <span class="math inline">\(\mu = 0\)</span> und der Standardabweichung <span class="math inline">\(\sigma = 1\)</span>.</li>
+</ol>
+<ul>
+<li>Jede Normalverteilung kann durch <em><span class="math inline">\(z\)</span>-Transformation</em> in die Standardnormalverteilung
+umgewandelt werden.</li>
+</ul>
+<p><span class="math display">\[z_n=\frac{x_n - \bar{x}}{s}\]</span></p>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Interpretiere den <strong><span class="math inline">\(z\)</span>-Wert</strong> als Abstand eines Datenpunktes vom Mittelwert
+in Anzahl Standardabweichungen. Punkte mit negativen z-Werten liegen links vom
+Mittelwert und Punkte mit positiven z-Werten liegen rechts vom Mittelwert.</p></li>
+<li><p>Verwende den <span class="math inline">\(z\)</span>-Wert,</p></li>
+</ol>
+<ul>
+<li>… um die Perzentile eines Datenpunktes zu bestimmen (z.B. bei der Berechnung
+von Vertrauensintervallen).<br />
+</li>
+<li>… um zu bestimmen, ob ein Datenpunkt als ungewöhnlich beurteilt werden muss
+(Faustregel: <span class="math inline">\(z\)</span> &gt; 2 ist ungewöhnlich).</li>
+</ul>
+<ol start="8" style="list-style-type: decimal">
+<li>Beurteile die Form einer Verteilung nach dem <span class="math inline">\(z\)</span>-Wert des Medians (für den
+Mittelwert gilt immer <span class="math inline">\(z\)</span> = 0)</li>
+</ol>
+<ul>
+<li>Bei linkssteilen Verteilungen hat der Median einen negativen <span class="math inline">\(z\)</span>-Wert.<br />
+</li>
+<li>Bei rechtssteilen Verteilungen hat der Median einen postiven <span class="math inline">\(z\)</span>-Wert.</li>
+</ul>
+<ol start="9" style="list-style-type: decimal">
+<li><p>Die <strong>68-95-99.7%-Regel</strong> ist eine Faustregel die besagt, dass unter der
+Normalverteilungskurve 68% der Fläche innerhalb von <span class="math inline">\(\bar{x} \pm 1s\)</span>, 95% der
+Fläche innerhalb von <span class="math inline">\(\bar{x} \pm 2s\)</span> und 99.7% der Fläche innerhalb von
+<span class="math inline">\(\bar{x} \pm 3s\)</span> liegen.</p></li>
+<li><p>Beurteile anhand eines Histogramms, eines Boxplots oder eines <strong>QQ-Plots</strong>,
+ob die beobachteten Daten aus einer normalverteilten Population stammen oder nicht.</p></li>
+<li><p>Interpretiere die <strong><span class="math inline">\(t\)</span>-Verteilung</strong> als Anpassung der Normalverteilung,
+wenn die Standardabweichung <span class="math inline">\(\sigma\)</span> einer Population unbekannt ist (was fast
+immer der Fall ist).</p></li>
+</ol>
+<ul>
+<li>Die Form der <span class="math inline">\(t\)</span>-Verteilung ist nur abhängig vom Stichprobenumfang. Dieser
+wird in Freiheitsgraden df angegeben, wobei <span class="math inline">\(df = n-1\)</span>.<br />
+</li>
+<li>Ist der Stichprobenumfang <span class="math inline">\(n\)</span> &gt; 30, nähert sich die Form der <span class="math inline">\(t\)</span>-Verteilung der
+Normalverteilung an.</li>
+<li>Die <span class="math inline">\(t\)</span>-Verteilung wird mit dem Parameter <strong><span class="math inline">\(df\)</span></strong> vollständig beschrieben.<br />
+</li>
+<li>Interpretiere <span class="math inline">\(t\)</span>-Werte, die von Statistikprogrammen angegeben werden, gleich wie z-Werte.</li>
+</ul>
+</div>
+<div id="zufallsvariablen" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Zufallsvariablen</h2>
+<p>Unter einer Zufallsvariable verstehen wir ein Beobachtungsmerkmal, dessen
+Ausprägung in gewissem Umfang vom Zufall abhängig ist, d.h. dessen Ausprägung
+variiert und daher nicht exakt vorhergesagt werden kann.</p>
+</div>
+<div id="wahrscheinlichkeitsverteilungen-1" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Wahrscheinlichkeitsverteilungen</h2>
+<p>Eine Wahrscheinlichkeitsverteilung ist eine mathematische Funktion (ein Modell),
+welche die Wahrscheinlichkeiten für alle möglichen Werte einer Zufallsvariable beschreibt.</p>
+<p>Das tönt recht technisch, ist aber anhand von einem Beispiel leicht zu verstehen:
+Stell dir vor, du möchtest wissen, wie gross deine Kolleginnen in der Klasse sind.
+Dazu misst du von jeder Person die Körpergrösse und stellst fest, dass gewisse
+Körpergrössen häufig und andere eher selten sind. Wahrscheinlichkeitsverteilungen
+helfen dir, wenn es darum geht zu verstehen, welche Merkmalsausprägungen eher
+häufig und welche eher selten zu erwarten sind. Sie erlauben auch die
+Beantwortung von Fragen wie: “Wie gross ist die Wahrscheinlichkeit, dass die
+nächste Person, die ich messe, grösser als zwei Meter ist?”</p>
+<p>In der deskriptiven Statistik haben wir bereits Verteilungen von Zufallsvariablen
+kennen gelernt: Sie lassen sich durch Form (symmetrisch, links- oder rechtssteil,
+irregulär), Kennzahlen der zentralen Tendenz und Kennzahlen der Streuung beschreiben.</p>
+<p><em>Beachte, dass Histogramme, Boxplots, Punktediagramme die Verteilung von
+Stichprobendaten beschreiben, während Wahrscheinlichkeitsverteilungen Modelle
+für die Verteilung von Daten in Populationen sind.</em></p>
+<p>In der statistischen Schreibweise wird die Wahrscheinlichkeit für ein Ereignis
+<span class="math inline">\(X\)</span> geschrieben als</p>
+<p><span class="math display">\[p(X) = Zahl~zwischen~0~und~1\]</span></p>
+<p>Die Summe für alle möglichen Ausprägungen von <span class="math inline">\(X\)</span> ist stets 1. Ausserdem ist die
+Wahrscheinlichkeit für eine bestimmte Merkmalsausprägung <span class="math inline">\(X\)</span> ein Wert zwischen
+0 (0%) und 1 (100%). Wenn wir also eine Münze werfen, dann ist die Wahrscheinlichkeit</p>
+<p><span class="math display">\[p(Kopf) = 0.5\]</span></p>
+<p><span class="math display">\[p(Zahl) = 0.5\]</span></p>
+<p>Eine andere Möglichkeit für das Ereignis <span class="math inline">\(X\)</span> existiert nicht. Die Summe aller
+möglichen Ereignisse <span class="math inline">\(X\)</span> für den Münzwurf ist daher</p>
+<p><span class="math display">\[p(Kopf) + p(Zahl) = 1\]</span></p>
+<p>Wahrscheinlichkeitsverteilungen beschreiben also die Verteilung der Werte
+(Merkmalsausprägungen) einer bestimmten Zufallsvariable (Beobachtungsmerkmal).
+Daher ist es naheliegend, dass die Art der Variable einen Einfluss auf den
+Verteilungstyp hat. In der Statistik unterscheidet man zwischen</p>
+<ul>
+<li>Verteilungen für diskrete Variablen (z.B. Binomialverteilung) und</li>
+<li>Verteilungen für kontinuierliche Variablen (z.B. Normalverteilung)</li>
+</ul>
+<p>Wir beschränken uns im Folgenden auf die <em>Normalverteilung</em>, die für
+zahlreiche statistische Verfahren von zentraler Bedeutung ist.</p>
+</div>
+<div id="die-normalverteilung" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Die Normalverteilung</h2>
+<p>Wenn eine Variable innerhalb eines Bereichs unendlich viele Werte annehmen kann,
+kann diese mittels einer kontinuierlichen Verteilung modelliert werden.</p>
+<p>Mathematisch ausgedrückt ist die Wahrscheinlichkeit, dass eine kontinuierliche
+Variable einen ganz bestimmten Wert annimmt gleich null. Z.B. die Wahrscheinlichkeit,
+dass eine Temperaturmessung exakt 37° C ergibt ist gleich null. Warum? In einem
+unendlichen Wertespektrum kann die aktuelle Temperatur unendlich viele kleinere
+oder grössere Werte annehmen, z.B. 36.99999999 oder 36.999999998 oder 37.000000001
+etc. (es sind unendlich viele Nachkommastellen möglich).</p>
+<div id="wahrscheinlichkeiten-für-kontinuierliche-daten" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Wahrscheinlichkeiten für kontinuierliche Daten?</h3>
+<p>Da es unmöglich ist, die Wahrscheinlichkeit für einen bestimmten Wert in einem
+kontinuierlichen Datenspektrum anzugeben, werden Wahrscheinlichkeiten für
+kontinuierliche Daten für Wertebereiche (Werteintervalle) berechnet und nicht für
+einzelne Werte. Was berechnet werden kann, ist die Wahrscheinlichkeit, dass ein
+gesuchter Wert in einem bestimmten Intervall liegt.</p>
+<p>In einem Wahrscheinlichkeitsdiagramm ist die Fläche unter der Kurve gleich 1.
+Dies entspricht der Summe der Wahrscheinlichkeiten für alle möglichen Ausprägungen
+einer Variablen <span class="math inline">\(X\)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:normdist-fig"></span>
+<img src="statbook_files/figure-html/normdist-fig-1.png" alt="Die Fläche unter der Kurve ist gleich 1" width="480" />
+<p class="caption">
+Abbildung 4.1: Die Fläche unter der Kurve ist gleich 1
+</p>
+</div>
+<p>In der Statistik nimmt die Normalverteilung (auch Gauss-Verteilung, Glockenkurve)
+eine zentrale Stellung ein. Diese symmetrische Wahrscheinlichkeitsverteilung
+erlaubt es, eine Vielzahl von kontinuierlichen Variablen wie z.B. Körpergrösse
+oder IQ-Scores zu modellieren.</p>
+<p>Eine Normalverteilung wird durch die Parameter <em>Mittelwert <span class="math inline">\(\bar{x}\)</span></em> und
+<em>Standardabweichung <span class="math inline">\(\sigma\)</span></em> vollständig beschrieben: Während eine Änderung des
+Mittelwerts die Glockenkurve nach links oder nach rechts verschiebt, führt eine
+Änderung der Standardabweichung dazu, dass die Kurve breiter oder schmaler wird.</p>
+<p>Die Normalverteilung von Daten ist eine wichtige Voraussetzung für zahlreiche
+statistische Verfahren. Üblicherweise kennt man die wahre Verteilung einer
+Variablen in einer Population jedoch nicht und man muss aus den Stichprobendaten
+ermitteln, ob Evidenz dafür vorliegt, dass die Daten aus einer normalverteilten
+Population stammen. Wie man dabei vorgeht, wird weiter unten beschrieben.</p>
+</div>
+<div id="anwendung-der-normalverteilung" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Anwendung der Normalverteilung</h3>
+<p>Beispiel: Der Intelligenzquotient (IQ-Score) ist normalverteilt. Er hat einen
+Mittelwert <span class="math inline">\(\mu\)</span> = 100 und eine Standardabweichung <span class="math inline">\(\sigma\)</span> = 15. Die Abbildung
+zeigt die Wahrscheinlichkeitsverteilung für den IQ-Score. Uns interessiert z.B.
+die Frage, wie gross ist die Wahrscheinlichkeit, dass bei einem Test der IQ-Score
+zwischen 120 und 140 (also in ein bestimmtes Werteintervall) fällt.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:normal-iq-fig"></span>
+<img src="statbook_files/figure-html/normal-iq-fig-1.png" alt="Wahrscheinlichkeit für IQ-Score zwischen 120 und 140" width="480" />
+<p class="caption">
+Abbildung 4.2: Wahrscheinlichkeit für IQ-Score zwischen 120 und 140
+</p>
+</div>
+<p>Die Abbildung <a href="wahrscheinlichkeitsverteilungen.html#fig:normal-iq-fig">4.2</a> zeigt, dass die Verteilung des IQ-Score symmetrisch ist. Die Höhe der Kurve in einem bestimmten Abschnitt gibt die Wahrscheinlichkeit an. Die Kurve hat ihr Maximum Werte um 100, also beim Mittelwert. Je weiter wir uns nach links oder rechts vom Mittelwert entfernen, desto geringer wird die Wahrscheinlichkeit für den IQ-Score. Die blaue Fläche zwischen den IQ-Scores 120 und 140 macht 8.7% der Gesamtfläche unter der Kurve aus. Damit ist die Wahrscheinlichkeit, dass der IQ-Score zwischen 120 und 140 fällt <span class="math inline">\(p\)</span> = 0.087 bzw. 8.7%. Wir sehen also, dass ein IQ-Score zwischen 120 und 140 ein nicht sehr häufiges Ereignis ist.</p>
+</div>
+<div id="normalverteilung-vertiefung" class="section level3" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> Normalverteilung Vertiefung</h3>
+<p>Wie bereits erwähnt ist die Normalverteilung ist eine wichtige Wahrscheinlichkeitsverteilung in der Statistik, weil sie die Modellierung zahlreicher natürlicher Phänomene erlaubt. So sind z.B. Körpergrösse, Blutdruck, Messfehler von Instrumenten und Hämoglobin-Gehalt im Blut normal verteilt. Als Wahrscheinlichkeitsfunktion beschreibt sie, wie die Werte (Merkmalsausprägungen) einer Variablen (Beobachtungsmerkmal) verteilt sind. Die Kurve hat die Form einer Glocke (Gauss’sche Glockenkurve) und ist symmetrisch bezüglich des Mittelwerts, d.h. die häufigsten Merkmalsausprägugen liegen in der Nähe des Mittelwerts. Mit zunehmendem Abstand vom Mittelwert nach links oder rechts nimmt die Wahrscheinlichkeit für Werte ab und die Verteilungskurve nähert sich dem Wert 0 (den sie aber nie erreicht!).</p>
+<p>Beispiel: Körpergrösse ist eine normalverteilte Variable ist. Die Abbildung zeigt die Verteilung der Körpergrösse von 14-jährigen Frauen aus einer Stichprobe von n = 800.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:normal-14j-frauen-fig"></span>
+<img src="statbook_files/figure-html/normal-14j-frauen-fig-1.png" alt="Körpergrösse 14-jähriger Mädchen in m (n = 800)" width="480" />
+<p class="caption">
+Abbildung 4.3: Körpergrösse 14-jähriger Mädchen in m (n = 800)
+</p>
+</div>
+<p>Das Histogramm in Abb. <a href="wahrscheinlichkeitsverteilungen.html#fig:normal-14j-frauen-fig">4.3</a> zeigt die Verteilung der Daten in der Stichprobe und wir erkennen, dass die meisten Werte um den Mittelwert <span class="math inline">\(\bar{x}\)</span> = 1.52m liegen. Werte über 1.65m oder unter 1.4m sind vergleichsweise selten anzutreffen. Die rote Kurve ist die Normalverteilungskurve mit dem Mittelwert <span class="math inline">\(\bar{x}\)</span> = 1.52 und der Standardabweichung <span class="math inline">\(s\)</span> = 0.07. Obwohl die Kurve das Histogramm nicht exakt abbildet, scheint sie ein akzeptables Modell für die Häufigkeitsverteilung zu liefern und wir dürfen annehmen, dass unsere Stichprobe aus einer normalverteilten Population stammt.</p>
+</div>
+<div id="parameter-der-normalverteilung" class="section level3" number="4.4.4">
+<h3><span class="header-section-number">4.4.4</span> Parameter der Normalverteilung</h3>
+<p>Eine Normalverteilung wird mit den Parametern <em>Mittelwert <span class="math inline">\(\mu\)</span></em> und <em>Standardabweichung <span class="math inline">\(\sigma\)</span></em> vollständig beschrieben. Die Form einer Normalverteilung variiert jedoch in Abhängigkeit von diesen Parametern.</p>
+<p>Der Mittelwert ist die Kennzahl der zentralen Lage. Er gibt den Wert an, an dem die Glockenkurve ihr Maximum hat. Die meisten Werte gruppieren sich um den Mittelwert herum. Eine Veränderung des Mittelwerts verschiebt die Kurve nach links oder nach rechts auf der x-Achse einer Grafik.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:normal-mean-influence-fig"></span>
+<img src="statbook_files/figure-html/normal-mean-influence-fig-1.png" alt="Der Mittelwert beeinflusst die Lage der Verteilung auf der x-Achse" width="480" />
+<p class="caption">
+Abbildung 4.4: Der Mittelwert beeinflusst die Lage der Verteilung auf der x-Achse
+</p>
+</div>
+<p>Die Standardabweichung ist eine Kennzahl der Streuung. Unterschiedliche Standardabweichungen beeinflussen Breite der Glockenkurve.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:normal-sd-influence-fig"></span>
+<img src="statbook_files/figure-html/normal-sd-influence-fig-1.png" alt="Die Standardabweichung beeinflusst die Breite der Glockenkurve" width="480" />
+<p class="caption">
+Abbildung 4.5: Die Standardabweichung beeinflusst die Breite der Glockenkurve
+</p>
+</div>
+</div>
+<div id="kennzahlen-der-population-vs.-kennzahlen-von-stichproben" class="section level3" number="4.4.5">
+<h3><span class="header-section-number">4.4.5</span> Kennzahlen der Population vs. Kennzahlen von Stichproben</h3>
+<p>Wie oben ausgeführt, beschreibt das Normalverteilungsmodell die Verteilung der Daten in der Population. Um Stichprobenkennzahlen und Populationparameter leicht zu unterschieden, ist es gebräuchlich, Populationskennzahlen mit griechischen Buchstaben und Stichprobenkennzahlen mit römischen Buchstaben anzugeben. Daher wird ein Populationsmittelwert mit dem griechischen Symbol <span class="math inline">\(\mu\)</span> und eine Populationsstandardabweichung stets mit dem griechischen Symbol <span class="math inline">\(\sigma\)</span> angegeben.</p>
+<p>Üblicherweise sind <span class="math inline">\(\mu\)</span> und <span class="math inline">\(\sigma\)</span> einer Population jedoch unbekannt, da es in der Regel unmöglich ist, eine gesamte Population zu messen. Wir können jedoch Zufallsstichproben ziehen um diese Parameter zu <em>schätzen</em>. Die Stichprobenkennzahlen, die als Punktschätzer (engl. point estimate) für die Populationsparameter dienen, werden mit den Symbolen <span class="math inline">\(\bar{x}\)</span> für den Stichprobenmittelwert und <span class="math inline">\(s\)</span> für die Stichprobenstandardabweichung angegeben. (Aus technischen Gründen wird in Grafiken für den Stichprobenmittelwert oft der Buchstabe <strong><span class="math inline">\(M\)</span></strong> verwendet)</p>
+</div>
+<div id="eigenschaften-von-normalverteilungen" class="section level3" number="4.4.6">
+<h3><span class="header-section-number">4.4.6</span> Eigenschaften von Normalverteilungen</h3>
+<p>Trotz ihrer unterschiedlichen Formen haben alle Normalverteilungen folgende gemeinsamen Eigenschaften:</p>
+<ul>
+<li>Alle Normalverteilungen sind symmetrisch.<br />
+</li>
+<li>Median und Mittelwert sind identisch.<br />
+</li>
+<li>Eine Hälfte der Werte liegt unter und eine Hälfte über dem Mittelwert.<br />
+</li>
+<li>Die 68-95-99.7 Regel erlaubt es, den Anteil der Werte innerhalb einer bestimmten Distanz vom Mittelwert zu bestimmen.</li>
+</ul>
+</div>
+<div id="die-68-95-99.7-regel" class="section level3" number="4.4.7">
+<h3><span class="header-section-number">4.4.7</span> Die 68 – 95 – 99.7 – Regel</h3>
+<p>Die 68-95-99.7 Regel ist eine empirische Regel der angewandten Statistik, die einen anschaulichen Zusammenhang zwischen Mittelwert und Standardabweichung eines normalverteilten Zufallsereignisses ermöglicht. Sie gibt an, wie viel Prozent der Daten innerhalb einer, zwei bzw. drei Standardabweichungen <span class="math inline">\(\sigma\)</span> vom Mittelwert <span class="math inline">\(\mu\)</span> entfernt sind.</p>
+<p>Als Faustregel gilt:</p>
+<ul>
+<li>Mittelwert +/- 1 Standardabweichung: 68% der Daten<br />
+</li>
+<li>Mittelwert +/- 2 Standardabweichungen: 95% der Daten<br />
+</li>
+<li>Mittelwert +/- 3 Standardabweichungen: 99.7% der Daten</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:n699599-rule-fig"></span>
+<img src="statbook_files/figure-html/n699599-rule-fig-1.png" alt="68-95-99.7-Regel" width="480" />
+<p class="caption">
+Abbildung 4.6: 68-95-99.7-Regel
+</p>
+</div>
+<p>Beispiel: Dein Lieblingspizzakurier wirbt damit, dass er innerhalb von durchschnittlich <span class="math inline">\(\bar{x}\)</span> = 30 Minuten, mit einer Standardabweichung von <span class="math inline">\(s\)</span> = 5 Minuten die bestellte Pizza liefern kann. Unter Anwendung der 68-95-99.7-Regel bedeutet dies, dass die Auslieferung</p>
+<ul>
+<li>in 68% der Bestellungen innerhalb von 25 bis 35 Minuten,<br />
+</li>
+<li>in 95% der Bestellungen innerhalb von 20 bis 40 Minuten und<br />
+</li>
+<li>in 99.7% der Bestellungen innerhalb von 15 bis 45 Minuten erfolgt.</li>
+</ul>
+</div>
+<div id="die-standardnormalverteilung" class="section level3" number="4.4.8">
+<h3><span class="header-section-number">4.4.8</span> Die Standardnormalverteilung</h3>
+<p>Wenn wir beliebige, normalverteilte Merkmale messen, werden wir immer wieder neue Normalverteilungen mit jeweils ihrem eigenen Mittelwert und ihrer eigenen Standardabweichung erhalten. D.h. die Normalverteilungskurve wird manchmal breiter, manchmal schmaler, manchmal höher, manchmal tiefer sein. Jedes Merkmal weist seine charakteristische Verteilung auf. In der Statistik interessieren wir uns oft für die Wahrscheinlichkeit, dass ein bestimmtes Ereignis eintritt (z.B. das Ereignis, dass eine Studentin 168 cm gross ist). Bei Daten aus normalverteilten Populationen erfolgt die Berechnung von Wahrscheinlichkeiten über die Berechnung von Flächeninhalten unter der Normalverteilungskurve. Allerdings ist diese Berechnung von Flächen unter Kurven eine nicht ganz triviale Angelegenheit (Schule Analysis!). Um diese Berechnungen zu erleichtern, wurde die <strong>Standardnormalverteilung</strong> “erfunden.” Diese ist eine Normalverteilung mit dem Mittelwert <span class="math inline">\(\mu\)</span> = 0 und der Standardabweichung <span class="math inline">\(\sigma\)</span> = 1. Jede beliebige Normalverteilung kann durch Transformation in eine Standardnormalverteilung umgewandelt werden, was Flächenberechnungen erheblich erleichtert.</p>
+<p>Eine bestimmte Merkmalsausprägung in der Standardnormalverteilung wird als <strong><span class="math inline">\(z\)</span>-Wert</strong> bezeichnet. Der <span class="math inline">\(z\)</span>-Wert gibt an, um wieviel Standardabweichungen diese Merkmalsausprägung vom Mittelwert entfernt ist. Ist der <span class="math inline">\(z\)</span>-Wert negativ, liegt der Wert links vom Mittelwert, d.h. er ist kleiner als der Mittelwert. Ist der <span class="math inline">\(z\)</span>-Wert positiv, liegt der Wert rechts vom Mittelwert und ist somit grösser. Der Mittelwert selber hat stets den <span class="math inline">\(z\)</span>-Wert 0.</p>
+</div>
+<div id="berechnung-von-z-werten-z-transformation" class="section level3" number="4.4.9">
+<h3><span class="header-section-number">4.4.9</span> Berechnung von <span class="math inline">\(z\)</span>-Werten (<span class="math inline">\(z\)</span>-Transformation)</h3>
+<p>Um Stichprobendaten zu standardisieren, müssen die Rohdaten in <span class="math inline">\(z\)</span>-Werte umgerechnet werden. Die Umwandlung einer beliebigen Normalverteilung in die Standardnormalverteilung erfolgt nach der Formel:</p>
+<p><span class="math display">\[z_n=\frac{x_n - \bar{x}}{s}\]</span></p>
+<p>Beispiel: Du hast zwei Äpfel, der eine wiegt 85g, der andere wiegt 110 g. Das durchschnittliche Gewicht von Äpfeln beträgt <span class="math inline">\(\bar{x}\)</span> = 100g mit einer Standardabweichung <span class="math inline">\(s\)</span> = 10 g.</p>
+<ul>
+<li>z-Wert für den 85g-Apfel: <span class="math inline">\(z_{85}=\frac{85-100}{10} = -1.5\)</span><br />
+</li>
+<li>z-Wert für den 110g-Apfel: <span class="math inline">\(z_{110}=\frac{110-100}{10} = 1\)</span></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:apfel-rohdaten-fig"></span>
+<img src="statbook_files/figure-html/apfel-rohdaten-fig-1.png" alt="Gewicht von Äpfeln (g), roh und standardisiert" width="672" />
+<p class="caption">
+Abbildung 4.7: Gewicht von Äpfeln (g), roh und standardisiert
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:apfel-z-werte-fig"></span>
+<img src="statbook_files/figure-html/apfel-z-werte-fig-1.png" alt="$z$-Werte der beiden Äpfel" width="672" />
+<p class="caption">
+Abbildung 4.8: <span class="math inline">\(z\)</span>-Werte der beiden Äpfel
+</p>
+</div>
+<p>Der <span class="math inline">\(z\)</span>-Wert für den 85g Apfel ist negativ da er leichter ist als ein durchschnittlicher Apfel. Um wie viel leichter? Um -1.5 Standardabweichungen = 15g. Der <span class="math inline">\(z\)</span>-Wert für den 110g-Apfel ist positiv, d.h. er ist schwerer als ein durchschnittlicher Apfel. Um wie viel schwerer? Um 1 Standardabweichung = 10g.</p>
+</div>
+<div id="interpretation-von-z-werten" class="section level3" number="4.4.10">
+<h3><span class="header-section-number">4.4.10</span> Interpretation von z-Werten</h3>
+<p>Uns interessiert die Frage: Wie wahrscheinlich ist es, dass ein Apfel 85g schwer oder leichter ist?</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:flaeche-kleiner-z-fig"></span>
+<img src="statbook_files/figure-html/flaeche-kleiner-z-fig-1.png" alt="Wahrscheinlichkeit für $z$ gleich -1.5 oder kleiner" width="672" />
+<p class="caption">
+Abbildung 4.9: Wahrscheinlichkeit für <span class="math inline">\(z\)</span> gleich -1.5 oder kleiner
+</p>
+</div>
+<p>Die blaue Fläche unter der Kurve in Abbildung <a href="wahrscheinlichkeitsverteilungen.html#fig:flaeche-kleiner-z-fig">4.9</a> entspricht der Wahrscheinlichkeit für <span class="math inline">\(z \leq -1.5\)</span>. Normalerweise verwenden wir den Computer, um Wahrscheinlichkeiten unter der Normalverteilungskurve zu berechnen. Vor dem Computerzeitalter erlaubte die z-Werte-Tabelle für beliebige Normalverteilungen beliebige Flächeninhalte und somit Wahrscheinlichkeiten zu berechnen.</p>
+<p><a href="http://eswf.uni-koeln.de/glossar/zvert.htm">z-Werte-Tabelle</a></p>
+<p>Mit der Funktion <code>pnorm()</code> <span class="citation">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2021</a>)</span> können wir in <code>R/jamovi</code> <span class="citation">(<a href="#ref-jamovi" role="doc-biblioref"><em>The Jamovi Project</em> 2021</a>)</span> diese Arbeit machen lassen:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="wahrscheinlichkeitsverteilungen.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.5</span>)</span></code></pre></div>
+<pre><code>## [1] 0.0668072</code></pre>
+<p><code>R/jamovi</code> gibt eine Wahrscheinlichkeit von <span class="math inline">\(p\)</span> = 0.067 für <span class="math inline">\(z \leq -1.5\)</span> an. Das bedeutet, dass wir erwarten können, dass die Wahrscheinlichkeit einen Apfel von 85g oder einen leichteren Apfel zu erhalten bei 6.7% liegt. Umgekehrt heisst es auch, dass die Wahrscheinlichkeit, einen Apfel zu erhalten, der schwerer als 85g ist, ist gleich <span class="math inline">\(p = 1-0.067 = 0.933\)</span> bzw 93.3%.</p>
+<p>Auch folgende Frage können wir stellen: Wie wahrscheinlich ist es, dass Ein Apfel 110g oder mehr wiegt?</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:flaeche-groesser-z-fig"></span>
+<img src="statbook_files/figure-html/flaeche-groesser-z-fig-1.png" alt="Wahrscheinlichkeit für $z$ = 1 oder grösser" width="672" />
+<p class="caption">
+Abbildung 4.10: Wahrscheinlichkeit für <span class="math inline">\(z\)</span> = 1 oder grösser
+</p>
+</div>
+<p>Die blaue Fläche in Abbildung <a href="wahrscheinlichkeitsverteilungen.html#fig:flaeche-groesser-z-fig">4.10</a> entspricht der Wahrscheinlichkeit für <span class="math inline">\(z\geq1\)</span>. Wiederum hilft uns die z-Werte-Tabelle oder die Funktion <code>pnorm()</code> in <code>R/jamovi</code>:</p>
+<pre><code>## [1] 0.8413447</code></pre>
+<p>Aber dieses Ergebnis kann nicht richtig sein! Die Wahrscheinlichkeit <span class="math inline">\(p\)</span> muss kleiner als 50% sein, da ja nicht die ganze Fläche rechts vom Mittelwert blau eingefärbt ist. Der “Fehler” kommt daher, dass die Funktion <code>pnorm()</code> stets die Fläche unterhalb des angegebenen <span class="math inline">\(z\)</span>-Werts, also die Fläche links vom <span class="math inline">\(z\)</span>-Wert, berechnet. Daher müssen wir in diesem Fall eine kleine Anpassung vornehmen und wir ziehen den <span class="math inline">\(p\)</span>-Wert einfach von 1 ab:</p>
+<pre><code>## [1] 0.1586553</code></pre>
+<p>Unsere Berechnungen haben ergeben, dass die Wahrscheinlichkeit <span class="math inline">\(p\)</span>, einen Apfel von 110g oder schwerer zu erhalten bei 15.8% liegt.</p>
+<p>Zum Schluss noch folgende Übung: Wie gross ist die Wahrscheinlichkeit dafür, dass das Gewicht eines Apfels zwischen 85g und 110g liegt (c)? Auch diese Berechnung ist kein Problem: Zuerst berechnen wir, wie gross die Wahrscheinlichkeit ist, dass ein Apfel 110g schwer ist (a) und ziehen von diesem Wert die Wahrscheinlichkeit ab, dass ein Apfel 85g oder leichter ist (b).</p>
+<p><img src="statbook_files/figure-html/zwei-z-fig-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Die Berechnung in <code>R/jamovi</code> folgt genau diesem Prinzip:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="wahrscheinlichkeitsverteilungen.html#cb37-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="dv">1</span>)     <span class="co"># Wahrscheinlichkeit für z &lt;= 1</span></span>
+<span id="cb37-2"><a href="wahrscheinlichkeitsverteilungen.html#cb37-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.5</span>)  <span class="co"># Wahrscheinlichkeit für z &lt;= -1.5</span></span>
+<span id="cb37-3"><a href="wahrscheinlichkeitsverteilungen.html#cb37-3" aria-hidden="true" tabindex="-1"></a>a <span class="sc">-</span> b             <span class="co"># Wahrscheinlichkeit für -1.5 &lt;= z &lt;= 1</span></span></code></pre></div>
+<pre><code>## [1] 0.7745375</code></pre>
+<p>Die Wahrscheinlichkeit, dass ein Apfel zwischen 85g und 110g wiegt beträgt 77.5% (<span class="math inline">\(p = 0.775\)</span>).</p>
+</div>
+<div id="prüfung-auf-normalverteilung" class="section level3" number="4.4.11">
+<h3><span class="header-section-number">4.4.11</span> Prüfung auf Normalverteilung</h3>
+<p>Üblicherweise ist die die Verteilung der Daten in der Populationsdaten unbekannt Daher müssen wir anhand von Stichprobendaten abschätzen, ob eine Normalverteilung zu Grunde liegt. Dazu existieren mehrere Verfahren:</p>
+<ul>
+<li>Visuelle Verfahren zur Prüfung auf Normalverteilung
+<ul>
+<li>Histogramm<br />
+</li>
+<li>Boxplot<br />
+</li>
+<li>QQ-Plot</li>
+</ul></li>
+<li>Mathematische Verfahren
+<ul>
+<li>Vergleich von Mittelwert und Median</li>
+</ul></li>
+</ul>
+</div>
+<div id="qq-plot" class="section level3 unnumbered">
+<h3>QQ-Plot</h3>
+<p>Der <strong>QQ-Plot</strong> (Quantile-Quantile-Plot) ist ein wichtiges visuelles Hilfsmittel um zwei Wahrscheinlichkeitsverteilungen miteinander zu vergleichen. Wenn diese beiden Verteilungen identisch sind, liegen im QQ-Plot alle Punkte auf einer Linie.</p>
+<p>Im QQ-Plot für Normalverteilung werden auf der x-Achse die Quantile einer Normalverteilung (theoretisch erwartete Werte) eingetragen und auf der y-Achse die Quantile der beobachteten Daten (Stichprobendaten).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qq-norm-fig"></span>
+<img src="statbook_files/figure-html/qq-norm-fig-1.png" alt="Histogramm, Boxplot und QQ-Plot für eine Normalverteilung." width="672" />
+<p class="caption">
+Abbildung 4.11: Histogramm, Boxplot und QQ-Plot für eine Normalverteilung.
+</p>
+</div>
+<p>Liegt Normalverteilung vor hat</p>
+<ul>
+<li>das Histogramm annähernd die Form einer symmetrischen Glockenkurve.<br />
+</li>
+<li>ist der Boxplot symmetrisch, Median und Mittelwert (roter Punkt) sind annähernd identisch.<br />
+</li>
+<li>Liegen die Punkte im QQ-Plot annähernd auf einer Geraden.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qq-leftskewed-fig"></span>
+<img src="statbook_files/figure-html/qq-leftskewed-fig-1.png" alt="Histogramm und QQ-Plot für eine rechtssteile Verteilung." width="672" />
+<p class="caption">
+Abbildung 4.12: Histogramm und QQ-Plot für eine rechtssteile Verteilung.
+</p>
+</div>
+<p>Beispiel für eine linksschiefe Verteilung:</p>
+<ul>
+<li>Im Histogramm sind die Daten linksschief verteilt.<br />
+</li>
+<li>Der Boxplot ist asymmetrisch, der Mittelwert (roter Punkt) ist kleiner als der Median.<br />
+</li>
+<li>Der QQ-Plot weist eine deutliche, nach oben konvexe Krümmung auf.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qq-rightskewed-fig"></span>
+<img src="statbook_files/figure-html/qq-rightskewed-fig-1.png" alt="Histogramm und QQ-Plot für eine linkssteile Verteilung." width="672" />
+<p class="caption">
+Abbildung 4.13: Histogramm und QQ-Plot für eine linkssteile Verteilung.
+</p>
+</div>
+<p>Beispiel für eine rechtsschiefe Verteilung:</p>
+<ul>
+<li>Im Histogramm sind die Daten rechtsschief verteilt.<br />
+</li>
+<li>Der Boxplot ist asymmetrisch, der Mittelwert (roter Punkt) ist grösser als der Median.<br />
+</li>
+<li>Der QQ-Plot weist eine deutliche, nach unten konvexe Krümmung auf.</li>
+</ul>
+<p>Die Interpretation von QQ-Plots für kleine Stichproben ist schwierig und nicht
+immer ganz eindeutig möglich.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qq-small-sample-fig"></span>
+<img src="statbook_files/figure-html/qq-small-sample-fig-1.png" alt="QQ-Plots für Stichproben (n = 28) aus einer perfekten Normalverteilung" width="672" />
+<p class="caption">
+Abbildung 4.14: QQ-Plots für Stichproben (n = 28) aus einer perfekten Normalverteilung
+</p>
+</div>
+<p>In der Abbildung <a href="wahrscheinlichkeitsverteilungen.html#fig:qq-small-sample-fig">4.14</a> wurden zehn Stichproben im Umfang von <span class="math inline">\(n\)</span> = 28 aus einer perfekt normalverteilten Population gezogen. Die Grafiken 3, 6 und 8 könnten auch zur Einschätzung führen, dass die Daten nicht normal verteilt sind.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:qq-real-fig"></span>
+<img src="statbook_files/figure-html/qq-real-fig-1.png" alt="." width="672" />
+<p class="caption">
+Abbildung 4.15: .
+</p>
+</div>
+<p>Diese Abbildung <a href="wahrscheinlichkeitsverteilungen.html#fig:qq-real-fig">4.15</a> zeigt reale Daten zur Körpergrösse aus einer Stichprobe <span class="math inline">\(n\)</span> = 50 Personen. Obwohl wir theoretisch wissen, dass Körpergrösse eine normalverteilte Variable ist, würden wir aus den Stichprobendaten vermutlich einen anderen Schluss ziehen.</p>
+<p>Wenn wir mit den Grafiken gar nicht weiterkommen, kann der <strong>Shapiro-Wilk-Test</strong>
+weiter helfen. Dieser Test ist ein Hypothesentest (s. Kapitel Grundlagen der Inferenzstatistik)
+auf Normalverteilung. Die Nullhypothese des Shapiro-Tests ist, dass die Population
+normalverteilt ist.</p>
+<ul>
+<li>Wenn der p-Wert des Tests gleich oder kleiner als 0.05 ist, dann wird die Normalitätshypothese durch den Shapiro-Test abgelehnt. Das heisst, dass die Daten mit mindestens 95%iger Sicherheit nicht der Normalverteilung entsprechen.<br />
+</li>
+<li>Ist der p-Wert des Tests grösser als 0.05 ist der Test bestanden und es besteht keine Evidenz für eine signifikante Abweichung von der Normalverteilung.</li>
+</ul>
+</div>
+</div>
+<div id="die-t-verteilung" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Die <span class="math inline">\(t\)</span>-Verteilung</h2>
+<p>Die <span class="math inline">\(t\)</span>-Verteilung wird hier eingeführt, weil Statistikprogramme wie <code>R</code> oder <code>jamovi</code> bei den Hypothesentests als Teststatistik nicht einen <span class="math inline">\(z\)</span>-Wert angeben, sondern einen <span class="math inline">\(t\)</span>-Wert, was bei den Studierenden immer wieder zu Verwirrung führt. Es würde für diesen Kurs zu weit gehen, die <span class="math inline">\(t\)</span>-Verteilung detailliert zu besprechen.</p>
+<p>Die <strong><span class="math inline">\(t\)</span>-Verteilung</strong> ist eine <em>Variante der Normalverteilung</em>, die in der Statistik eine grosse Rolle spielt <a href="https://higherlogicdownload.s3.amazonaws.com/AMSTAT/1484431b-3202-461e-b7e6-ebce10ca8bcd/UploadedImages/Classroom_Activities/HS_7__t-ditribution_and_GOSSET.pdf">William S. Gosset, Pseudonym: Student</a> hatte festgestellt, dass die standardisierte Schätzfunktion des Stichproben-Mittelwerts normalverteilter Daten nicht mehr normalverteilt, sondern eben <span class="math inline">\(t\)</span>-verteilt ist, wenn die zur Standardisierung des Mittelwerts benötigte Varianz des Merkmals in der Population unbekannt ist und mit der Stichprobenvarianz geschätzt werden muss. Seine <span class="math inline">\(t\)</span>-Verteilung erlaubt – insbesondere für kleine Stichprobenumfänge – die Berechnung der Verteilung der Differenz vom Mittelwert der Stichprobe zum wahren Mittelwert der Grundgesamtheit.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:t-distribution-fig"></span>
+<img src="statbook_files/figure-html/t-distribution-fig-1.png" alt="t-Verteilung für df = 1, 2, 4 und 8; Normalverteilung rot" width="480" />
+<p class="caption">
+Abbildung 4.16: t-Verteilung für df = 1, 2, 4 und 8; Normalverteilung rot
+</p>
+</div>
+<p>Was ist wichtig?</p>
+<ul>
+<li>Für die praktische Arbeit gilt, dass die <span class="math inline">\(t\)</span>-Verteilung als Anpassung der Normalverteilung für kleine Stichprobenumfänge aufgefasst werden kann. Ab einem Stichprobenumfang von n &gt; 30 entspricht sie nahezu der Normalverteilung. <em>Der <span class="math inline">\(t\)</span>-Wert, den Statistikprogramme berechnen, wird gleich wie ein <span class="math inline">\(z\)</span>-Wert interpretiert.</em><br />
+</li>
+<li>Die Form der <span class="math inline">\(t\)</span>-Verteilung ist abhängig vom Stichprobenumfang <span class="math inline">\(n\)</span>. Dieser wird in Freiheitsgraden (degrees of freedom, <span class="math inline">\(df\)</span> angegeben), wobei <span class="math inline">\(df = n−1\)</span>. Je grösser die Anzahl Freiheitsgrade <span class="math inline">\(df\)</span> ist, desto mehr nähert sich die <span class="math inline">\(t\)</span>-Verteilung der Normalverteilung an.<br />
+</li>
+<li>Aktuelle Statistikprogramme verwenden, unabhängig vom Stichprobenumfang, als Testsstatistik <span class="math inline">\(t\)</span>-Werte anstelle von <span class="math inline">\(z\)</span>-Werten.<br />
+</li>
+<li>Wie für die <span class="math inline">\(z\)</span>-Werte können auch Flächen für <span class="math inline">\(t\)</span>-Werte unter der Kurve bestimmt werden. Dafür existieren Tabellen, z.B. hier <a href="http://eswf.uni-koeln.de/glossar/tvert.htm">Tabelle T-Verteilung</a>. Genauer sind Internet-Rechner, z.B. hier <a href="http://eswf.uni-koeln.de/glossar/surfstat/t.htm">Internet-Rechner T-Verteilung</a> oder Statistikprogramme wie <code>R/jamovi</code>.</li>
+</ul>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-R-base" class="csl-entry">
+R Core Team. 2021. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-jamovi" class="csl-entry">
+<em>The Jamovi Project</em>. 2021. jamovi. <a href="https://www.jamovi.org/">https://www.jamovi.org/</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="deskriptive-statistik.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="grundlagen-der-inferenzstatistik.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-distributions.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

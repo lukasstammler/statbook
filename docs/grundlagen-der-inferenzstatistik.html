@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Grundlagen der Inferenzstatistik | Leitfaden Statistik</title>
+  <meta name="description" content="<p>Leitfaden Statstik für den Unterricht am BSc Physiotherapie
+der Berner Fachhochschule BFH. The HTML output format for this example is
+bookdown::gitbook, set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Grundlagen der Inferenzstatistik | Leitfaden Statistik" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="<p>Leitfaden Statstik für den Unterricht am BSc Physiotherapie
+der Berner Fachhochschule BFH. The HTML output format for this example is
+bookdown::gitbook, set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Grundlagen der Inferenzstatistik | Leitfaden Statistik" />
+  
+  <meta name="twitter:description" content="<p>Leitfaden Statstik für den Unterricht am BSc Physiotherapie
+der Berner Fachhochschule BFH. The HTML output format for this example is
+bookdown::gitbook, set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Lukas Stammler" />
+
+
+<meta name="date" content="2021-11-29" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="wahrscheinlichkeitsverteilungen.html"/>
+<link rel="next" href="korrelation-und-linearer-zusammenhang.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Leitfaden Statistik</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Über diesen Leitfaden</a></li>
+<li class="chapter" data-level="2" data-path="einführung.html"><a href="einführung.html"><i class="fa fa-check"></i><b>2</b> Einführung</a></li>
+<li class="chapter" data-level="3" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptive Statistik</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#lernziele"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
+<li class="chapter" data-level="3.2" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#grundbegriffe"><i class="fa fa-check"></i><b>3.2</b> Grundbegriffe</a></li>
+<li class="chapter" data-level="3.3" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#quantitative-und-qualitative-daten"><i class="fa fa-check"></i><b>3.3</b> Quantitative und qualitative Daten</a></li>
+<li class="chapter" data-level="3.4" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#quantitative-daten-zusammenfassen"><i class="fa fa-check"></i><b>3.4</b> Quantitative Daten zusammenfassen</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#kennzahlen-der-zentralen-tendenz-lagemasse"><i class="fa fa-check"></i><b>3.4.1</b> Kennzahlen der zentralen Tendenz (Lagemasse)</a></li>
+<li class="chapter" data-level="3.4.2" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#exkurs-der-mittelwert-als-kleinst-quadrat-modell"><i class="fa fa-check"></i><b>3.4.2</b> Exkurs: Der Mittelwert als Kleinst-Quadrat-Modell</a></li>
+<li class="chapter" data-level="3.4.3" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#kennzahlen-der-streuung-streuungsmasse"><i class="fa fa-check"></i><b>3.4.3</b> Kennzahlen der Streuung (Streuungsmasse)</a></li>
+<li class="chapter" data-level="3.4.4" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#grafiken-für-quantitative-daten"><i class="fa fa-check"></i><b>3.4.4</b> Grafiken für quantitative Daten</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#qualitative-daten-zusammenfassen"><i class="fa fa-check"></i><b>3.5</b> Qualitative Daten zusammenfassen</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#kreuztabellen"><i class="fa fa-check"></i><b>3.5.1</b> Kreuztabellen</a></li>
+<li class="chapter" data-level="3.5.2" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#balkendiagramme"><i class="fa fa-check"></i><b>3.5.2</b> Balkendiagramme</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#grundregeln-für-die-erstellung-von-grafiken"><i class="fa fa-check"></i><b>3.6</b> Grundregeln für die Erstellung von Grafiken</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html"><i class="fa fa-check"></i><b>4</b> Wahrscheinlichkeitsverteilungen</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#lernziele-1"><i class="fa fa-check"></i><b>4.1</b> Lernziele</a></li>
+<li class="chapter" data-level="4.2" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#zufallsvariablen"><i class="fa fa-check"></i><b>4.2</b> Zufallsvariablen</a></li>
+<li class="chapter" data-level="4.3" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#wahrscheinlichkeitsverteilungen-1"><i class="fa fa-check"></i><b>4.3</b> Wahrscheinlichkeitsverteilungen</a></li>
+<li class="chapter" data-level="4.4" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-normalverteilung"><i class="fa fa-check"></i><b>4.4</b> Die Normalverteilung</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#wahrscheinlichkeiten-für-kontinuierliche-daten"><i class="fa fa-check"></i><b>4.4.1</b> Wahrscheinlichkeiten für kontinuierliche Daten?</a></li>
+<li class="chapter" data-level="4.4.2" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#anwendung-der-normalverteilung"><i class="fa fa-check"></i><b>4.4.2</b> Anwendung der Normalverteilung</a></li>
+<li class="chapter" data-level="4.4.3" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#normalverteilung-vertiefung"><i class="fa fa-check"></i><b>4.4.3</b> Normalverteilung Vertiefung</a></li>
+<li class="chapter" data-level="4.4.4" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#parameter-der-normalverteilung"><i class="fa fa-check"></i><b>4.4.4</b> Parameter der Normalverteilung</a></li>
+<li class="chapter" data-level="4.4.5" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#kennzahlen-der-population-vs.-kennzahlen-von-stichproben"><i class="fa fa-check"></i><b>4.4.5</b> Kennzahlen der Population vs. Kennzahlen von Stichproben</a></li>
+<li class="chapter" data-level="4.4.6" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#eigenschaften-von-normalverteilungen"><i class="fa fa-check"></i><b>4.4.6</b> Eigenschaften von Normalverteilungen</a></li>
+<li class="chapter" data-level="4.4.7" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-68-95-99.7-regel"><i class="fa fa-check"></i><b>4.4.7</b> Die 68 – 95 – 99.7 – Regel</a></li>
+<li class="chapter" data-level="4.4.8" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-standardnormalverteilung"><i class="fa fa-check"></i><b>4.4.8</b> Die Standardnormalverteilung</a></li>
+<li class="chapter" data-level="4.4.9" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#berechnung-von-z-werten-z-transformation"><i class="fa fa-check"></i><b>4.4.9</b> Berechnung von <span class="math inline">\(z\)</span>-Werten (<span class="math inline">\(z\)</span>-Transformation)</a></li>
+<li class="chapter" data-level="4.4.10" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#interpretation-von-z-werten"><i class="fa fa-check"></i><b>4.4.10</b> Interpretation von z-Werten</a></li>
+<li class="chapter" data-level="4.4.11" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#prüfung-auf-normalverteilung"><i class="fa fa-check"></i><b>4.4.11</b> Prüfung auf Normalverteilung</a></li>
+<li class="chapter" data-level="" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#qq-plot"><i class="fa fa-check"></i>QQ-Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-t-verteilung"><i class="fa fa-check"></i><b>4.5</b> Die <span class="math inline">\(t\)</span>-Verteilung</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html"><i class="fa fa-check"></i><b>5</b> Grundlagen der Inferenzstatistik</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einleitung"><i class="fa fa-check"></i><b>5.1</b> Einleitung</a></li>
+<li class="chapter" data-level="5.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#lernziele-2"><i class="fa fa-check"></i><b>5.2</b> Lernziele</a></li>
+<li class="chapter" data-level="5.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#grundbegriffe-1"><i class="fa fa-check"></i><b>5.3</b> Grundbegriffe</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#population"><i class="fa fa-check"></i><b>5.3.1</b> Population</a></li>
+<li class="chapter" data-level="5.3.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#populationsparameter-vs.-stichprobenkennzahl"><i class="fa fa-check"></i><b>5.3.2</b> Populationsparameter vs. Stichprobenkennzahl</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#methoden-der-inferenzstatistik"><i class="fa fa-check"></i><b>5.4</b> Methoden der Inferenzstatistik</a></li>
+<li class="chapter" data-level="5.5" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#stichprobenumfang-und-fehlergrenze"><i class="fa fa-check"></i><b>5.5</b> Stichprobenumfang und Fehlergrenze</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#verteilung-von-stichprobenkennzahlen"><i class="fa fa-check"></i><b>5.5.1</b> Verteilung von Stichprobenkennzahlen</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#standardfehler-engl.-standard-error-abk.-se"><i class="fa fa-check"></i><b>5.6</b> Standardfehler (engl. standard error, Abk. SE)</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#das-wurzel-n-gesetz"><i class="fa fa-check"></i><b>5.6.1</b> Das Wurzel-n-Gesetz</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#konfidenzintervalle-auch-vertrauensintervalle-engl.-confidence-intervalls-abk.-ci"><i class="fa fa-check"></i><b>5.7</b> Konfidenzintervalle (auch Vertrauensintervalle, engl. confidence intervalls, Abk. <span class="math inline">\(CI\)</span>)</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#anpassung-des-konfidenzniveaus"><i class="fa fa-check"></i><b>5.7.1</b> Anpassung des Konfidenzniveaus</a></li>
+<li class="chapter" data-level="5.7.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#präzision-versus-sicherheit"><i class="fa fa-check"></i><b>5.7.2</b> Präzision versus Sicherheit</a></li>
+<li class="chapter" data-level="5.7.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#voraussetzungen"><i class="fa fa-check"></i><b>5.7.3</b> Voraussetzungen</a></li>
+<li class="chapter" data-level="5.7.4" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#interpretation-von-konfidenzintervallen"><i class="fa fa-check"></i><b>5.7.4</b> Interpretation von Konfidenzintervallen</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#hypothesen-in-der-statistik"><i class="fa fa-check"></i><b>5.8</b> Hypothesen in der Statistik</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#mathematische-formulierung-von-hypothesen"><i class="fa fa-check"></i><b>5.8.1</b> Mathematische Formulierung von Hypothesen</a></li>
+<li class="chapter" data-level="5.8.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#hypothesen-mittels-konfidenzintervallen-prüfen"><i class="fa fa-check"></i><b>5.8.2</b> Hypothesen mittels Konfidenzintervallen prüfen</a></li>
+<li class="chapter" data-level="5.8.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#entscheidungsfehler"><i class="fa fa-check"></i><b>5.8.3</b> Entscheidungsfehler</a></li>
+<li class="chapter" data-level="5.8.4" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#signifkanzniveau"><i class="fa fa-check"></i><b>5.8.4</b> Signifkanzniveau</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#der-p-wert"><i class="fa fa-check"></i><b>5.9</b> Der p-Wert</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#statistische-macht-power"><i class="fa fa-check"></i><b>5.9.1</b> Statistische Macht (Power)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einseitige-und-zweiseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10</b> Einseitige und zweiseitige Hypothesentests</a>
+<ul>
+<li class="chapter" data-level="5.10.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10.1</b> Einseitige Hypothesentests</a></li>
+<li class="chapter" data-level="5.10.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#zweiseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10.2</b> Zweiseitige Hypothesentests</a></li>
+<li class="chapter" data-level="5.10.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einseitige-vs.-zweiseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10.3</b> Einseitige vs. zweiseitige Hypothesentests</a></li>
+<li class="chapter" data-level="5.10.4" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einseitige-vs.-zweiseitige-hypothesentests-1"><i class="fa fa-check"></i><b>5.10.4</b> Einseitige vs. zweiseitige Hypothesentests</a></li>
+</ul></li>
+<li class="chapter" data-level="5.11" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#hypothesentests-schritt-für-schritt"><i class="fa fa-check"></i><b>5.11</b> Hypothesentests Schritt für Schritt</a></li>
+<li class="chapter" data-level="5.12" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#statistische-signifikanz-versus-praktische-relevanz"><i class="fa fa-check"></i><b>5.12</b> Statistische Signifikanz versus praktische Relevanz</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html"><i class="fa fa-check"></i><b>6</b> Korrelation und linearer Zusammenhang</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#einleitung-1"><i class="fa fa-check"></i><b>6.1</b> Einleitung</a></li>
+<li class="chapter" data-level="6.2" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#lernziele-3"><i class="fa fa-check"></i><b>6.2</b> Lernziele</a></li>
+<li class="chapter" data-level="6.3" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#korrelation"><i class="fa fa-check"></i><b>6.3</b> Korrelation</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#eigenschaften-von-zusammenhängen"><i class="fa fa-check"></i><b>6.3.1</b> Eigenschaften von Zusammenhängen</a></li>
+<li class="chapter" data-level="6.3.2" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#korrelationskoeffizient-r"><i class="fa fa-check"></i><b>6.3.2</b> Korrelationskoeffizient <span class="math inline">\(r\)</span></a></li>
+<li class="chapter" data-level="6.3.3" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#berechnung-von-r"><i class="fa fa-check"></i><b>6.3.3</b> Berechnung von <span class="math inline">\(r\)</span></a></li>
+<li class="chapter" data-level="6.3.4" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#hypothesentest-für-r"><i class="fa fa-check"></i><b>6.3.4</b> Hypothesentest für <span class="math inline">\(r\)</span></a></li>
+<li class="chapter" data-level="6.3.5" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#interpretation-des-beispiels-für-laufgeschwindigkeit-und-kalorienverbrauch"><i class="fa fa-check"></i><b>6.3.5</b> Interpretation des Beispiels für Laufgeschwindigkeit und Kalorienverbrauch</a></li>
+<li class="chapter" data-level="6.3.6" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#datenmuster-und-r"><i class="fa fa-check"></i><b>6.3.6</b> Datenmuster und <span class="math inline">\(r\)</span></a></li>
+<li class="chapter" data-level="6.3.7" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#rangkorrelationskoeffizient-nach-spearman"><i class="fa fa-check"></i><b>6.3.7</b> Rangkorrelationskoeffizient nach Spearman</a></li>
+<li class="chapter" data-level="6.3.8" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#scheinkorrelationen"><i class="fa fa-check"></i><b>6.3.8</b> Scheinkorrelationen</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#zusammenfassung"><i class="fa fa-check"></i><b>6.4</b> Zusammenfassung</a></li>
+<li class="chapter" data-level="6.5" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#korrelation-in-rjamovi"><i class="fa fa-check"></i><b>6.5</b> Korrelation in R/jamovi</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#r-code-und-output"><i class="fa fa-check"></i><b>6.5.1</b> <code>R</code> Code und Output</a></li>
+<li class="chapter" data-level="6.5.2" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#jamovi-output"><i class="fa fa-check"></i><b>6.5.2</b> <code>jamovi</code> Output</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html"><i class="fa fa-check"></i><b>7</b> Einfache lineare Regression</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#lernziele-4"><i class="fa fa-check"></i><b>7.1</b> Lernziele</a></li>
+<li class="chapter" data-level="7.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#eine-bücherbestellung"><i class="fa fa-check"></i><b>7.2</b> Eine Bücherbestellung</a></li>
+<li class="chapter" data-level="7.3" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#unabhängige-und-abhängige-variable"><i class="fa fa-check"></i><b>7.3</b> Unabhängige und abhängige Variable</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#zusammenhang-zwischen-den-variablen"><i class="fa fa-check"></i><b>7.3.1</b> Zusammenhang zwischen den Variablen</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#einfache-lineare-regression-1"><i class="fa fa-check"></i><b>7.4</b> Einfache lineare Regression</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#die-regressionsgerade"><i class="fa fa-check"></i><b>7.4.1</b> Die Regressionsgerade</a></li>
+<li class="chapter" data-level="7.4.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#lineares-modell"><i class="fa fa-check"></i><b>7.4.2</b> Lineares Modell</a></li>
+<li class="chapter" data-level="7.4.3" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#die-kleinst-quadrat-linie"><i class="fa fa-check"></i><b>7.4.3</b> Die Kleinst-Quadrat-Linie</a></li>
+<li class="chapter" data-level="7.4.4" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#warum-man-nicht-über-die-gemessenen-daten-hinaus-extrapolieren-sollte"><i class="fa fa-check"></i><b>7.4.4</b> Warum man nicht über die gemessenen Daten hinaus extrapolieren sollte</a></li>
+<li class="chapter" data-level="7.4.5" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#das-bestimmtheitsmass-r2"><i class="fa fa-check"></i><b>7.4.5</b> Das Bestimmtheitsmass <span class="math inline">\(R^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#einfache-lineare-regression-in-rjamovi"><i class="fa fa-check"></i><b>7.5</b> Einfache lineare Regression in <code>R/jamovi</code></a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#r-modell-erstellen-und-output-interpretieren"><i class="fa fa-check"></i><b>7.5.1</b> <code>R</code> Modell erstellen und Output interpretieren</a></li>
+<li class="chapter" data-level="7.5.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#jamovi-modell-erstellen-und-output-interpretieren"><i class="fa fa-check"></i><b>7.5.2</b> <code>jamovi</code> Modell erstellen und Output interpretieren</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#voraussetzungen-für-die-gültigkeit-des-linearen-modells"><i class="fa fa-check"></i><b>7.6</b> Voraussetzungen für die Gültigkeit des linearen Modells</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#diagnostische-plots"><i class="fa fa-check"></i><b>7.6.1</b> Diagnostische Plots</a></li>
+<li class="chapter" data-level="7.6.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#interpretation-der-plots"><i class="fa fa-check"></i><b>7.6.2</b> Interpretation der Plots:</a></li>
+<li class="chapter" data-level="7.6.3" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#was-bedeutet-es-wenn-die-voraussetzungen-nicht-erfüllt-sind"><i class="fa fa-check"></i><b>7.6.3</b> Was bedeutet es, wenn die Voraussetzungen nicht erfüllt sind?</a></li>
+<li class="chapter" data-level="7.6.4" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#beispielplots-zu-homo--und-heteroskedastizität"><i class="fa fa-check"></i><b>7.6.4</b> Beispielplots zu Homo- und Heteroskedastizität</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html"><i class="fa fa-check"></i><b>8</b> Vergleich von Mittelwerten</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#lernziele-5"><i class="fa fa-check"></i><b>8.1</b> Lernziele</a></li>
+<li class="chapter" data-level="8.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-tests"><i class="fa fa-check"></i><b>8.2</b> T-Tests</a></li>
+<li class="chapter" data-level="8.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-verteilung-versus-normalverteilung"><i class="fa fa-check"></i><b>8.3</b> T-Verteilung versus Normalverteilung</a></li>
+<li class="chapter" data-level="8.4" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-test-für-eine-einfache-stichprobe"><i class="fa fa-check"></i><b>8.4</b> T-Test für eine einfache Stichprobe</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vorgehen"><i class="fa fa-check"></i><b>8.4.1</b> Vorgehen</a></li>
+<li class="chapter" data-level="8.4.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vertrauensintervall-für-einen-mittelwert-schritt-für-schritt"><i class="fa fa-check"></i><b>8.4.2</b> Vertrauensintervall für einen Mittelwert Schritt-für-Schritt:</a></li>
+<li class="chapter" data-level="8.4.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#ein-stichproben-t-test-schritt-für-schritt"><i class="fa fa-check"></i><b>8.4.3</b> Ein-Stichproben-T-Test Schritt-für-Schritt:</a></li>
+<li class="chapter" data-level="8.4.4" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi"><i class="fa fa-check"></i><b>8.4.4</b> R/jamovi</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-test-für-verbundene-stichproben"><i class="fa fa-check"></i><b>8.5</b> T-Test für verbundene Stichproben</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vorgehen-1"><i class="fa fa-check"></i><b>8.5.1</b> Vorgehen</a></li>
+<li class="chapter" data-level="8.5.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi-1"><i class="fa fa-check"></i><b>8.5.2</b> R/jamovi</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#zweistichproben-t-test-für-unabhängige-stichproben"><i class="fa fa-check"></i><b>8.6</b> Zweistichproben-T-Test für unabhängige Stichproben</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#konfidenzintervall-für-einen-mittelwertsunterschied"><i class="fa fa-check"></i><b>8.6.1</b> Konfidenzintervall für einen Mittelwertsunterschied</a></li>
+<li class="chapter" data-level="8.6.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#der-zweistichproben-t-test-für-unabhängige-stichproben-schritt-für-schritt"><i class="fa fa-check"></i><b>8.6.2</b> Der Zweistichproben-T-Test für unabhängige Stichproben Schritt-für-Schritt</a></li>
+<li class="chapter" data-level="8.6.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi-2"><i class="fa fa-check"></i><b>8.6.3</b> R/jamovi</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#nicht-parametrische-tests"><i class="fa fa-check"></i><b>8.7</b> Nicht-parametrische Tests</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rang-methoden-rank-tests"><i class="fa fa-check"></i><b>8.7.1</b> Rang-Methoden (rank tests)</a></li>
+<li class="chapter" data-level="8.7.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#wilcoxon-vorzeichenrangtest"><i class="fa fa-check"></i><b>8.7.2</b> Wilcoxon-Vorzeichenrangtest</a></li>
+<li class="chapter" data-level="8.7.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#wilcoxon-rangsummentest"><i class="fa fa-check"></i><b>8.7.3</b> Wilcoxon-Rangsummentest</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html"><i class="fa fa-check"></i><b>9</b> Inferenz für nominale Daten</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#lernziele-6"><i class="fa fa-check"></i><b>9.1</b> Lernziele</a></li>
+<li class="chapter" data-level="9.2" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#der-chi2-test"><i class="fa fa-check"></i><b>9.2</b> Der <span class="math inline">\(\chi^2\)</span>-Test</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#hypothesen-und-signifikanzniveau"><i class="fa fa-check"></i><b>9.2.1</b> Hypothesen und Signifikanzniveau</a></li>
+<li class="chapter" data-level="9.2.2" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#berechnen-der-erwarteten-werte-unter-der-nullhypothese"><i class="fa fa-check"></i><b>9.2.2</b> Berechnen der erwarteten Werte unter der Nullhypothese</a></li>
+<li class="chapter" data-level="9.2.3" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#voraussetzungen-1"><i class="fa fa-check"></i><b>9.2.3</b> Voraussetzungen</a></li>
+<li class="chapter" data-level="9.2.4" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#interpretation-des-chi2-tests"><i class="fa fa-check"></i><b>9.2.4</b> Interpretation des <span class="math inline">\(\chi^2\)</span>-Tests</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#referenzen"><i class="fa fa-check"></i><b>9.3</b> Referenzen</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Leitfaden Statistik</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="grundlagen-der-inferenzstatistik" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Grundlagen der Inferenzstatistik</h1>
+<div id="einleitung" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Einleitung</h2>
+<blockquote>
+<p>Here’s some shocking information for you - sample statistics are <em>always</em> wrong!</p>
+<p>— Jim Frost</p>
+</blockquote>
+<p>Deskriptive Statistik und Inferenzstatistik sind die zwei Hauptkategorien in der Statistik.</p>
+<p>Deskriptive Statistik …</p>
+<ul>
+<li>dient der Beschreibung von Daten in einen Datensatz, der z.B. durch eine Zufallsstichprobe entstanden ist. Die Ergebnisse werden nicht verallgemeinert.<br />
+</li>
+<li>berechnet Kennzahlen zu den Daten aus einem Datensatzes und stellt die Daten grafisch dar; verwendet zur Beschreibung der Daten Kennzahlen wie Mittelwert, Median, Standardabweichung, Quartilsabstand oder Korrelationskoeffizient.<br />
+</li>
+<li>arbeitet nur mit den vorliegenden Daten im Datensatz; daher besteht keine Unsicherheit im Hinblick auf die Gültigkeit von Kennzahlen.</li>
+</ul>
+<p>Inferenzstatistik …</p>
+<ul>
+<li>arbeitet mit Daten, die durch die Untersuchung einer Zufallsstichprobe aus einer grösseren Population ermittelt wurden. Ihre Aufgabe ist es, Rückschlüsse auf die Population zu ziehen, aus der diese Daten stammen. Die Ergebnisse der Stichprobe werden also auf eine grössere Gruppe oder Population übertragen.<br />
+</li>
+<li>benötigt als Grundlage eine repräsentative Stichprobe aus der Population. Am besten gelingt das, indem die Beobachtungseinheiten für die Stichprobe zufällig aus der Population ausgewählt werden (Zufallsstichprobe).<br />
+</li>
+<li>schätzt die wahren Kennzahlen in der Population auf Grundlage der Stichproben-Kennzahlen. Da Schätzungen immer mit einer gewissen Ungenauigkeit verbunden sind interessiert die Frage «Wie sicher können wir sein, dass der geschätzte Mittelwert <span class="math inline">\(\bar{x}\)</span> dem wahren Populationsmittelwert <span class="math inline">\(\mu\)</span> entspricht?».<br />
+</li>
+<li>liefert Angaben, bis zu welchem Grad bzw. mit welcher Wahrscheinlichkeit wir unseren Schätzungen vertrauen können.</li>
+</ul>
+<p>Die diesem Kapitel vorgestellten Grundlagen der Inferenzstatistik sind absolut essentiell für das Verständnis der nachfolgenden Themen. Es lohnt sich daher, für das Verständnis dieser Inhalte genügend Zeit zu investieren.</p>
+</div>
+<div id="lernziele-2" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Lernziele</h2>
+<ol style="list-style-type: decimal">
+<li><p>Verwende eine Stichprobenkennzahl als Schätzung für einen Populationsparameter, z.B. wird der Stichprobenmittelwert verwendet um den Populationsmittelwert zu schätzen; beachte dass <strong>Punktschätzer</strong> und <strong>Stichprobenkennzahl</strong> synonym sind.</p></li>
+<li><p>Beachte, dass Punktschätzer (wie z.B. der Stichprobenmittelwert) von Stichprobe zu Stichprobe variieren. Diese Variablilität wird als <strong>Stichprobenvariation</strong> bezeichnet. Eine Punktschätzung auf Grund einer Stichprobe wird in der Nähe des Populationsparameters liegen, aber es ist sehr unwahrscheinlich, dass sie diesen exakt trifft. Diese Abweichung wird als <strong>Stichprobenfehler:</strong> bezeichnet.</p></li>
+<li><p>Berechne die Stichprobenvariation des Mittelwerts, den <strong>Standardfehler SE</strong> mit der Formel (<span class="math inline">\(\sigma\)</span> ist die Standardabweichung des Populationsparameters)</p></li>
+</ol>
+<p><span class="math display">\[SE = \frac{\sigma}{\sqrt{n}}\]</span></p>
+<ul>
+<li>Wenn die Populationsstandardabweichung <span class="math inline">\(\sigma\)</span> nicht bekannt ist, was meist der Fall ist, verwenden wir die Standardabweichung <span class="math inline">\(s\)</span> der Stichprobe, um SE zu schätzen: <span class="math inline">\(SE = \frac{s}{\sqrt{n}}\)</span>.</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Unterscheide zwischen Standardabweichung (<span class="math inline">\(s\)</span> oder <span class="math inline">\(\sigma\)</span>) und Standardfehler <span class="math inline">\(SE\)</span>: Die Standardabweichung misst die Variabilität in den Stichprobendaten, während der Standardfehler die Variabilität von Punktschätzungen aus verschiedenen Stichproben der gleichen Grösse und aus der gleichen Population misst. Mit anderen Worten: Der Standardfehler ist ein Mass für die die Stichprobenvariation.</p></li>
+<li><p>Erwarte, dass mit steigendem Stichprobenumfang die Stichprobenvariation abnimmt, da in der Formel zur Berechnung des Standardfehlers der Stichprobenumfang <span class="math inline">\(n\)</span> im Nenner ist.</p></li>
+<li><p>Intepretiere ein <strong>Konfidenzintervall</strong> (engl. confidence interval) als glaubhaften Wertebereich für einen Populationsparameter.</p></li>
+<li><p>Interpretiere das <strong>Konfidenzniveau</strong> (engl. confidence level) als den prozentualen Anteil von Zufallsstichproben, die Vertrauensintervalle ergeben, welche den wahren Populationsparameter enthalten.</p></li>
+<li><p>Beachte, dass der zentrale Grenzwertsatz eine Aussage zur Verteilung von Punktschätzern erlaubt und dass diese Verteilung normal ist, wenn die Voraussetzungen erfüllt sind.</p></li>
+</ol>
+<ul>
+<li><p>Diese Voraussetzungen sind:</p>
+<ul>
+<li><p>Normalverteilung der Daten in der Population. Wenn die Verteilung in der Population unbekannt ist, kann diese Bedingung anhand eines Histogramms, eines Boxplots oder QQ-Plots überprüft werden.</p></li>
+<li><p>Stichprobenumfang <span class="math inline">\(n\)</span> &gt; 30. Je grösser der Stichprobenumfang <span class="math inline">\(n\)</span>, desto unbedeutender wird die Verteilung, d.h. wenn <span class="math inline">\(n\)</span> sehr gross ist, wird die Stichprobenverteilung nahezu normal sein, unabhängig von der Form der Verteilung in der Population.</p></li>
+<li><p>Unabhängigkeit der Beobachtungseinheiten in einer Stichprobe: Die Unabhänigkeit der Beobachtungseinheiten kann sicher gestellt werden, indem diese zufällig ausgewählt werden (random sampling) und zufällig zu Gruppen zugeordnet werden (random assignment).</p></li>
+</ul></li>
+</ul>
+<ol start="9" style="list-style-type: decimal">
+<li>Merke, dass die Normalverteilung der Punktschätzer bedeutet, dass ein Konfidenzintervall berechnet werden
+kann:</li>
+</ol>
+<p><span class="math display">\[Punktschätzer \pm z_{1-\frac{\alpha}{2}} \times SE\]</span></p>
+<ul>
+<li><p>wobei <span class="math inline">\(z_{1-\frac{\alpha}{2}}\)</span> den Grenzen der Standardnormalverteilung entspricht, innerhalb derer <span class="math inline">\(1-\alpha\)</span> % der Daten liegen, wobei <span class="math inline">\(1-\alpha\)</span> % dem erwünschten Konfidenzniveau entspricht.</p></li>
+<li><p>Für einen Mittelwert ist dies: <span class="math inline">\(CI_{1-\alpha} = \bar{x} \pm z_{1-\frac{\alpha}{2}} \times SE\)</span></p></li>
+<li><p>Beachte, dass <span class="math inline">\(z_{1-\frac{\alpha}{2}}\)</span> immer positiv ist!</p></li>
+</ul>
+<ol start="11" style="list-style-type: decimal">
+<li>Definiere bei der Berechnung des Konfidenzintervalls den <strong>Fehlerbereich</strong> (engl. margin of error, Abk. ME) als Abstand in beide Richtung vom Punktschätzer, d.h.</li>
+</ol>
+<p><span class="math display">\[ME = z_{1-\frac{\alpha}{2}} \times SE\]</span>
+* Beachte, dass dies genau einer Hälfte der Breite des Vertrauensintervalls ist.</p>
+<ol start="12" style="list-style-type: decimal">
+<li>Interpretiere ein Konfidenzintervall als “Wir können zu XX% darauf vertrauen, dass der wahre Populationsparameter innerhalb dieses Intervalls liegt, wobei XX% das gewünschte Vertrauensniveau ist.”</li>
+</ol>
+<ul>
+<li>Beachte, dass deine Interpretation immer im Kontext der Daten erfolgen sollte; erwähne immer, auf welche Population und welchen Parameter sich eine Aussage bezieht.</li>
+</ul>
+<ol start="13" style="list-style-type: decimal">
+<li><p>Erkläre, inwiefern das Prinzip von Hypothesentests mit dem Vorgehen am Gericht vergleichbar ist.</p></li>
+<li><p>Denke daran, dass wir bei Hypothesentests immer zwei sich gegenseitig ausschliessende Aussagen untersuchen:</p></li>
+</ol>
+<ul>
+<li>Die <strong>Nullhypothese</strong> <span class="math inline">\(H_0\)</span> steht für den skeptischen Standpunkt (kein Unterschied).<br />
+</li>
+<li>Die <strong>Alternativhypothese</strong> <span class="math inline">\(H_A\)</span> ist die Gegenhypothese zur Nullhypothese (es gibt einen Unterschied).</li>
+</ul>
+<ol start="15" style="list-style-type: decimal">
+<li>Beachte bei der Hypothesenbildung:</li>
+</ol>
+<ul>
+<li><p>Hypothesen beziehen sich immer auf Populationsparameter (z.B. Populationsmittelwert, <span class="math inline">\(\mu\)</span>) und nicht auf die Stichprobenkennzahlen (z.B. Stichprobenmittelwert, <span class="math inline">\(\bar{x}\)</span>). Es ist absurd, bezüglich der Stichprobenkennzahl eine Hypothese zu bilden, da diese ja aus der Stichprobe bekannt ist.</p></li>
+<li><p>Verstehe den <strong>Nullwert</strong> als den Wert eines Populationsparameters, welcher der Nullhypothese entspricht.</p></li>
+<li><p>Beachte, dass die Alternativhypothese <span class="math inline">\(H_A\)</span> entweder <strong>einseitig</strong> (<span class="math inline">\(\mu\)</span> &gt; Nullwert oder <span class="math inline">\(\mu\)</span> &lt; Nullwert) oder <strong>zweiseitig</strong> formuliert werden kann (<span class="math inline">\(\mu \neq\)</span> Nullwert). Die Wahl hängt von der konkreten Fragestellung ab. Wenn kein spezieller Grund für eine einseitige Alternativhypothese vorliegt, wähle stets eine zweiseitige Alternativhypothese.</p></li>
+</ul>
+<ol start="16" style="list-style-type: decimal">
+<li><p>Um die Abweichung einer Stichprobe von der angenommenen Grundgesamtheit im Rahmen eines Hypothesentests zu messen, wird eine <strong>Teststatistik</strong> (engl.: test statistic) berechnet.</p></li>
+<li><p>Definiere den <strong><span class="math inline">\(p\)</span>-Wert</strong> als die Wahrscheinlichkeit – unter der Bedingung, dass die Nullhypothese in Wirklichkeit gilt – den beobachteten Wert der Teststatistik oder einen in Richtung der Alternative extremeren Wert zu erhalten.</p></li>
+</ol>
+<p><span class="math display">\[ p-Wert = P(beobachteter~oder~noch~extremerer~Wert~der~Prüfgrösse~|~H_0~wahr)\]</span></p>
+<ol start="18" style="list-style-type: decimal">
+<li><p>Berechne einen <span class="math inline">\(p\)</span>-Wert als Fläche unter der Normalverteilungskurve (entweder auf eine Seite oder auf beide Seiten abhängig von der Alternativhypothese). Verwende zu diesem Zweck einen <span class="math inline">\(z\)</span>-Wert oder einen <span class="math inline">\(t\)</span>-Wert.</p></li>
+<li><p>Verwerfe die Nullhypothese zugunsten der Alternativhypothese, wenn ein Konfidenzintervall den Nullwert nicht enthält.</p></li>
+<li><p>Vergleiche den <span class="math inline">\(p\)</span>-Wert mit dem <strong>Signifikanzniveau</strong> <span class="math inline">\(\alpha\)</span> (typischerweise <span class="math inline">\(\alpha = 0.05\)</span>), um zwischen den Hypothesen zu entscheiden:</p></li>
+</ol>
+<ul>
+<li><p>Verwerfe die Nullhypothese zugunsten der Alternativhypothese, wenn der <span class="math inline">\(p\)</span>-Wert kleiner als das Signifikanzniveau ist, da dies bedeutet, dass es sehr unwahrscheinlich ist, eine mindestens so extreme Teststatistik rein durch Zufall zu erhalten. Interpretiere das Ergebnis in dem Sinn, dass die Daten Evidenz für die Alternativhypothese liefern.</p></li>
+<li><p>Verwerfe die Nullhypothese nicht, wenn der <span class="math inline">\(p\)</span>-Wert grösser als das Signifikanzniveau ist, da dies bedeutet, dass es rein auf Zufall beruhen kann, eine mindestens so extreme Teststatistik zu erhalten. Interpretiere das Ergebnis so, dass die Daten keine Evidenz für die Alternativhypothese liefern.</p></li>
+<li><p>Merke: Die Nullhypothese kann nie angenommen oder bewiesen werden, da das Prinzip von Hypothesentests dies nicht erlaubt.</p></li>
+</ul>
+<ol start="21" style="list-style-type: decimal">
+<li>Denke daran, dass es immer möglich ist, einen Entscheidungsfehler zu begehen:</li>
+</ol>
+<ul>
+<li><p>Ein <strong>Fehler 1. Art</strong> bedeutet, dass die Nullhypothese verworfen wird, obwohl sie in Wirklichkeit wahr ist. Mit einem Signifikanzniveau von <span class="math inline">\(\alpha = 0.05\)</span> nehmen wir in Kauf, dass dies bei 1 von 20 Entscheidungen der Fall ist.</p></li>
+<li><p>Ein <strong>Fehler 2. Art</strong> bedeutet, dass wir die Nullhypothese aufrechterhalten, obwohl in Wirklichkeit die Alternativhypothese wahr ist. Damit verpassen wir die Erfassung eines Effektes, wo einer in Wahrheit vorhanden ist.</p></li>
+</ul>
+<ol start="22" style="list-style-type: decimal">
+<li>Beachte, dass die Wahrscheinlichkeit, einen Fehler 1. Art zu begehen dem Signifikanzniveau entspricht. Wähle das Signifkanzniveau so, dass es den Folgerisiken entspricht, die mit einem Fehler 1. oder 2. Art verbunden ist:</li>
+</ol>
+<ul>
+<li>Wähle ein kleineres <span class="math inline">\(\alpha\)</span>, wenn das Risiko einen Fehler 1. Art zu begehen, minimiert werden soll.<br />
+</li>
+<li>Wähle ein grösseres <span class="math inline">\(\alpha\)</span>, wenn das Risiko einen Fehler 2. Art zu begehen, minimiert werden soll.</li>
+</ul>
+<ol start="23" style="list-style-type: decimal">
+<li><p>Definiere einen <strong>Effekt</strong> als Auswirkung oder als Folge einer Ursache. Wenn wir z.B. zwei Stichproben von Probanden mit und ohne Schlafmittel vergleichen und sich herausstellt, dass die Probanden mit dem Schlafmittel im Durchschnitt 1.5 Stunden länger schlafen, dann bezeichnen wir diese Differenz in der Schlafdauer zwischen den Gruppen als Effekt mit der Effektgrösse 1.5 Stunden.</p></li>
+<li><p>Beachte, dass ein statistisch signifikanter Effekt nicht zwingend auch <strong>praktische Relevanz</strong> (Bedeutung) hat.</p></li>
+</ol>
+</div>
+<div id="grundbegriffe-1" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Grundbegriffe</h2>
+<div id="population" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Population</h3>
+<p>Im alltäglichen Sprachgebrauch besteht eine Population meist aus Menschen, z.B. die Einwohner:innen von Basel, Primarschüler:innen in einer Stadt oder Diabetiker:innen. In der Forschung können Populationen jedoch auch Objekte, Ereignisse, Firmen usw. sein. Zum Beispiel:</p>
+<ul>
+<li>Die Sterne der Milchstrasse<br />
+</li>
+<li>Ein bestimmter Microchip für Handys<br />
+</li>
+<li>Coronaviren SARS-CoV-2</li>
+<li>Hefekulturen in einer Brauerei</li>
+</ul>
+<p>Je nach Fragestellung muss die Population sehr genau definiert werden, wenn man eine Studie durchführt. Dieser Aspekt wird im wissenschaftlichen Arbeiten bei der Behandlung der PICO-Fragestellung ausführlich besprochen.</p>
+<p>Eine <strong>Subpopulation</strong> ist eine Untergruppe einer Population. So kann man die Population Bürger:innen der Schweiz in die Subpopulationen «Mann», «Frau» oder «höchster Schulabschluss» oder «sozialer Status» etc. oder Covid-19-Viren in die Subpopulationen Alpha (England), Beta (Südafrika), Gamma (Brasilien) und Delta (Indien) unterteilen. Die Einteilung in Subpopulationen ist v.a. dann von Bedeutung, wenn zwischen den Untergruppen systematische Unterschiede bestehen, wie das z.B. bei der Körpergrösse von Männern und Frauen der Fall ist (<a href="grundlagen-der-inferenzstatistik.html#fig:groesse-erwachsene-ch-fig">5.1</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:groesse-erwachsene-ch-fig"></span>
+<img src="statbook_files/figure-html/groesse-erwachsene-ch-fig-1.png" alt="Körpergrösse einmal gemeinsam, einmal nach Geschlecht getrennt" width="672" />
+<p class="caption">
+Abbildung 5.1: Körpergrösse einmal gemeinsam, einmal nach Geschlecht getrennt
+</p>
+</div>
+</div>
+<div id="populationsparameter-vs.-stichprobenkennzahl" class="section level3" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Populationsparameter vs. Stichprobenkennzahl</h3>
+<p>Ein <strong>Parameter</strong> ist ein Wert, der ein Merkmal einer ganzen Population beschreibt, z.B. ein Populationsmittelwert. Da es in der Regel nicht möglich ist, alle Beobachtungseinheiten einer Population zu messen, kennen wir Populationsparameter meist nicht. Obwohl wir Populationsparameter nicht messen können, existieren sie. Z.B. die durchschnittliche Körpergrösse aller Frauen in der Schweiz ist ein exakter Parameter, nur kennen wir diesen einfach nicht!</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Mass</th>
+<th align="center">Populationsparameter</th>
+<th align="center">Stichprobenkennzahl</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Umfang</td>
+<td align="center"><span class="math inline">\(N\)</span></td>
+<td align="center"><span class="math inline">\(n\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Mittelwert</td>
+<td align="center"><span class="math inline">\(\mu\)</span></td>
+<td align="center"><span class="math inline">\(\bar{x}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">Standardabweichung</td>
+<td align="center"><span class="math inline">\(\sigma\)</span></td>
+<td align="center"><span class="math inline">\(s\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Korrelation</td>
+<td align="center"><span class="math inline">\(\rho\)</span></td>
+<td align="center"><span class="math inline">\(r\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>In der Inferenzstatistik dient die Stichprobenkennzahl dazu, den Populationsparameter zu schätzen. Folgende Schätzer (engl. estimate) für Populationsparameter kommen zum Einsatz:</p>
+<ul>
+<li>Ein <strong>Punktschätzer</strong> verwendet eine Stichprobenkennzahl als beste Schätzung für einen Populationsparameter. Z.B. ist der Stichprobenmittelwert der beste Schätzer für den Populationsmittelwert. Wegen dem Stichprobenfehler sind leider Punktschätzer immer ungenau und die Grösse der Abweichung vom wahren Wert bleibt unbekannt.<br />
+</li>
+<li>Ein <strong>Intervallschätzer</strong> umfasst einen Wertebereich, der mit einer gewissen Wahrscheinlichkeit den Populationsparameter enthält. Solche Wertebereiche beinhalten eine Fehlergrenze (Fehlerbereich, engl. margin of error, Abk. ME) und berücksichtigen auf diese Weise die Ungenauigkeit eines Punktschätzers. Wenn wir statistische Resultate lesen, sollten wir uns immer fragen, wie gross diese Ungenauigkeit ist. Leider wird in den Medien dieser Fehlerbereich sehr oft nicht angegeben, wodurch eine falsche Genauigkeit suggeriert wird, die fakisch gar nicht vorhanden ist.</li>
+</ul>
+</div>
+</div>
+<div id="methoden-der-inferenzstatistik" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Methoden der Inferenzstatistik</h2>
+<p>In diesem Kurs lernen wir drei Methoden der Inferenzstatistik kennen:</p>
+<ul>
+<li><strong>Hypothesentests</strong> verwenden Stichprobendaten um Fragen zu Punktschätzern zu beantworten. Z.B. ist der Populationsparameter grösser oder kleiner als ein bestimmter Wert oder unterscheiden sich die Parameter von zwei Populationen voneinander (Bsp. klinische Studie mit Interventions- und Kontrollgruppe).<br />
+</li>
+<li><strong>Konfidenzintervalle</strong> (engl. confidence intervalls, Abk. CI) dienen der Bestimmung von Populationsparametern und berücksichtigen die Unsicherheit (Ungenauigkeit) als Folge des Stichprobenfehlers. Sie geben einen Wertebereich an, in den der wahre Parameter mit einer gewissen Wahrscheinlichkeit fällt. Z.B. Ein Konfidenzintervall [176; 186] gibt an, dass wir darauf vertrauen können, dass der wahre Populationsparameter innerhalb dieses Intervalls liegt.<br />
+</li>
+<li>Die <strong>Korrelations- und Regressionsanalyse</strong> beschreibt den Zusammenhang zwischen einer oder mehreren unabhängigen Variablen und einer abhängigen Variablen. Diese Analyse umfasst Hypothesentests, welche die Entscheidung ermöglichen, ob ein Zusammenhang zwischen zwei oder mehr Variablen in einer Stichprobe effektiv auch in der Population besteht.</li>
+</ul>
+</div>
+<div id="stichprobenumfang-und-fehlergrenze" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Stichprobenumfang und Fehlergrenze</h2>
+<p>Inferenzstatistik ist ein mächtiges Werkzeug, das uns erlaubt, aus relativ kleinen Stichproben etwas über eine ganze Population zu erfahren. Leider ist es jedoch so, dass auch wenn eine Studie akribisch genau durchgeführt wird, die Ergebnisse immer etwas <em>falsch</em> sein werden (bezogen auf die wahren Populationsparameter). Weil eine Stichprobe eben nicht die gesamte Population ist, können Stichprobendaten nie zu 100% präzis sein.</p>
+<p>Das primäre Ziel der Inferenzstatistik ist es, von einer Stichprobe auf die Population zu verallgemeinern. Grosse Stichproben repräsentieren die Vielfalt einer Population besser als kleine Stichproben. Wenn wir zum Beispiel eine Studie zum Intelligenzquotienten durchführen und wir haben nur fünf Probanden zum testen, dann wird ein aussergewöhnlich hoher oder tiefer Wert den Stichprobenmittelwert erheblich beeinflussen. Wenn wir 50 Probanden untersuchen können, haben einzelne Extremwerte einen viel geringeren Einfluss.</p>
+<div id="verteilung-von-stichprobenkennzahlen" class="section level3" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Verteilung von Stichprobenkennzahlen</h3>
+<p>(Stichprobenverteilungen, engl. sampling distributions)</p>
+<p>Für das Verständnis der Denkweise in der Statistik ist es ausserordentlich wichtig sich vor Augen zu halten, dass wenn wir eine Zufallsstichprobe aus einer Population ziehen, diese Stichprobe nur <em>eine</em> von einer grossen Zahl möglicher Stichproben ist.</p>
+<p>Zur Illustration führen wir ein simuliertes Experiment durch: Wir wissen, dass der IQ normalverteilt ist und dass der Populationsmittelwert des IQ-Scores bei <span class="math inline">\(\mu = 100\)</span> und die Standardabweichung bei <span class="math inline">\(\sigma = 15\)</span> liegt. Jetzt ziehen wir 1000 Stichproben aus der Population im Umfang <span class="math inline">\(n = 5\)</span>, <span class="math inline">\(n = 25\)</span>, <span class="math inline">\(n = 100\)</span> und stellen die ermittelten Stichprobenmittelwerte als Histogram dar.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:samplingvar-combined-fig"></span>
+<img src="statbook_files/figure-html/samplingvar-combined-fig-1.png" alt="Stichprobenvariabilität für Mittelwerte von jeweils 1000 Stichproben" width="480" />
+<p class="caption">
+Abbildung 5.2: Stichprobenvariabilität für Mittelwerte von jeweils 1000 Stichproben
+</p>
+</div>
+<p>Was lernen wir aus diesem Experiment?</p>
+<ul>
+<li>Jeder Stichprobenmittelwert liegt in der Nähe des wahren Populationsmittelwertes, aber es ist wenig wahrscheinlich, dass ein Stichprobenmittelwert exakt den wahren Populationsmittelwert trifft.<br />
+</li>
+<li>Je grösser die Stichprobe <span class="math inline">\(n\)</span>, desto näher liegen die geschätzten Mittelwerte beim wahren Populationsmittelwert. Mit anderen Worten: Je grösser der Stichprobenumfang <span class="math inline">\(n\)</span>, desto mehr können wir dem Stichprobenmittelwert vertrauen, dass er den wahren Populationsparameter repräsentiert.<br />
+</li>
+<li>Die Variabilität dieser Verteilungen <span class="math inline">\(SE\)</span> entspricht dem Stichprobenfehler in Abhängigkeit vom Stichprobenumfang <span class="math inline">\(n\)</span>. Grössere Stichprobenumfänge weisen einen kleineren Fehlerbereich auf.<br />
+</li>
+<li>Die Stichprobenmittelwerte mehrerer Stichproben sind normalverteilt.</li>
+</ul>
+<p>Was wir an unserem Beispiel nicht erkennen können ist, dass die Stichprobenverteilung der Mittelwerte selbst dann normalverteilt ist, wenn die zu Grunde liegende Verteilung der Populationsdaten nicht normal ist.</p>
+<p><strong>Tipp:</strong> Die Online-App <a href="https://gallery.shinyapps.io/CLT_mean/">Central Limit Theorem for Means</a> ermöglicht es, interaktiv verschiedene Szenarios durchzuspielen.</p>
+<p>Im Experiment zum IQ-Score wird eine Verteilung für die Mittelwerte mehrerer Stichproben erstellt. Eine solche <strong>Stichprobenverteilung</strong> zeigt die Verteilung von Stichprobenkennzahlen (hier von Mittelwerten) mehrerer gleich grosser Stichproben aus einer bestimmten Population. Wie weiter unten erläutert, kann mit Hilfe eines mathematischen Tricks solche Stichprobenverteilungen aus einer einzigen Stichprobe geschätzt werden. Diese Verfahren bilden die theoretische Grundlage für Hypothesentests und Konfidenzintervalle.</p>
+<p><strong>Tipp:</strong> <a href="https://www.youtube.com/watch?v=jvoxEYmQHNM">Bunnies, Dragons and the Normal World</a></p>
+</div>
+</div>
+<div id="standardfehler-engl.-standard-error-abk.-se" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Standardfehler (engl. standard error, Abk. SE)</h2>
+<p>Die einzelnen Stichprobenmittelwerte in unserem Experiment liegen mehr oder weniger in der Nähe des wahren Populationsmittelwerts. Die Streuung der einzelnen Werte einer Stichprobenverteilung kann mit Hilfe der Standardabweichung quantifiziert werden. Die Standardabweichung eines Stichprobenmittelwerts beschreibt, wie weit typischerweise eine bestimmte Kennzahl vom wahren Populationsparameter entfernt ist oder mit anderen Worten, den <em>Fehler</em> dieser Schätzung. Die Standardabweichung einer Punktschätzung wird als <strong>Standardfehler</strong> bezeichnet. Der Standardfehler ist ein Mass für die Ungenauigkeit, die auf Grund der Stichprobenvariation mit unserer Punktschätzung verbunden ist.</p>
+<p>Was genau ist jetzt aber der Unterschied zwischen Standardabweichung und Standardfehler? Sowohl der Standardfehler als auch die Standardabweichung befassen sich mit dem Mittelwert einer Stichprobe, das ist das Gemeinsame, aber …</p>
+<ul>
+<li>… der Standardfehler gibt Auskunft über die mittlere Abweichung des Mittelwerts einer Stichprobe vom tatsächlichen Mittelwert der <em>Population</em>; er beschreibt also die Beziehung zwischen Stichprobenkennzahl und Populationsparameter!<br />
+</li>
+<li>… die Standardabweichung gibt uns Auskunft darüber, wie sehr die einzelnen Werte der <em>Stichprobe</em> um ihren Mittelwert streuen.</li>
+</ul>
+<p>Üblicherweise steht, v.a. aus ökonomischen Gründen, nur eine einzige Stichprobe zur Verfügung und es ist auf den ersten Blick nicht offensichtlich, wie der Standardfehler <span class="math inline">\(SE\)</span> aus einer einzigen Stichprobe berechnet werden kann. Wenn wir uns noch einmal den drei Experimenten oben zuwenden, stellen wir fest, dass <span class="math inline">\(SE\)</span> mit zunehmendem Stichprobenumfang kleiner wird: 6.89 bei n = 5, 2.9 bei n = 25 und 1.94 bei n = 100.</p>
+<p>Es besteht demnach eine Beziehung zwischen der Grösse des Standardfehlers SE und dem Stichprobenumfang <span class="math inline">\(n\)</span>. Bei einem Stichprobenumfang <span class="math inline">\(n\)</span> aus einer Population mit der Standardabweichung <span class="math inline">\(\sigma\)</span>, ist der Standardfehler des Stichprobenmittelwerts gleich</p>
+<p><span class="math display">\[SE = \frac{\sigma}{\sqrt{n}}\]</span></p>
+<p>Da die Standardabweichung einer Population üblicherweise unbekannt ist, werd sie mit der Standardabweichung der vorhandenen Stichprobe geschätzt: Anstelle von <span class="math inline">\(\sigma\)</span> setzen wir <span class="math inline">\(s\)</span> als Punktschätzer für <span class="math inline">\(\sigma\)</span> ein:</p>
+<p><span class="math display">\[SE = \frac{s}{\sqrt{n}}\]</span></p>
+<div id="das-wurzel-n-gesetz" class="section level3" number="5.6.1">
+<h3><span class="header-section-number">5.6.1</span> Das Wurzel-n-Gesetz</h3>
+<p>Der Formel für die Berechnung des Standardfehlers <span class="math inline">\(SE\)</span> ist zu entnehmen, dass sich dieser umgkehrt proportional zur Quadratwurzel des Stichprobenumfangs <span class="math inline">\(n\)</span> verändert. Um also den Standardfehler beispielsweise zu halbieren, müsste daher den Stichprobenumfang vervierfacht werden.</p>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+s
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+SE
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+64
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="konfidenzintervalle-auch-vertrauensintervalle-engl.-confidence-intervalls-abk.-ci" class="section level2" number="5.7">
+<h2><span class="header-section-number">5.7</span> Konfidenzintervalle (auch Vertrauensintervalle, engl. confidence intervalls, Abk. <span class="math inline">\(CI\)</span>)</h2>
+<p>Die Kennzahl aus einer Stichprobe, z.B. der Mittelwert, liefert uns eine einzige Schätzung für einen Populationsparameter. Wie wir gesehen haben, sind solche Punktschätzungen eigentlich nie perfekt und wir würden gerne wissen, in welchem Mass wir auf diesen Wert vertrauen können, um unser Ergebnis korrekt interpretieren zu können. Hier kommen die Vertrauensintervalle ins Spiel. Es liegt eigentlich nahe, dass wir an Stelle einer Punktschätzung ein Werteintervall angeben können, in dem der wahre Populationsparameter mit grosser Wahrscheinlichkeit liegt. Das wäre dann zwar scheinbar weniger präzis, dafür etwas zuverlässiger (siehe unten <em>Präzision versus Sicherheit</em>).</p>
+<p>Da ein Punktschätzer aus einer Stichprobe der überzeugendste Wert für einen gesuchten Populationsparameter ist, macht es Sinn, dass ein Konfidenzintervall um diese Schätzung herum konstruiert wird. Der Standardfehler, als Mass für die Ungenauigkeit des Punktschätzers, liefert die Angabe, wie breit das Konfidenzintervall konstruiert werden soll.</p>
+<p>Der Standardfehler ist die Standardabweichung der Punktschätzung. Aus der 68-95-99.7-Regel wissen wir, dass ca. 95% der Daten innerhalb von zwei Standardabweichungen liegen. Damit können wir davon ausgehen, dass in ca. 95% der Fälle, der Punktschätzer innerhalb von plus/minus 2 Standardfehlern des Populationsparameters liegt. Wenn also die Breite eines Konfidenzintervalls plus/minus 2 Standardfehler zum Punktschätzer umfasst, dürfen wir zu 95% darauf vertrauen, dass dieses den wahren Populationsparameter enthält.</p>
+<p><span class="math display">\[CI_{95} = Punktschätzung \pm 2 \times SE\]</span></p>
+<p>Was bedeutet aber “zu 95% darauf vertrauen können?” Wenn viele Stichproben mit dem gleichen Stichprobenumfang aus einer Population gezogen werdne und für jede Stichprobe das 95%-Konfidenzintervall bestimmt wird, dann werden im Durchschnitt ca. 95% aller dieser Konfidenzintervalle den wahren Populationsparamter enthalten.</p>
+<p>Kommen wir auf unser IQ-Score-Experiment zurück. Wir ziehen nochmals 25 Stichproben im Umfang <span class="math inline">\(n\)</span> = 50 und konstruieren für jede Stichprobe das 95%-Konfidenzintervall für den IQ-Score.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ci95-fig"></span>
+<img src="statbook_files/figure-html/ci95-fig-1.png" alt="IQ-Score: 95%-Vertrauensintervalle für 25 Zufallsstichproben, $n$ = 50" width="672" />
+<p class="caption">
+Abbildung 5.3: IQ-Score: 95%-Vertrauensintervalle für 25 Zufallsstichproben, <span class="math inline">\(n\)</span> = 50
+</p>
+</div>
+<p>Von den 25 Stichproben enthalten in Abbildung <a href="grundlagen-der-inferenzstatistik.html#fig:ci95-fig">5.3</a> zwei (= 8%) den wahren Populationsmittelwert nicht.</p>
+<p>Da der Standardfehler <span class="math inline">\(SE\)</span> mit zunehmendem Stichprobenumfang <span class="math inline">\(n\)</span> abnimmt, hat der
+Stichprobenumfang <span class="math inline">\(n\)</span> einen grossen Einfluss auf die Breite von Konfidenzintervallen.</p>
+<p><strong>Tipp:</strong> Web-App <a href="https://seeing-theory.brown.edu/frequentist-inference/index.html#section2">Seeing Theory: Confidence Intervalls</a>.</p>
+<ul>
+<li>Wähle <span class="math inline">\(Normal\)</span> für Normalverteilung<br />
+</li>
+<li>Stelle mit dem Regler das Konfidenzniveau <span class="math inline">\(1-\alpha\)</span> = 0.95<br />
+</li>
+<li>Beachte den Einfluss des Stichprobenumfangs auf die Breite der Konfidenzintervalle.<br />
+</li>
+<li>Welchen Einfluss hat die Veränderung des Konfidenzniveaus <span class="math inline">\(1-\alpha\)</span> auf die Breite der Konfidenzintervalle?</li>
+</ul>
+<p>Erkenntnis:</p>
+<ul>
+<li>Je höher der Stichprobenumfang pro Stichprobe ist, desto schmaler werden die Konfidenzintervalle.<br />
+</li>
+<li>Je höher das Konfidenzniveau wird, desto breiter werden die Konfidenzintervalle.</li>
+</ul>
+<div id="anpassung-des-konfidenzniveaus" class="section level3" number="5.7.1">
+<h3><span class="header-section-number">5.7.1</span> Anpassung des Konfidenzniveaus</h3>
+<p>Konfidenzintervalle haben eine untere und eine obere Grenze. In der Mitte steht die Stichprobenkennzahl, z.B. <span class="math inline">\(\bar{x}\)</span>. Die untere Grenze des Vertrauensintevalls wird berechnet als <span class="math inline">\(\bar{x} - Fehlerbereich ~ME\)</span> und die obere Grenze <span class="math inline">\(\bar{x} + Fehlerbereich~ ME\)</span>.</p>
+<p><span class="math display">\[ME = z \times SE\]</span></p>
+<p>In der Formel zum 95%-Konfidenzintervall haben wir <span class="math inline">\(z = 2\)</span> eingesetzt. Möglicherweise sind aber 95%-Vertrauensintervalle zu unsicher (z.B. wenn wir die Festigkeit von Schweissnähten in einem Atomkraftwerk prüfen würden) und man möchte eine grössere Zuverlässigkeit haben. In diesem Fall wird das Konfidenzniveau auf z.B. 99% erhöht. Es kann jedoch sein, dass keine so grosse Zuverlässigkeit erforderlich ist, dann kann das Konfidenzniveau auf z.B. 90% gesenkt werden. Das gewünschte Konfidenzniveau hat einen Einfluss auf den Fehlerbereich ME, der toleriert wird und somit auf den Faktor, mit dem der Standardfehler multipliziert werden muss. Allgemein formuliert:</p>
+<p><span class="math display">\[CI_{1-\alpha} =\bar{x} \pm z_{1-\frac{\alpha}{2}} \times SE\]</span></p>
+<p>Das <span class="math inline">\(z\)</span> erinnert an die <span class="math inline">\(z\)</span>-Werte der Standardverteilung und effektiv ist es das auch. Aus der 68-95-99.7-Regel wissen wir, dass wenn wir für <span class="math inline">\(z\)</span> = 1 einsetzen ca. 68%, wenn wir für <span class="math inline">\(z\)</span> = 2 einsetzen ca. 95% und für <span class="math inline">\(z\)</span> = 3 ca. 99.7% der Daten enthalten sind. Üblich sind Konfidenzintervalle von 90%, 95% und 99%.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(\alpha/2\)</span></th>
+<th align="center">Vertrauensniveau <span class="math inline">\(1-\alpha\)</span></th>
+<th align="center"><span class="math inline">\(z_{1-\frac{\alpha}{2}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">.05</td>
+<td align="center">.9 = 90%</td>
+<td align="center">1.645</td>
+</tr>
+<tr class="even">
+<td align="center">.025</td>
+<td align="center">.95 = 95%</td>
+<td align="center">1.96</td>
+</tr>
+<tr class="odd">
+<td align="center">.005</td>
+<td align="center">.99 = 99%</td>
+<td align="center">2.58</td>
+</tr>
+</tbody>
+</table>
+<p>Anmerkungen:</p>
+<ul>
+<li>Eine Erklärung zur Bedeutung des Signifikanzniveaus <span class="math inline">\(\alpha\)</span> folgt weiter unten. Man kann hier schon ahnen, dass <span class="math inline">\(\alpha\)</span> etwas mit dem Fehler zu tun hat, den wir bereit sind, in Kauf zu nehmen.<br />
+</li>
+<li>Zur Schätzung des 95%-Bereichs kann in der Praxis der Faktor 2 verwendet werden, genauer ist aber 1.96.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:choosingZforCI-fig"></span>
+<img src="statbook_files/figure-html/choosingZforCI-fig-1.png" alt="Flächen für 95%-CI und 99%-CI" width="480" />
+<p class="caption">
+Abbildung 5.4: Flächen für 95%-CI und 99%-CI
+</p>
+</div>
+<p>Die Abbildung <a href="grundlagen-der-inferenzstatistik.html#fig:choosingZforCI-fig">5.4</a> zeigt, dass mit grösserem <span class="math inline">\(z\)</span> die Fläche zwischen <span class="math inline">\(-z\)</span> und <span class="math inline">\(+z\)</span> grösser wird. Für das 99% Konfidenzintervall wurde <span class="math inline">\(z\)</span> so gewählt, dass 99% der Fläche unter der Kurve zwischen <span class="math inline">\(-z\)</span> und <span class="math inline">\(+z\)</span> liegt.</p>
+</div>
+<div id="präzision-versus-sicherheit" class="section level3" number="5.7.2">
+<h3><span class="header-section-number">5.7.2</span> Präzision versus Sicherheit</h3>
+<p>Es besteht ein direkter Zusammenhang zwischen der Genauigkeit eines Konfidenzintervalls und seiner Zuverlässigkeit. Schmale Konfidenzintervalle bedeuten hohe Präzision. Wenn wir die Formel zur Berechnung von Konfidenzintervallen betrachten, erkennen wir, dass drei Variablen die Grösse des Fehlerbereichs ME bestimmen:</p>
+<ul>
+<li>die Standardabweichung <span class="math inline">\(s\)</span> der Stichprobenkennzahl: je grösser <span class="math inline">\(s\)</span>, desto breiter das Konfidenzintervall.<br />
+</li>
+<li>der Stichprobenumfang <span class="math inline">\(n\)</span>: je grösser <span class="math inline">\(n\)</span>, desto kleiner ist das Konfidenzintervall.<br />
+</li>
+<li>die Wahl von <span class="math inline">\(z\)</span>: die Wahl eines kleineren <span class="math inline">\(z\)</span>-Werts ergibt ein kleineres Konfidenzintervall als die Wahl eines grösseren <span class="math inline">\(z\)</span>-Werts. Allerdings ist das Konfidenzniveau bei einem kleineren <span class="math inline">\(z\)</span>-Wert auch geringer als bei einem grösseren <span class="math inline">\(z\)</span>-Wert. Wählen wir z.B. einen <span class="math inline">\(z\)</span>-Wert von 1.645 können wir nur zu 90% darauf vertrauen, dass der wahre Populationsparameter im Konfidenzintervall liegt. Wählen wir jedoch <span class="math inline">\(z\)</span> = 1.96, wird zwar der Fehlerbereich grösser (weniger Präzision), dafür steigt das Konfidenzniveau auf 95% (mehr Zuverlässigkeit).</li>
+</ul>
+</div>
+<div id="voraussetzungen" class="section level3" number="5.7.3">
+<h3><span class="header-section-number">5.7.3</span> Voraussetzungen</h3>
+<p>Wichtige Voraussetzungen dafür, dass die Stichprobenverteilung von <span class="math inline">\(\bar{x}\)</span> normalverteilt ist und dass die Schätzung für den Standardfehler SE genügend genau ist, sind:</p>
+<ul>
+<li>Die einzelnen Beobachtungseinheiten der Stichprobe sind unabhängig voneinander.<br />
+</li>
+<li>Der Stichprobenumfang ist gross: <span class="math inline">\(n &gt; 30\)</span> ist eine gute Faustregel<br />
+</li>
+<li>Die Populationsdaten sind nicht allzu stark schief verteilt. Die Beurteilung dieser Bedingung ist im Einzelfall nicht immer ganz einfach.</li>
+</ul>
+<p>Wie kann man sicher sein, dass die Beobachtungseinheiten in der Stichprobe voneinander unabhängig sind?</p>
+<ul>
+<li>Wenn die Beobachtungseinheiten aus einer Zufallsstichprobe (randomisierte Zuteilung) stammen und weniger als 10% der Gesamtpopulation umfassen, dann sind sie unabhängig.<br />
+</li>
+<li>Beobachtungseinheiten in einer Studie gelten als unabhängig, wenn sie randomisiert den Gruppen (z.B. Interventions- und Kontrollgruppen) zugeteilt werden.</li>
+</ul>
+</div>
+<div id="interpretation-von-konfidenzintervallen" class="section level3" number="5.7.4">
+<h3><span class="header-section-number">5.7.4</span> Interpretation von Konfidenzintervallen</h3>
+<p>Aufmerksamen Leser:innen mag aufgefallen sein, dass die sprachliche Formulierung von Konfidenzintervallen etwas holprig tönt:</p>
+<blockquote>
+<p>Wir können zu XX% darauf vertrauen, dass der wahre Populationsparameter zwischen … und … liegt.</p>
+</blockquote>
+<p>De facto bedeutet dies, dass wenn wir 100 Stichproben mit dem gleichen Stichprobenumfang aus einer Population ziehen, werden im Durchschnitt XX Stichproben den wahren Populationsparameter enthalten.</p>
+<p>Bei der Formulierung von Konfidenzintervallen kommt es häufig zu zwei typischen Fehlern:</p>
+<ul>
+<li>Zu sagen, dass ein Konfidenzintervall mit einer Wahrscheinlichkeit von XX% den Populationsparameter enthält ist nicht korrekt. Das Konfidenzintervall enthält den Populationsparameter oder nicht, wir wissen es einfach nicht, aber wir können zu XX% darauf vertrauen. Das ist ein sehr subtiler sprachlicher Fehler.<br />
+</li>
+<li>Zu sagen, dass XX% der Populationsdaten in das Konfidenzintervall fallen, ist falsch. Das Konfidenzintervall bezieht sich ausschliesslich auf den gesuchten Populationsparameter und nicht auf die Populationsdaten!</li>
+</ul>
+</div>
+</div>
+<div id="hypothesen-in-der-statistik" class="section level2" number="5.8">
+<h2><span class="header-section-number">5.8</span> Hypothesen in der Statistik</h2>
+<p>Wir beginnen mit der Frage, ob Studierende heute öfter ins Krafttrainig gehen als vor 10 Jahren. Es liegen uns Daten von Studien aus den Jahren 2010 und 2020 vor, welche u.a. die Frage bearbeitet haben “Wie oft pro Woche gehen Studierende ins Krafttraining.” Unsere Hypothesen könnten lauten:</p>
+<ul>
+<li><span class="math inline">\(H_0:\)</span> Die durchschnittliche Anzahl Krafttrainings der Studierenden ist in den Jahren 2010 und 2020 die gleiche. Es gibt keinen Unterschied in der durchschnittlichen Anzahl Krafttrainings pro Woche zwischen den Studierenden 2010 und 2020.<br />
+</li>
+<li><span class="math inline">\(H_A:\)</span> Die durchschnittliche Anzahl Krafttrainings der Studierenden ist in den Jahren 2010 und 2020 nicht gleich. Es gibt einen Unterschied in der durchschnittlichen Anzahl Krafttrainings pro Woche zwischen den Studierenden 2010 und 2020.</li>
+</ul>
+<p><span class="math inline">\(H_0\)</span> bezeichnen wir als <strong>Nullhypothese</strong>, <span class="math inline">\(H_A\)</span> als <strong>Alternativhypothese</strong>. In der Regel, steht die Nullhypothese für einen skeptisch-konservativen Standpunkt: Es gibt keinen Unterschied. Die Alternativhypothese ist dagegen der Standpunkt der eine neue Perspektive eröffnet und die Möglichkeit in Betracht zieht, dass ein Unterschied besteht.</p>
+<blockquote>
+<p>Die wissenschaftliche Position ist grundsätzlich eine skeptische. Das bedeutet, dass die Nullhypothese <span class="math inline">\(H_0\)</span> nicht verworfen wird, es sei dann es bestehe starke Evidenz für die Alternativhypothese <span class="math inline">\(H_A\)</span>. In diesem Fall wird <span class="math inline">\(H_0\)</span> zu Gunsten von <span class="math inline">\(H_A\)</span> verworfen.</p>
+</blockquote>
+<p>Dieses Prinzip wird auch in der Rechtssprechung angewandt. Ein Angeklagter gilt so lange als unschuldig (<span class="math inline">\(H_0\)</span> = Unschuldsvermutung), bis mit ausreichender Evidenz das Gegenteil (<span class="math inline">\(H_A\)</span>) bewiesen ist. Auch wenn ein Angeklagter frei gesprochen wird (<span class="math inline">\(H_0\)</span> wird nicht verworfen) ist es möglich, dass er schuldig ist, aber die Beweislage war in diesem Fall ungenügend. Daher gilt</p>
+<blockquote>
+<p>Auch wenn wir die Nullhypothese nicht verwerfen können, heisst das nicht, dass wir sie als wahr akzeptieren.</p>
+</blockquote>
+<p>Keine starke Evidenz für die Alternativhypothese zu finden bedeutet daher nicht, dass wir die Nullhypothese akzeptieren.</p>
+<div id="mathematische-formulierung-von-hypothesen" class="section level3" number="5.8.1">
+<h3><span class="header-section-number">5.8.1</span> Mathematische Formulierung von Hypothesen</h3>
+<p>Damit Hypothesen mit statistischen Methoden überprüft werden können, müssen sie zuerst
+mathematisch formuliert werden. Im Beispiel zur Trainingshäufigkeit von Studierenden haben wir die Null- und die Alternativhypothese bereits sprachlich formuliert und können sie jetzt im Hinblick auf die statistische Auswertung mathematisch formulieren:</p>
+<p>Nullhypothese:</p>
+<p><span class="math inline">\(H_0: \mu_{Training2020}=\mu_{Training2010}\)</span> bzw.<br />
+<span class="math inline">\(H_0: \mu_{Training2020}-\mu_{Training2010} = 0\)</span></p>
+<p>Alternativhypothese:</p>
+<p><span class="math inline">\(H_A: \mu_{Training2020}\neq\mu_{Training2010}\)</span> bzw.<br />
+<span class="math inline">\(H_A: \mu_{Training2020}-\mu_{Training2010} \neq 0\)</span></p>
+<p>(In jeweils der Formulierung (<span class="math inline">\(=0,~\neq0\)</span>) erkennen Sie, warum das Ganze <em>Nullhypothese</em> genannt wird)</p>
+<p>Ein Fehler, der häufig bei der mathematischen Formulierung von <span class="math inline">\(H_0\)</span> und <span class="math inline">\(H_A\)</span> gemacht wird ist:</p>
+<p><span class="math inline">\(H_0: \bar{x}_1 = \bar{x}_2\)</span><br />
+<span class="math inline">\(H_A: \bar{x}_1 \neq \bar{x}_2\)</span></p>
+<p>Warum ist das falsch? Weil bei der Formulierung der Hypothesen nicht für die Stichprobenmittelwerte interessieren, sondern die Populationsparameter! Für die Stichprobenmittelwerte brauchen wir ja keine Hypothesen, die sind bekannt: entweder sind die beiden Stichprobenkennzahlen identisch oder sie sind es nicht.</p>
+<p>In der Umgangssprache und in der medizinischen Diagnostik hat der Begriff <em>Hypothese</em> eine etwas andere Bedeutung: Wir verwenden ihn, wenn wir eine Vermutung oder eine Annahme über die Ursache eines Zustands oder Ereignisses haben. Aus der Perspektive der Statistik handelt es sich dabei typischerweise um eine Alternativhypothese. Im Unterschied zu Hypothesen im Alltag muss eine Hypothese in der Wissenschaft prüfbar, d.h. falsifizierbar sein. In der statistischen Praxis empfiehlt es sich daher, die Null- und Alternativhypothese immer mathematisch zu formulieren.</p>
+</div>
+<div id="hypothesen-mittels-konfidenzintervallen-prüfen" class="section level3" number="5.8.2">
+<h3><span class="header-section-number">5.8.2</span> Hypothesen mittels Konfidenzintervallen prüfen</h3>
+<p>Betrachten wir die Ergebnisse der Studien aus den Jahren 2010 und 2020. An wie vielen Tagen haben die Studierenden in den beiden Stichproben (n = 92) pro Woche durchschnittlich trainiert?</p>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:student-training-tab">Tabelle 5.1: </span>Mittelwert (M) und Standardabweichung (s) für Anzahl Trainingstage 2010 und 2020
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+name
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+M
+</th>
+<th style="text-align:right;">
+s
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+training_2010
+</td>
+<td style="text-align:right;">
+92
+</td>
+<td style="text-align:right;">
+3.01
+</td>
+<td style="text-align:right;">
+2.46
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+training_2020
+</td>
+<td style="text-align:right;">
+92
+</td>
+<td style="text-align:right;">
+2.79
+</td>
+<td style="text-align:right;">
+2.60
+</td>
+</tr>
+</tbody>
+</table>
+<p>2010 haben die Studierenden durchschnittlich an 3.01 Tagen und 2020 an 2.79 Tagen trainiert. Es sieht demnach so aus, dass die Studierenden 2020 im Durchschnitt etwas seltener ins Training gingen, als die Studierenden in 2010.</p>
+<p><span class="math inline">\(H_0: \mu_{2020} = \mu_{2010}\)</span><br />
+<span class="math inline">\(H_A: \mu_{2020} \neq \mu_{2010}\)</span></p>
+<p>Der Mittelwert aus 2010 ist in dieser Fragestellung <em>Nullwert</em> (Die Nullhypothese
+ist gültig wenn <span class="math inline">\(\mu_{2020} - \mu_{2010 = 0}\)</span>)</p>
+<p><span class="math inline">\(H_0: \mu_{2020} = 3.01\)</span><br />
+<span class="math inline">\(H_A: \mu_{2020} \neq 3.01\)</span></p>
+<p>Die Berechnung des 95%-Konfidenzintervalls für den Mittelwert aus 2020 ergibt:</p>
+<p><span class="math inline">\(CI_{95} = \bar{x} \pm 1.96 \times \frac{s}{\sqrt{n}}\)</span></p>
+<p><span class="math inline">\(CI_{95} = 2.79 \pm 1.96 \times \frac{2.6}{\sqrt{92}}\)</span></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="grundlagen-der-inferenzstatistik.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb39-2"><a href="grundlagen-der-inferenzstatistik.html#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="grundlagen-der-inferenzstatistik.html#cb39-3" aria-hidden="true" tabindex="-1"></a>nullvalue <span class="ot">&lt;-</span> <span class="fl">3.01</span></span>
+<span id="cb39-4"><a href="grundlagen-der-inferenzstatistik.html#cb39-4" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fl">2.79</span></span>
+<span id="cb39-5"><a href="grundlagen-der-inferenzstatistik.html#cb39-5" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fl">2.6</span></span>
+<span id="cb39-6"><a href="grundlagen-der-inferenzstatistik.html#cb39-6" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">92</span></span>
+<span id="cb39-7"><a href="grundlagen-der-inferenzstatistik.html#cb39-7" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">&lt;-</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n)</span>
+<span id="cb39-8"><a href="grundlagen-der-inferenzstatistik.html#cb39-8" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fl">1.96</span></span>
+<span id="cb39-9"><a href="grundlagen-der-inferenzstatistik.html#cb39-9" aria-hidden="true" tabindex="-1"></a>ME <span class="ot">&lt;-</span> z <span class="sc">*</span> SE</span>
+<span id="cb39-10"><a href="grundlagen-der-inferenzstatistik.html#cb39-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-11"><a href="grundlagen-der-inferenzstatistik.html#cb39-11" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> m <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> ME</span>
+<span id="cb39-12"><a href="grundlagen-der-inferenzstatistik.html#cb39-12" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="fu">round</span>(ci, <span class="dv">2</span>)</span>
+<span id="cb39-13"><a href="grundlagen-der-inferenzstatistik.html#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;95%-CI [&quot;</span>, ci[<span class="dv">1</span>], <span class="st">&quot;; &quot;</span>, ci[<span class="dv">2</span>], <span class="st">&quot;]&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>))</span></code></pre></div>
+<pre><code>## [1] &quot;95%-CI [2.26; 3.32]&quot;</code></pre>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ci-trainingstage-fig"></span>
+<img src="statbook_files/figure-html/ci-trainingstage-fig-1.png" alt="95%-CI für Trainingstage pro Woche" width="480" />
+<p class="caption">
+Abbildung 5.5: 95%-CI für Trainingstage pro Woche
+</p>
+</div>
+<p>Intepretation: Das 95%-Konfidenzintervall für den Stichprobenmittelwert 2020 ist [2.26; 3.32]. Wir können zu 95% darauf vertrauen, dass die durchschnittliche Anzahl Trainings, welche die Studierenden von 2020 besuchten zwischen 2.26 und 3.32 lag. Dieses Vertrauensintervall beinhaltet den Mittelwert aus der Stichprobe von 2010 (Nullwert). Das heisst, dieser Wert ist auch für die Studierenden von 2020 durchaus plausibel. Es liegt daher keine Evidenz dafür vor, dass <span class="math inline">\(H_0\)</span> verworfen werden kann.</p>
+<p><strong>Merke:</strong> Wenn ein Konfidenzintervall den Nullwert beinhaltet, liegt keine ausreichende Evidenz dafür vor, dass <span class="math inline">\(H_0\)</span> verworfen werden kann.</p>
+</div>
+<div id="entscheidungsfehler" class="section level3" number="5.8.3">
+<h3><span class="header-section-number">5.8.3</span> Entscheidungsfehler</h3>
+<p>Kommen wir noch einmal zurück zum Beispiel am Gericht: Die Aufgabe des Gerichts ist es, ein Urteil über den Angeklagten zu fällen. Auf Grund der Unschuldsvermutung gilt:</p>
+<p><span class="math inline">\(H_0:\)</span> Der Angeklagte ist unschuldig.<br />
+<span class="math inline">\(H_A:\)</span> Der Angeklagte ist schuldig.</p>
+<p>Die Anklage wird im Laufe des Verfahrens Hinweise auf die Schuld des Angeklagten präsentieren. Sein Verteidiger wird entlastende Argumente vorbringen. Irgendwann kommt dieses Argument- und Gegenargument-Spiel zu Ende und das Gericht muss ein Urteil fällen. Da in vielen Fällen die Fakten nicht ganz eindeutig sind (man nennt das juristisch einen Indizienfall), besteht die Möglichkeit, dass das Gericht zu einem Fehlurteil kommt. Vier verschiedene Urteile sind möglich:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">H0 nicht verwerfen</th>
+<th align="center">H0 zugunsten HA verwerfen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">H0 ist wahr</td>
+<td align="center">okay</td>
+<td align="center">Fehler 1. Art</td>
+</tr>
+<tr class="even">
+<td align="center">HA ist wahr</td>
+<td align="center">Fehler 2. Art</td>
+<td align="center">okay</td>
+</tr>
+</tbody>
+</table>
+<p>Ist der Angeklagte in Wahrheit …</p>
+<ul>
+<li>unschuldig und wird vom Gericht freigesprochen, ist das Urteil korrekt.<br />
+</li>
+<li>schuldig und wird vom Gericht verurteilt, ist das Urteil korrekt.<br />
+</li>
+<li>unschuldig, wird aber vom Gericht verurteilt, ist das ein Fehlurteil (Fehler 1. Art).<br />
+</li>
+<li>schuldig, wird aber vom Gericht freigesprochen, ist das ein Fehlurteil (Fehler 2. Art).</li>
+</ul>
+<p><img src="illustrations/ntest_errors.png" style="width:70.0%" /></p>
+<p>Wie im Gericht müssen in der Statistik Entscheide getroffen werden, auch wenn die Datenlage meist nicht eindeutig ist. Unser Wissen ist <em>immer unsicher</em>, weil wir nie alle Daten haben, und es ist, wie am Gericht, nahezu unvermeidbar, dass wir Fehlentscheide treffen.</p>
+<ul>
+<li><strong>Fehler 1. Art, <span class="math inline">\(\alpha\)</span>-Fehler</strong>: <span class="math inline">\(H_0\)</span> wird zugunsten <span class="math inline">\(H_A\)</span> verworfen, obwohl <span class="math inline">\(H_0\)</span> wahr ist. Es besteht vermutlich Einigkeit darüber, dass dies ein schwerwiegender Fehler ist. Er bedeutet am Gericht, dass ein Unschuldiger eine Strafe verbüssen muss. In der Medizin kann das bedeuten, dass eine teure Therapie, die in Wirklichkeit völlig nutzlos ist, eine Zulassung erhält und die Gesundheitskosten belastet.<br />
+</li>
+<li><strong>Fehler 2. Art, <span class="math inline">\(\beta\)</span>-Fehler</strong>: <span class="math inline">\(H_0\)</span> wird nicht verworfen, obwohl <span class="math inline">\(H_A\)</span> wahr ist. Auch dieser Fehlerentscheid ist unschön, aber wir stimmen Sir William Blackstone vermutlich zu, dass er weniger schwerwiegende Folgen hat, als ein Fehler 1. Art.</li>
+</ul>
+</div>
+<div id="signifkanzniveau" class="section level3" number="5.8.4">
+<h3><span class="header-section-number">5.8.4</span> Signifkanzniveau</h3>
+<p>Jeder Entscheid birgt das Risiko eines Fehlentscheids. Bei der Erläuterung der Hypothesentests haben wir etwas schwammig formuliert, dass <span class="math inline">\(H_0\)</span> verworfen wird, wenn <em>starke</em> Evidenz für <span class="math inline">\(H_A\)</span> vorliegt. Was aber bedeutet <em>stark</em>? Als Faustregel gilt, dass wir bereit sind, in nicht mehr als 5% der Fälle, bei denen <span class="math inline">\(H_0\)</span> effektiv wahr ist, die Nullhypothese fälschlicherweise zurückzuweisen. Oder anders formuliert: Wir erlauben uns einen Fehler 1. Art bei 5% der Entscheidungen bezüglich <span class="math inline">\(H_0\)</span>. Diese (willkürlich) festgelegte Grenze wird als <strong>Signifikanzniveau</strong> bezeichnet. Oft wird das Signifikanzniveau mit dem griechischen Buchstaben <span class="math inline">\(\alpha\)</span> angegeben und wir schreiben: <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<blockquote>
+<p>Das Signifikanzniveau, gibt an, wie hoch das Risiko ist, das man bereit ist einzugehen, einen Fehler 1. Art zu begehen.</p>
+</blockquote>
+<p>In den meisten Studien im Gesundheitsbereich wird ein Wert für <span class="math inline">\(\alpha=0.05\)</span> verwendet. Diese Entscheidungsgrenze bei der Entwicklung der Studienmethodik festgelegt und ist gewissermassen willkürlich. Je nach Fragestellung kann auch <span class="math inline">\(\alpha=0.1\)</span> oder <span class="math inline">\(\alpha=0.01\)</span> festgelegt werden.</p>
+<p>Wenn wir bei einem Hypothesentest, bei dem <span class="math inline">\(H_0\)</span> wahr ist, ein 95%-Konfidenzintervall verwenden, können wir einen Entscheidungsfehler begehen, wenn ein Punktschätzer &gt; 1.96 Standardabweichungen vom Mittelwert entfernt ist. Bei <span class="math inline">\(\alpha=0.05\)</span> passiert uns das in ca. 5% der Fälle (2.5% auf beiden Seiten der Kurve).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:norm-verwerfungsbereich-fig"></span>
+<img src="statbook_files/figure-html/norm-verwerfungsbereich-fig-1.png" alt="Nullhypothese: 5%-Verwerfungsbereich &amp; 95% Annahmebereich" width="672" />
+<p class="caption">
+Abbildung 5.6: Nullhypothese: 5%-Verwerfungsbereich &amp; 95% Annahmebereich
+</p>
+</div>
+<p>Die Kurve in Abbildung <a href="grundlagen-der-inferenzstatistik.html#fig:norm-verwerfungsbereich-fig">5.6</a> zeigt die Verteilung der Daten unter <span class="math inline">\(H_0\)</span>. Die beiden Flächen am Ende der Kurve ergeben zusammen einen Verwerfungsbereich für <span class="math inline">\(H_0\)</span> von 5%. Der Annahmebereich beträgt 95%. Liegt der Punktschätzer im Verwerfungsbereich (roter Punkt <span class="math inline">\(z\)</span> = -2.2, violetter Punkt <span class="math inline">\(z\)</span> = +3), verwerfen wir die <span class="math inline">\(H_0\)</span> und begehen einen Fehler 1. Art. Liegt der Punktschätzer im Annahmebereich (grüner Punkt) wird <span class="math inline">\(H_0\)</span> nicht verworfen.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:significantResult-fig"></span>
+<img src="statbook_files/figure-html/significantResult-fig-1.png" alt="Starke Evidenz gegen die Nullhypothese" width="672" />
+<p class="caption">
+Abbildung 5.7: Starke Evidenz gegen die Nullhypothese
+</p>
+</div>
+<p>Im abgebildeten Fall (Abb. <a href="#significantResult-fig"><strong>??</strong></a> liegt der Punktschätzer 5 Standardfehler vom Mittelwert der Verteilung unter der Nullhypothese entfernt. Dies bedeutet starke Evidenz gegen <span class="math inline">\(H_0\)</span>. Die Wahrscheinlichkeit ist gering, einen Fehler 1. Art zu begehen, wenn <span class="math inline">\(H_0\)</span> in diesem Fall verworfen wird.</p>
+</div>
+</div>
+<div id="der-p-wert" class="section level2" number="5.9">
+<h2><span class="header-section-number">5.9</span> Der p-Wert</h2>
+<p>Der letzte Abschnitt schloss mit der Feststellung, dass wir starke Evidenz gegen die Nullhypothese haben. Aber wie stark ist <em>stark</em>? Hier kommt jetzt der <strong><span class="math inline">\(p\)</span>-Wert</strong> ins Spiel, dem wir in fast allen Studien begegnen.</p>
+<p>Der p-Wert ist eine Möglichkeit, die Stärke der Evidenz gegen die <span class="math inline">\(H_0\)</span> zugunsten der <span class="math inline">\(H_A\)</span> zu quantifizieren. Formell betrachtet ist der <span class="math inline">\(p\)</span>-Wert eine bedingte Wahrscheinlichkeit (p steht als Abkürzung für <em>probability</em>).</p>
+<blockquote>
+<p>Der <span class="math inline">\(p\)</span>-Wert gibt die Wahrscheinlichkeit für das Auftreten eines Ereignisses oder eines noch extremeren Ereignisses an, unter der Annahme, dass die Nullhypothese wahr ist.</p>
+</blockquote>
+<p>Zu technisch? Dann vielleicht so: Wenn wir einen statistischen Test durchführen, können wir folgende Frage beantworten: “Wenn meine Intervention (ein Medikament, eine Behandlung etc.) absolut keinen Effekt hat (Nullhypothese), wie gross ist dann die Wahrscheinlichkeit, dass ich ein bestimmtes Resultat in meiner Studie erhalte?” Der <span class="math inline">\(p\)</span>-Wert gibt diese Wahrscheinlichkeit an.</p>
+<p>Nehmen wir das Beispiel aus der letzten Abbildung: Der beobachtete Stichprobenmittelwert <span class="math inline">\(\bar{x}\)</span> liegt 5 Standardfehler vom Nullwert (Mittelwert der Verteilung unter der Nullhypothese) entfernt. Wie gross ist die Wahrscheinlichkeit, dass ein solches Ereignis eintritt, wenn die <span class="math inline">\(H_0\)</span> wahr ist?</p>
+<p>Minus 5 SE bedeutet <span class="math inline">\(z\)</span> = -5. Leider ist es so, dass keine <span class="math inline">\(z\)</span>-Tabelle so extreme <span class="math inline">\(z\)</span>-Werte darstellt, weil solche Werte unter der Nullhypothese sehr unwahrscheinlich sind. Wir können aber mit einer einfachen Funktion in <code>R</code> die Frage beantworten:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="grundlagen-der-inferenzstatistik.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb41-2"><a href="grundlagen-der-inferenzstatistik.html#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="grundlagen-der-inferenzstatistik.html#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># die Funktion pnorm(z-Wert) berechnet die Fläche der Normalverteilung </span></span>
+<span id="cb41-4"><a href="grundlagen-der-inferenzstatistik.html#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co"># links vom z-Wert.</span></span>
+<span id="cb41-5"><a href="grundlagen-der-inferenzstatistik.html#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">5</span>) </span></code></pre></div>
+<pre><code>## [1] 2.866516e-07</code></pre>
+<p>Interpretation: Die Wahrscheinlichkeit für unser Ereignis ist p = 0.000000029, d.h. 0.0000029%. Zugegeben, das ist sehr unwahrscheinlich und wir können guten Gewissens <span class="math inline">\(H_0\)</span> zugunsten der <span class="math inline">\(H_A\)</span> verwerfen, insbesondere wenn wir <span class="math inline">\(\alpha=0.05\)</span> als Entscheidungsgrenze definiert haben. Ist der p-Wert kleiner als unser Signifikanzniveau, spricht man in der Statistik von einem <strong>signifikanten</strong> Ergebnis. Man bringt damit zum Ausdruck, dass das Ergebnis nicht auf purem Zufall bzw. natürlicher Variation beruht, sondern dass ein echter Unterschied zwischen der Population der Nullhypothese (z.B. der Kontrollgruppe) und der beobachteten Population (z.B. der Interventionsgruppe) besteht.</p>
+<p><strong>Häufige Fehlinterpretationen des <span class="math inline">\(p\)</span>-Werts:</strong> Der <span class="math inline">\(p\)</span>-Wert ist nicht</p>
+<ul>
+<li>die Wahrscheinlichkeit, dass die Nullhypothese stimmt.<br />
+</li>
+<li>die Wahrscheinlichkeit, dass die Alternativhypothese falsch ist.<br />
+</li>
+<li>die Wahrscheinlichkeit, dass das Ergebnis nur durch Zufall entstanden ist.<br />
+</li>
+<li>eine Quantifizierung der (klinischen) Relevanz der Ergebnisse.<br />
+</li>
+<li>eine Quantifizierung der Stärke eines Effekts.</li>
+</ul>
+<p><strong>Zusammenfassung</strong></p>
+<ul>
+<li>Die Nullhypothese ist Ausdruck einer skeptischen Position; sie geht davon aus, dass es keinen Unterschied gibt. Diese Position wird nur verworfen, wenn ausreichend Evidenz für die Alternativhypothese (= es gibt einen Unterschied) vorliegt.<br />
+</li>
+<li>Ein kleiner <span class="math inline">\(p\)</span>-Wert bedeutet, dass eine kleine Wahrscheinlichkeit für das Ergebnis einer Punktschätzung (oder noch ein extremeres Ergebnis) besteht, wenn die Nullhypothese wahr ist. Wir interpretieren das als starke Evidenz zugunsten der Alternativhypothese.<br />
+</li>
+<li>Wir verwerfen die Nullhypothese, wenn der <span class="math inline">\(p\)</span>-Wert kleiner als unser Signifikanzniveau <span class="math inline">\(\alpha\)</span> (üblicherweise 0.05) ist. Andernfalls halten wir die Nullhypothese aufrecht.<br />
+</li>
+<li>Wir formulieren die Schlussfolgerung eines Hypothesentests stets so, dass auch Nichtstatistiker:innen diese verstehen können.</li>
+</ul>
+<div id="statistische-macht-power" class="section level3" number="5.9.1">
+<h3><span class="header-section-number">5.9.1</span> Statistische Macht (Power)</h3>
+<p>Statistische Macht (auch Power, Trennschärfe) ist die Wahrscheinlichkeit, dass ein Effekt entdeckt wird, wenn der Effekt auch tatsächlich existiert.</p>
+<blockquote>
+<p>Statistische Macht ist definiert als die Wahrscheinlichkeit, korrekterweise
+eine falsche Nullhypothese zurückzuweisen.</p>
+</blockquote>
+<p>Wenn die statistische Power hoch ist, sinkt die Wahrscheinlichkeit, einen Typ-II-Fehler zu begehen oder festzustellen, dass es keinen Effekt gibt, wenn es tatsächlich einen gibt. Damit ist sie gleich 1 − <span class="math inline">\(\beta\)</span>, wobei <span class="math inline">\(\beta\)</span> die Wahrscheinlichkeit ist, einen Fehler 2. Art zu begehen.</p>
+<p><span class="math display">\[Power = 1 - \beta\]</span></p>
+<p>Die statistische Macht <span class="math inline">\((1-\beta)\)</span> wird grösser …</p>
+<ol style="list-style-type: decimal">
+<li>mit wachsender Grösse des wahren Unterschieds oder Effekts: Ein großer Unterschied zwischen zwei Teilpopulationen wird seltener übersehen als ein kleiner Unterschied<br />
+</li>
+<li>mit kleiner werdender Merkmalsstreuung <span class="math inline">\(\sigma\)</span>: Dies kann z.B. durch die Unterteilung in homogenere Subpopulationen erreicht werden.<br />
+</li>
+<li>mit wachsendem Stichprobenumfang, da der Standardfehler <span class="math inline">\(SE\)</span> kleiner wird.<br />
+</li>
+<li>mit grösser werdendem Signifikanzniveau <span class="math inline">\(\alpha\)</span>.</li>
+</ol>
+<p>Wichtig für die statistische Macht bzw. Power ist auch die Art des statistischen Tests: Parametrische Tests wie zum Beispiel der <span class="math inline">\(t\)</span>-Test haben, falls die Verteilungsannahme stimmt, bei gleichem Stichprobenumfang stets eine höhere Trennschärfe als nichtparametrische Tests.</p>
+<p><strong>Power-Analysen</strong> machen eine Aussage darüber, wie hoch die statistische Macht für ein Studiendesign ist. Sie werden entweder vor der eigentlichen Datenerhebung durchgeführt, um abzuschätzen wie viele Versuchspersonen für die Durchführung der Studie nötig sind, oder nach der eigentlichen Datenerhebung – dann meist aber wenn die Studie keine signifikanten Ergebnisse geliefert hat. In einem solchen Fall kann eine Power-Analyse Aufschluss darüber geben, wie viele Versuchsteilnehmer:innen noch nötig gewesen wären, damit der Effekt doch ein signifikantes Ergebnis geliefert hätte.</p>
+<p>Beim designen einer Studie, legt man gewöhnlicherweise das Powerniveau genauso fest, wie man es auch mit dem Signifikanzniveau macht. Oft wird eine statistische Power von 80 % gewählt, so dass ein echter Unterschied in 20% der der Fälle nicht erkannt wird. Dies ist, wie oft in der Statistik, ein Kompromiss. Eine Erhöhung der Power auf beispielsweise 90 % würde auch mit einer Erhöhung des Stichprobenumfangs um etwa 30 % einhergehen, bei einer Erhöhung auf 95 % müsste man den Stichprobenumfang sogar um 60 % erhöhen, was in beiden Fällen die Kosten für die Studie erheblich erhöhen würde.</p>
+</div>
+</div>
+<div id="einseitige-und-zweiseitige-hypothesentests" class="section level2" number="5.10">
+<h2><span class="header-section-number">5.10</span> Einseitige und zweiseitige Hypothesentests</h2>
+<div id="einseitige-hypothesentests" class="section level3" number="5.10.1">
+<h3><span class="header-section-number">5.10.1</span> Einseitige Hypothesentests</h3>
+<p>Eine Studie der National Sleep Foundation hat herausgefunden, dass Schüler:innen im Durchschnitt 7 Stunden pro Nacht schlafen. Lehrer:innen an einer lokalen Schule mit über 2000 Schüler:innen waren überzeugt, dass diese im Durchschnitt länger als sieben Stunden schlafen. Ihre Fragestellung lautete: “Schlafen Schüler:innen an unserer Schule länger als 7 Stunden?”</p>
+<p>Als erstes formulierten wir die mathematischen Hypothesen:</p>
+<ul>
+<li><span class="math inline">\(H_0:~\mu = 7\)</span>, Schüler:innen an dieser Schule schlafen im Durchschnitt 7 Stunden (Nullwert).<br />
+</li>
+<li><span class="math inline">\(H_A:~\mu &gt; 7\)</span>, Schüler:innen an dieser Schule schlafen im Durchschnitt länger als 7 Stunden.</li>
+</ul>
+<p>Dies ist ein Beispiel für einen <em>einseitigen</em> Hypothesentest. Es interessiert bei dieser Fragestellung nicht, ob Schüler:innen weniger als 7 Stunden schlafen.</p>
+<p>Die Lehrer:innen zogen eine Zufallsstichprobe von n = 110 Schüler:innen an ihrer Schule und fragten sie nach der üblichen Schlafdauer. Als Signifikanzniveau legten Sie <span class="math inline">\(\alpha=0.05\)</span> fest. Die Erhebung ergab folgendes Resultat:</p>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:studen-sleep-tab">Tabelle 5.2: </span>Kennzahlen zur Schlafdauer (h)
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+M
+</th>
+<th style="text-align:right;">
+s
+</th>
+<th style="text-align:right;">
+median
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+110
+</td>
+<td style="text-align:right;">
+7.42
+</td>
+<td style="text-align:right;">
+1.75
+</td>
+<td style="text-align:right;">
+7.04
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:stud-sleep-fig"></span>
+<img src="statbook_files/figure-html/stud-sleep-fig-1.png" alt="Schlafdauer (h) bei 110 Studierenden" width="480" />
+<p class="caption">
+Abbildung 5.8: Schlafdauer (h) bei 110 Studierenden
+</p>
+</div>
+<p>Bevor das Normalmodell für den Stichprobenmittelwert bei der Berechnung des 95%-Vertrauensintervalls verwendet werden darf, muss überprüft werden, ob die Voraussetzungen erfüllt sind:</p>
+<ul>
+<li>Da es eine Zufallstichprobe von weniger als 10% der Studierenden ist, sind die Beobachtungen unabhängig.<br />
+</li>
+<li>Die Stichprobengrösse ist genügend gross (n &gt; 30).<br />
+</li>
+<li>Die Daten sind auf Grund der beiden Ausreisser bei 12 und 15 Stunden linkssteil verteilt. Bei einer Stichprobengrösse von 110 darf dies jedoch vernachlässigt werden.</li>
+</ul>
+<p>Da die Voraussetzungen weitgehend erfüllt sind, darf angenommen werden, dass die Populationsdaten normalverteilt sind.</p>
+<p>Prüfung mit dem 95%-Konfidenzintervall:</p>
+<p>Das 95%-Vertrauensintervall für die durchschnittliche Schlafdauer der Schüler:innen beträgt [7.09; 7.75], d.h. wir können zu 95% darauf vertrauen, dass die durchschnittliche Schlafdauer 7.42 [7.09; 7.75] Stunden beträgt. Der Nullwert von 7 Stunden ist in diesem Vertrauensintervall nicht enthalten und wir verwerfen die <span class="math inline">\(H_0\)</span> zugunsten der <span class="math inline">\(H_A\)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:stud-sleep-oneSide-SE-fig"></span>
+<img src="statbook_files/figure-html/stud-sleep-oneSide-SE-fig-1.png" alt="95%-CI für die Schlafdauer der Schüler:innen, n = 110" width="480" />
+<p class="caption">
+Abbildung 5.9: 95%-CI für die Schlafdauer der Schüler:innen, n = 110
+</p>
+</div>
+<p>Prüfung mit dem p-Wert:</p>
+<p>Wir überprüfen, ob unsere Daten mit der <span class="math inline">\(H_0\)</span> vereinbar sind. Wir zeichnen die Verteilung unter der Nullhypothese (kann man auch von Hand skizzieren, ist sehr zu empfehlen) und berechnen den <span class="math inline">\(z\)</span>-Wert für den Mittelwert unserer Stichprobe.</p>
+<p><span class="math display">\[z = \frac{\bar{x} - Nullwert}{SE} = \frac{7.42 - 7}{0.17} = 2.47\]</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:stud-sleep-p-onesided1-fig"></span>
+<img src="statbook_files/figure-html/stud-sleep-p-onesided1-fig-1.png" alt="Einseitiger Hypothesentest: Der z-Wert 2.47 liegt im 5%-Verwerfungsbereich (blau)" width="480" />
+<p class="caption">
+Abbildung 5.10: Einseitiger Hypothesentest: Der z-Wert 2.47 liegt im 5%-Verwerfungsbereich (blau)
+</p>
+</div>
+<p>In der Abbildung <a href="grundlagen-der-inferenzstatistik.html#fig:stud-sleep-p-onesided1-fig">5.10</a> ist der obere 5%-Verwerfungsbereich blau markiert. Wenn <span class="math inline">\(H_A\)</span> einseitig <span class="math inline">\(\mu_1 &gt; \mu_0\)</span> formuliert ist und ein Wert in den oberen 5%-Bereich der Verteilung unter der Nullhypothese fällt, entscheiden wir für einen signifikanten Unterschied (auf der Entscheidungsgrundlage <span class="math inline">\(\alpha\)</span> = 0.05).</p>
+<p>Den <span class="math inline">\(p\)</span>-Wert für <span class="math inline">\(z\)</span> = 2.47 kann in einer <span class="math inline">\(z\)</span>-Werte-Tabelle abgelesen werden oder - einfacher und genauer - mittels <code>R</code> berechnet werden.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="grundlagen-der-inferenzstatistik.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb43-2"><a href="grundlagen-der-inferenzstatistik.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">2.47</span>)</span></code></pre></div>
+<pre><code>## [1] 0.9932443</code></pre>
+<p>Die Fläche unter der Kurve links von unserem Stichprobenmittelwert ist 0.993. Somit ist die verbleibende Fläche 1 - 0.993 = 0.007.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="grundlagen-der-inferenzstatistik.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb45-2"><a href="grundlagen-der-inferenzstatistik.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">2.47</span>)</span></code></pre></div>
+<pre><code>## [1] 0.006755653</code></pre>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:stud-sleep-p-onesided2"></span>
+<img src="statbook_files/figure-html/stud-sleep-p-onesided2-1.png" alt="Einseitiger Hypothesentest: Die Fläche rechts vom z-Wert 2.47 (blau) beträgt 0.7% der Gesamtfläche unter der Kurve" width="480" />
+<p class="caption">
+Abbildung 5.11: Einseitiger Hypothesentest: Die Fläche rechts vom z-Wert 2.47 (blau) beträgt 0.7% der Gesamtfläche unter der Kurve
+</p>
+</div>
+<p>Interpretation: <em>Wenn die Nullhypothese wahr ist, dann liegt die Wahrscheinlichkeit für einen Stichprobenmittelwert von 7.42 oder mehr Stunden für eine Stichprobe von 110 Schülerinnen bei nur <span class="math inline">\(p\)</span> = 0.007, bzw. 0.7%.</em> Wenn die Nullhypothese wahr wäre, würden wir ein solches Ergebnis nur sehr selten antreffen. Weil der p-Wert kleiner als das festgelegte Signifikanzniveau <span class="math inline">\(\alpha = 0.05\)</span> ist, verwerfen wir die Nullhypothese zugunsten der Alternativhypothese und kommen zum Schluss, dass die Schülerinnen an dieser Schule im Durchschnitt länger als 7 Stunden schlafen.</p>
+</div>
+<div id="zweiseitige-hypothesentests" class="section level3" number="5.10.2">
+<h3><span class="header-section-number">5.10.2</span> Zweiseitige Hypothesentests</h3>
+<p>In einseitigen Tests interessieren wir uns für den Bereich der Verteilung in der Richtung der Alternativhypothese. Im vorangehenden Beispiel war dies <span class="math inline">\(H_A: \mu &gt; 7\)</span>. Somit liegt unser Verwerfungsbereich rechts vom Mittelwert unter <span class="math inline">\(H_0\)</span>. Die Alternativhypothese kann auch in die andere Richtung zeigen <span class="math inline">\(H_A: \mu &lt; 7\)</span>, dann liegt unser Verwerfungsbereich links vom Mittelwert unter <span class="math inline">\(H_0\)</span>. Bei zweiseitigen Tests, interessieren uns beide Seiten der Verteilung und die Alternativhypothese ist symmetrisch formuliert <span class="math inline">\(H_A: \mu \neq 7\)</span>. Diese Formulierung lässt offen, ob unsere der Populationsmittelwert gemäss unserer Stichproben nach oben oder nach unten abweicht. Die Frage lautet dann: “Unterscheidet sich unserer Mittelwert von dem der Population <span class="math inline">\(H_0\)</span>?” wobei der Mittelwert aus der Stichprobe sowohl kleiner als auch grösser als der Mittelwert unter <span class="math inline">\(H_0\)</span> sein kann.</p>
+<p>Wie wir gesehen haben, hat die National Sleep Foundation festgestellt, dass Schülerinnen im Durchschnitt 7 Stunden schlafen. Eine andere Forschungsgruppe wollte wissen, ob sich die Schlafdauer der Schülerinnen an ihrer Schule von dieser Norm unterscheidet. Sie formulierten die Hypothesen:</p>
+<p><span class="math inline">\(H_0: \mu = 7\)</span>, die durchschnittliche Schlafdauer beträgt 7 Stunden.<br />
+<span class="math inline">\(H_A: \mu \neq 7\)</span>, die durchschnittliche Schlafdauer unterscheidet sich von 7 Stunden.</p>
+<p>Diese zweite Gruppe hat randomisiert 122 Schülerinnen zu ihrer Schlafdauer befragt. Das Ergebnis war, dass die Schülerinnen an dieser Schule im Durchschnitt <span class="math inline">\(\bar{x}=6.83\)</span> Stunden schlafen (s = 1.8 Stunden). Haben wir damit Evidenz gegen die Nullhypothese (<span class="math inline">\(\alpha = 0.05\)</span>)?</p>
+<ol style="list-style-type: decimal">
+<li><p>Prüfen der Voraussetzungen: (1) Eine Zufallsstichprobe von weniger als 10% der Schülerinnen bedeutet, dass die Beobachtungen unabhängig sind. (2) Der Stichprobenumfang ist grösser als 30. (3) Aufgrund der Überlegungen im letzten Beispiel können wir davon ausgehen, dass der Stichprobenumfang ausreichen gross ist, damit die Stichprobenmittelwerte normal verteilt sind.</p></li>
+<li><p>Den Standardfehler SE berechnen:</p></li>
+</ol>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="grundlagen-der-inferenzstatistik.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb47-2"><a href="grundlagen-der-inferenzstatistik.html#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="grundlagen-der-inferenzstatistik.html#cb47-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">122</span></span>
+<span id="cb47-4"><a href="grundlagen-der-inferenzstatistik.html#cb47-4" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fl">6.83</span></span>
+<span id="cb47-5"><a href="grundlagen-der-inferenzstatistik.html#cb47-5" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fl">1.8</span></span>
+<span id="cb47-6"><a href="grundlagen-der-inferenzstatistik.html#cb47-6" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">&lt;-</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n)</span>
+<span id="cb47-7"><a href="grundlagen-der-inferenzstatistik.html#cb47-7" aria-hidden="true" tabindex="-1"></a>SE</span></code></pre></div>
+<pre><code>## [1] 0.1629643</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Eine Skizze erstellen:</li>
+</ol>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:p-twosided-tails"></span>
+<img src="statbook_files/figure-html/p-twosided-tails-1.png" alt="Zweiseitiger Hypothesentest: Der 5%-Verwerfungsbereich (blau) verteilt sich auf die beiden Enden der Verteilung" width="480" />
+<p class="caption">
+Abbildung 5.12: Zweiseitiger Hypothesentest: Der 5%-Verwerfungsbereich (blau) verteilt sich auf die beiden Enden der Verteilung
+</p>
+</div>
+<p>Da wir unsere Alternativhypothese zweiseitig formuliert haben, wird der Verwerfungsbereich auf 2.5% am unteren und 2.5% am oberen Ende der Verteilung aufgeteilt. <em>Die Grenze zu den Verwerfungsbereichen liegt bei z=-1.96 und z=1.96</em>.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Berechnung des <span class="math inline">\(z\)</span>-Werts:</li>
+</ol>
+<p><span class="math display">\[z = \frac{6.83 - 7}{0.16} = -1.06\]</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:p-twosided-tails2"></span>
+<img src="statbook_files/figure-html/p-twosided-tails2-1.png" alt="Zweiseitiger Hypothesentest: Der z-Wert für den Stichprobenmittelwert liegt im Nichtverwerfungsbereich" width="480" />
+<p class="caption">
+Abbildung 5.13: Zweiseitiger Hypothesentest: Der z-Wert für den Stichprobenmittelwert liegt im Nichtverwerfungsbereich
+</p>
+</div>
+<p>Der <span class="math inline">\(p\)</span>-Wert für die linke Fläche bei <span class="math inline">\(z\)</span> = -1.06 ist 0.145. Weil das Normalmodell symmetrisch ist, muss die rechte Hälfte die selbe Fläche haben wie die linke Fläche. Der <span class="math inline">\(p\)</span>-Wert wird daher für die Summe beider Flächen berechnet:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="grundlagen-der-inferenzstatistik.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb49-2"><a href="grundlagen-der-inferenzstatistik.html#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="grundlagen-der-inferenzstatistik.html#cb49-3" aria-hidden="true" tabindex="-1"></a>linke_flaeche <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">1.06</span>)     <span class="co"># Fläche &lt;= -1.06</span></span>
+<span id="cb49-4"><a href="grundlagen-der-inferenzstatistik.html#cb49-4" aria-hidden="true" tabindex="-1"></a>rechte_flaeche <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(<span class="fl">1.06</span>)   <span class="co"># Fläche &gt;= 1.06</span></span>
+<span id="cb49-5"><a href="grundlagen-der-inferenzstatistik.html#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="grundlagen-der-inferenzstatistik.html#cb49-6" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> linke_flaeche <span class="sc">+</span> rechte_flaeche</span>
+<span id="cb49-7"><a href="grundlagen-der-inferenzstatistik.html#cb49-7" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div>
+<pre><code>## [1] 0.2891446</code></pre>
+<p>Ein p-Wert von 0.29 ist relativ gross (grösser als <span class="math inline">\(\alpha = 0.05)\)</span> und wir wir haben keine Evidenz gegen <span class="math inline">\(H_0\)</span>. Das heisst, wenn <span class="math inline">\(H_0\)</span> wahr ist, ist es nicht aussergewöhnlich, wenn man einen Mittelwert erhält, der sich so wenig von 7 Stunden unterscheidet. Die Ursache für die geringe Abweichung des Mittelwerts von 7 Stunden kann alleine auf der Variabilität der Stichprobenmittelwerte beruhen.</p>
+</div>
+<div id="einseitige-vs.-zweiseitige-hypothesentests" class="section level3" number="5.10.3">
+<h3><span class="header-section-number">5.10.3</span> Einseitige vs. zweiseitige Hypothesentests</h3>
+</div>
+<div id="einseitige-vs.-zweiseitige-hypothesentests-1" class="section level3" number="5.10.4">
+<h3><span class="header-section-number">5.10.4</span> Einseitige vs. zweiseitige Hypothesentests</h3>
+<p>Wir bevorzugen grundsätzlich die Verwendung von zweiseitigen Arbeitshypothesen. Warum? Einseitige Hypothesentests verdoppeln das Risiko, einen Fehler 1. Art zu begehen. Es ist unlautere wissenschaftliche Praxis, wenn nach der Datenerhebung eine zweiseitige Alternativhypothese zu einer einseitigen Alternativhypothese geändert wird, mit der Absicht, statistisch signifikante Effekte zu erhalten, weil solche eher publiziert werden als nicht signifikante Resultate. Deshalb müssen die Hypothesen bei der Registrierung von Studien immer vor der Datenerhebung deklariert werden.</p>
+</div>
+</div>
+<div id="hypothesentests-schritt-für-schritt" class="section level2" number="5.11">
+<h2><span class="header-section-number">5.11</span> Hypothesentests Schritt für Schritt</h2>
+<ol style="list-style-type: decimal">
+<li>Notiere die Hypothesen in Umgangssprache. Übersetze sie dann in mathematische Notation.<br />
+</li>
+<li>Identifiziere die korrekte Prüfgrösse für die Fragestellung.<br />
+</li>
+<li>Prüfe die Voraussetzungen für die Durchführung der Tests (Unabhängigkeit, <span class="math inline">\(n\)</span> &gt; 30, Normalverteilung)<br />
+</li>
+<li>Berechne die Kennzahlen und den Standardfehler. Erstelle eine Skizze für die Verteilung unter <span class="math inline">\(H_0\)</span>. Markiere die Verwerfungsbereiche.<br />
+</li>
+<li>Berechne den <span class="math inline">\(z\)</span>-Wert und den zugehörigen p-Wert.<br />
+</li>
+<li>Berechne das 95%-Konfidenzintervall für den Populationsparameter.</li>
+<li>Schreibe eine Schlussfolgerung in einer Sprache, sie auch für Nichtstatistiker:innen verständlich ist. Vermeide es, nur einen <span class="math inline">\(p\)</span>-Wert ohne Kennzahlen für Punktschätzer und 95%-Konfidenzintervall anzugeben.</li>
+</ol>
+</div>
+<div id="statistische-signifikanz-versus-praktische-relevanz" class="section level2" number="5.12">
+<h2><span class="header-section-number">5.12</span> Statistische Signifikanz versus praktische Relevanz</h2>
+<p>Eine Konsequenz des Wurzel-n-Gesetzes ist es, dass es bloss eine Frage des Stichprobenumfangs ist, ob auch kleine Effekte statistisch signifikant werden. Die Aussage, dass ein Ergebnis statistisch signifikant ist, bedeutet nicht, dass es auch von praktischer Bedeutung ist. In den Gesundheitsberufen müssen wir einen Effekt immer in Bezug zur <strong>MCID</strong> (minimal clinical important difference) setzen, sofern dieser bekannt ist.</p>
+<p>Beispiel: In einer Studie wird der Effekt einer neuen Behandlung auf das subjektive Schmerzempfinden bei Rückenschmerzpatienten gemessen. Die Intervention ist vielversprechend aber auch wesentlich teurer, als die bisherige Standardbehandlung. Das Studiendesign entspricht einer randomisierten kontrollierten Studie (RCT). Die Kontrollgruppe erhält die bisherige Standardbehandlung, die Interventionsgruppe erhält die neue Behandlung. Gemessen wird der Effekt der Behandlungen auf die subjektiven Schmerzen auf einer VAS-Skala von 0 bis 10. Die Studie kommt zum Schluss, dass die Intervention im Durchschnitt eine signifikante Verbesserung bei der Interventionsgruppe gegenüber der Kontrollgruppe von VAS -1.5 [-1.7 -1.3] mit p &lt; 0.05 ergibt. Auf Grund dieser Ergebnisse stellt sich die Frage, ob die alte Behandlung aufgegeben und durch die neue ersetzt werden muss. Um diese Frage zu beantworten, müssen wir wissen, wie gross der Effekt einer Behandlung sein muss, damit die Patientinnen subjektiv eine Verbesserung ihrer Schmerzen wahrnehmen. Eine Suche in der Literatur ergibt, dass die MCID (minimal clinical important difference) bei einer Reduktion der VAS um -2 liegt. Mit anderen Worten: Die neue Intervention mag zwar eine statistisch signifikante Verbesserung von VAS -1.5 bewirken, für die Patient:innen ist das aber nicht von Bedeutung (nicht klinisch relevant), weil sie subjektiv erst ab einer Reduktion der VAS um -2 einen Effekt und damit eine Verbesserung ihrer Lebensqualität wahrnehmen. Vor allem in Anbetracht der zusätzlichen Kosten der neuen Intervention, besteht keine Evidenz dafür, dass diese die bisherige Standardtherapie ersetzen sollte.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="wahrscheinlichkeitsverteilungen.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="korrelation-und-linearer-zusammenhang.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-inference.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
