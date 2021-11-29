@@ -1,7 +1,0 @@
-{
-    "installOptions": {
-        "installFromRepository": true,
-        "libraryPath": "C:/Users/balbu/RLibrary",
-        "installDependencies": true
-    }
-}
