@@ -1,0 +1,47 @@
+---
+title: "Leitfaden Statistik"
+author: "Lukas Stammler"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  Leitfaden Statstik für den Unterricht am BSc Physiotherapie
+  der Berner Fachhochschule BFH. The HTML output format for this example is 
+  bookdown::gitbook, set in the _output.yml file.
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# Über diesen Leitfaden
+
+Dieses Dokument ergänzt die Unterrichtsmaterialien zum Grundkurs Statistik am Studiengang BSc Physiotherapie der Berner Fachhochschule BFH, Departement Gesundheit. Es enthält die Lernziele für einen 2 ECTS-Kurs und vertieft gewisse 
+Aspekte, die im Unterricht nur kursorisch behandelt werden können. 
+
+Der Leitfaden basiert teilweise auf der Arbeit der [OpenIntro-Gruppe](https://www.openintro.org/). OpenIntro ist eine Nonprofit-Organisation, die sich zum Ziel gesetzt hat, Studierenden und Lehrer:innen qualitativ hochwertiges Schulungsmaterial für den Statistikunterricht kostenfrei zur Verfügung zu stellen. Einige Abschnitte dieses Textes sind Übersetzungen aus dem Englischen aus dem Buch OpenIntro-Statistics [@OpenIntroStat]. Für einige Abbildungen wurde der R-Code aus dem [OpenIntro-Github-Repositorium](https://github.com/OpenIntroStat/openintro-statistics) übernommen und für den vorliegenden Text angepasst. Ich kann das didaktisch hervorragende Buch, das über die [Homepage von OpenIntro](https://www.openintro.org/) gratis im pdf-Format heruntergeladen werden kann, allen Interessierten wärmstens empfehlen.  
+
+Im Unterricht mit den Bachelorstudierenden arbeiten wir mit der `R`-Umgebung `jamovi` [@jamovi], damit die 
+Studierenden nicht zusätzlich mit dem Lernen von `R` [@R-base] belastet werden. Video-Anleitungen für die Arbeit mit 
+`jamovi` findet man z.B. [hier](https://datalab.cc/jamovi/) oder im Buch von @LearnStatJamovi, das als pdf-Download frei zugänglich ist. 
+
+Übungen werden über [Rpubs](https://rpubs.com/stammler) bereitgestellt. Die verwendeten Datensätze können [hier](https://drive.google.com/drive/folders/1-83DTsYzGrgGVfoXKMpFKxrloAEMtDmh?usp=sharing) als zip-Datei 
+heruntergeladen werden.   
+
+Der Leitfaden wurde mit ´Bookdown´ @R-bookdown erstellt.   
+
+Lukas Stammler, Winter 2021/22
+
+```{r, echo=FALSE, out.width="25%"}
+knitr::include_graphics("./illustrations/LS.png")
+```
+
+Version 0.1
+Hinweise auf Fehler gerne an <lukas.stammler@bfh.ch>
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', "tidyverse", "openintro"), 'packages.bib')
+```

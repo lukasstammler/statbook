@@ -1,0 +1,30 @@
+h1:einfache-lineare-regression Einfache lineare Regression
+h2:lernziele Lernziele
+h2:eine-bücherbestellung Eine Bücherbestellung
+tab:bookstore-tab Buchhandlung
+h2:unabhängige-und-abhängige-variable Unabhängige und abhängige Variable
+h3:zusammenhang-zwischen-den-variablen Zusammenhang zwischen den Variablen
+fig:bookstore-fig Zusammenhang Anzahl verkaufte Bücher und Anzahl Studierende
+h2:einfache-lineare-regression-1 Einfache lineare Regression
+h3:die-regressionsgerade Die Regressionsgerade
+h4:kurzes-repe-mathematik---lineare-funktion-gerade Kurzes Repe Mathematik - Lineare Funktion: Gerade
+fig:geradengleichung-fig Geradengleichung
+h3:lineares-modell Lineares Modell
+h3:die-kleinst-quadrat-linie Die Kleinst-Quadrat-Linie
+fig:bookstore-lines-fig Welche Gerade ist ein optimales Modell?
+fig:elmhurst-fig Universitäre Unterstützung nach Familieneinkommen
+fig:bookstore-33-fig Buchhandlung: Vorhersage für 33 Stud.
+h3:warum-man-nicht-über-die-gemessenen-daten-hinaus-extrapolieren-sollte Warum man nicht über die gemessenen Daten hinaus extrapolieren sollte
+fig:sprint100m-fig Olympische Zeit für 100m-Sprint
+fig:sprint100m-extrapol-fig Zeit für 100m-Sprint Frauen extrapoliert
+fig:sprint100m-zero-fig Zeit für 100m-Sprint Frauen bis ins Jahr 2800 extrapoliert
+h3:das-bestimmtheitsmass-r2 Das Bestimmtheitsmass 
+h2:einfache-lineare-regression-in-rjamovi Einfache lineare Regression in 
+h3:r-modell-erstellen-und-output-interpretieren  Modell erstellen und Output interpretieren
+h3:jamovi-modell-erstellen-und-output-interpretieren  Modell erstellen und Output interpretieren
+h2:voraussetzungen-für-die-gültigkeit-des-linearen-modells Voraussetzungen für die Gültigkeit des linearen Modells
+h3:diagnostische-plots Diagnostische Plots
+h3:interpretation-der-plots Interpretation der Plots:
+h3:was-bedeutet-es-wenn-die-voraussetzungen-nicht-erfüllt-sind Was bedeutet es, wenn die Voraussetzungen nicht erfüllt sind?
+h3:beispielplots-zu-homo--und-heteroskedastizität Beispielplots zu Homo- und Heteroskedastizität
+

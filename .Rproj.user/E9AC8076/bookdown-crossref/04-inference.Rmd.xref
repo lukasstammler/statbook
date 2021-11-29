@@ -1,0 +1,46 @@
+h1:grundlagen-der-inferenzstatistik Grundlagen der Inferenzstatistik
+h2:einleitung Einleitung
+h2:lernziele Lernziele
+h2:grundbegriffe Grundbegriffe
+h3:population Population
+fig:groesse-erwachsene-ch-fig Körpergrösse einmal gemeinsam, einmal nach Geschlecht getrennt
+h3:populationsparameter-vs.-stichprobenkennzahl Populationsparameter vs. Stichprobenkennzahl
+h2:methoden-der-inferenzstatistik Methoden der Inferenzstatistik
+h2:stichprobenumfang-und-fehlergrenze Stichprobenumfang und Fehlergrenze
+h3:verteilung-von-stichprobenkennzahlen Verteilung von Stichprobenkennzahlen
+fig:samplingvar-combined-fig Stichprobenvariabilität für Mittelwerte von jeweils 1000 Stichproben
+h2:standardfehler-engl.-standard-error-abk.-se Standardfehler (engl. standard error, Abk. SE)
+h3:das-wurzel-n-gesetz Das Wurzel-n-Gesetz
+fig:bspWurzelNGesetz-tab Beispiel zum Wurzel-n-Gesetz
+h2:konfidenzintervalle-auch-vertrauensintervalle-engl.-confidence-intervalls-abk.-ci Konfidenzintervalle (auch Vertrauensintervalle, engl. confidence intervalls, Abk. )
+fig:ci95-fig IQ-Score: 95%-Vertrauensintervalle für 25 Zufallsstichproben, $n$ = 50
+h3:anpassung-des-konfidenzniveaus Anpassung des Konfidenzniveaus
+fig:choosingZforCI-fig Flächen für 95%-CI und 99%-CI
+h3:präzision-versus-sicherheit Präzision versus Sicherheit
+h3:voraussetzungen Voraussetzungen
+h3:interpretation-von-konfidenzintervallen Interpretation von Konfidenzintervallen
+h2:hypothesen-in-der-statistik Hypothesen in der Statistik
+h3:mathematische-formulierung-von-hypothesen Mathematische Formulierung von Hypothesen
+h3:hypothesen-mittels-konfidenzintervallen-prüfen Hypothesen mittels Konfidenzintervallen prüfen
+tab:student-training-tab Mittelwert (M) und Standardabweichung (s) für Anzahl Trainingstage 2010 und 2020
+fig:ci-trainingstage-fig 95%-CI für Trainingstage pro Woche
+h3:entscheidungsfehler Entscheidungsfehler
+h3:signifkanzniveau Signifkanzniveau
+fig:norm-verwerfungsbereich-fig Nullhypothese: 5%-Verwerfungsbereich & 95% Annahmebereich
+fig:significantResult-fig Starke Evidenz gegen die Nullhypothese
+h2:der-p-wert Der p-Wert
+h3:statistische-macht-power Statistische Macht (Power)
+h2:einseitige-und-zweiseitige-hypothesentests Einseitige und zweiseitige Hypothesentests
+h3:einseitige-hypothesentests Einseitige Hypothesentests
+fig:stud-sleep-fig Schlafdauer (h) bei 110 Studierenden
+fig:stud-sleep-oneSide-SE-fig 95%-CI für die Schlafdauer der Schüler:innen, n = 110
+fig:stud-sleep-p-onesided1-fig Einseitiger Hypothesentest: Der z-Wert 2.47 liegt im 5%-Verwerfungsbereich (blau)
+fig:stud-sleep-p-onesided2 Einseitiger Hypothesentest: Die Fläche rechts vom z-Wert 2.47 (blau) beträgt 0.7% der Gesamtfläche unter der Kurve
+h3:zweiseitige-hypothesentests Zweiseitige Hypothesentests
+fig:p-twosided-tails Zweiseitiger Hypothesentest: Der 5%-Verwerfungsbereich (blau) verteilt sich auf die beiden Enden der Verteilung
+fig:p-twosided-tails2 Zweiseitiger Hypothesentest: Der z-Wert für den Stichprobenmittelwert liegt im Nichtverwerfungsbereich
+h3:einseitige-vs.-zweiseitige-hypothesentests Einseitige vs. zweiseitige Hypothesentests
+h3:einseitige-vs.-zweiseitige-hypothesentests-1 Einseitige vs. zweiseitige Hypothesentests
+h2:hypothesentests-schritt-für-schritt Hypothesentests Schritt für Schritt
+h2:statistische-signifikanz-versus-praktische-relevanz Statistische Signifikanz versus praktische Relevanz
+

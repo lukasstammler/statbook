@@ -1,0 +1,33 @@
+h1:deskriptive-statistik Deskriptive Statistik
+h2:lernziele Lernziele
+h2:grundbegriffe Grundbegriffe
+tab:phy-import Daten der ersten 5 Studierenden im Datensatz phy.csv (n = 228)
+h2:quantitative-und-qualitative-daten Quantitative und qualitative Daten
+h2:quantitative-daten-zusammenfassen Quantitative Daten zusammenfassen
+h3:kennzahlen-der-zentralen-tendenz-lagemasse Kennzahlen der zentralen Tendenz (Lagemasse)
+fig:mean-dotp-fig Mittelwert
+fig:median-dotp-fig Median
+fig:income-f-fig Monatliches Einkommen Frauen CH, 2018
+h3:exkurs-der-mittelwert-als-kleinst-quadrat-modell Exkurs: Der Mittelwert als Kleinst-Quadrat-Modell
+fig:statlehrer-scatter-fig Streudiagramm Anzahl Freunde
+fig:statlehrer-mw2-fig Geschätzter Mittelwert = 2
+fig:statlehrer-mw3-fig Geschätzter Mittelwert = 3
+fig:statlehrer-truemw-fig Fehler bei wahrem Mittelwert = 2.6
+fig:mw-ssq-fig Verteilung der Fehlerquadratsummen
+h3:kennzahlen-der-streuung-streuungsmasse Kennzahlen der Streuung (Streuungsmasse)
+fig:two-distr-fig Zwei Variablen mit Mittelwert 0
+h3:grafiken-für-quantitative-daten Grafiken für quantitative Daten
+fig:phy-hist-fig Körpergrösse von Studentinnen, n = 183
+fig:bp-gruppen-fig Körpergrösse von Studierenden
+h2:qualitative-daten-zusammenfassen Qualitative Daten zusammenfassen
+h3:kreuztabellen Kreuztabellen
+tab:phy-kreuz-tab Augenfarben von 228 Studierenden
+h3:balkendiagramme Balkendiagramme
+fig:barplot-fig Augenfarben von Studierenden, n = 228
+fig:pies-fig Kuchendiagramme vs. Balkendiagramme
+fig:funny-pie-fig Pyramide - R Code in der Helpdatei zu pie()
+h2:grundregeln-für-die-erstellung-von-grafiken Grundregeln für die Erstellung von Grafiken
+fig:expl-plots-fig Serotoninspiegel von Heuschrecken in engem Habitat, n = 10
+fig:aapl-fig Schlusskurse der Apple-Aktie 1.1. bis 24.11.2021
+fig:iris-fig Länge der Kelchblätter von drei Iris-Spezies, n = 50/Spezies
+

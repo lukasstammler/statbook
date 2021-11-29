@@ -1,0 +1,26 @@
+h1:korrelation-und-linearer-zusammenhang Korrelation und linearer Zusammenhang
+h2:einleitung Einleitung
+h2:lernziele Lernziele
+h2:korrelation Korrelation
+tab:running-tab 11 Läuferinnen
+fig:running-scatp-fig Kalorienverbrauch nach Laufgeschwindigkeit, n = 11
+h3:eigenschaften-von-zusammenhängen Eigenschaften von Zusammenhängen
+fig:relationshipsR-fig Zusammenhänge identifizieren
+h3:korrelationskoeffizient-r Korrelationskoeffizient 
+h3:berechnung-von-r Berechnung von 
+h3:hypothesentest-für-r Hypothesentest für 
+h3:interpretation-des-beispiels-für-laufgeschwindigkeit-und-kalorienverbrauch Interpretation des Beispiels für Laufgeschwindigkeit und Kalorienverbrauch
+fig:running-PearsonR-fig Zusammenhang von Kalorienverbrauch und Laufgeschwindigkeit
+h3:datenmuster-und-r Datenmuster und 
+fig:relationship-16-fig 16 Varianten von Zusammenhängen, alle $r$ = 0.8
+fig:cor-outlier-fig Einfluss eines Ausreissers auf $r$
+h3:rangkorrelationskoeffizient-nach-spearman Rangkorrelationskoeffizient nach Spearman
+fig:monoton-fig Zwei perfekte monotone Zusammenhänge
+h3:scheinkorrelationen Scheinkorrelationen
+fig:shoesizeSalary-fig Einkommen nach Schuhgrösse, n = 1000
+fig:shoesizeSalarySex-fig Einkommen nach Schuhgrösse
+h2:zusammenfassung Zusammenfassung
+h2:korrelation-in-rjamovi Korrelation in R/jamovi
+h3:r-code-und-output  Code und Output
+h3:jamovi-output  Output
+

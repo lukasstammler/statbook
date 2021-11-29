@@ -1,0 +1,26 @@
+```{r setup-01, include=FALSE}
+rm(list = ls())
+```
+
+# Einführung
+
+> All models are wrong, but some are useful.
+>
+> --- George E.P. Box
+
+
+In den Naturwissenschaften sind Erkenntnisse meist mit einer gewissen Unsicherheit verbunden. Beispiele dafür sind die Wettervorhersage für die nächsten Tage oder das tägliche Verkehrsaufkommen bei einer Brücke. Auch wenn man die Zugfestigkeit von Sehnen experimentell ermittelt, ist das Ergebnis mit Unsicherheit verbunden; einerseits infolge von Messungenauigkeit, andererseits weil eine natürliche Variabilität zwischen Beobachtungseinheiten vorhanden ist (keine zwei Beobachtungseinheiten sind exakt identisch). Die Unsicherheit kann auch durch fehlendes Wissen auftreten, z.B. weil wir nur einen beschränkten Zugriff auf Daten haben (wir können nie den Blutdruck von allen Menschen messen). Wir benötigen daher Methoden, um unsichere Phänomene angemessen zu modellieren, aber auch um Daten richtig zu verstehen. Aus den vorliegenden Daten wollen wir ja (korrekte) Rückschlüsse ziehen, um auf dieser Grundlage Entscheidungen zu treffen. Die Wahrscheinlichkeitsrechnung und die Statistik liefern Methoden, die uns dabei unterstützen.  
+
+Was tun Wissenschaftler, die in der Forschung arbeiten, die also versuchen, bestimmte Teilaspekte der uns umgebenden Welt zu verstehen? Manche von ihnen machen das,was die meisten Menschen von Wissenschaftlern erwarten: Sie beobachten, zählen, messen, registrieren, katalogisieren. Sie sind die Empiriker:innen. Sie streben danach, möglichst genaue Informationen über die Vorgänge in der Natur zu erhalten.
+
+Das ist die eine Seite der wissenschaftlichen Arbeit. Für die andere Seite sind die Theoretiker:innen zuständig, die versuchen, in den Beobachtungen der Empiriker:innen Gesetzmässigkeiten zu erkennen und diese so zu formulieren, dass sie nicht nur mit den vorhandenen Beobachtungen übereinstimmen, sondern auch die Ergebnisse von Experimenten voraussagen können, die noch gar nicht durchgeführt worden sind. Solche Gesetzmässigkeiten können unterschiedliche Gestalt annehmen: Formeln, Diagramme oder Algorithmen.
+
+Jede wissenschaftliche Theorie ist ein Modell des beobachteten Aspekts der Wirklichkeit. Modelle stellen stets eine Abstraktion oder Idealisierung dar: Sie beschreiben die Realität niemals absolut genau, sondern erfassen bestimmte relevante Aspekte »hinreichend gut«; für eine Fragestellung weniger bedeutende Details werden dabei vernachlässigt. So gesehen sind alle Modelle falsch, wie der Statistiker George Box provokant formulierte. Trotzdem sind sie nützlich, weil sie uns helfen, von einzelnen Beobachtungen auf das Ganze zu schliessen. Die Modelle, welche z.B. in der Wettervorhersage verwendet werden, so komplex sie sein mögen, beruhen auf vielen Vereinfachungen; daher trifft die die Wettervorhersage nicht immer zu - aber sie ist, zumindest gelegentlich, sehr nützlich.
+
+> Die (komplexe) Realität kann mit Modellen abgebildet werden. Modelle liefern zwar vereinfachende Beschreibungen der Realität, dadurch ermöglichen sie aber allgemeine Aussagen, welche sonst nicht gemacht werden könnten.
+>
+> --- Marco Waser
+
+In der Statistik geht es darum, aus vorhandenen Daten auf den datengenerierenden Mechanismus zu schliessen. Wir sehen ein paar (wenige) Datenpunkte (z.B. Blutdruckmessungen) und versuchen mit diesem beschränkten Wissen herauszufinden, was wohl ein gutes Modell dafür ist. 
+
+Auch wenn wir Experimente durchführen, erhalten wir Daten, die angemessen ausgewertet werden müssen. Wenn wir also einen wissenschaftlichen Fachartikel beurteilen sollen, dann kommt darin wohl fast immer auch eine Datenanalyse vor. Um  Fehlschlüsse zu vermeiden und Fehlinterpretationen zu durchschauen benötigen wir ein Verständnis der theoretischen Grundlagen. 

@@ -1,0 +1,39 @@
+h1:vergleich-von-mittelwerten Vergleich von Mittelwerten
+h2:lernziele Lernziele
+h2:t-tests T-Tests
+h2:t-verteilung-versus-normalverteilung T-Verteilung versus Normalverteilung
+h2:t-test-für-eine-einfache-stichprobe T-Test für eine einfache Stichprobe
+h3:vorgehen Vorgehen
+fig:run12-hist-fig Cherryblossom-Run 2012: Laufzeiten für die Stichprobe n = 100
+fig:run12-qq-fig QQ-Plot fpr Cherryblossom-Run 2012, n = 100
+h3:vertrauensintervall-für-einen-mittelwert-schritt-für-schritt Vertrauensintervall für einen Mittelwert Schritt-für-Schritt:
+h3:ein-stichproben-t-test-schritt-für-schritt Ein-Stichproben-T-Test Schritt-für-Schritt:
+h3:rjamovi R/jamovi
+h2:t-test-für-verbundene-stichproben T-Test für verbundene Stichproben
+fig:schlafmittel-fig Zusammenhang zwischen Schlafdauer mit und ohne Medikament
+h3:vorgehen-1 Vorgehen
+fig:medi-data-qq Histogramm und QQ-Plot für paarweise Differenzen
+h3:rjamovi-1 R/jamovi
+h2:zweistichproben-t-test-für-unabhängige-stichproben Zweistichproben-T-Test für unabhängige Stichproben
+h3:konfidenzintervall-für-einen-mittelwertsunterschied Konfidenzintervall für einen Mittelwertsunterschied
+fig:stemcell-qq-fig Histogramm und QQ-Plot für ESC- und Kontrollgruppe
+h3:der-zweistichproben-t-test-für-unabhängige-stichproben-schritt-für-schritt Der Zweistichproben-T-Test für unabhängige Stichproben Schritt-für-Schritt
+tab:data-births-tab Datensatz Geburtsgewicht (g) und Raucherstatus
+fig:plot-births-fig Histogramm und QQ-Plot für Geburtsgewicht nach Raucherstatus der Mutter
+fig:births-summary Kennzahlen für Geburtsgewicht (g) nach Raucherstatus der Mutter
+h3:rjamovi-2 R/jamovi
+h2:nicht-parametrische-tests Nicht-parametrische Tests
+h3:rang-methoden-rank-tests Rang-Methoden (rank tests)
+h3:wilcoxon-vorzeichenrangtest Wilcoxon-Vorzeichenrangtest
+fig:ss-boxplot-fig Boxplots für Schwangerschaftsdauer
+fig:ss-ranks Daten, Differenzen, Ränge und Vorzeichen der Differenzen der LMP- und US-Werte der Schwangerschaftsdauer
+fig:plot-ss-points Punktediagramm der Schwangerschaftsdauer, US- und LMP-Werte mit Rängen
+h4:rjamovi-3 R/jamovi
+h3:wilcoxon-rangsummentest Wilcoxon-Rangsummentest
+fig:data-statex-tab Daten Statistikübungen
+fig:statex-bp-fig Boxplot für Statistikresultate
+fig:statex-dots-fig Punktediagramm der Ränge für Statistikresultate
+h4:rjamovi-4 R/jamovi
+h4:voraussetzungen-für-den-wilcoxon-rangsummen-test Voraussetzungen für den Wilcoxon-Rangsummen-Test:
+fig:plot-equal-notequal Gleiche versus ungleiche Verteilung
+
