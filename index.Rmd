@@ -26,7 +26,7 @@ Im Unterricht mit den Bachelorstudierenden arbeiten wir mit der `R`-Umgebung `ja
 Studierenden nicht zusätzlich mit dem Lernen von `R` [@R-base] belastet werden. Video-Anleitungen für die Arbeit mit 
 `jamovi` findet man z.B. [hier](https://datalab.cc/jamovi/) oder im Buch von @LearnStatJamovi, das als pdf-Download frei zugänglich ist. 
 
-Übungen werden über [Rpubs](https://rpubs.com/stammler) bereitgestellt. Die verwendeten Datensätze können [hier](https://drive.google.com/drive/folders/1-83DTsYzGrgGVfoXKMpFKxrloAEMtDmh?usp=sharing) als zip-Datei 
+Übungen werden über [Rpubs](https://rpubs.com/stammler) bereitgestellt. Die verwendeten Datensätze können [hier](https://github.com/lukasstammler/statbook/tree/main/data) als .csv oder  [hier](https://drive.google.com/drive/folders/1-83DTsYzGrgGVfoXKMpFKxrloAEMtDmh?usp=sharing) als zip-Datei 
 heruntergeladen werden.   
 
 Der Leitfaden wurde mit ´Bookdown´ @R-bookdown erstellt.   
