@@ -644,7 +644,10 @@ SE <- s/sqrt(n)
 z <- 1.96
 ME <- z * SE
 
+# 95%-CI berechnen
 ci <- m + c(-1, 1) * ME
+
+# 95%-CI auf zwei Nachkommastellen runden und ausgeben
 ci <- round(ci, 2)
 print(paste("95%-CI [", ci[1], "; ", ci[2], "]", sep = ""))
 ```
@@ -863,6 +866,8 @@ Bevor das Normalmodell für den Stichprobenmittelwert bei der Berechnung des 95%
 Da die Voraussetzungen weitgehend erfüllt sind, darf angenommen werden, dass die Populationsdaten normalverteilt sind.  
 
 ```{r stud-sleep-oneSide-SE}
+### R-Code
+
 n <- 110     # Stichprobenumfang
 m <- 7.42    # Mittelwert der Stichprobe
 s <- 1.75    # Standardabweichung des Mittelwerts der Stichprobe   
@@ -917,6 +922,7 @@ Den $p$-Wert für $z$ = 2.47 kann in einer $z$-Werte-Tabelle abgelesen werden od
 
 ```{r, echo=TRUE}
 ### R-Code
+
 pnorm(2.47)
 ```
 
@@ -924,6 +930,7 @@ Die Fläche unter der Kurve links von unserem Stichprobenmittelwert ist 0.993. S
 
 ```{r, echo=TRUE}
 ### R-Code
+
 1 - pnorm(2.47)
 ```
 

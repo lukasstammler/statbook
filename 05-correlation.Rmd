@@ -257,7 +257,8 @@ Die Funktion in `R` [@R-base] für die Berechnung des Korrelationskoeffizienten 
 ```{r, echo=TRUE, eval=FALSE}
 ### R-Code
 
-cor(x, y)        # Korrelationskoeffizient nach Pearson   
+# Korrelationskoeffizient nach Pearson   
+cor(x, y)        
 ```
 
 ### Hypothesentest für $r$   
@@ -274,6 +275,7 @@ Die Funktion in `R` für diesen Hypothesentest ist
 ```{r, echo=TRUE, eval=FALSE}
 ### R-Code
 
+# Hypothesentest für r
 cor.test(x, y)
 ```
 
@@ -688,7 +690,6 @@ Ohne im einzelnen auf die Streudiagramme in Abbildung \@ref(fig:relationship-16-
 Betrachten wir das Beispiel 12 aus der Abbildung \@ref(fig:relationship-16-fig) etwas genauer: 
 
 ```{r cor-outlier-fig, fig.align='center', fig.dim=c(5, 5), fig.cap="Einfluss eines Ausreissers auf $r$"}
-
 compute.y <- function(x, y, r) {
     theta <- acos(r)
     X     <- cbind(x, y)                              # matrix
@@ -797,6 +798,7 @@ Die Funktion in `R` für die Berechnung von $r_S$ ist
 ```{r, echo=TRUE, eval=FALSE}
 ### R-Code
 
+# Rangkorrelationskoeffizient nach Spearman
 cor(x, y, method = "spearman")
 ```
 

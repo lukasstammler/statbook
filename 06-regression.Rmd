@@ -324,6 +324,7 @@ in `R` benutzen wir die Funktion `lm()`:
 ```{r, echo=TRUE}
 ### R-Code
 
+# lineares Modell erstellen und Zusammenfassung ausgeben
 lm_bookstore <- lm(Buecher ~ Studierende, data = bookstore)
 summary(lm_bookstore)
 ```
@@ -538,6 +539,8 @@ Eine Variable y kann folglich umso besser durch die Variable x erklärt werden, 
 Zur Erläuterung des R-Outputs verwenden wir die Fragestellung aus der Buchhandlung. Es werden nur die wichtigsten Angaben erläutert. Eine detaillierte Beschreibung des Outputs findet man z.B. [hier](https://feliperego.github.io/blog/2015/10/23/Interpreting-Model-Output-In-R)
 
 ```{r, eval=FALSE}
+### R-Code
+
 # ein lineares Modell berechnen
 model <- lm(Buecher ~ Studierende, data = bookstore)
 

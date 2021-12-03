@@ -519,9 +519,16 @@ par(mfrow = c(1, 1))
 Die Berechnung in `R/jamovi` folgt genau diesem Prinzip:   
 
 ```{r, echo=TRUE}
-a <- pnorm(1)     # Wahrscheinlichkeit für z <= 1
-b <- pnorm(-1.5)  # Wahrscheinlichkeit für z <= -1.5
-a - b             # Wahrscheinlichkeit für -1.5 <= z <= 1
+### R-Code
+
+#  Wahrscheinlichkeit für z <= 1
+a <- pnorm(1)  
+
+# Wahrscheinlichkeit für z <= -1.5
+b <- pnorm(-1.5)  
+
+# Wahrscheinlichkeit für -1.5 <= z <= 1
+a - b             
 ```
 
 Die Wahrscheinlichkeit, dass ein Apfel zwischen 85g und 110g wiegt beträgt 77.5% ($p = 0.775$).   
