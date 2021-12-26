@@ -751,7 +751,7 @@ Ist die Verteilung der Daten nicht bekannt, so müssen andere Testverfahren, sog
 
 ### Rang-Methoden (rank tests)
 
-Rangtests spielen in der Klasse der nichtparametrischen Verfahren eine dominierende Rolle. Dabei ist die zu berechnende Testgrösse nur eine Funktion der rangierten (geordneten) Beobachtungen; die Beobachtungswerte selber werden nicht verwendet. Dies bedeutet, dass man nur die ordinale Information der Daten nutzt. Daher ist auch die Mindestanforderung an die Daten, dass sie qualitativ-ordinal skaliert sind.  
+Rangtests spielen in der Klasse der nichtparametrischen Verfahren eine dominierende Rolle. Dabei ist die zu berechnende Teststatistik nur eine Funktion der rangierten (geordneten) Beobachtungen; die Beobachtungswerte selber werden nicht verwendet. Dies bedeutet, dass man nur die ordinale Information der Daten nutzt. Daher ist auch die Mindestanforderung an die Daten, dass sie qualitativ-ordinal skaliert sind.  
 
 Mathematisches Detail (nicht zu lernen): Die nichtparametrischen Methoden arbeiten mit diskreten Verteilungen. Die Berechnung von $p$-Werten erfolgt jedoch über eine sog. Approximation (Annäherung) an die Normalverteilung, welche eine kontinuierliche Verteilung ist. Bei der Aproximation einer diskreten an eine kontinuierliche Verteilung muss ein Korrekturfaktor *Kontinuitätskorrektur (engl. continuity correction)* eingeführt werden, der in der Ausgabe von Statistikprogrammen erwähnt wird.   
 
@@ -862,11 +862,11 @@ p_rank
 
 Wenn die Differenzen symmetrisch um Null angeordnet sind, haben wir Evidenz dafür, dass $H_0$ wahr ist. Beachte, dass einige dieser Differenzen der Schwangerschaftsdauer gleich sind. Der Wert 7 kommt drei Mal vor. Diesen drei Werten sollten die Ränge 4, 5 und 6 zugeordnet werden. Ihr mittlerer Rang (Mittelwert von 4, 5 und 6) ist 5. Deshalb wird dieser mittlere Rang jedem der drei Werte zugeordnet.  
 
-Wir vergleichen jetzt die Summe der positiven Ränge mit der Summe der negativen Ränge. Sind diese beiden Rangsummen etwa gleich gross, haben wir keine Evidenz gegen die Nullhypothese, andernfalls werden wir die Nullhypothese ablehnen. Als einfache **Testgrösse W** verwenden wir Rangsumme der positiven Differenzen.  
+Wir vergleichen jetzt die Summe der positiven Ränge mit der Summe der negativen Ränge. Sind diese beiden Rangsummen etwa gleich gross, haben wir keine Evidenz gegen die Nullhypothese, andernfalls werden wir die Nullhypothese ablehnen. Als einfache **Teststatistik W** verwenden wir Rangsumme der positiven Differenzen.  
 
 Summe der positiven Ränge: 2 + 3 + 5 + 5 + 5 + 8 + 9 + 10 = 47   
 Summe der negativen Ränge: 1 + 7 = 8  
-Testgrösse $W$ (in `R` Testgrösse $V$) = 47  
+Teststatistik $W$ (in `R` Teststatistik $V$) = 47  
 
 Berechnung des p-Werts für $W = 47$ und $n = 10$ 
 
@@ -895,7 +895,7 @@ wilcox.test(ss$LMP, ss$US,
 
 Anmerkung:   
 
-- Bei der Berechnung in `R` kann entspricht die ausgegebene *Testgrösse V*  $W$.  
+- Bei der Berechnung in `R` kann entspricht die ausgegebene *Teststatistik V*  $W$.  
 - In `R` kann entschieden werden, ob die Kontinuitätskorrektur durchgeführt wird oder nicht Bei unterschiedlichen Stichprobenumfängen sollte dies immer geschehen. `jamovi` führt die Kontinuitätskorrektur immer durch.   
 
 
@@ -951,7 +951,7 @@ $H_A: P(INT > CON) \neq P(CON > INT)$, die Summen der Rangplätze von INT und CO
 
 Signifikanzniveau $\alpha = 0.05$   
 
-Für den Mann-Whitney-U-Test berechnen wir die **Testgrösse U**. $U$ ist der kleinere Wert von den beiden $U_1$ und $U_2$, die wie folgt berechnet werden:
+Für den Mann-Whitney-U-Test berechnen wir die **Teststatistik U**. $U$ ist der kleinere Wert von den beiden $U_1$ und $U_2$, die wie folgt berechnet werden:
 
 $U_1 = n_1 \times n_2+\frac{n_1 \times (n_1+1)}{2} - R_1$  
 $U_2 = n_1 \times n_2+\frac{n_2 \times (n_2+1)}{2} - R_2$  
@@ -991,12 +991,12 @@ p_U <- ggplot(statex, aes(x = Punkte, fill = Gruppe)) +
 p_U
 ```
 
-Berechnung der Testgrössen $U_1$ für die Interventionsgruppe und $U_2$ für die Kontrollgruppe  
+Berechnung der Teststatistiken $U_1$ für die Interventionsgruppe und $U_2$ für die Kontrollgruppe  
 
 $U_1 = 8\times7+\frac{8(8+1)}{2} - 48 = 44$  
 $U_2 = 8\times7+\frac{7(7+1)}{2} - 72 = 12$  
 
-Unsere Testgrösse $U$ ist die kleinere der beiden Grössen $U_1$ und $U_2$: $U = 12$  
+Unsere Teststatistik $U$ ist die kleinere der beiden Grössen $U_1$ und $U_2$: $U = 12$  
 
 Berechnung des p-Werts mit `R`
 
