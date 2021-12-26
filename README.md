@@ -2,4 +2,4 @@ Willkommen
 
 Dies ist die Projektseite "Leitfaden Statistik"
 
-https://lukasstammler.github.io/statbook/ 
+Der Leitfaden befindet sich hier: https://lukasstammler.github.io/statbook/ 
