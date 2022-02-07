@@ -41,7 +41,7 @@ durch Kennzahlen und Grafiken geeignet zusammengefasst und präsentiert werden k
 ## Lernziele   
 
 1. Beschreibe Daten mit den Begriffen Beobachtungseinheit, Beobachtungsmerkmal 
-(= Variable), Ausprägung von Beobachtungseinheiten.   
+(= Variable), Ausprägung von Beobachtungsmerkmalen.   
 2. Unterscheide quantitative und qualitative Daten.   
   - Unterscheide bei quantitativen Daten zwischen kontinuierlichen und diskreten 
   Variablen.  
@@ -51,14 +51,14 @@ durch Kennzahlen und Grafiken geeignet zusammengefasst und präsentiert werden k
 und die Kennzahlen der Lage und der Streuung.   
   - Kennzahlen der Lage: Mittelwert $\bar{x}$ und Median  
   - Kennzahlen der Streuung: Varianz $s^2$, Standardabweichung $s$, Variationsbreite  
-  (= Spannweite) und Interquartilabstand (IQR, engl. interquartile range)   
+  (= Spannweite) und Interquartilabstand ($IQR$, engl. interquartile range)   
 4. Beschreibe die Verteilung einer Variable als symmetrisch, rechtsschief oder 
 linksschief.   
 5. Verwende Histogramme und Boxplots um die Verteilung von quantitativen Daten 
 zu beschreiben.   
 6. Definiere *robuste statisische Kennzahlen* wie Median und IQR als Kennzahlen, 
 die wenig von der Verteilungsform und von Ausreissern beeinflusst werden.  
-7. Verwende Kreuztabellen und Balkendiagramme zur Beschreibung qualitativer Daten.  
+7. Verwende Kreuztabellen und Balkendiagramme zur Beschreibung von qualitativen Daten.  
 
 ## Grundbegriffe   
 
