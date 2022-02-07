@@ -66,11 +66,11 @@ Wir verwenden in diesem Kapitel einen Datensatz mit biometrischen Merkmalen von
 Studierenden 
 
 ```{r phy-import}
-phy <- read_csv("./data/02_phy.csv", show_col_types = FALSE)
+phy <- read_csv("./data/02_physio.csv", show_col_types = FALSE)
 
 
 head(phy, 5) %>% 
-  kable(caption = "Daten der ersten 5 Studierenden im Datensatz phy.csv (n = 228)") %>% 
+  kable(caption = "Daten der ersten 5 Studierenden im Datensatz 02_physio.csv (n = 228)") %>% 
   kable_classic(full_width = FALSE)
 ```
 
@@ -123,7 +123,7 @@ Bei quantitativen Daten unterscheiden wir zwei Unterkategorien:
 werden auch als *numerische* oder *stetige* Variablen bezeichnet. Im phy-
 Datensatz sind `Groesse`, `Gewicht` und `Schuhgroesse` kontinuierliche Variablen.  
 - quantitativ-**diskrete** Variablen werden durch Zählen erhoben. Sie können nur 
-ganzzahlige Werte annehmen. Beispiele sind Anzahl roter Blutkörperchen pro ml Blut  
+ganzzahlige Werte annehmen. Beispiele sind Anzahl roter Blutkörperchen pro ml Blut 
 oder die Anzahl Geschwister.
 
 **Qualitative** Variablen sind Beobachtungsmerkmale, die wir nicht durch messen 
@@ -135,19 +135,19 @@ Körpergrösse von Männern und Frauen.
 
 Auch bei qualitativen Daten unterscheiden wir zwei Unterkategorien:  
 
-- qualitativ-**nominal**: Die Variable gibt eine Gruppenzugehörigkeit an. Im phy-
+- qualitativ-**nominal**: Die Variable gibt eine Gruppenzugehörigkeit an. Im physio-
 Datensatz sind die Variablen `ID`, `Kohorte`, `Klasse`, `Augenfarbe` und `Geschlecht` 
 diesem Variablentyp zuzuordnen.   
 - qualitativ-**ordinal**:  Bei diesem Typ sind die Kategorien logisch geordnet, 
 wie z. B. der Schweregrad einer Krankheit oder die Antworten „stimme nicht zu“, 
-„stimme teilweise zu“, „stimme zu“ in einer Umfrage. Im phy-Datensatz entspricht die 
+„stimme teilweise zu“, „stimme zu“ in einer Umfrage. Im physio-Datensatz entspricht die 
 Variable `Statistik` diesem Variablentyp.   
 
 
 ## Quantitative Daten zusammenfassen   
 
 Mit Hilfe von **Kennzahlen** lassen sich Variablen zusammenfassen. Kennzahlen der
-zentralen Tendenz (Lagemasse) geben Auskunft über den "Schwerpunkt" einer Variable und Kennzahlen der Streuung vermitteln uns einen Eindruck darüber, wie die Variablenwerte um 
+zentralen Tendenz (Lagemasse) geben Auskunft über den "Schwerpunkt" einer Variablen und Kennzahlen der Streuung vermitteln uns einen Eindruck darüber, wie die Variablenwerte um 
 diesen Schwerpunkt verteilt sind. In vielen Fällen sind Grafiken (engl. plots) 
 einfacher lesbar als umfangreiche Tabellen.   
 
@@ -214,7 +214,7 @@ p2m <- p2 +
 
 In der Abbildung \@ref(fig:mean-dotp-fig) ist erkennbar, dass wenn die zwei höchsten 
 Werte aus der Abbildung links nach rechts verschoben werden, also höhere Werte 
-annehmen, sich auch der Mittelwert nach rechts verschiebt.  
+annehmen, sich auch der Mittelwert nach rechts verschiebt und somit grösser wird.  
 
 Den Mittelwert einer Variable in `R` berechnen [@R-base]:   
 
@@ -352,11 +352,11 @@ der Median berichtet.
 Perzentile (auch Quantile) sind Hilfsmittel zur Beschreibung der Verteilung von 
 Daten. Die Definition für ein Perzentil ist etwas schwerfällig:       
 
-*Eine Zahl $p_k$ heißt $k$-tes Perzentil ($k$ bezeichnet hierbei eine ganze Zahl zwischen 1 und 99) einer Variablen, wenn mindestens $k$ % der Beobachtungen der Variable kleiner oder gleich $p_k$ und mindestens (100 - $k$) %größer oder gleich $p_k$ sind.*   
+*Eine Zahl $p_k$ heißt $k$-tes Perzentil ($k$ bezeichnet hierbei eine ganze Zahl zwischen 1 und 99) einer Variablen, wenn mindestens $k$ % der Beobachtungen der Variable kleiner oder gleich $p_k$ und mindestens (100 - $k$)% größer oder gleich $p_k$ sind.*   
 
-Einfacher geht es mit einem Beispiel: Uns interessiert, wo die Einkommensgrenze 
-zwischen dem unteren und dem mittleren Drittel liegt. Das bedeutet, wir müssen das 
-33. Perzentil der Einkommensverteilung bestimmen.
+Einfacher geht es mit einem Beispiel: Uns interessiert, wo die Grenze zwischen 
+dem unteren und dem mittleren Drittel beim Einkommen von Frauen in der Schweiz liegt. 
+Das bedeutet, wir müssen das 33. Perzentil der Einkommensverteilung bestimmen.
 
 ```{r Rquantile, echo=TRUE}
 ### R-Code
@@ -382,8 +382,8 @@ quantile(einkommen$Einkommen, c(.25, .5, .75))
 Intepretation:   
 
 - 25% der Frauen verdienen CHF 3000.- oder weniger 
-- 25% der Frauen verdienen zwischen CHF 3000 und 4000.  
-- 25% der Frauen verdienen zwischen CHF 4000 und 6000.
+- 25% der Frauen verdienen zwischen CHF 3000.- und 4000.-.  
+- 25% der Frauen verdienen zwischen CHF 4000.- und 6000.-.
 - 25% der Frauen verdienen CHF 6000.- oder mehr.
 
 
@@ -434,10 +434,9 @@ ggplot(mw_tib_est1, aes(x = ID, y = Freunde)) +
 
 Die horizontale schwarze Linie gibt unseren geschätzen Mittelwert von $\bar{x} = 2$ 
 an. Die gelben Linien geben den Abstand zum Mittelwert an. Die Länge der Linien gibt 
-die Grösse des Fehler $e$ an, um den unser geschätzter Mittelwert jeden einzelnen 
-Messpunkt unter- oder überschätzt. Die Summe der Fehler $e$ ergibt den gesamten Fehler in 
-unserem Modell. Es hat sich in der Statistik allerdings als Standard etabliert, dass nicht 
-die Summe der einfachen Fehler $e$ , sondern die Summe der quadrierten Fehler
+die Grösse des Fehlers $e$ an, um den unser geschätzter Mittelwert jeden einzelnen 
+Messpunkt unter- oder überschätzt. Die Summe der Grösse der Fehler $e$ ergibt den 
+gesamten Fehler in unserem Modell. Es hat sich in der Statistik allerdings als Standard etabliert, dass nicht die Summe der einfachen Fehler $e$ , sondern die Summe der quadrierten Fehler
  $e^2$ berücksichtigt wird. Dies, weil damit einerseits negative Werte für Fehler, 
 welche die Fehlersumme fälschlicherweise zu klein erscheinen lassen, vermieden werden und andererseits grosse Fehler das System "bestrafen." (Durch das  Quadrieren werden 
 Fehler die kleiner als 1 sind noch kleiner, z.B. $0.5^2 = 0.25$ und Fehler die 
@@ -461,12 +460,12 @@ mw_tib_est1 %>%
 Wir addieren aus der Tabelle \@ref(tab:fehler-mw2)  die Werte der quadrierten Fehler $e^2$ (= e_sq) und erhalten für unser Modell mit $\bar{x} = 2$ eine **Fehlerquadratsumme** von 7. 
 Wir können jetzt unseren Fehler mit der Zahl 7 quantifizieren.
 
-Vielleicht gibt es aber einen besseren Mittelwert und als nächstes schätzen wir einen Mittelwert $\bar{x} = 3$. Wiederum berechnen wir die Fehlerquadratsumme.
+Vielleicht gibt es aber einen besseren Mittelwert und als nächstes schätzen wir einen Mittelwert $\bar{x} = 4$ (wir wissen, dass das nicht stimmen kann, es geht um das Verständnis des Konzepts). Wiederum berechnen wir die Fehlerquadratsumme.
 
-```{r statlehrer-mw3-fig, fig.align='center', fig.dim=c(4, 3), fig.cap="Geschätzter Mittelwert = 3"}
+```{r statlehrer-mw3-fig, fig.align='center', fig.dim=c(4, 3), fig.cap="Geschätzter Mittelwert = 4"}
 mw_tib_est2 <- mw_tib %>% 
   mutate(
-    Est = 3,
+    Est = 4,
     e = Freunde - Est,
     e_sq = e^2
   )
@@ -474,17 +473,17 @@ mw_tib_est2 <- mw_tib %>%
 ggplot(mw_tib_est2, aes(x = ID, y = Freunde)) +
   geom_point(color = "steelblue", size = 4) +
   theme_grey() +
-  geom_hline(yintercept = 3) +
+  geom_hline(yintercept = 4) +
   geom_segment(aes(xend = ID, yend = Est), color = "orange", size = 1) 
 ```
 
 ```{r fehler-mw3}
 mw_tib_est2 %>% 
-  kbl(caption = "Fehler und Fehlerquadrate bei geschätztem Mittelwert = 3") %>% 
+  kbl(caption = "Fehler und Fehlerquadrate bei geschätztem Mittelwert = 4") %>% 
   kable_classic(full_width = FALSE)
 ```
 
-Bei einem geschätzten Mittelwert $\bar{x}$ ergibt sich gemäss Tabelle \@ref(tab:fehler-mw3) eine Fehlerquadratsumme von 6.  
+Bei einem geschätzten Mittelwert $\bar{x}$ ergibt sich gemäss Tabelle \@ref(tab:fehler-mw3) eine Fehlerquadratsumme von 15.  
 
 Jetzt setzen wir den wahren Mittelwert $\bar{x} = 2.6$ ein und machen das ganze 
 noch einmal.   
@@ -513,9 +512,7 @@ mw_tib_est3 %>%
 ```
 
 Der wahre Mittelwert ergibt eine Fehlerquadratsumme von 5.2. Dieser Wert ist kleiner als
-die Fehlerquadratsumme für die beiden anderen geschätzten Mittelwerte.  
-
-Wir halten fest: *Der Mittelwert einer Variable ist der Wert, der die Fehlerquadratsumme minimiert*.  
+die Fehlerquadratsumme für die beiden anderen geschätzten Mittelwerte und wir halten fest: **Der Mittelwert einer Variable ist der Wert, der die Fehlerquadratsumme minimiert**.  
 
 Grafisch dargestellt: 
 
@@ -558,7 +555,7 @@ in der Statistik, das bei zahlreichen Verfahren zum Einsatz kommt.
 
 ### Kennzahlen der Streuung (Streuungsmasse)    
 
-Lagekennzahlen beschreiben einen Aspekt einer Stichprobe oder einer Verteilung. Abbildung \@ref(fig:two-distr-fig) verdeutlicht, dass Lagekennzahlen nicht ausreichen, um eine Verteilung genügend zu charakterisieren. Beide Stichproben haben einen Mittelwert von 0 (senkrechte Linie), trotzdem würden wir nicht behaupten, dass sie aus der gleichen Verteilung stammen: Die Beobachtungen in der oberen Stichprobe „streuen“ mehr, sie sind im Mittel weiter weg vom Mittelwert. Variabilitätskennzahlen quantifizieren diese Eigenschaft.  
+Lagemasse beschreiben einen Aspekt einer Stichprobe oder einer Verteilung. Abbildung \@ref(fig:two-distr-fig) verdeutlicht, dass Lagemasse nicht ausreichen, um eine Verteilung genügend zu charakterisieren. Beide Stichproben haben einen Mittelwert von 0 (senkrechte Linie), trotzdem würden wir nicht behaupten, dass sie aus der gleichen Verteilung stammen: Die Beobachtungen in der oberen Stichprobe „streuen“ mehr, sie sind im Mittel weiter weg vom Mittelwert. Kennzahlen der Streuung quantifizieren diese Eigenschaft.  
 
 ```{r two-distr-fig, fig.align='center', fig.dim=c(7, 1.5), fig.cap="Zwei Variablen mit Mittelwert 0"}
 set.seed(2)
@@ -595,9 +592,7 @@ Abweichung der Beobachtungen vom Mittelwert:
 $$s^2=\frac{(x_1-\bar{x})^2 + (x_2-\bar{x})^2+...+(x_n-\bar{x})^2}{n-1} = 
 \frac{1}{n-1} \sum_{i=1}^n (x_i-\bar{x})^2$$
 
-Um die Variabilität der Stichprobe in einer Zahl zusammenzufassen, wäre man auf den ersten Blick versucht, die Abweichungen $x_1-\bar{x}... x_n-\bar{x}$ der Beobachtungen vom Mittelwert zu mitteln. Dies würde allerdings bedeuten, dass sich positive und negative Abweichungen gegenseitig aufheben, und die „Varianz“ wäre 0. Dieses Vorgehen ist deshalb ungeeignet. Werden die Abweichungen $x_i-\bar{x}$ jedoch quadriert, dann gehen sie alle positiv in die Summe ein, d. h., eine gegebene Abweichung vom Mittelwert nach unten trägt gleichviel bei wie die identische Abweichung vom Mittelwert nach oben. Die Verwendung von 
-$n-1$ als Nenner hat einen theoretischen Hintergrund, auf den an dieser Stelle nicht 
-eingegangen wird (die Herleitung ist mathematisch komplex, siehe z.B. [Wikipedia](https://de.wikipedia.org/wiki/Stichprobenvarianz_(Sch%C3%A4tzfunktion) ).  
+Um die Variabilität der Stichprobe in einer Zahl zusammenzufassen, wäre man auf den ersten Blick versucht, die Abweichungen $x_1-\bar{x}... x_n-\bar{x}$ der Beobachtungen vom Mittelwert zu mitteln. Dies würde allerdings bedeuten, dass sich positive und negative Abweichungen gegenseitig aufheben, und die „Varianz“ wäre dann 0. Dieses Vorgehen ist deshalb ungeeignet. Werden die Abweichungen $x_i-\bar{x}$ jedoch quadriert, dann gehen sie alle positiv in die Summe ein, d. h., eine gegebene Abweichung vom Mittelwert nach unten trägt gleichviel bei wie die identische Abweichung vom Mittelwert nach oben. Die Verwendung von $n-1$ als Nenner hat einen theoretischen Hintergrund, auf den an dieser Stelle nicht eingegangen wird (die Herleitung ist mathematisch komplex, siehe z.B. [Wikipedia](https://de.wikipedia.org/wiki/Stichprobenvarianz_(Sch%C3%A4tzfunktion) ).  
 
 Berechnung der Varianz einer Variablen $x$ in `R`
 
@@ -612,13 +607,13 @@ var(x)
 ```
 
 
-**Standardabweichung**
+**Standardabweichung $s$**
 
-Gemäß ihrer Definition wird die Varianz $s^2$ im Quadrat der Einheit der ursprünglichen Daten angegeben (bei der Körpergröße z. B. $cm^2$ ). Um eine Kennzahl auf derselben Skala wie die Originaldaten zu erhalten, ist es gebräuchlich, die Wurzel aus der Varianz, die Standardabweichung (engl. standard deviation, SD) zu berechnen.  
+Gemäß ihrer Definition wird die Varianz $s^2$ im Quadrat der Einheit der ursprünglichen Daten angegeben (bei der Körpergröße z. B. $cm^2$ ). Um eine Kennzahl auf derselben Skala wie die Originaldaten zu erhalten, ist es gebräuchlich, die Wurzel aus der Varianz, die Standardabweichung $s$ (engl. standard deviation, SD) zu berechnen.  
 
 $$s=\sqrt{s^2}$$
 
-Die Standardabweichung hat die gleiche Einheit wie die Originaldaten, beispielsweise bei der Körpergröße cm. In Abbildung \@ref(fig:two-distr-fig) betragen die Standardabweichungen 1.18 für die blaue Stichprobe und 0.21 für die rote Stichprobe.  
+Die Standardabweichung hat die gleiche Einheit wie die Originaldaten, beispielsweise bei der Körpergrösse sind es cm. In Abbildung \@ref(fig:two-distr-fig) betragen die Standardabweichungen 1.18 für die blaue Stichprobe und 0.21 für die rote Stichprobe.    
 
 Berechnung der Standardabweichung einer Variablen $x$ in `R`
 
@@ -643,7 +638,7 @@ Die Spannweite (engl. range), auch Variationsbreite, ist die Differenz zwischen 
 $$Spannweite = Maximum - Minimum$$
 
 Die Spannbreite wird nur durch die Extremwerte einer Stichprobe bestimmt und ist 
-daher sehr empfindlich für Extremwerte (wenig robust).  
+daher sehr empfindlich für Extremwerte und damit wenig robust.  
 
 Berechnung der Spannbreite einer Variablen $x$ in `R`
 
@@ -660,7 +655,7 @@ max(x) - min(x)
 **Interquartilsabstand**
 
 Der Interquartilsabstand (engl. interquartile range, IQR) ist die Differenz 
-zwischen dem 75. und dem 25. Perzentil. Der IQR umfasst die Spannweite der 
+zwischen dem 75. und dem 25. Perzentil. Der $IQR$ umfasst die Spannweite der 
 mittleren 50% der Daten. 
 
 Der IQR beschreibt die Länge der Box im Boxplot, welche die zentralen 50% der 
@@ -685,7 +680,7 @@ quantile(x, c(.25, .75))
 ### Grafiken für quantitative Daten  
 
 Grafiken sind elementare Werkzeuge der Datenanalyse. Sie eignen sich auch dafür, 
-Muster in den Daten einem grösseren Publikum vorzustellen. Mit geeigneten grafischen Darstellungen können die Eigenschaften einer Verteilung beurteilt und mehrere Stichproben leicht miteinander verglichen werden.   
+Muster in den Daten einem grösseren Publikum vorzustellen. Mit geeigneten grafischen Darstellungen können die Eigenschaften einer Verteilung rasch beurteilt und mehrere Stichproben leicht miteinander verglichen werden.   
 
 
 **Histogramm**
@@ -756,24 +751,21 @@ hist(groesse,
 
 **Boxplot**
 
-Boxplots sind ein weiteres grafisches Hilfsmittel, um die Verteilung von Daten zu visualisieren, verschiedene Gruppen oder Zeitpunkte zu vergleichen und auffällige Werte zu entdecken. Boxplots gehören zu den vom Autor bevorzugten Grafiken, da sie eine 
-grosse Menge an Informationen enthalten.
+Boxplots sind ein weiteres grafisches Hilfsmittel, um die Verteilung von Daten zu visualisieren, verschiedene Gruppen oder Zeitpunkte zu vergleichen und auffällige Werte zu entdecken. Boxplots gehören zu den vom Autor bevorzugten Grafiken, da sie eine grosse Menge an Informationen enthalten.
 
-Die „Box“ im Boxplot (engl. box and whiskers plot) gibt den Bereich vom **25.** zum **75. Perzentil** an, der horizontale Strich in der Box den **Median**. Die Stäbe (engl. **whiskers**), die aus der Box herausragen, sind nicht einheitlich definiert. Bei einfachen Boxplots reichen sie zum Minimum und zum Maximum. Eine verbreitete Definition, die auf [John W. Tukey](https://en.wikipedia.org/wiki/John_Tukey) zurückgeht, besteht darin, die Länge der Whiskers auf maximal das 1,5-fache der Boxlänge zu beschränken. Beobachtungen außerhalb dieses Bereichs werden als **Ausreisser** gekennzeichnet.
+Die „Box“ im Boxplot (engl. box and whiskers plot) gibt den Bereich vom **25.** zum **75. Perzentil** an, der horizontale Strich in der Box den **Median**. Die Stäbe (engl. **whiskers**), die aus der Box herausragen, sind nicht einheitlich definiert. Bei einfachen Boxplots reichen sie zum Minimum und zum Maximum. Eine verbreitete Definition, die auf [John W. Tukey](https://en.wikipedia.org/wiki/John_Tukey) zurückgeht, besteht darin, die Länge der Whiskers auf maximal das 1,5-fache der Boxlänge zu beschränken. Beobachtungen ausserhalb dieses Bereichs werden als **Ausreisser** gekennzeichnet.
 
 ![Boxplot für die Grösse von 50 Frauen](./illustrations/02_boxplot.png)  
 
-Die Abbildung illustriert die Definitionen des Boxplots an der Grösse von 
-50 Frauen.   
+Die Abbildung illustriert die Definitionen des Boxplots an der Grösse von 50 Frauen.   
 
 Am Boxplot beurteilen wir   
 - die Spannweite   
 - die Lage der zentralen 50% der Daten (IQR)   
 - die Lage des Medians   
-- die Verteilung der Daten. Liegt der Median etwa in der Mitte 
-zwischen dem 25. und dem 75. Perzentil, können wir von einer symmetrischen Verteilung 
-der Daten ausgehen. Liegt der Median näher am 25. Perzentil, spricht dies eher für eine 
-rechtsschiefe Verteilung, liegt er näher am 75. Perzentil, spricht dies eher für eine 
+- die Verteilung der Daten.   
+
+Liegt der Median etwa in der Mitte zwischen dem 25. und dem 75. Perzentil, können wir von einer symmetrischen Verteilung der Daten ausgehen. Liegt der Median näher am 25. Perzentil, spricht dies eher für eine rechtsschiefe Verteilung, liegt er näher am 75. Perzentil, spricht dies eher für eine 
 linksschiefe Verteilung.
 
 Boxplots eignen sich sehr gut für den Vergleich von Gruppen.  
@@ -832,7 +824,7 @@ boxplot(weight ~ group, data = PlantGrowth,
 
 ## Qualitative Daten zusammenfassen  
 
-Bei diskreten Daten interessiert man sich für die Häufigkeiten der vorkommenden Kategorien. Diese Häufigkeiten werden in der Regel absolut (Anzahl) und relativ (in Prozentzahlen) angegeben.   
+Bei diskreten Daten interessiert man sich für die Häufigkeiten der vorkommenden Kategorien. Diese Häufigkeiten werden können absolut (Anzahl) oder relativ (in Prozentzahlen) angegeben werden. Werden relative Häufigkeiten angegeben, sollten immer auch die absoluten Häufigkeiten dargestellt werden.   
 
 ### Kreuztabellen   
 
@@ -923,7 +915,7 @@ par(mfrow = c(1, 1))
 In den Tortendiagrammen sind die Grössenunterschiede der fünf Kategorien kaum zu 
 differenzieren, ganz im Gegensatz zu den Balkendiagrammen.   
 
-Hier noch ein witziges Tortendiagramm
+Hier noch ein nicht ganz ernst gemeintes Tortendiagramm:
 
 ```{r funny-pie-fig, fig.dim=c(5, 4), fig.cap="Pyramide - R Code in der Helpdatei zu pie()" }
 ## (original by FinalBackwardsGlance on http://imgur.com/gallery/wWrpU4X)
@@ -934,17 +926,9 @@ pie(c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5),
 
 ## Grundregeln für die Erstellung von Grafiken
 
-Effektive Datenvisualisierungen sind die Voraussetzung 
-jeder Datenanalyse, da sie allgemeine Muster in den Daten zeigen, was bei der 
-reinen Betrachtung von Rohdaten nicht der Fall ist. Datenvisualisierungen werden von unserem Gehirn besser verarbeitet als einzelne Zahlen oder Zahlentabellen. Deshalb sind für die Präsentation von Daten Grafiken, wenn immer möglich, Zahlentabellen vorzuziehen. Mittels moderner Software kann eine Vielzahl von Grafiken erstellt werden, allerdings ist nicht jede Grafik auch eine gute Grafik. Die zahllosen Gestaltungsmöglichkeiten können 
-schnell zur Erstellung von "fancy" Grafiken verleiten die zwar effektvoll aussehen, 
-jedoch wenig bis keine Information über die Daten selbst vermitteln. Deshalb hier 
-ein paar Grundregeln für die Erstellung von Grafiken für statistische Zwecke:  
+Effektive Datenvisualisierungen sind die Voraussetzung jeder Datenanalyse, da sie allgemeine Muster in den Daten zeigen, was bei der reinen Betrachtung von Rohdaten nicht der Fall ist. Datenvisualisierungen werden von unserem Gehirn besser verarbeitet als einzelne Zahlen oder Zahlentabellen. Deshalb sind für die Präsentation von Daten Grafiken, wenn immer möglich, Zahlentabellen vorzuziehen. Mittels moderner Software kann eine Vielzahl von Grafiken erstellt werden, allerdings ist nicht jede Grafik auch eine gute Grafik. Die zahllosen Gestaltungsmöglichkeiten können schnell zur Erstellung von "fancy" Grafiken verleiten die zwar effektvoll aussehen, jedoch wenig bis keine Information über die Daten selbst vermitteln. Deshalb hier ein paar Grundregeln für die Erstellung von Grafiken für statistische Zwecke:  
 
-1. Die Daten stehen im Mittelpunkt. Eine gute 
-Grafik visualisiert die Daten und hilft dem Auge, Muster zu erkennen. Sie erleichtert 
-die Beurteilung der Verteilung der Daten und den Vergleich von Messungen in 
-verschiedenen Gruppen. 
+1. Die Daten stehen im Mittelpunkt. Eine gute Grafik visualisiert die Daten und hilft dem Auge, Muster zu erkennen. Sie erleichtert die Beurteilung der Verteilung der Daten und den Vergleich von Messungen in verschiedenen Gruppen.  
 2. Es sollen alle relevanten Informationen mit möglichst wenigen grafischen Elementen 
 dargestellt werden.   
 3. Keep it simple! Vermeide Ablenkung wie 3D-Effekte, Schatten, unnötige Farben, 
