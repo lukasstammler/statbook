@@ -875,7 +875,7 @@ s <- 1.75    # Standardabweichung des Mittelwerts der Stichprobe
 SE <- s/sqrt(n)  # Berechnung des Standardfehlers
 #SE         # not run: Ausgabe des Standardfehlers
 CI95 <- round(m + c(-1, 1) * 1.96 * SE, 2)  # 95%-Vertrauensintervall berechnen
-#CI95       # not run: Ausgabe des 95% Vertrauensintervalls
+CI95       # not run: Ausgabe des 95% Vertrauensintervalls
 ```
 
 Prüfung mit dem 95%-Konfidenzintervall:  
@@ -1026,8 +1026,6 @@ p
 ```
 
 Ein p-Wert von 0.29 ist relativ gross (grösser als $\alpha = 0.05)$ und wir wir haben keine Evidenz gegen $H_0$. Das heisst, wenn $H_0$ wahr ist, ist es nicht aussergewöhnlich, wenn man einen Mittelwert erhält, der sich so wenig von 7 Stunden unterscheidet. Die Ursache für die geringe Abweichung des Mittelwerts von 7 Stunden kann alleine auf der Variabilität der Stichprobenmittelwerte beruhen.
-
-### Einseitige vs. zweiseitige Hypothesentests   
 
 ### Einseitige vs. zweiseitige Hypothesentests   
 
