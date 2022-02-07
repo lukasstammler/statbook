@@ -688,7 +688,7 @@ Muster in den Daten einem grösseren Publikum vorzustellen. Mit geeigneten grafi
 Mit einem Histogramm wird die Verteilung von quantitativen Daten visualisiert. Dazu wird der Bereich der Daten in gleiche, anliegende aber sich nicht überlappende Intervalle (Klassen) zerlegt. Dann zählt man die Anzahl der Beobachtungen in jedem Intervall und erstellt ein Balkendiagramm.
 
 ```{r phy-hist-fig, fig.align='center', fig.dim=c(8, 7), fig.cap="Körpergrösse von Studentinnen, n = 183"}
-phy_w <- read_csv("./data/02_phy_w.csv", show_col_types = FALSE)
+phy_w <- read_csv("./data/02_physio_w.csv", show_col_types = FALSE)
 
 p1 <- ggplot(phy_w, aes(x = Groesse)) + 
   geom_histogram(color = "white", fill = COL[1], binwidth = 1) +

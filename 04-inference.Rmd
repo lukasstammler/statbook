@@ -38,7 +38,7 @@ Deskriptive Statistik und Inferenzstatistik sind die zwei Hauptkategorien in der
 Deskriptive Statistik …   
 
 - dient der Beschreibung von Daten in einen Datensatz, der z.B. durch eine Zufallsstichprobe entstanden ist. Die Ergebnisse werden nicht verallgemeinert.  
-- berechnet Kennzahlen zu den Daten aus einem Datensatzes und stellt die Daten grafisch dar; verwendet zur Beschreibung der Daten Kennzahlen wie Mittelwert, Median, Standardabweichung, Quartilsabstand oder Korrelationskoeffizient.  
+- berechnet Kennzahlen zu den Daten aus einem Datensatzes und stellt die Daten grafisch dar; verwendet zur Beschreibung der Daten Kennzahlen wie Mittelwert, Median, Standardabweichung, Interquartilsabstand oder Korrelationskoeffizient.  
 -	arbeitet nur mit den vorliegenden Daten im Datensatz; daher besteht keine Unsicherheit im Hinblick auf die Gültigkeit von Kennzahlen.
 
 Inferenzstatistik …  
@@ -54,7 +54,7 @@ Die diesem Kapitel vorgestellten Grundlagen der Inferenzstatistik sind absolut e
 
 1. Verwende eine Stichprobenkennzahl als Schätzung für einen Populationsparameter, z.B. wird der Stichprobenmittelwert verwendet um den Populationsmittelwert zu schätzen; beachte dass **Punktschätzer** und **Stichprobenkennzahl** synonym sind.  
 
-2. Beachte, dass Punktschätzer (wie z.B. der Stichprobenmittelwert) von Stichprobe zu Stichprobe variieren. Diese Variablilität wird als **Stichprobenvariation** bezeichnet. Eine Punktschätzung auf Grund einer Stichprobe wird in der Nähe des Populationsparameters liegen, aber es ist sehr unwahrscheinlich, dass sie diesen exakt trifft. Diese Abweichung wird als **Stichprobenfehler:** bezeichnet.   
+2. Beachte, dass Punktschätzer (wie z.B. der Stichprobenmittelwert) von Stichprobe zu Stichprobe variieren. Diese Variablilität wird als **Stichprobenvariation** bezeichnet. Ein Punktschätzer auf Grundlage einer Stichprobe, wird in der Nähe des Populationsparameters liegen, aber es ist sehr unwahrscheinlich, dass er diesen exakt trifft. Diese Abweichung wird als **Stichprobenfehler** bezeichnet.   
 
 3. Berechne die Stichprobenvariation des Mittelwerts, den **Standardfehler SE** mit der Formel ($\sigma$ ist die Standardabweichung des Populationsparameters)  
 
@@ -62,43 +62,42 @@ $$SE = \frac{\sigma}{\sqrt{n}}$$
 
 * Wenn die Populationsstandardabweichung $\sigma$ nicht bekannt ist, was meist der Fall ist, verwenden wir die Standardabweichung $s$ der Stichprobe, um SE zu schätzen: $SE = \frac{s}{\sqrt{n}}$.  
 
-4. Unterscheide zwischen Standardabweichung ($s$ oder $\sigma$) und Standardfehler $SE$: Die Standardabweichung misst die Variabilität in den Stichprobendaten, während der Standardfehler die Variabilität von Punktschätzungen aus verschiedenen Stichproben der gleichen Grösse und aus der gleichen Population misst. Mit anderen Worten: Der Standardfehler ist ein Mass für die die Stichprobenvariation.  
+4. Unterscheide zwischen Standardabweichung ($s$ oder $\sigma$) und Standardfehler $SE$: Die Standardabweichung misst die Variabilität in den Stichprobendaten, während der Standardfehler die Variabilität von Punktschätzern aus verschiedenen Stichproben der gleichen Grösse und aus der gleichen Population misst. Mit anderen Worten: Der Standardfehler ist ein Mass für die die Stichprobenvariation.  
 
 5. Erwarte, dass mit steigendem Stichprobenumfang die Stichprobenvariation abnimmt, da in der Formel zur Berechnung des Standardfehlers der Stichprobenumfang $n$ im Nenner ist.   
 
-6. Intepretiere ein **Konfidenzintervall** (engl. confidence interval) als glaubhaften Wertebereich für einen Populationsparameter.   
+6. Intepretiere ein **Konfidenzintervall** (Vertrauensintervall, engl. confidence interval, Abk. $CI$) als glaubhaften Wertebereich für einen Populationsparameter.   
 
-7. Interpretiere das **Konfidenzniveau** (engl. confidence level) als den prozentualen Anteil von Zufallsstichproben, die Vertrauensintervalle ergeben, welche den wahren Populationsparameter enthalten.   
+7. Interpretiere das **Konfidenzniveau** (engl. confidence level) als den prozentualen Anteil von Zufallsstichproben, die Konfidenzintervalle ergeben, welche den wahren Populationsparameter enthalten.   
 
-8. Beachte, dass der zentrale Grenzwertsatz eine Aussage zur Verteilung von Punktschätzern erlaubt und dass diese Verteilung normal ist, wenn die Voraussetzungen erfüllt sind.   
+8. Beachte, dass der zentrale Grenzwertsatz eine Aussage zur Verteilung von Punktschätzern erlaubt und dass diese Verteilung annähernd normal ist, wenn die Voraussetzungen erfüllt sind.   
 
 * Diese Voraussetzungen sind:  
 
-  * Normalverteilung der Daten in der Population. Wenn die Verteilung in der Population unbekannt ist, kann diese Bedingung anhand eines Histogramms, eines Boxplots oder QQ-Plots überprüft werden.     
+  * Annähernd Normalverteilung der Daten in der Population. Wenn die Verteilung in der Population unbekannt ist, kann diese Bedingung anhand eines Histogramms, eines Boxplots oder QQ-Plots überprüft werden.     
 
   * Stichprobenumfang $n$ > 30. Je grösser der Stichprobenumfang $n$, desto unbedeutender wird die Verteilung, d.h. wenn $n$ sehr gross ist, wird die Stichprobenverteilung nahezu normal sein, unabhängig von der Form der Verteilung in der Population.   
   
   * Unabhängigkeit der Beobachtungseinheiten in einer Stichprobe: Die Unabhänigkeit der Beobachtungseinheiten kann sicher gestellt werden, indem diese zufällig ausgewählt werden (random sampling) und zufällig zu Gruppen zugeordnet werden (random assignment).   
 
-9.  Merke, dass die Normalverteilung der Punktschätzer bedeutet, dass ein Konfidenzintervall berechnet werden 
-kann: 
+9.  Merke, dass die Normalverteilung der Punktschätzer bedeutet, dass ein Konfidenzintervall berechnet werden kann: 
 
 $$Punktschätzer \pm z_{1-\frac{\alpha}{2}} \times SE$$  
 
-* wobei  $z_{1-\frac{\alpha}{2}}$ den Grenzen der Standardnormalverteilung entspricht, innerhalb derer $1-\alpha$ % der Daten liegen, wobei $1-\alpha$ % dem erwünschten Konfidenzniveau entspricht.  
+* $z_{1-\frac{\alpha}{2}}$ entspricht den Grenzen der Standardnormalverteilung, innerhalb derer $1-\alpha$ % der Daten liegen, $1-\alpha$% entspricht dem erwünschten Konfidenzniveau.    
 
 * Für einen Mittelwert ist dies: $CI_{1-\alpha} = \bar{x} \pm z_{1-\frac{\alpha}{2}} \times SE$
 
 * Beachte, dass $z_{1-\frac{\alpha}{2}}$ immer positiv ist!  
 
-11.  Definiere bei der Berechnung des Konfidenzintervalls den **Fehlerbereich** (engl. margin of error, Abk. ME) als Abstand in beide Richtung vom Punktschätzer, d.h.
+11.  Definiere bei der Berechnung des Konfidenzintervalls den **Fehlerbereich** (engl. margin of error, Abk. $ME$) als Abstand in beide Richtung vom Punktschätzer, d.h.
 
 $$ME = z_{1-\frac{\alpha}{2}} \times SE$$
-* Beachte, dass dies genau einer Hälfte der Breite des Vertrauensintervalls ist.   
+* $ME$ entspricht genau einer Hälfte der Breite des Vertrauensintervalls.   
 
-12. Interpretiere ein Konfidenzintervall als "Wir können zu XX% darauf vertrauen, dass der wahre Populationsparameter innerhalb dieses Intervalls liegt, wobei XX% das gewünschte Vertrauensniveau ist". 
+12. Interpretiere ein Konfidenzintervall als "Wir können zu XX% darauf vertrauen, dass der wahre Populationsparameter innerhalb dieses Intervalls liegt" (XX% ist das gewünschte Vertrauensniveau). 
 
-* Beachte, dass deine Interpretation immer im Kontext der Daten erfolgen sollte; erwähne immer, auf welche Population und welchen Parameter sich eine Aussage bezieht.   
+* Beachte, dass die Interpretation immer im Kontext der Daten erfolgen sollte; erwähne immer, auf welche Population und welchen Parameter sich eine Aussage bezieht.   
 
 13. Erkläre, inwiefern das Prinzip von Hypothesentests mit dem Vorgehen am Gericht vergleichbar ist.  
 
@@ -113,11 +112,11 @@ $$ME = z_{1-\frac{\alpha}{2}} \times SE$$
 
 * Verstehe den **Nullwert** als den Wert eines Populationsparameters, welcher der Nullhypothese entspricht.  
 
-* Beachte, dass die Alternativhypothese $H_A$ entweder **einseitig** ($\mu$ > Nullwert oder $\mu$ < Nullwert) oder **zweiseitig** formuliert werden kann ($\mu \neq$ Nullwert). Die Wahl hängt von der konkreten Fragestellung ab. Wenn kein spezieller Grund für eine einseitige Alternativhypothese vorliegt, wähle stets eine zweiseitige Alternativhypothese.  
+* Beachte, dass die Alternativhypothese $H_A$ entweder **einseitig** ($\mu$ > Nullwert oder $\mu$ < Nullwert) oder **zweiseitig** formuliert werden kann ($\mu \neq$ Nullwert). Die Wahl hängt von der konkreten Fragestellung ab. Wenn kein spezieller Grund für eine einseitige Alternativhypothese vorliegt, wähle und prüfe stets eine zweiseitige Alternativhypothese.  
 
 16. Um die Abweichung einer Stichprobe von der angenommenen Grundgesamtheit im Rahmen eines Hypothesentests zu messen, wird eine **Teststatistik** (engl.: test statistic) berechnet.  
 
-17. Definiere den **$p$-Wert** als die Wahrscheinlichkeit – unter der Bedingung, dass die Nullhypothese in Wirklichkeit gilt – den beobachteten Wert der Teststatistik oder einen in Richtung der Alternative extremeren Wert zu erhalten. 
+17. Definiere den **$p$-Wert** als die Wahrscheinlichkeit – unter der Bedingung, dass die Nullhypothese in Wirklichkeit gilt – den beobachteten Wert der Teststatistik oder einen in Richtung der Alternativhypothese extremeren Wert zu erhalten. 
 
 $$ p-Wert = P(beobachteter~oder~noch~extremerer~Wert~der~Prüfgrösse~|~H_0~wahr)$$
 
@@ -131,13 +130,13 @@ $$ p-Wert = P(beobachteter~oder~noch~extremerer~Wert~der~Prüfgrösse~|~H_0~wahr
 
 * Verwerfe die Nullhypothese nicht, wenn der $p$-Wert grösser als das Signifikanzniveau ist, da dies bedeutet, dass es rein auf Zufall beruhen kann, eine mindestens so extreme Teststatistik zu erhalten. Interpretiere das Ergebnis so, dass die Daten keine Evidenz für die Alternativhypothese liefern.  
 
-* Merke: Die Nullhypothese kann nie angenommen oder bewiesen werden, da das Prinzip von Hypothesentests dies nicht erlaubt.
+* Merke: Fehlende Evidenz gegen die Nullhypothese bedeutet nicht, dass die Nullhypothese wahr ist. Die Nullhypothese kann nie angenommen oder bewiesen werden, da das Prinzip von Hypothesentests dies nicht erlaubt. 
 
 21. Denke daran, dass es immer möglich ist, einen Entscheidungsfehler zu begehen:   
 
-* Ein **Fehler 1. Art** bedeutet, dass die Nullhypothese verworfen wird, obwohl sie in Wirklichkeit wahr ist. Mit einem Signifikanzniveau von $\alpha = 0.05$ nehmen wir in Kauf, dass dies bei 1 von 20 Entscheidungen der Fall ist.  
+* Ein **Fehler 1. Art** bedeutet, dass die Nullhypothese verworfen wird, obwohl sie in Wirklichkeit wahr ist. Mit einem Signifikanzniveau von $\alpha = 0.05$ nehmen wir in Kauf, dass dies bei einer von 20 Entscheidungen der Fall ist.  
 
-* Ein **Fehler 2. Art** bedeutet, dass wir die Nullhypothese aufrechterhalten, obwohl in Wirklichkeit die Alternativhypothese wahr ist. Damit verpassen wir die Erfassung eines Effektes, wo einer in Wahrheit vorhanden ist.  
+* Ein **Fehler 2. Art** bedeutet, dass wir die Nullhypothese nicht verwerfen, obwohl in Wirklichkeit die Alternativhypothese wahr ist. Damit verpassen wir die Erfassung eines Effektes, wo einer in Wahrheit vorhanden ist.  
 
 22. Beachte, dass die Wahrscheinlichkeit, einen Fehler 1. Art zu begehen dem Signifikanzniveau entspricht. Wähle das Signifkanzniveau so, dass es den Folgerisiken entspricht, die mit einem Fehler 1. oder 2. Art verbunden ist:  
 
@@ -147,6 +146,7 @@ $$ p-Wert = P(beobachteter~oder~noch~extremerer~Wert~der~Prüfgrösse~|~H_0~wahr
 23. Definiere einen **Effekt** als Auswirkung oder als Folge einer Ursache. Wenn wir z.B. zwei Stichproben von Probanden mit und ohne Schlafmittel vergleichen und sich herausstellt, dass die Probanden mit dem Schlafmittel im Durchschnitt 1.5 Stunden länger schlafen, dann bezeichnen wir diese Differenz in der Schlafdauer zwischen den Gruppen als Effekt mit der Effektgrösse 1.5 Stunden. 
 
 24. Beachte, dass ein statistisch signifikanter Effekt nicht zwingend auch **praktische Relevanz** (Bedeutung) hat.    
+
   
 ## Grundbegriffe
 
@@ -161,7 +161,7 @@ Im alltäglichen Sprachgebrauch besteht eine Population meist aus Menschen, z.B.
 
 Je nach Fragestellung muss die Population sehr genau definiert werden, wenn man eine Studie durchführt. Dieser Aspekt wird im wissenschaftlichen Arbeiten bei der Behandlung der PICO-Fragestellung ausführlich besprochen.  
 
-Eine **Subpopulation** ist eine Untergruppe einer Population. So kann man die Population Bürger:innen der Schweiz in die Subpopulationen «Mann», «Frau» oder «höchster Schulabschluss» oder «sozialer Status» etc. oder Covid-19-Viren in die Subpopulationen Alpha (England), Beta (Südafrika), Gamma (Brasilien) und Delta (Indien) unterteilen. Die Einteilung in Subpopulationen ist v.a. dann von Bedeutung, wenn zwischen den Untergruppen systematische Unterschiede bestehen, wie das z.B. bei der Körpergrösse von Männern und Frauen der Fall ist (\@ref(fig:groesse-erwachsene-ch-fig).  
+Eine **Subpopulation** ist eine Untergruppe einer Population. So kann man die Population Bürger:innen der Schweiz in die Subpopulationen «Mann», «Frau» oder «höchster Schulabschluss» oder «sozialer Status» etc. oder Covid-19-Viren in die Subpopulationen Alpha (England), Beta (Südafrika), Gamma (Brasilien) und Delta (Indien) oder Omikron unterteilen. Die Einteilung in Subpopulationen ist v.a. dann von Bedeutung, wenn zwischen den Untergruppen systematische Unterschiede bestehen, wie das z.B. bei der Körpergrösse von Männern und Frauen der Fall ist (Abb. \@ref(fig:groesse-erwachsene-ch-fig)).  
 
 ```{r groesse-erwachsene-ch-fig, fig.dim=c(7, 4), fig.align='center', fig.cap="Körpergrösse einmal gemeinsam, einmal nach Geschlecht getrennt"}
 male <- 177.4
@@ -216,7 +216,9 @@ p1 + p2
 
 ### Populationsparameter vs. Stichprobenkennzahl  
 
-Ein **Parameter** ist ein Wert, der ein Merkmal einer ganzen Population beschreibt, z.B. ein Populationsmittelwert. Da es in der Regel nicht möglich ist, alle Beobachtungseinheiten einer Population zu messen, kennen wir Populationsparameter meist nicht. Obwohl wir Populationsparameter nicht messen können, existieren sie. Z.B. die durchschnittliche Körpergrösse aller Frauen in der Schweiz ist ein exakter Parameter, nur kennen wir diesen einfach nicht!
+Ein **Parameter** ist eine Kennzahl, die ein Merkmal einer ganzen Population beschreibt, z.B. ein Populationsmittelwert. Da es in der Regel nicht möglich ist, alle Beobachtungseinheiten einer Population zu messen, kennen wir Populationsparameter meist nicht. Obwohl wir Populationsparameter nicht messen können, existieren sie. Z.B. die durchschnittliche Körpergrösse aller Frauen in der Schweiz ist ein exakter Parameter, nur kennen wir diesen einfach nicht!  
+
+Populationsparameter werden mit griechischen Buchstaben, Stichprobenkennzahlen mit lateinischen Buchstaben gekennzeichnet (Ausnahmen bestätigen die Regel).
 
 \hfill \break
 
@@ -229,18 +231,21 @@ Ein **Parameter** ist ein Wert, der ein Merkmal einer ganzen Population beschrei
 
 \hfill \break
 
-In der Inferenzstatistik dient die Stichprobenkennzahl dazu, den Populationsparameter zu schätzen. Folgende Schätzer (engl. estimate) für Populationsparameter kommen zum Einsatz:   
+In der Inferenzstatistik dient die Stichprobenkennzahl dazu, den Populationsparameter zu *schätzen.* Folgende Schätzer (engl. estimate) für Populationsparameter kommen zum Einsatz:   
 
--	Ein **Punktschätzer** verwendet eine Stichprobenkennzahl als beste Schätzung für einen Populationsparameter. Z.B. ist der Stichprobenmittelwert der beste Schätzer für den Populationsmittelwert. Wegen dem Stichprobenfehler sind leider Punktschätzer immer ungenau und die Grösse der Abweichung vom wahren Wert bleibt unbekannt.     
--	Ein **Intervallschätzer** umfasst einen Wertebereich, der mit einer gewissen Wahrscheinlichkeit den Populationsparameter enthält. Solche Wertebereiche beinhalten eine Fehlergrenze (Fehlerbereich, engl. margin of error, Abk. ME) und berücksichtigen auf diese Weise die Ungenauigkeit eines Punktschätzers. Wenn wir statistische Resultate lesen, sollten wir uns immer fragen, wie gross diese Ungenauigkeit ist. Leider wird in den Medien dieser Fehlerbereich sehr oft nicht angegeben, wodurch eine falsche Genauigkeit suggeriert wird, die fakisch gar nicht vorhanden ist.  
+-	**Punktschätzer** verwenden eine Stichprobenkennzahl als besten Schätzer für einen Populationsparameter. Z.B. ist der Stichprobenmittelwert der beste Schätzer für den Populationsmittelwert. Wegen dem Stichprobenfehler sind leider Punktschätzer immer ungenau und die Grösse der Abweichung vom wahren Wert bleibt unbekannt.  
+
+-	**Intervallschätzer** umfassen einen Wertebereich, der mit einer gewissen Wahrscheinlichkeit den Populationsparameter enthält. Solche Wertebereiche beinhalten eine Fehlergrenze (Fehlerbereich, engl. margin of error, Abk. $ME$) und berücksichtigen auf diese Weise die Ungenauigkeit eines Punktschätzers. Wenn wir statistische Resultate lesen, sollten wir uns immer fragen, wie gross diese Ungenauigkeit ist. Leider wird in den Medien dieser Fehlerbereich sehr oft nicht angegeben, wodurch eine falsche Genauigkeit suggeriert wird, die fakisch gar nicht vorhanden ist.  
 
 ## Methoden der Inferenzstatistik    
 
 In diesem Kurs lernen wir drei Methoden der Inferenzstatistik kennen:  
 
-- **Hypothesentests** verwenden Stichprobendaten um Fragen zu Punktschätzern zu beantworten. Z.B. ist der Populationsparameter grösser oder kleiner als ein bestimmter Wert oder unterscheiden sich die Parameter von zwei Populationen voneinander (Bsp. klinische Studie mit Interventions- und Kontrollgruppe).  
-- **Konfidenzintervalle** (engl. confidence intervalls, Abk. CI) dienen der Bestimmung von Populationsparametern und berücksichtigen die Unsicherheit (Ungenauigkeit) als Folge des Stichprobenfehlers. Sie geben einen Wertebereich an, in den der wahre Parameter mit einer gewissen Wahrscheinlichkeit fällt. Z.B. Ein Konfidenzintervall [176; 186] gibt an, dass wir darauf vertrauen können, dass der wahre Populationsparameter innerhalb dieses Intervalls liegt.   
-- Die **Korrelations- und Regressionsanalyse** beschreibt den Zusammenhang zwischen einer oder mehreren unabhängigen Variablen und einer abhängigen Variablen. Diese Analyse umfasst Hypothesentests, welche die Entscheidung ermöglichen, ob ein Zusammenhang zwischen zwei oder mehr Variablen in einer Stichprobe effektiv auch in der Population besteht.   
+- **Hypothesentests, Signifikanztests** verwenden Stichprobendaten um Fragen zu Punktschätzern zu beantworten. Z.B. ist der Populationsparameter grösser oder kleiner als ein bestimmter Wert oder unterscheiden sich die Parameter von zwei Populationen voneinander (Bsp. klinische Studie mit Interventions- und Kontrollgruppe).  
+
+- **Konfidenzintervalle** (engl. confidence intervalls, Abk. $CI$) dienen der Bestimmung von Populationsparametern und berücksichtigen die Unsicherheit (Ungenauigkeit) als Folge des Stichprobenfehlers. Sie geben einen Wertebereich an, in den der wahre Parameter mit einer gewissen Wahrscheinlichkeit fällt. Z.B. Ein 95%-Konfidenzintervall [176; 186] gibt an, dass wir zu 95% darauf vertrauen können, dass der wahre Populationsparameter innerhalb dieses Intervalls liegt.  
+
+- **Korrelations- und Regressionsanalysen** beschreiben den Zusammenhang zwischen einer oder mehreren unabhängigen Variablen und einer abhängigen Variablen. Auch diese Analyse umfasst Hypothesentests, welche die Entscheidung ermöglichen, ob ein Zusammenhang zwischen zwei oder mehr Variablen in einer Stichprobe effektiv auch in der Population besteht.   
 
 ## Stichprobenumfang und Fehlergrenze   
 
@@ -252,9 +257,9 @@ Das primäre Ziel der Inferenzstatistik ist es, von einer Stichprobe auf die Pop
 
 (Stichprobenverteilungen, engl. sampling distributions)     
 
-Für das Verständnis der Denkweise in der Statistik ist es ausserordentlich wichtig sich vor Augen zu halten, dass wenn wir eine Zufallsstichprobe aus einer Population ziehen, diese Stichprobe nur *eine* von einer grossen Zahl möglicher Stichproben ist.  
+Für das Verständnis der Denkweise in der Statistik ist es ausserordentlich wichtig, sich vor Augen zu halten, dass wenn wir eine Zufallsstichprobe aus einer Population ziehen, diese Stichprobe nur *eine* von einer grossen Zahl möglicher Stichproben ist.  
 
-Zur Illustration führen wir ein simuliertes Experiment durch: Wir wissen, dass der IQ normalverteilt ist und dass der Populationsmittelwert des IQ-Scores bei $\mu = 100$ und die Standardabweichung bei $\sigma = 15$ liegt. Jetzt ziehen wir 1000 Stichproben aus der Population im Umfang $n = 5$, $n = 25$, $n = 100$ und stellen die ermittelten Stichprobenmittelwerte als Histogram dar.   
+Zur Verdeutlichung führen wir ein simuliertes Experiment durch: Wir wissen, dass der IQ normalverteilt ist und dass der Populationsmittelwert des IQ-Scores bei $\mu = 100$ und die Standardabweichung bei $\sigma = 15$ liegt. Jetzt ziehen wir je 1000 Stichproben aus der Population im Umfang $n = 5$, $n = 25$, $n = 100$ und stellen die ermittelten Stichprobenmittelwerte als Histogram dar.   
 
 ```{r samplingvar-combined-fig, cache = TRUE, fig.align='center', fig.cap="Stichprobenvariabilität für Mittelwerte von jeweils 1000 Stichproben"}
 set.seed(0)
@@ -314,7 +319,6 @@ plotSampVarMean <- function(sample, n, m, se, txt){
     theme(text = element_text(size = 8))  
 }
 
-
 p1 <- plotSampVarMean(sample = sample5, n = 5, m = m5, se = se5, txt = txt5)
 p2 <- plotSampVarMean(sample = sample25, n = 25, m = m25, se = se25, txt = txt25)
 p3 <- plotSampVarMean(sample = sample100, n = 100, m = m100, se = se100, txt = txt100)
@@ -327,33 +331,36 @@ Was lernen wir aus diesem Experiment?
 
 * Jeder Stichprobenmittelwert liegt in der Nähe des wahren Populationsmittelwertes, aber es ist wenig wahrscheinlich, dass ein Stichprobenmittelwert exakt den wahren Populationsmittelwert trifft.   
 * Je grösser die Stichprobe $n$, desto näher liegen die geschätzten Mittelwerte beim wahren Populationsmittelwert. Mit anderen Worten: Je grösser der Stichprobenumfang $n$, desto mehr können wir dem Stichprobenmittelwert vertrauen, dass er den wahren Populationsparameter repräsentiert.  
-* Die Variabilität dieser Verteilungen $SE$ entspricht dem Stichprobenfehler in Abhängigkeit vom Stichprobenumfang $n$. Grössere Stichprobenumfänge weisen einen kleineren Fehlerbereich auf.   
-* Die Stichprobenmittelwerte mehrerer Stichproben sind normalverteilt.  
+
+* Die Variabilität dieser Verteilungen $SE$ entspricht dem Stichprobenfehler in Abhängigkeit vom Stichprobenumfang $n$. Grössere Stichprobenumfänge weisen einen kleineren Fehlerbereich auf. 
+
+* Die Stichprobenmittelwerte mehrerer Stichproben sind annähernd normalverteilt.  
 
 Was wir an unserem Beispiel nicht erkennen können ist, dass die Stichprobenverteilung der Mittelwerte selbst dann normalverteilt ist, wenn die zu Grunde liegende Verteilung der Populationsdaten nicht normal ist.  
 
-**Tipp:** Die Online-App [Central Limit Theorem for Means](https://gallery.shinyapps.io/CLT_mean/) ermöglicht es, interaktiv verschiedene Szenarios durchzuspielen.  
+**Hinweis:** Die Online-App [Central Limit Theorem for Means](https://gallery.shinyapps.io/CLT_mean/) ermöglicht es, interaktiv verschiedene Szenarios durchzuspielen.  
 
 Im Experiment zum IQ-Score wird eine Verteilung für die Mittelwerte mehrerer Stichproben erstellt. Eine solche **Stichprobenverteilung** zeigt die Verteilung von Stichprobenkennzahlen (hier von Mittelwerten) mehrerer gleich grosser Stichproben aus einer bestimmten Population. Wie weiter unten erläutert, kann mit Hilfe eines mathematischen Tricks solche Stichprobenverteilungen aus einer einzigen Stichprobe geschätzt werden. Diese Verfahren bilden die theoretische Grundlage für Hypothesentests und Konfidenzintervalle. 
 
 **Tipp:** [Bunnies, Dragons and the Normal World](https://www.youtube.com/watch?v=jvoxEYmQHNM) 
 
-## Standardfehler (engl. standard error, Abk. SE)  
+## Standardfehler (engl. standard error, Abk. $SE$)  
 
 Die einzelnen Stichprobenmittelwerte in unserem Experiment liegen mehr oder weniger in der Nähe des wahren Populationsmittelwerts. Die Streuung der einzelnen Werte einer Stichprobenverteilung kann mit Hilfe der Standardabweichung quantifiziert werden. Die Standardabweichung eines Stichprobenmittelwerts beschreibt, wie weit typischerweise eine bestimmte Kennzahl vom wahren Populationsparameter entfernt ist oder mit anderen Worten, den *Fehler* dieser Schätzung. Die Standardabweichung einer Punktschätzung wird als **Standardfehler** bezeichnet. Der Standardfehler ist ein Mass für die Ungenauigkeit, die auf Grund der Stichprobenvariation mit unserer Punktschätzung verbunden ist. 
 
 Was genau ist jetzt aber der Unterschied zwischen Standardabweichung und Standardfehler? Sowohl der Standardfehler als auch die Standardabweichung befassen sich mit dem Mittelwert einer Stichprobe, das ist das Gemeinsame, aber ...     
 
 * ... der Standardfehler gibt Auskunft über die mittlere Abweichung des Mittelwerts einer Stichprobe vom tatsächlichen Mittelwert der *Population*; er beschreibt also die Beziehung zwischen Stichprobenkennzahl und Populationsparameter!  
+
 - ... die Standardabweichung gibt uns Auskunft darüber, wie sehr die einzelnen Werte der *Stichprobe* um ihren Mittelwert streuen.
 
-Üblicherweise steht, v.a. aus ökonomischen Gründen, nur eine einzige Stichprobe zur Verfügung und es ist auf den ersten Blick nicht offensichtlich, wie der Standardfehler $SE$ aus einer einzigen Stichprobe berechnet werden kann. Wenn wir uns noch einmal den drei Experimenten oben zuwenden, stellen wir fest, dass $SE$ mit zunehmendem Stichprobenumfang kleiner wird: 6.89 bei n = 5, 2.9 bei n = 25 und 1.94 bei n = 100. 
+Üblicherweise steht, v.a. aus ökonomischen Gründen, nur eine einzige Stichprobe zur Verfügung und es ist auf den ersten Blick nicht offensichtlich, wie der Standardfehler $SE$ aus einer einzigen Stichprobe berechnet werden kann. Wenn wir uns noch einmal den drei Experimenten oben zuwenden, stellen wir fest, dass $SE$ mit zunehmendem Stichprobenumfang kleiner wird: $SE$ = 6.89 bei n = 5, $SE$ = 2.9 bei n = 25 und $SE$ = 1.94 bei n = 100. 
 
 Es besteht demnach eine Beziehung zwischen der Grösse des Standardfehlers SE und dem Stichprobenumfang $n$. Bei einem Stichprobenumfang $n$ aus einer Population mit der Standardabweichung $\sigma$, ist der Standardfehler des Stichprobenmittelwerts gleich   
 
 $$SE = \frac{\sigma}{\sqrt{n}}$$  
 
-Da die Standardabweichung einer Population üblicherweise unbekannt ist, werd sie mit der Standardabweichung der vorhandenen Stichprobe geschätzt: Anstelle von $\sigma$ setzen wir $s$ als Punktschätzer für $\sigma$ ein:    
+Da die Standardabweichung einer Population üblicherweise unbekannt ist, wird sie mit der Standardabweichung der vorhandenen Stichprobe geschätzt: Anstelle von $\sigma$ setzen wir $s$ als Punktschätzer für $\sigma$ ein:    
 
 $$SE = \frac{s}{\sqrt{n}}$$ 
 
@@ -390,7 +397,7 @@ Der Standardfehler ist die Standardabweichung der Punktschätzung. Aus der 68-95
 
 $$CI_{95} = Punktschätzung \pm 2 \times SE$$
 
-Was bedeutet aber "zu 95% darauf vertrauen können"? Wenn viele Stichproben mit dem gleichen Stichprobenumfang aus einer Population gezogen werdne und für jede Stichprobe das 95%-Konfidenzintervall bestimmt wird, dann werden im Durchschnitt ca. 95% aller dieser Konfidenzintervalle den wahren Populationsparamter enthalten.   
+Was bedeutet aber "zu 95% darauf vertrauen können"? Wenn viele Stichproben mit dem gleichen Stichprobenumfang aus einer Population gezogen werden und für jede Stichprobe das 95%-Konfidenzintervall bestimmt wird, dann werden im Durchschnitt 95% aller dieser Konfidenzintervalle den wahren Populationsparamter enthalten.   
 
 Kommen wir auf unser IQ-Score-Experiment zurück. Wir ziehen nochmals 25 Stichproben im Umfang $n$ = 50 und konstruieren für jede Stichprobe das 95%-Konfidenzintervall für den IQ-Score.
 
@@ -434,7 +441,8 @@ for(i in 1:k){
 }
 ```
 
-Von den 25 Stichproben enthalten in Abbildung \@ref(fig:ci95-fig) zwei (= 8%) den wahren Populationsmittelwert nicht.  
+Von den 25 Stichproben enthalten in Abbildung \@ref(fig:ci95-fig) zwei (= 8%) den wahren Populationsmittelwert nicht. 8% ist etwas höher als erwartet. Allerdings ist zu berücksichtigen, 
+dass wir das Experiment nur 25 Mal wiederholt haben. Mit weiteren Wiederholungen würde sich der Anteil, der 95%-Konfidenzintervalle, die den Populationsparameter nicht enthalten immer mehr bei 5% einpendeln [Gesetz der grossen Zahlen](https://de.wikipedia.org/wiki/Gesetz_der_gro%C3%9Fen_Zahlen).
 
 Da der Standardfehler $SE$ mit zunehmendem Stichprobenumfang $n$ abnimmt, hat der 
 Stichprobenumfang $n$ einen grossen Einfluss auf die Breite von Konfidenzintervallen.
@@ -453,17 +461,17 @@ Erkenntnis:
 
 ### Anpassung des Konfidenzniveaus   
 
-Konfidenzintervalle haben eine untere und eine obere Grenze. In der Mitte steht die Stichprobenkennzahl, z.B. $\bar{x}$. Die untere Grenze des Vertrauensintevalls wird berechnet als $\bar{x} - Fehlerbereich ~ME$ und die obere Grenze $\bar{x} + Fehlerbereich~ ME$. 
+Konfidenzintervalle haben eine untere und eine obere Grenze. In der Mitte steht die Stichprobenkennzahl als Schätzer für den Parameter, z.B. $\bar{x}$. Die untere Grenze des Vertrauensintevalls wird berechnet als $\bar{x} - Fehlerbereich ~ME$ und die obere Grenze $\bar{x} + Fehlerbereich~ ME$. 
 
 $$ME = z \times SE$$
 
-In der Formel zum 95%-Konfidenzintervall haben wir $z = 2$ eingesetzt. Möglicherweise sind aber 95%-Vertrauensintervalle zu unsicher (z.B. wenn wir die Festigkeit von Schweissnähten in einem Atomkraftwerk prüfen würden) und man möchte eine grössere Zuverlässigkeit haben. In diesem Fall wird das Konfidenzniveau auf z.B. 99% erhöht. Es kann jedoch sein, dass keine so grosse Zuverlässigkeit erforderlich ist, dann kann das Konfidenzniveau auf z.B. 90% gesenkt werden. Das gewünschte Konfidenzniveau hat einen Einfluss auf den Fehlerbereich ME, der toleriert wird und somit auf den Faktor, mit dem der  Standardfehler multipliziert werden muss. Allgemein formuliert:  
+In der Formel zum 95%-Konfidenzintervall haben wir $z = 2$ eingesetzt. Möglicherweise sind 95%-Vertrauensintervalle zu unsicher und man möchte eine grössere Zuverlässigkeit haben. In diesem Fall wird das Konfidenzniveau auf z.B. 99% erhöht. Es kann jedoch sein, dass keine so grosse Zuverlässigkeit erforderlich ist, dann kann das Konfidenzniveau auf z.B. 90% gesenkt werden. Das gewünschte Konfidenzniveau hat einen Einfluss auf den Fehlerbereich ME, der toleriert wird und somit auf den Faktor, mit dem der Standardfehler multipliziert werden muss. Allgemein formuliert:  
 
 $$CI_{1-\alpha} =\bar{x} \pm z_{1-\frac{\alpha}{2}} \times SE$$
 
 Das $z$ erinnert an die $z$-Werte der Standardverteilung und effektiv ist es das auch. Aus der 68-95-99.7-Regel wissen wir, dass wenn wir für $z$ = 1 einsetzen ca. 68%, wenn wir für $z$ = 2 einsetzen ca. 95% und für $z$ = 3 ca. 99.7% der Daten enthalten sind. Üblich sind Konfidenzintervalle von 90%, 95% und 99%.
 
-| $\alpha/2$ | Vertrauensniveau $1-\alpha$ |   $z_{1-\frac{\alpha}{2}}$   |
+| $\alpha/2$ | Konfidenzniveau $1-\alpha$ |   $z_{1-\frac{\alpha}{2}}$   |
 |:--------:|:----------------:|:-----:|
 |    .05   |   .9 = 90%       | 1.645 |
 |   .025   |  .95 = 95%       |  1.96 |
@@ -472,7 +480,7 @@ Das $z$ erinnert an die $z$-Werte der Standardverteilung und effektiv ist es das
 Anmerkungen:  
 
 - Eine Erklärung zur Bedeutung des Signifikanzniveaus $\alpha$ folgt weiter unten. Man kann hier schon ahnen, dass $\alpha$ etwas mit dem Fehler zu tun hat, den wir bereit sind, in Kauf zu nehmen.   
-- Zur Schätzung des 95%-Bereichs kann in der Praxis der Faktor 2 verwendet werden, genauer ist aber 1.96. 
+- Zur Schätzung des 95%-Bereichs kann in der Praxis der Faktor 2 verwendet werden, genauer ist aber **1.96**. 
 
 ```{r choosingZforCI-fig, fig.align='center', fig.cap="Flächen für 95%-CI und 99%-CI"}
 normTail(M = c(-1.96, 1.96),
@@ -503,27 +511,31 @@ lines(rep( 2.58,2), c(0,yMax), lty=2, col='#00000055')
 text(0, yMax, '99%, reicht von -2.58 bis 2.58', pos=3)
 ```
 
-Die Abbildung \@ref(fig:choosingZforCI-fig) zeigt, dass mit grösserem $z$ die Fläche zwischen $-z$ und $+z$ grösser wird. Für das 99% Konfidenzintervall wurde $z$ so gewählt, dass 99% der Fläche unter der Kurve zwischen $-z$ und $+z$ liegt. 
+Die Abbildung \@ref(fig:choosingZforCI-fig) zeigt, dass mit grösserem $z$ die Fläche zwischen $-z$ und $+z$ grösser wird. Für das 99% Konfidenzintervall wurde $z$ so gewählt, dass 99% der Fläche unter der Kurve zwischen $-z$ und $+z$ liegt. Es ist logisch, dass, je sicherer wir sein wollen, dass das Konfidenzintervall den wahren Parameter enthält, desto breiter muss es sein.    
 
 ### Präzision versus Sicherheit
 
 Es besteht ein direkter Zusammenhang zwischen der Genauigkeit eines Konfidenzintervalls und seiner Zuverlässigkeit. Schmale Konfidenzintervalle bedeuten hohe Präzision. Wenn wir die Formel zur Berechnung von Konfidenzintervallen betrachten, erkennen wir, dass drei Variablen die Grösse des Fehlerbereichs ME bestimmen:  
 
 * die Standardabweichung $s$ der Stichprobenkennzahl: je grösser $s$, desto breiter das Konfidenzintervall.  
+
 * der Stichprobenumfang $n$: je grösser $n$, desto kleiner ist das Konfidenzintervall.  
+
 * die Wahl von $z$: die Wahl eines kleineren $z$-Werts ergibt ein kleineres Konfidenzintervall als die Wahl eines grösseren $z$-Werts. Allerdings ist das Konfidenzniveau bei einem kleineren $z$-Wert auch geringer als bei einem grösseren $z$-Wert. Wählen wir z.B. einen $z$-Wert von 1.645 können wir nur zu 90% darauf vertrauen, dass der wahre Populationsparameter im Konfidenzintervall liegt. Wählen wir jedoch $z$ = 1.96, wird zwar der Fehlerbereich grösser (weniger Präzision), dafür steigt das Konfidenzniveau auf 95% (mehr Zuverlässigkeit).  
 
 ### Voraussetzungen  
 
-Wichtige Voraussetzungen dafür, dass die Stichprobenverteilung von $\bar{x}$ normalverteilt ist und dass die Schätzung für den Standardfehler SE genügend genau ist, sind:    
+Wichtige Voraussetzungen dafür, dass die Stichprobenverteilung von $\bar{x}$ annähernd normalverteilt ist und dass die Schätzung für den Standardfehler $SE$ genügend genau ist, sind:    
 
 * Die einzelnen Beobachtungseinheiten der Stichprobe sind unabhängig voneinander.   
+
 * Der Stichprobenumfang ist gross: $n > 30$ ist eine gute Faustregel   
+
 * Die Populationsdaten sind nicht allzu stark schief verteilt. Die Beurteilung dieser Bedingung ist im Einzelfall nicht immer ganz einfach.   
 
 Wie kann man sicher sein, dass die Beobachtungseinheiten in der Stichprobe voneinander unabhängig sind?   
 
-* Wenn die Beobachtungseinheiten aus einer Zufallsstichprobe (randomisierte Zuteilung) stammen und weniger als 10% der Gesamtpopulation umfassen, dann sind sie unabhängig.   
+* Wenn die Beobachtungseinheiten aus einer Zufallsstichprobe (randomisierte Zuteilung) stammen und weniger als 10% der Gesamtpopulation umfassen, dann dürfen wir annehmen, dass sie unabhängig sind.   
 * Beobachtungseinheiten in einer Studie gelten als unabhängig, wenn sie randomisiert den Gruppen (z.B. Interventions- und Kontrollgruppen) zugeteilt werden.  
 
 
@@ -537,7 +549,8 @@ De facto bedeutet dies, dass wenn wir 100 Stichproben mit dem gleichen Stichprob
 
 Bei der Formulierung von Konfidenzintervallen kommt es häufig zu zwei typischen Fehlern:  
 
-- Zu sagen, dass ein Konfidenzintervall mit einer Wahrscheinlichkeit von XX% den Populationsparameter enthält ist nicht korrekt. Das Konfidenzintervall enthält den Populationsparameter oder nicht, wir wissen es einfach nicht, aber wir können zu XX% darauf vertrauen. Das ist ein sehr subtiler sprachlicher Fehler.  
+- Zu sagen, dass ein Konfidenzintervall mit einer Wahrscheinlichkeit von XX% den Populationsparameter enthält ist nicht korrekt. Das Konfidenzintervall enthält den Populationsparameter oder nicht, wir wissen es einfach nicht, aber wir können zu XX% darauf vertrauen. Das ist ein sehr subtiler sprachlicher Unterschied.  
+
 - Zu sagen, dass XX% der Populationsdaten in das Konfidenzintervall fallen, ist falsch. Das Konfidenzintervall bezieht sich ausschliesslich auf den gesuchten Populationsparameter und nicht auf die Populationsdaten!  
 
 
@@ -547,6 +560,7 @@ Bei der Formulierung von Konfidenzintervallen kommt es häufig zu zwei typischen
 Wir beginnen mit der Frage, ob Studierende heute öfter ins Krafttrainig gehen als vor 10 Jahren. Es liegen uns Daten von Studien aus den Jahren 2010 und 2020 vor, welche u.a. die Frage bearbeitet haben "Wie oft pro Woche gehen Studierende ins Krafttraining". Unsere Hypothesen könnten lauten:   
 
 * $H_0:$ Die durchschnittliche Anzahl Krafttrainings der Studierenden ist in den Jahren 2010 und 2020 die gleiche. Es gibt keinen Unterschied in der durchschnittlichen Anzahl Krafttrainings pro Woche zwischen den Studierenden 2010 und 2020.   
+
 * $H_A:$ Die durchschnittliche Anzahl Krafttrainings der Studierenden ist in den Jahren 2010 und 2020 nicht gleich. Es gibt einen Unterschied in der durchschnittlichen Anzahl Krafttrainings pro Woche zwischen den Studierenden 2010 und 2020.   
 
 $H_0$ bezeichnen wir als **Nullhypothese**, $H_A$ als **Alternativhypothese**. In der Regel, steht die Nullhypothese für einen skeptisch-konservativen Standpunkt: Es gibt keinen Unterschied. Die Alternativhypothese ist dagegen der Standpunkt der eine neue Perspektive eröffnet und die Möglichkeit in Betracht zieht, dass ein Unterschied besteht.   
@@ -581,7 +595,7 @@ Ein Fehler, der häufig bei der mathematischen Formulierung von $H_0$ und $H_A$ 
 $H_0: \bar{x}_1 = \bar{x}_2$   
 $H_A: \bar{x}_1 \neq \bar{x}_2$ 
 
-Warum ist das falsch? Weil bei der Formulierung der Hypothesen nicht für die Stichprobenmittelwerte interessieren, sondern die Populationsparameter! Für die Stichprobenmittelwerte brauchen wir ja keine Hypothesen, die sind bekannt: entweder sind die beiden Stichprobenkennzahlen identisch oder sie sind es nicht.  
+Warum ist das falsch? Weil bei der Formulierung der Hypothesen nicht für die Stichprobenmittelwerte interessieren, sondern die Populationsparameter! Für die Stichprobenmittelwerte brauchen wir ja keine Hypothesen, die sind bekannt: entweder unterscheiden sich die beiden Stichprobenkennzahlen identisch oder sie unterscheiden sich nicht.  
 
 In der Umgangssprache und in der medizinischen Diagnostik hat der Begriff *Hypothese* eine etwas andere Bedeutung: Wir verwenden ihn, wenn wir eine Vermutung oder eine Annahme über die Ursache eines Zustands oder Ereignisses haben. Aus der Perspektive der Statistik handelt es sich dabei typischerweise um eine Alternativhypothese. Im Unterschied zu Hypothesen im Alltag muss eine Hypothese in der Wissenschaft prüfbar, d.h. falsifizierbar sein. In der statistischen Praxis empfiehlt es sich daher, die Null- und Alternativhypothese immer mathematisch zu formulieren.       
 
@@ -719,7 +733,7 @@ text(x = c(-2.5, 0, 2.5), y = c(0.1, 0.1, 0.1), labels = c("2.5%", "95%", "2.5%"
 points(x = c(-2.2, -1, 3), y = c(0, 0, 0), pch = 19, cex = 2.5, col = c(ggred, ggreen, ggviolet), add = TRUE)
 ```
 
-Die Kurve in Abbildung \@ref(fig:norm-verwerfungsbereich-fig) zeigt die Verteilung der Daten unter $H_0$. Die beiden Flächen am Ende der Kurve ergeben zusammen einen Verwerfungsbereich für $H_0$ von 5%. Der Annahmebereich beträgt 95%. Liegt der Punktschätzer im Verwerfungsbereich (roter Punkt $z$ = -2.2, violetter Punkt $z$ = +3), verwerfen wir die $H_0$ und begehen einen Fehler 1. Art. Liegt der Punktschätzer im Annahmebereich (grüner Punkt) wird $H_0$ nicht verworfen. 
+Die Kurve in Abbildung \@ref(fig:norm-verwerfungsbereich-fig) zeigt die Verteilung der Daten unter $H_0$ und $H_0$ ist in diesem Beispiel effektiv wahr. Die beiden blauen Flächen am Ende der Kurve ergeben zusammen einen Verwerfungsbereich für $H_0$ von 5%. Der Annahmebereich beträgt 95%. Liegt der Punktschätzer im Verwerfungsbereich (roter Punkt $z$ = -2.2, violetter Punkt $z$ = +3), verwerfen wir die $H_0$ und begehen einen Fehler 1. Art. Liegt der Punktschätzer im Annahmebereich (grüner Punkt) wird $H_0$ nicht verworfen. 
 
 
 ```{r significantResult-fig, fig.dim=c(7, 5), fig.align='center', fig.cap="Starke Evidenz gegen die Nullhypothese"}
@@ -762,7 +776,7 @@ Der p-Wert ist eine Möglichkeit, die Stärke der Evidenz gegen die $H_0$ zuguns
 
 > Der $p$-Wert gibt die Wahrscheinlichkeit für das Auftreten eines Ereignisses oder eines noch extremeren Ereignisses an, unter der Annahme, dass die Nullhypothese wahr ist. 
 
-Zu technisch? Dann vielleicht so: Wenn wir einen statistischen Test durchführen, können wir folgende Frage beantworten: "Wenn meine Intervention (ein Medikament, eine Behandlung etc.) absolut keinen Effekt hat (Nullhypothese), wie gross ist dann die Wahrscheinlichkeit, dass ich ein bestimmtes Resultat in meiner Studie erhalte?" Der $p$-Wert gibt diese Wahrscheinlichkeit an.   
+Zu technisch? Dann vielleicht so: Wenn wir einen statistischen Test durchführen, können wir folgende Frage beantworten: "Wenn meine Intervention (ein Medikament, eine Behandlung etc.) absolut keinen Effekt hat (Nullhypothese), wie gross ist dann die Wahrscheinlichkeit für das Resultat, das meine Studiendaten ergeben haben?" Der $p$-Wert gibt diese Wahrscheinlichkeit an.   
 
 Nehmen wir das Beispiel aus der letzten Abbildung: Der beobachtete Stichprobenmittelwert $\bar{x}$ liegt 5 Standardfehler vom Nullwert (Mittelwert der Verteilung unter der Nullhypothese) entfernt. Wie gross ist die Wahrscheinlichkeit, dass ein solches Ereignis eintritt, wenn die $H_0$ wahr ist?  
 
@@ -776,7 +790,7 @@ Minus 5 SE bedeutet $z$ = -5. Leider ist es so, dass keine $z$-Tabelle so extrem
 pnorm(-5) 
 ```
 
-Interpretation: Die Wahrscheinlichkeit für unser Ereignis ist p = 0.000000029, d.h. 0.0000029%. Zugegeben, das ist sehr unwahrscheinlich und wir können guten Gewissens $H_0$ zugunsten der $H_A$ verwerfen, insbesondere wenn wir $\alpha=0.05$ als Entscheidungsgrenze definiert haben. Ist der p-Wert kleiner als unser Signifikanzniveau, spricht man in der Statistik von einem **signifikanten** Ergebnis. Man bringt damit zum Ausdruck, dass das Ergebnis nicht auf purem Zufall bzw. natürlicher Variation beruht, sondern dass ein echter Unterschied zwischen der Population der Nullhypothese (z.B. der Kontrollgruppe) und der beobachteten Population (z.B. der Interventionsgruppe) besteht.   
+Interpretation: Die Wahrscheinlichkeit für unser Ereignis ist p = 0.000000029, d.h. 0.0000029%. Zugegeben, das ist sehr unwahrscheinlich und wir können guten Gewissens $H_0$ zugunsten der $H_A$ verwerfen, insbesondere wenn wir $\alpha=0.05$ als Entscheidungsgrenze definiert haben. Ist der p-Wert kleiner als unser Signifikanzniveau, spricht man in der Statistik von einem **signifikanten** Ergebnis. Man bringt damit zum Ausdruck, dass das Ergebnis nicht auf purem Zufall bzw. natürlicher Stichprobenvariation beruht, sondern dass ein echter Unterschied zwischen der Population der Nullhypothese (z.B. der Kontrollgruppe) und der beobachteten Population (z.B. der Interventionsgruppe) besteht.   
 
 **Häufige Fehlinterpretationen des $p$-Werts:** Der $p$-Wert ist nicht   
 
@@ -806,16 +820,16 @@ $$Power = 1 - \beta$$
 
 Die statistische Macht $(1-\beta)$ wird grösser ...
 
-1. mit wachsender Grösse des wahren Unterschieds oder Effekts: Ein großer Unterschied zwischen zwei Teilpopulationen wird seltener übersehen als ein kleiner Unterschied     
+1. mit wachsender Grösse des wahren Unterschieds oder Effekts: Ein großer Unterschied zwischen zwei Teilpopulationen wird seltener übersehen als ein kleiner Unterschied.     
 2. mit kleiner werdender Merkmalsstreuung $\sigma$: Dies kann z.B. durch die Unterteilung in homogenere Subpopulationen erreicht werden.    
 3. mit wachsendem Stichprobenumfang, da der Standardfehler $SE$ kleiner wird.   
 4. mit grösser werdendem Signifikanzniveau $\alpha$.   
 
 Wichtig für die statistische Macht bzw. Power ist auch die Art des statistischen Tests: Parametrische Tests wie zum Beispiel der $t$-Test haben, falls die Verteilungsannahme stimmt, bei gleichem Stichprobenumfang stets eine höhere Trennschärfe als nichtparametrische Tests.  
 
-**Power-Analysen** machen eine Aussage darüber, wie hoch die statistische Macht für ein Studiendesign ist. Sie werden entweder vor der eigentlichen Datenerhebung durchgeführt, um abzuschätzen wie viele Versuchspersonen für die Durchführung der Studie nötig sind, oder nach der eigentlichen Datenerhebung – dann meist aber wenn die Studie keine signifikanten Ergebnisse geliefert hat. In einem solchen Fall kann eine Power-Analyse Aufschluss darüber geben, wie viele Versuchsteilnehmer:innen noch nötig gewesen wären, damit der Effekt doch ein signifikantes Ergebnis geliefert hätte.  
+**Power-Analysen** machen eine Aussage darüber, wie hoch die statistische Macht für ein Studiendesign ist. Sie werden entweder vor der eigentlichen Datenerhebung durchgeführt, um abzuschätzen wie viele Versuchspersonen für die Durchführung der Studie nötig sind, oder nach der eigentlichen Datenerhebung – dann in der Regel, wenn die Studie keine signifikanten Ergebnisse geliefert hat. In einem solchen Fall kann eine Power-Analyse Aufschluss darüber geben, wie viele Versuchsteilnehmer:innen noch nötig gewesen wären, damit der Effekt doch ein signifikantes Ergebnis geliefert hätte.  
 
-Beim designen einer Studie, legt man gewöhnlicherweise das Powerniveau genauso fest, wie man es auch mit dem Signifikanzniveau macht. Oft wird eine statistische Power von 80 % gewählt, so dass ein echter Unterschied in 20% der der Fälle nicht erkannt wird. Dies ist, wie oft in der Statistik, ein Kompromiss. Eine Erhöhung der Power auf beispielsweise 90 % würde auch mit einer Erhöhung des Stichprobenumfangs um etwa 30 % einhergehen, bei einer Erhöhung auf 95 % müsste man den Stichprobenumfang sogar um 60 % erhöhen, was in beiden Fällen die Kosten für die Studie erheblich erhöhen würde.
+Beim Designen einer Studie, legt man gewöhnlicherweise das Powerniveau genauso fest, wie man es auch mit dem Signifikanzniveau macht. Oft wird eine statistische Power von 80 % gewählt, so dass ein echter Effekt in 20% der der Fälle nicht erkannt wird. Dies ist, wie oft in der Statistik, ein Kompromiss. Eine Erhöhung der Power auf beispielsweise 90 % würde auch mit einer Erhöhung des Stichprobenumfangs um etwa 30 % einhergehen, bei einer Erhöhung auf 95 % müsste man den Stichprobenumfang sogar um 60 % erhöhen, was in beiden Fällen die Kosten für die Studie erheblich erhöhen würde.
 
 
 ## Einseitige und zweiseitige Hypothesentests
@@ -952,7 +966,7 @@ Interpretation: *Wenn die Nullhypothese wahr ist, dann liegt die Wahrscheinlichk
 
 ### Zweiseitige Hypothesentests   
 
-In einseitigen Tests interessieren wir uns für den Bereich der Verteilung in der Richtung der Alternativhypothese. Im vorangehenden Beispiel war dies $H_A: \mu > 7$. Somit liegt unser Verwerfungsbereich rechts vom Mittelwert unter $H_0$. Die Alternativhypothese kann auch in die andere Richtung zeigen $H_A: \mu < 7$, dann liegt unser Verwerfungsbereich links vom Mittelwert unter $H_0$. Bei zweiseitigen Tests, interessieren uns beide Seiten der Verteilung und die Alternativhypothese ist symmetrisch formuliert $H_A: \mu \neq 7$. Diese Formulierung lässt offen, ob unsere der Populationsmittelwert gemäss unserer Stichproben nach oben oder nach unten abweicht. Die Frage lautet dann: "Unterscheidet sich unserer Mittelwert von dem der Population $H_0$?", wobei der Mittelwert aus der Stichprobe sowohl kleiner als auch grösser als der Mittelwert unter $H_0$ sein kann.   
+In einseitigen Tests interessieren wir uns für den Bereich der Verteilung in der Richtung der Alternativhypothese. Im vorangehenden Beispiel war dies $H_A: \mu > 7$. Somit liegt unser Verwerfungsbereich rechts vom Mittelwert unter $H_0$. Die Alternativhypothese kann auch in die andere Richtung zeigen $H_A: \mu < 7$, dann liegt unser Verwerfungsbereich links vom Mittelwert unter $H_0$. Bei zweiseitigen Tests, interessieren uns beide Seiten der Verteilung und die Alternativhypothese ist symmetrisch formuliert $H_A: \mu \neq 7$. Diese Formulierung lässt offen, ob der Populationsmittelwert gemäss unserer Stichproben nach oben oder nach unten abweicht. Die Frage lautet dann: "Unterscheidet sich unserer Mittelwert von dem der Population $H_0$?", wobei der Mittelwert aus der Stichprobe sowohl kleiner als auch grösser als der Mittelwert unter $H_0$ sein kann.   
 
 Wie wir gesehen haben, hat die National Sleep Foundation festgestellt, dass Schülerinnen im Durchschnitt 7 Stunden schlafen. Eine andere Forschungsgruppe wollte wissen, ob sich die Schlafdauer der Schülerinnen an ihrer Schule von dieser Norm unterscheidet. Sie formulierten die Hypothesen:   
 
@@ -975,6 +989,8 @@ SE <- s/sqrt(n)
 SE
 ```
 
+Der Standardfehler ist $SE$ = 0.163.
+
 3. Eine Skizze erstellen:
 
 ```{r p-twosided-tails, fig.cap="Zweiseitiger Hypothesentest: Der 5%-Verwerfungsbereich (blau) verteilt sich auf die beiden Enden der Verteilung"}
@@ -992,7 +1008,7 @@ arrows(-2.4, yMax / 5, -2.2, yMax / 10, length = 0.1, lwd = 2, col = COL[1])
 #points(x = -1.06, y = c(0), pch = 21, cex = 2.5, col = "black", bg = "#F05133", add = TRUE)
 ```
 
-Da wir unsere Alternativhypothese zweiseitig formuliert haben, wird der Verwerfungsbereich auf 2.5% am unteren und 2.5% am oberen Ende der Verteilung aufgeteilt. *Die Grenze zu den Verwerfungsbereichen liegt bei z=-1.96 und z=1.96*.  
+Da wir unsere Alternativhypothese zweiseitig formuliert haben, wird der Verwerfungsbereich auf 2.5% am unteren und 2.5% am oberen Ende der Verteilung aufgeteilt. *Die Grenze zu den Verwerfungsbereichen liegt bei z=-1.96 und z=+1.96*.  
 
 4. Berechnung des $z$-Werts:  
 
@@ -1025,7 +1041,7 @@ p <- linke_flaeche + rechte_flaeche
 p
 ```
 
-Ein p-Wert von 0.29 ist relativ gross (grösser als $\alpha = 0.05)$ und wir wir haben keine Evidenz gegen $H_0$. Das heisst, wenn $H_0$ wahr ist, ist es nicht aussergewöhnlich, wenn man einen Mittelwert erhält, der sich so wenig von 7 Stunden unterscheidet. Die Ursache für die geringe Abweichung des Mittelwerts von 7 Stunden kann alleine auf der Variabilität der Stichprobenmittelwerte beruhen.
+Ein p-Wert von 0.29 ist relativ gross (grösser als $\alpha = 0.05)$ und wir wir haben keine Evidenz gegen $H_0$. Das heisst, wenn $H_0$ wahr ist, ist es nicht aussergewöhnlich, wenn man einen Mittelwert erhält, der sich so wenig von 7 Stunden unterscheidet. Die Ursache für die geringe Abweichung des Mittelwerts von 7 Stunden kann alleine auf der Stichprobenvariation beruhen.
 
 ### Einseitige vs. zweiseitige Hypothesentests   
 
@@ -1046,4 +1062,4 @@ Wir bevorzugen grundsätzlich die Verwendung von zweiseitigen Arbeitshypothesen.
 
 Eine Konsequenz des Wurzel-n-Gesetzes ist es, dass es bloss eine Frage des Stichprobenumfangs ist, ob auch kleine Effekte statistisch signifikant werden. Die Aussage, dass ein Ergebnis statistisch signifikant ist, bedeutet nicht, dass es auch von praktischer Bedeutung ist. In den Gesundheitsberufen müssen wir einen Effekt immer in Bezug zur **MCID** (minimal clinical important difference) setzen, sofern dieser bekannt ist.
 
-Beispiel: In einer Studie wird der Effekt einer neuen Behandlung auf das subjektive Schmerzempfinden bei Rückenschmerzpatienten gemessen. Die Intervention ist vielversprechend aber auch wesentlich teurer, als die bisherige Standardbehandlung. Das Studiendesign entspricht einer randomisierten kontrollierten Studie (RCT). Die Kontrollgruppe erhält die bisherige Standardbehandlung, die Interventionsgruppe erhält die neue Behandlung. Gemessen wird der Effekt der Behandlungen auf die subjektiven Schmerzen auf einer VAS-Skala von 0 bis 10. Die Studie kommt zum Schluss, dass die Intervention im Durchschnitt eine signifikante Verbesserung bei der Interventionsgruppe gegenüber der Kontrollgruppe von VAS -1.5 [-1.7 -1.3] mit p < 0.05 ergibt. Auf Grund dieser Ergebnisse stellt sich die Frage, ob die alte Behandlung aufgegeben und durch die neue ersetzt werden muss. Um diese Frage zu beantworten, müssen wir wissen, wie gross der Effekt einer Behandlung sein muss, damit die Patientinnen subjektiv eine Verbesserung ihrer Schmerzen wahrnehmen. Eine Suche in der Literatur ergibt, dass die MCID (minimal clinical important difference) bei einer Reduktion der VAS um -2 liegt. Mit anderen Worten: Die neue Intervention mag zwar eine statistisch signifikante Verbesserung von VAS -1.5 bewirken, für die Patient:innen ist das aber nicht von Bedeutung (nicht klinisch relevant), weil sie subjektiv erst ab einer Reduktion der VAS um -2 einen Effekt und damit eine Verbesserung ihrer Lebensqualität wahrnehmen. Vor allem in Anbetracht der zusätzlichen Kosten der neuen Intervention, besteht keine Evidenz dafür, dass diese die bisherige Standardtherapie ersetzen sollte.  
+Beispiel: In einer Studie wird der Effekt einer neuen Behandlung auf das subjektive Schmerzempfinden bei Rückenschmerzpatienten gemessen. Die Intervention ist vielversprechend aber auch wesentlich teurer, als die bisherige Standardbehandlung. Das Studiendesign entspricht einer randomisierten kontrollierten Studie (RCT). Die Kontrollgruppe erhält die bisherige Standardbehandlung, die Interventionsgruppe erhält die neue Behandlung. Gemessen wird der Effekt der Behandlungen auf die subjektiven Schmerzen auf einer VAS-Skala von 0 bis 10. Die Studie kommt zum Schluss, dass die Intervention im Durchschnitt eine signifikante Verbesserung bei der Interventionsgruppe gegenüber der Kontrollgruppe von VAS -1.5 [-1.7 -1.3] mit p < 0.05 ergibt. Auf Grund dieser Ergebnisse stellt sich die Frage, ob die alte Behandlung aufgegeben und durch die neue ersetzt werden muss. Um diese Frage zu beantworten, müssen wir wissen, wie gross der Effekt einer Behandlung sein muss, damit die Patientinnen subjektiv eine Verbesserung ihrer Schmerzen wahrnehmen. Eine Suche in der Literatur ergibt, dass die MCID (minimal clinical important difference) bei einer Reduktion der VAS um -2 liegt. Mit anderen Worten: Die neue Intervention mag zwar eine statistisch signifikante Verbesserung von VAS -1.5 bewirken, für die Patient:innen ist das aber nicht von Bedeutung (nicht klinisch relevant), weil sie subjektiv erst ab einer Reduktion der VAS um -2 einen Effekt und damit eine Verbesserung ihrer Lebensqualität wahrnehmen. Vor allem in Anbetracht der zusätzlichen Kosten der neuen Intervention, besteht keine Evidenz dafür, dass diese die bisherige Standardtherapie ersetzen sollte. [@vas-lbp]  
