@@ -26,18 +26,18 @@ Im Unterricht mit den Bachelorstudierenden arbeiten wir mit der `R`-Umgebung `ja
 Studierenden nicht zusätzlich mit dem Lernen von `R` [@R-base] belastet werden. Video-Anleitungen für die Arbeit mit 
 `jamovi` findet man z.B. [hier](https://datalab.cc/jamovi/) oder im Buch von @LearnStatJamovi, das als pdf-Download frei zugänglich ist. 
 
-Übungen werden über [Rpubs](https://rpubs.com/stammler) bereitgestellt. Die verwendeten Datensätze können [hier](https://github.com/lukasstammler/statbook/tree/main/data) als .csv oder  [hier](https://drive.google.com/drive/folders/1-83DTsYzGrgGVfoXKMpFKxrloAEMtDmh?usp=sharing) als zip-Datei 
-heruntergeladen werden.   
+Übungen werden über [Rpubs](https://rpubs.com/stammler) bereitgestellt. Die verwendeten Datensätze  können [hier](https://github.com/lukasstammler/statbook/blob/main/data/data_statbook.zip) als zip-Datei heruntergeladen werden.   
 
-Der Leitfaden wurde mit ´Bookdown´ @R-bookdown erstellt.   
+Der Leitfaden wurde mit `Bookdown` @R-bookdown erstellt.   
 
-Lukas Stammler, Winter 2021/22
+Lukas Stammler, Februar 2022
 
 ```{r, echo=FALSE, out.width="25%"}
 knitr::include_graphics("./illustrations/LS.png")
 ```
 
-Version 0.1
+Version 1.0 (09.02.2022)     
+
 Hinweise auf Fehler gerne an <lukas.stammler@bfh.ch>
 
 ```{r include=FALSE}
