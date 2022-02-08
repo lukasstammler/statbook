@@ -39,9 +39,9 @@ show_col(COL[1:20])
 
 3. Identifiziere Daten als **unabhängig**, wenn die Werte einer Stichprobe keine Informationen über die Werte der anderen Stichprobe enthalten. Dies ist z.B. bei kontrollierten Studien der Fall, bei denen Daten von Interventions- und Kontrollgruppen miteinander verglichen werden: Die Daten der Interventionsgruppe sind unabhängig von den Daten der Kontrollgruppe und enthalten keine Information über die Kontrollgruppe.  
 
-4. Beachte, dass beim Vergleich der Differenz von zwei Parametern, die Interpretation von Vertrauensintervallen stets eine vergleichende Aussage beinhaltet; erwähne, welche Gruppe den grösseren Parameterwert hat.  
+4. Beachte, dass beim Vergleich der Differenz von zwei Parametern, die Interpretation von Konfidenzintervallen stets eine vergleichende Aussage beinhaltet; erwähne, welche Gruppe den grösseren Parameterwert hat.  
 
-5. Verwerfe die Nullhypothese, wenn ein Vertrauensintervall für eine Differenz zwischen zwei Parametern den Wert 0 enthält.     
+5. Verwerfe die Nullhypothese, wenn ein Konfidenzintervall für eine Differenz zwischen zwei Parametern den Wert 0 enthält.     
 
 6. Verwende **nichtparametrische Testverfahren**, wenn der Stichprobenumfang klein ist (n < 30, Ausnahme gepaarter t-Test möglich ab n > 12) und/oder Hinweise vorliegen, dass die Populationsdaten nicht normal verteilt sind. 
 
@@ -49,18 +49,18 @@ show_col(COL[1:20])
 
   * Lege die Prüfgrösse und das Signifikanzniveau fest, formuliere die Hypothesen und berechne die Kennzahlen.  
   * Prüfe die Voraussetzungen (1) Unabhängigkeit der Daten, (2) Normalverteilung der Prüfgrösse und wähle je nach Ergebnis den richtigen [Test](https://rpubs.com/stammler/739797) aus.  
-  * Berechne das Vertrauensintervall für die Prüfgrösse.  
+  * Berechne das Konfidenzintervall für die Prüfgrösse.  
   * Berechne die Teststatistik t (t-Test), W (Wilcoxon-Vorzeichen-Test) oder U (Mann-Whitney-U-Test) und den p-Wert.   
   * Formuliere eine Schlussfolgerung in leicht verständlicher Sprache.   
 
 
 ## T-Tests  
 
-T-Tests sind *die* klassischen Hypothesentests. Sie gehören zur Gruppe der sog. *parametrischen* Tests. Damit parametrische Tests durchgeführt werden können, müssen die Daten in der annähernd normalverteilt sein. Wenn diese Voraussetzung nicht erfüllt ist, können alternativ *nicht-parametrische* Tests verwendet werden. Sie werden auch als *verteilungsfreie* Tests bezeichnet, da sie keine Annahme über die Verteilung der Daten voraussetzen. Nichtparametrische Tests sind in mehr Situationen zulässig als parametrische Tests.   
+T-Tests sind *die* klassischen Hypothesentests. Sie gehören zur Gruppe der sog. *parametrischen* Tests. Damit parametrische Tests durchgeführt werden können, müssen die Daten in der Population  annähernd normalverteilt sein. Wenn diese Voraussetzung nicht erfüllt ist, können alternativ *nicht-parametrische* Tests verwendet werden. Sie werden auch als *verteilungsfreie* Tests bezeichnet, da sie keine Annahme über die Verteilung der Daten voraussetzen. Nichtparametrische Tests sind in mehr Situationen zulässig als parametrische Tests.   
 
 Warum sollen wir dann überhaupt parametrische Tests einsetzen? Parametrische Tests haben eine grössere Teststärke (Power) als nicht-parametrische Tests. Mit anderen Worten: Wenn tatsächlich ein Effekt in der Population vorliegt, haben parametrische Tests bessere Chancen, diesen Effekt auch nachzuweisen. Zudem prüfen nicht-parametrische Tests typischerweise eine etwas andere Nullhypothese als die parametrischen Tests.  
 
-Im Zweifel gilt deshalb: *Wenn wir Evidenz für normalverteilte Daten haben, verwenden wir einen parametrischen Test. Wenn die Verteilung der Daten aber den Voraussetzungen eines parametrischen Tests widerspricht, weichen wir auf nichtparametrische Tests aus.*  
+Im Zweifel gilt deshalb: *Wenn wir keine Evidenz dagegen haben, dass unsere Daten aus einer normalverteilten Population stammen, verwenden wir einen parametrischen Test. Wenn die Verteilung der Daten aber den Voraussetzungen eines parametrischen Tests widerspricht, weichen wir auf nichtparametrische Tests aus.*  
 
 Nichtparametrische Testverfahren werden am Ende dieses Kapitels vorgestellt.
 
@@ -70,11 +70,13 @@ Wie am Ende des Kapitels zu den Wahrscheinlichkeitsverteilungen beschrieben, ver
 
 ## T-Test für eine einfache Stichprobe 
 
-(Im folgenden Beispiel wird auch die Berechnung von Vertrauensintervallen für t-verteilte Daten besprochen. Der eigentliche T-Test ist der letzte Schritt 4.)
+(Im folgenden Beispiel wird auch die Berechnung von Konfidenzintervallen für t-verteilte Daten besprochen. Der eigentliche T-Test ist der letzte Schritt 4.)
 
-Beispiel: Werden Volksläufer über die Jahre eher schneller oder langsamer? Für die Bearbeitung diese Frage liegen die Daten des Cherryblossom-Volkslaufs der jeweils im Frühjahr in Washington, DC durchgeführt wird, vor. Die Laufstrecke ist 16.1 km (10 Meilen) lang [www.cherryblossom.org](https://www.cherryblossom.org/).  
+Beispiel: Werden Volksläufer über die Jahre eher schneller oder langsamer? Für die Bearbeitung diese Frage liegen die Daten des Cherryblossom-Volkslaufs, der jeweils im Frühjahr in Washington, DC durchgeführt wird, vor. Die Laufstrecke ist 16.1 km (10 Meilen) lang [www.cherryblossom.org](https://www.cherryblossom.org/).  
 
-Die durchschnittliche Laufzeit für alle Läufer:innen, die den Lauf 2006 beendet haben betrug 93.29 Minuten. Zum Vergleich liegt uns eine Zufallsstichprobe von 100 Läufer:innen vor, die am Lauf im Jahre 2012 teilgenommen haben (die Teilnehmerzahl betrug im Jahr 2012 16'924 Läufer:innen). Uns interessiert, ob die Läufer:innen zwischen 2006 und 2012 im Durchschnitt schneller oder langsamer geworden sind.   
+Die durchschnittliche Laufzeit für alle Läufer:innen, die den Lauf 2006 beendet haben betrug 93.29 Minuten. Zum Vergleich liegt uns eine Zufallsstichprobe von 100 Läufer:innen vor, die am Lauf im Jahre 2012 teilgenommen haben (die Teilnehmerzahl betrug im Jahr 2012 16'924 Läufer:innen). Uns interessiert, ob die Läufer:innen zwischen 2006 und 2012 im Durchschnitt schneller oder langsamer geworden sind.  
+
+Falls Sie die folgenden Schritte nachvollziehen wollen, finden Sie die Daten in `07_run12_100.csv`.   
 
 ### Vorgehen
 
@@ -85,7 +87,9 @@ Der Vergleichswert aus dem Jahr 2006 ist in diesem Fall der sog. *Nullwert*: $\m
 $H_0: \mu_{2012} = 93.29$, es gibt keinen Unterschied in der durchschnittlichen Laufzeit zwischen 2006 und 2012.  
 $H_A: \mu_{2012} \neq 93.39$, es gibt einen Unterschied in der durchschnittlichen Laufzeit zwischen 2006 und 2012.  
 
-Ist das eine einseitige oder eine zweiseitige $H_A$?
+Ist das eine einseitige oder eine zweiseitige $H_A$?  
+
+Das Signifikanzniveau legen wir auf $\alpha = 0.05$ fest.   
 
 **2. Test-Voraussetzungen prüfen**   
 
@@ -135,13 +139,13 @@ ggplot(sample, aes(sample = time)) +
   theme_grey()
 ```
 
-**3. Berechnung des 95%-Vertrauensintervalls für $\bar{x}$**  
+**3. Berechnung des 95%-Konfidenzintervalls für $\bar{x}$**  
 
 $$SE = \frac{s}{\sqrt{n}} = \frac{16.66}{\sqrt{100}}=1.66$$
 
 $$CI_{95} = \bar{x} \pm t_{df} \times SE$$
 
-Wir verwenden hier für die Berechnung des 95%-Intervalls den t-Wert für die Anzahl Freiheitsgrade df = (100 - 1) = 99. Am einfachsten finden Sie den t-Wert mit dem [Internet-Rechner Students T-Verteilung](http://eswf.uni-koeln.de/glossar/surfstat/t.htm).
+Wir verwenden hier für die Berechnung des 95%-Konfidenzintervalls den t-Wert für die Anzahl Freiheitsgrade df = (100 - 1) = 99. Am einfachsten finden Sie den t-Wert mit dem [Internet-Rechner Students T-Verteilung](http://eswf.uni-koeln.de/glossar/surfstat/t.htm).
 
 Die Berechnung in `R/jamovi`:
 
@@ -149,23 +153,24 @@ Die Berechnung in `R/jamovi`:
 ### R-Code
 
 # die Funktion qt() berechnet eine Quantile für eine bestimmte Fläche und 
-# einen bestimmten Freiheitsgrad (s. unten)
+# einen bestimmten Freiheitsgrad df
 
 qt(.975, df = 99)
 ```
 
 
-```{r confint_run}
-n <- 100
-m <- 95.87
-s <- 16.66
-SE <- s/sqrt(n)
-t <- qt(.975, df = 100-1)
-CI95 <- m + c(-1, 1) * t * SE
-CI95 <- round(CI95, 2)
+```{r confint_run, echo=TRUE}
+### R-Code   
+n <- 100                       # Stichprobenumfang 
+m <- 95.87                     # Mittelwert
+s <- 16.66                     # Standardabweichung
+SE <- s/sqrt(n)                # Standardfehler berechnen
+t <- qt(.975, df = 100-1)      # t-Wert für 95%-CI und df = n-1 berechnen
+CI95 <- m + c(-1, 1) * t * SE  # Grenzen für 95%-CI berechnen
+round(CI95, 2)                 # 95%-CI gerundet auf 2 Nachkommastellen ausgeben
 ```
 
-Das 95%-Vertrauensintervall für die durchschnittliche Laufzeit 2012 ist [92.56; 99.18]. Es beinhaltet den Durchschnittswert von 2006 von 93.29 Minuten und wir haben keine Evidenz dafür, die Nullhypothese zu verwerfen.  
+Das 95%-Konfidenzintervall für die durchschnittliche Laufzeit 2012 ist [92.56; 99.18]. Es beinhaltet den Durchschnittswert von 2006 von 93.29 Minuten und wir haben keine Evidenz gegen die Nullhypothese.  
 
 **4. Berechnung des p-Werts: Ein-Stichproben-T-Test**    
 
@@ -182,17 +187,17 @@ s <- 16.66                 # Standardabweichung 2012
 mu <- 93.29                # Nullwert 2006
 SE <- s/sqrt(n)            # Standardfehler für den Stichprobenmittelwert 2012
 t_wert <- (m - mu)/SE      # Berechnung des t-Werts
-t_wert <- round(t_wert, 3) # t-wert auf drei Stellen runden
+round(t_wert, 3)           # t-wert auf drei Stellen runden und ausgeben
 ```
 
-Der $t$-Wert für unsere Punktschätzung ist $t = 1.549$. Den p-Wert können wir wieder mit dem [Internet-Rechner Students T-Verteilung](http://eswf.uni-koeln.de/glossar/surfstat/t.htm) oder mit `R/jamovi` berechnen. 
+Die Teststatistik für unsere Punktschätzung ist $t = 1.549$. Den p-Wert können wir wieder mit dem [Internet-Rechner Students T-Verteilung](http://eswf.uni-koeln.de/glossar/surfstat/t.htm) oder mit `R/jamovi` berechnen. 
 
 ```{r pvalue_run, echo=TRUE}
 ### R-Code
 
-p_wert <- 2 * (1-pt(t_wert, df = 99)) # Berechnung p-Wert für eine zweiseitige Hypothese
-p_wert <- round(p_wert, 3)            # berechneten p-Wert auf 3 Nachkommastellen runden
-p_wert                                # berechneten p-Wert anzeigen
+p_wert <- 2 * (1-pt(t_wert, df = 99)) # p-Wert für eine zweiseitige Hypothese
+p_wert <- round(p_wert, 3)            # p-Wert auf 3 Nachkommastellen runden
+p_wert                                # p-Wert anzeigen
 ```
 
 Ein $p$-Wert von $p$ = 0.125 bedeutet, dass unter der Annahme, dass $H_0$ wahr ist, ein Ergebnis wie in unserer Stichprobe oder ein noch extremeres Ergebnis mit einer Wahrscheinlichkeit von 12.5 % vorkommt. $p$ = 0.12 ist grösser als unser Signifikanzniveau $\alpha$ = 0.05 und wir verwerfen die $H_0$ nicht. 
@@ -201,12 +206,12 @@ Ein $p$-Wert von $p$ = 0.125 bedeutet, dass unter der Annahme, dass $H_0$ wahr i
 
 *Untersucht wurde die Frage, ob sich die durchschnittliche Laufzeit von Volksläufer:innen über die Jahre geändert hat. Als Nullwert wurde die durchschnittliche Laufzeit von 2006 von 93.29 Minuten angenommen. In einer Zufallsstichprobe n = 100 der Läufer:innen am Cherryblossom Run 2012 betrug die durchschnittliche Laufzeit 95.87 [92.56, 99.18] Minuten, $t(99)$ = 1.549, $p$ = 0.125. Die vorliegenden Daten liefern keine Evidenz dafür, dass sich die durchschnittlichen Laufzeiten zwischen 2006 und 2012 verändert haben.*
 
-### Vertrauensintervall für einen Mittelwert Schritt-für-Schritt: 
+### Konfidenzintervall für einen Mittelwert Schritt-für-Schritt: 
 
-1. Vorbereitung: Berechne den $\bar{x}$, $s$ und $n$ und lege das Vertrauensniveau fest (üblicherweise 95% = 0.95)   
+1. Vorbereitung: Berechne den $\bar{x}$, $s$ und $n$ und lege das Konfidenzniveau fest (üblicherweise 95% = 0.95)   
 2. Voraussetzungen: Prüfe, ob die Voraussetzungen erfüllt sind, dass die Daten aus einer Normalverteilung stammen (QQ-Plot).   
-3. Berechnung: Wenn die Voraussetzungen erfüllt sind, berechne SE und finde $t_{df}$, um das Intervall zu berechnen.   
-4. Schlussfolgerung: Interpretiere das Vertrauensintervall im Zusammenhang mit der Fragestellung.    
+3. Berechnung: Wenn die Voraussetzungen erfüllt sind, berechne SE und finde $t_{df}$, um die Grenzen des Konfidenzintervalls zu berechnen.   
+4. Schlussfolgerung: Interpretiere das Konfidenzintervall im Zusammenhang mit der Fragestellung.    
   
 Code-Tipp: $t_{df}$ lässt sich in `R/jamovi` einfach berechnen:   
 
@@ -215,20 +220,21 @@ Code-Tipp: $t_{df}$ lässt sich in `R/jamovi` einfach berechnen:
 
 # Copy-Paste in R-Konsole: für df muss jeweils n - 1 eingetragen werden
 
-# für ein 95%-Vertrauensintervall
+# für ein 95%-Konfidenzintervall
 qt(.975, df)
 
-# für ein 99%-Vertrauensintervall
+# für ein 99%-Konfidenzintervall
 qt(.995, df)
 
-# für ein 90%-Vertrauensintervall
+# für ein 90%-Konfidenzintervall
 qt(.95, df)
 ```
+
 
 ### Ein-Stichproben-T-Test Schritt-für-Schritt:   
 
 1. Vorbereitung: Identifiziere den für die Frage relevanten Parameter (die Prüfgrösse), formuliere die Hypothesen, lege das Signifikanzniveau $\alpha$ fest und berechne $\bar{x}$, $s$ und $n$.   
-2. Voraussetzungen: Prüfe, ob die Voraussetzungen erfüllt sind, dass die Daten aus einer Normalverteilung stammen (QQ-Plot). 
+2. Voraussetzungen: Prüfe, ob die Voraussetzungen erfüllt sind, dass die Daten aus einer normalverteilten Population stammen (QQ-Plot). 
 3. Wenn die Voraussetzungen erfüllt sind, berechne SE, den $t_{df}$-Wert und den p-Wert.  
 4. Schlussfolgerung: Beurteile den Hypothesentest, indem du den $p$-Wert mit dem Signifkanzniveau $\alpha$ vergleichst. Formuliere eine Schlussfolgerung im Zusammenhang mit der Fragestellung in leicht verständlicher Sprache.  
 
@@ -238,7 +244,7 @@ Code-Tipp: Der $p$-Wert lässt sich in `R/jamovi` einfach berechnen:
 ### R-Code
 
 # p-Wert für eine zweiseitige Hypothese berechnen
-2 * (1 - pt(t_wert, df = n - 1))  # n - 1 = Stichprobenumfang - 1
+2 * (1 - pt(t_wert, df = n - 1))  # df = n - 1 = Stichprobenumfang - 1
 ```
 
 ### R/jamovi
@@ -264,7 +270,11 @@ t.test(x = sample$time,               # sample$time = daten$variable
 
 Von *verbundenen bzw. gepaarten Daten* sprechen wir dann, wenn zwei Variablen voneinander abhängig sind: Dies bedeutet, dass die Werte der einen Messung die Werte der anderen Messung beeinflussen. Das ist der Fall, wenn wir z.B. die Preise für ein Buch in verschiedenen Läden vergleichen oder wenn wir Messungen bei Individuen zu verschiedenen Zeitpunkten, z.B. vor und nach einer Intervention (Prä-Post-Messungen), durchführen.  
 
-Beispiel: In einer Studie wird untersucht, ob die Testpersonen mit einem neuen Schlafmittel länger schlafen als ohne Schlafmittel. Die Studie wird mit 20 Personen durchgeführt. Zuerst wird die Schlafdauer ohne Medikament (Baseline-Messung), dann die Schlafdauer mit Medikament (Follow-Up-Messung) gemessen. Die Tabelle zeigt die Daten zu den ersten vier Probanden: 
+Beispiel: In einer Studie wird untersucht, ob die Testpersonen mit einem neuen Schlafmittel länger schlafen als ohne Schlafmittel. Die Studie wird mit 20 Personen durchgeführt. Zuerst wird die Schlafdauer ohne Medikament (Baseline-Messung), dann die Schlafdauer mit Medikament (Follow-Up-Messung) gemessen. 
+
+Falls Sie die folgenden Schritte nachvollziehen wollen, finden Sie die Daten in `07_schlafmittel.csv`.  
+
+Die Tabelle zeigt die Daten zu den ersten vier Probanden: 
 
 ```{r medi-data-tab}
 medi_data <- read_csv("./data/07_schlafmittel.csv")  # Beispiel aus Hüsler, Zimmermann
@@ -299,7 +309,7 @@ medi2 <- ggplot(medi_data, aes(x = ohne_Med, y = mit_Med)) +
 (medi1 | medi2)
 ```
 
-Das Punktediagramm zeigt, dass die Schlafdauer mit Medikament in einem Zusammenhang mit der Schlafdauer ohne Medikament steht: Probanden, die ohne Medikament länger schlafen, schlafen auch mit Medikament länger.  
+Das Streudiagramm zeigt, dass die Schlafdauer mit Medikament in einem Zusammenhang mit der Schlafdauer ohne Medikament steht: Probanden, die ohne Medikament länger schlafen, schlafen auch mit Medikament länger.  
 
 Wenn wir den Effekt einer Intervention bei gepaarten Daten untersuchen, ist die Prüfgrösse die Differenz der Datenpaare, die sog. **paarweisen Differenzen**. Im vorliegenden Beispiel ist dies die Differenz zwischen der Schlafdauer mit und ohne Medikament. Wenn die Differenzen bei der Datenerhebung noch nicht berechnet wurden, erstellt man eine neue abgeleitete Variable und berechnet für jeden Probanden die paarweisen Differenzen. Dabei ist es wichtig eine konsistente Ordnung einzuhalten: Wenn wir uns für den Effekt des Medikamentes interessieren, berechnen wir die paarweisen Differenzen durch Subtraktion der Schlafdauer ohne Medikament von der Schlafdauer mit Medikament.  
 
@@ -319,7 +329,7 @@ head(medi_data, 4) %>%
   kable_classic(full_width = FALSE)
 ```
 
-Mit dem Mittelwert für paarweise Differenzen als Prüfgrösse haben wir die gleiche Situation, wie beim Einstichproben-Test, nämlich einen Mittelwert den wir gegen einen Nullwert vergleichen, und das weitere Vorgehen ist wie beim Einstichproben-T-Test.  
+Mit dem Mittelwert für paarweise Differenzen als Prüfgrösse haben wir die gleiche Situation, wie beim Einstichproben-T-Test, nämlich einen Mittelwert, den wir gegen einen Nullwert vergleichen, und das weitere Vorgehen ist wie beim Einstichproben-T-Test.  
 
 ### Vorgehen
 
@@ -352,7 +362,7 @@ medi_data %>%
 
 * Prüfe, ob die Voraussetzungen erfüllt sind, dass $\bar{x}_{d}$ aus einer annähernd normal verteilten Population stammt.  
   * Prüfung auf Unabhängigkeit: Es handelt sich um eine Zufallsstichprobe, n < 10% der Population    
-  * Prüfung der Prüfgrösse auf Normalverteilung (QQ-Plot unten)   
+  * Prüfung der Prüfgrösse (= paarweise Differenzen!) auf Normalverteilung (QQ-Plot unten)   
   * Stichprobenumfang: Wenn die Prüfgrösse paarweise Differenzen sind, kann der T-Test ab n > 12 angewendet werden, wenn die Daten annähernd normalverteilt sind. Ab n > 100 ist der T-Test nahezu unbeschränkt durchführbar, unabhängig von der zugrundeliegenden Verteilung.   
   
 ```{r medi-data-qq, fig.height = 4, fig.width = 8, fig.align='center', fig.cap="Histogramm und QQ-Plot für paarweise Differenzen"}
@@ -371,13 +381,13 @@ qq <- ggplot(medi_data, aes(sample = paarweise.Differenzen)) +
 h + qq
 ```
 
-Im Histogramm sind die Daten leicht rechtssteil verteilt. Im QQ-Plot liegen die Punkte weitgehend auf einer Linie. Daher entscheiden wir für normalverteilte Daten.  
+Im Histogramm sind die Daten leicht linksschief verteilt. Im QQ-Plot liegen die Punkte weitgehend auf einer Linie. Daher entscheiden wir für normalverteilte Daten.  
 
 **3. SE, $t_{df}$-Wert p-Wert und 95%-Konfidenzintervall berechnen.**    
 
 $$SE = \frac{0.672}{\sqrt{20}}  = 0.15$$
 
-$$t_{19} = \frac{0.395-0}{0.150} = 2.629$$
+$$t_{df=19} = \frac{0.395-0}{0.150} = 2.629$$
 
 Den p-Wert für t und df = 20-1 können wir wieder mit dem [Internet-Rechner Students T-Verteilung](http://eswf.uni-koeln.de/glossar/surfstat/t.htm) oder mit `R/jamovi` berechnen.
 
@@ -389,7 +399,7 @@ Den p-Wert für t und df = 20-1 können wir wieder mit dem [Internet-Rechner Stu
 
 Mit $p$ = 0.017 ist die Wahrscheinlichkeit für den beobachteten Effekt oder einen stärkeren Effekt kleiner als unser Signifkanzniveau $\alpha = 0.05$ und wir haben Evidenz dafür, dass wir die Nullhypothese zugunsten der Alternativhypothese verwerfen können.   
 
-$$CI_{95} =0.395 \pm t_{0.975, df=19} \times 0.15$$
+$$CI_{95} = \bar{x} \pm t_{0.975, df} \times SE = 0.395 \pm t_{0.975, df=19} \times 0.15$$
 ```{r, echo=TRUE}
 ### R-Code
 
@@ -401,18 +411,24 @@ qt(.975, 19)
 ```{r medi-data-statistics, echo=TRUE}
 ### R-Code
 
+# p-Wert und 95%-CI berechnen
 n <- 20
 s <- .672
 m <- .395
 SE <- s/sqrt(n)
 t <- (.395 - 0)/SE
 p_wert <- 2 * (1-pt(t, df = 20-1))
-p_txt <- paste("p-Wert =", round(p_wert, 3))
+p_out <- paste("p-Wert =", round(p_wert, 3))
 CI95 <- m + c(-1, 1) * qt(.975, 19) * SE
 CI95 <- round(CI95, 3)
+CI95_out <- paste("[", CI95[1], ", ", CI95[2], "]", sep = "")
+
+# Output
+p_out
+CI95_out
 ```
 
-Die Berechnung ergibt ein 95%-Konfidenzintervall für den Mittelwert der Differenz in der Schlafdauer von 0.395 [0.08; 0.71] Stunden. Das 95%-Konfidenzintervall enthält den Nullwert nicht und wir verwerfen die Nullhypothese zugunsten der Alternativhypothese.
+Die Berechnung ergibt ein 95%-Konfidenzintervall für den Mittelwert der Differenz in der Schlafdauer von 0.395 [0.08, 0.71] Stunden. Das 95%-Konfidenzintervall enthält den Nullwert nicht und wir verwerfen die Nullhypothese zugunsten der Alternativhypothese.
 
 **4. Schlussfolgerung formulieren** 
 
@@ -439,7 +455,7 @@ t.test(x = medi_data$paarweise.Differenzen,
 
 Der T-Test für gepaarte Stichproben berechnet zuerst die paarweisen Differenzen und 
 ermittelt anschliessend die Teststatistik. Wenn man die paarweisen Differenzen im 
-Datensatz vorhanden sind, kann der Einstichproben-T-Test durchgeführt werden. Beide 
+Datensatz berechnet hat, kann der Einstichproben-T-Test durchgeführt werden. Beide 
 Varianten kommen zum exakt gleichen Ergebnis.  
 
 `jamovi`-Output
@@ -451,7 +467,7 @@ Wähle `jamovi\..\T-Tests\Paired Samples T-Test`
 
 ## Zweistichproben-T-Test für unabhängige Stichproben   
 
-In diesem Abschnitt beschäftigen wir uns mit der Differenz von zwei Populationsmittelwerten $\mu_1 - \mu_2$ unter der Voraussetzung, dass die Daten nicht gepaart sind. Typisch sind Vergleiche zwischen zwei Gruppen bzw. Stichproben, z.B.  kontrollierte Studien in denen Interventionsgruppe und Kontrollgruppe verglichen werden oder der Vergleich des Gewichts von Neugeborenen von rauchenden und nicht-rauchenden Müttern.  
+In diesem Abschnitt beschäftigen wir uns mit der Differenz von zwei Populationsmittelwerten $\mu_1 - \mu_2$ unter der Voraussetzung, dass die Daten nicht gepaart, also unabhängig, sind. Typisch sind Vergleiche zwischen zwei Gruppen bzw. Stichproben, z.B.  kontrollierte Studien in denen Interventionsgruppe und Kontrollgruppe verglichen werden oder der Vergleich des Gewichts von Neugeborenen von rauchenden und nicht-rauchenden Müttern.  
 
 Die Formeln in diesem Abschnitt werden etwas komplizierter. In der Regel lassen wir die Software die Berechnungen durchführen und müssen nicht mit ihnen arbeiten. Sie stehen hier als Hintergrundinformation und für diejenigen, die von Hand rechnen wollen.    
 
@@ -459,7 +475,7 @@ Die Formeln in diesem Abschnitt werden etwas komplizierter. In der Regel lassen 
 
 Im Folgenden werden zuerst die theoretischen Grundlagen erarbeitet, anschliessend folgt ein Schritt-für-Schritt Beispiel für die Durchführung des Zweistichproben-T-Tests für unabhängige Stichproben.   
 
-Beispiel: Hat die Behandlung mit embryonalen Stammzellen (ESC) einen Effekt auf die Pumpfunktion des Herzens nach einem Herzinfarkt?  
+Beispiel: Hat die Behandlung mit embryonalen Stammzellen (ESC) einen Effekt auf die Pumpfunktion des Herzens nach einem Herzinfarkt? (Die Daten sind im Datensatz `07_stemcell.csv` abgelegt)
 
 Die folgende Tabelle enthält die Kennzahlen aus einem Experiment, bei dem der Effekt von ESC bei Schafen, die einen Herzinfarkt erlitten hatten, geprüft wurde. Jedes dieser Schafe wurde randomisiert der Gruppe ESC oder der Kontrollgruppe zugewiesen, dann wurde ihre Herzkapazität (Auswurffraktion) gemessen. Details zur Studie hier [The Lancet](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(05)67380-1/fulltext). Ein positiver Wert entspricht einer Steigerung der Auswurffraktion, was einer besseren Erholung entspricht. Unsere erste Aufgabe ist es, das 95%-Konfidenzintervall für den Effekt der ESCs auf die Herzfunktion im Vergleich zur Kontrollgruppe zu berechnen.  
 
@@ -513,7 +529,7 @@ Für die Prüfung, ob wir für diese Differenz die t-Verteilung anwenden können
 
 - *Normalverteilung:* Die Daten müssen in beiden Stichproben normalverteilt sein.  
 
-Die Berechnung des Standardfehlers $SE$ und der Anzahl Freiheitsgrade $df$ ist relativ komplex und wird normalerweise von der Statistiksoftware übernommen. Diejenigen, die von Hand rechnen wollen, können diese - vereinfachte - Formel verwenden:   
+Die Berechnung des Standardfehlers $SE$ und der Anzahl Freiheitsgrade $df$ ist in diesem Fall etwas komplizierter und wird normalerweise von der Statistiksoftware übernommen. Diejenigen, die von Hand rechnen wollen, können diese - etwas vereinfachte - Formel verwenden:   
 
 $$SE_{\bar{x_2}-\bar{x_1}} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}$$
 
@@ -572,13 +588,15 @@ CI95 <- 7.83 + c(-1, 1) * 2.31 * 1.95
 
 Das 95%-Konfidenzintervall beinhaltet Null nicht und wir haben Evidenz für einen signifikanten Effekt.
 
-*Schlussfolgerung: Die Behandlung mit embryonalen Stammzellen bei Schafen, die einen Herzinfarkt erlitten haben, verbessert die Pumpfunktion des Herzens signifikant im Durchschnitt um 7.83% [3.33%  12.33%] im Vergleich zu keiner Behandlung.*  
+*Schlussfolgerung: Die Behandlung mit embryonalen Stammzellen bei Schafen, die einen Herzinfarkt erlitten haben, verbessert die Pumpfunktion des Herzens signifikant im Durchschnitt um 7.83% [3.33%, 12.33%] im Vergleich zu keiner Behandlung.*  
 
 ### Der Zweistichproben-T-Test für unabhängige Stichproben Schritt-für-Schritt
 
 Für einen T-Test für einen Mittelwertsunterschied ist eine der Voraussetzungen, dass der Stichprobenumfang $n$ gleich oder grösser als 30 ist. Dies ist für das Beispiel mit den Schafen nicht gegeben und wir verwenden ein neues Beispiel.
 
-Frage: Hat es einen Einfluss auf das Geburtsgewicht von Neugeborenen, wenn schwangere Frauen rauchen? Wir prüfen diese Frage anhand eines Datensatzes, der eine Zufallsstichprobe von 150 Müttern und ihren Neugeborenen umfasst. Die Variable `habit` erfasst, ob die Mutter während der Schwangerschaft geraucht hat oder nicht und die Variable `weight`gibt das Geburtsgewicht in g an. Die Raucherinnengruppe umfasst 50 Mütter, die Nichtraucherinnengruppe 100 Mütter. Die Tabelle gibt die ersten 5 Einträge im Datensatz an:    
+Frage: Hat es einen Einfluss auf das Geburtsgewicht von Neugeborenen, wenn schwangere Frauen rauchen? Wir prüfen diese Frage anhand eines Datensatzes, der eine Zufallsstichprobe von 150 Müttern und ihren Neugeborenen umfasst. Die Variable `smoke` erfasst, ob die Mutter während der Schwangerschaft geraucht hat oder nicht und die Variable `weight`gibt das Geburtsgewicht in g an. Die Raucherinnengruppe umfasst 50 Mütter, die Nichtraucherinnengruppe 100 Mütter. (Die Daten sind im Datensatz `07_geburtsgewicht_g.csv` abgelegt.)   
+
+Die Tabelle gibt die ersten 5 Einträge im Datensatz an:    
 
 ```{r data-births-tab}
 births <- read_csv("./data/07_geburtsgewicht_g.csv")
@@ -592,14 +610,14 @@ kable(births[c(1,60, 70, 3, 71),], caption = "Datensatz Geburtsgewicht (g) und R
 
 Das Vorgehen für die statistische Analyse ist wie bisher:   
 
-1. Vorbereitung: Identifiziere den für die Frage relevanten Parameter (die Prüfgrösse), formuliere die Hypothesen und lege das Signifikanzniveau $\alpha$ fest  
-2. Prüfe, ob die Voraussetzungen erfüllt sind.  
-3. Wenn die Voraussetzungen erfüllt sind, berechne SE, das 95%-Konfidenzintervall, den $t_{df}$-Wert und den $p$-Wert.  
-4. Schlussfolgerung: Beurteile den Hypothesentest, indem du den p-Wert mit dem Signifkanzniveau $\alpha$ vergleichst. Formuliere eine Schlussfolgerung im Zusammenhang mit der Fragestellung in leicht verständlicher Sprache.  
+1. Vorbereitung: Identifiziere den für die Frage relevanten Parameter (die Prüfgrösse), formuliere die Hypothesen und lege das Signifikanzniveau $\alpha$ fest.   
+2. Prüfe, ob die Voraussetzungen (Unabhängigkeit der Daten, Normalverteilung) erfüllt sind.  
+3. Wenn die Voraussetzungen erfüllt sind, berechne $SE$, das 95%-Konfidenzintervall, den $t_{df}$-Wert und den $p$-Wert.  
+4. Schlussfolgerung: Beurteile den Hypothesentest, indem du den $p$-Wert mit dem Signifkanzniveau $\alpha$ vergleichst. Formuliere eine Schlussfolgerung im Zusammenhang mit der Fragestellung in leicht verständlicher Sprache.  
 
 **1. Hypothesen formulieren**   
 
-- Die Prüfgrösse ist $\mu_s - \mu_{ns}$  
+- Die Prüfgrösse ist $\mu_s - \mu_{ns}$  ($s = smoker, ns = nonsmoker)
 - Signifikanzniveau $\alpha = 0.05$   
 
 Hypothesen:  
@@ -609,7 +627,7 @@ Hypothesen:
 **2. Voraussetzungen prüfen**  
 
 - Es handelt sich um eine Zufallsstichprobe, die Daten sind unabhängig.   
-- Auf Grund von Histogramm und QQ-Plot entscheiden wir, dass die Daten normalverteilt sind.     
+- Histogramm und QQ-Plot zeigen eine linksschiefe Verteilung für beide Gruppen. Aus Übungsgründen entscheiden wir jedoch, dass die Daten normalverteilt sind.     
 - Der Stichprobenumfang in jeder Gruppe ist n > 30.   
 - Die Streuung der Daten ist in beiden Stichproben gleich. Wir gehen immer davon aus, dass die Streuung der Daten nicht gleich ist und führen grundsätzlich den **Welch's-Test** durch, der eine Anpassung des Zweistichproben-T-Tests für ungleiche Varianzen ist.  
 
@@ -692,8 +710,11 @@ Neugeborene von Nichtraucherinnen sind im Durchschnitt um 181.6 [-62.4; 425.6] s
 Berechnung des t-Werts: 
 
 $$t = \frac{181.6 - 0}{121.4} = 1.496$$
-```{r}
+```{r, echo=TRUE}
+### R-Code
+
 t <- (181.6 - 0)/121.4
+t
 ```
 
 Berechnung des $p$-Werts:  
@@ -703,8 +724,7 @@ Für die Berechnung des p-Werts verwenden wir für die Anzahl Freiheitsgrade den
 ```{r pvalue-births, echo=TRUE}
 ### R-Code
 
-# p-Wert für eine zweiseitige Hyptothese und df = 49
-2 * (1-pt(1.496, df = 49)) 
+2 * (1-pt(1.496, df = 49)) # p-Wert für eine zweiseitige Hypothese und df = 49 
 ```
 
 $p = 0.141$; Dieser $p$-Wert ist grösser als $\alpha = 0.05$ und wir haben keine ausreichende Evidenz, um die Nullhypothese zu verwerfen.
@@ -745,7 +765,7 @@ Die bisher besprochenen Testverfahren (t-Tests) können nur durchgeführt werden
 2. Der minimale Stichprobenumfang bei gepaarten Daten sollte n > 12 und bei unabhängigen Daten n > 30 sein.  
 3. Es handelt sich um quantitative Daten.  
 
-Es stellt sich nun die Frage, wie man Hypothesentests durchführt, wenn diese Bedingungen nicht erfüllt sind.  
+Es stellt sich nun die Frage, wie man Hypothesentests durchführt, wenn diese Bedingungen nicht erfüllt sind, wie im Beispiel der rauchenden Mütter und dem Geburtsgewicht ihrer Babies.  
 
 Ist die Verteilung der Daten nicht bekannt, so müssen andere Testverfahren, sog. nicht-parametrische Verfahren verwendet werden. Diese stellen keine Annahme bezüglich der Verteilung der Daten voraus und eignen sich daher besonders für kleine Stichproben, bei denen die Beurteilung von Normalitätstests oft mit einer grossen Unsicherheit verbunden ist. Ein weiterer Vorteil der nichtparametrischen Verfahren besteht darin, dass auch qualitativ-ordinalen Daten, z.B. VAS-Skalen oder Schulnoten, analysiert werden können.
 
@@ -761,7 +781,7 @@ Mathematisches Detail (nicht zu lernen): Die nichtparametrischen Methoden arbeit
 
 Der Wilcoxon-Vorzeichenrangtest wird für gepaarte Daten oder den Einstichprobenfall gewählt.  
 
-Beispiel: Wie Lange dauert eine Schwangerschaft? Und hängt die genaue Bestimmung von der Untersuchungsmethode ab? Zur Verfügung stehen zwei Methoden um die Schwangerschaftsdauer zu bestimmen: Einerseits die Methode der letzten Menstruationsperiode (LMP) und andererseits die Ultraschallmethode (US). Zufällig werden zehn schwangere Frauen ausgewählt und nach beiden Methoden die Schwangerschaftsdauer bestimmt. Die Untersuchung wird blindiert durchgeführt, so dass die LMP-Untersucher:innen die Ergebnisse der US-Untersucher:innen nicht kennen und umgekehrt.  
+Beispiel: Wie Lange dauert eine Schwangerschaft? Und hängt die genaue Bestimmung von der Untersuchungsmethode ab? Zur Verfügung stehen zwei Methoden um die Schwangerschaftsdauer zu bestimmen: Einerseits die Methode der letzten Menstruationsperiode (LMP) und andererseits die Ultraschallmethode (US). Zufällig werden zehn schwangere Frauen ausgewählt und nach beiden Methoden die Schwangerschaftsdauer bestimmt. Die Untersuchung wird blindiert durchgeführt, so dass die LMP-Untersucher:innen die Ergebnisse der US-Untersucher:innen nicht kennen und umgekehrt. (Die Daten sind im Datensatz `07_schwangerschaft.csv` abgelegt.)  
 
 Die Bestimmung der Schwangerschaftsdauer bei zehn schwangeren Frauen einer einfachen Stichprobe aus der gegebenen Population liefert folgende LMP und US Daten:
 
@@ -773,7 +793,7 @@ ss <- tibble(
 ) %>% 
   mutate(LMPminusUS = LMP - US)
 
-# write_csv(ss, file = "../Datasets/schwangerschaft.csv")
+# write_csv(ss, file = "./data/07_schwangerschaft.csv")
 
 ss %>% 
   kbl(caption = "Daten für Schwangerschaftsdauer") %>% 
@@ -807,7 +827,8 @@ ss %>%
   geom_boxplot(show.legend = FALSE) +
   geom_point(color = COL[1], size = 3, alpha = .7) +
   ylab("Tage") +
-  theme_grey()
+  theme_grey() +
+  ggtitle("Vergleich SS-Dauer: LMP- vs. US-Methode (n = 10)")
 ```
 
 Der Vergleich von Mittelwert und Median und die Boxplots zeigen, dass die Daten linkssteil verteilt sind. Zudem ist der Stichprobenumfang mit n = 10 klein. Die Voraussetzungen für einen t-Test für gepaarte Daten sind nicht gegeben.   
@@ -823,7 +844,7 @@ Signifikanzniveau: $\alpha = 0.05$
 
 **Vorgehen Wilcoxon-Vorzeichenrangtest**  
 
-[Das Prinzip des Wilcoxon-Vorzeichen-Rangtests wird hier exemplarisch an einem Beispiel erläutert. Üblicherweise wird der Test in einem Statistikprogramm durchgeführt.]  
+*Das Prinzip des Wilcoxon-Vorzeichen-Rangtests wird hier exemplarisch an einem Beispiel erläutert. Üblicherweise wird der Test in einem Statistikprogramm durchgeführt.*   
 
 Gilt die Nullhypothese, so kann die Differenz der LMP- und US-Werte einer schwangeren Frau sowohl positiv wie auch negativ sein; weder positive noch negative Werte sollten überwiegen und die Differenzen sollten symmetrisch um Null verteilt sein. Der Wilcoxon-Vorzeichen-Rangtest prüft, ob die paarweisen Differenzen symmetrisch mit dem *Median* gleich Null verteilt sind.   
 
@@ -875,7 +896,7 @@ Berechnung des p-Werts für $W = 47$ und $n = 10$
 
 W <- 47                            
 p_Wert <- 2 * psignrank(W, n = 10, lower.tail = FALSE) 
-p_Wert            
+round(p_Wert, 3)            
 ```
 
 *Schlussfolgerung: In einer Stichprobe von n = 10 schwangeren Frauen wurde die Frage untersucht, wie lange eine Schwangerschaft dauert und ob die Untersuchungsmethoden US und LMP zum gleichen Ergebnis kommen. Die Methode US ergibt gegenüber der Methode LMP eine um durchschnittlich um 6.2 Tage  kürzere Schwangerschaftsdauer, Wilcoxon-Vorzeichenrangtest W = 47, p = 0.037.*  
@@ -896,18 +917,18 @@ wilcox.test(ss$LMP, ss$US,
 Anmerkung:   
 
 - Bei der Berechnung in `R` kann entspricht die ausgegebene *Teststatistik V*  $W$.  
-- In `R` kann entschieden werden, ob die Kontinuitätskorrektur durchgeführt wird oder nicht Bei unterschiedlichen Stichprobenumfängen sollte dies immer geschehen. `jamovi` führt die Kontinuitätskorrektur immer durch.   
+- In `R` kann entschieden werden, ob die Kontinuitätskorrektur durchgeführt wird oder nicht. Bei unterschiedlichen Stichprobenumfängen sollte dies immer geschehen. `jamovi` führt die Kontinuitätskorrektur immer durch.   
 
 
 `jamovi\..\T-Tests\Paired Samples T-Test > Wilcoxon Rank`
 
 ![jamovi-Output Wilcoxon Rank](./illustrations/07_jamovi_wilcoxRank.png)  
 
-### Wilcoxon-Rangsummentest   
+### Mann-Whitney-U-Test  
 
-Der Wilcoxon-Rangsummentest (= Mann-Whitney-U-Test) wird für den Vergleich von zwei Mittelwerten verwendet, wenn der Stichprobenumfang n < 30 ist oder wenn die Daten nicht normalverteilt sind.   
+Der Mann-Whitney-U-Test (= Wilcoxon-Rangsummentest) wird für den Vergleich von zwei Mittelwerten verwendet, wenn der Stichprobenumfang n < 30 ist oder wenn die Daten nicht normalverteilt sind.   
 
-Beispiel: Erreichen Studierende, die während einer Woche täglich 30 Minuten Statistikübungen machen, bessere Noten in einer Statistikprüfung? Für diese Studie wurden 15 Studierende zufällig ausgewählt und zufällig den Gruppen INT (n = 8) und CON (n = 7) zugeteilt. Beide Gruppen besuchten die Statistikvorlesung. Die Studierenden der Gruppe INT machten zusätzlich während einer Woche täglich 30 Min. Statistikübungen, die Gruppe CON machte keine Statistikübungen. Nach einer Woche wurde ein Statistiktest durchgeführt, der mit 0 bis 100 Punkten bewertet wurde.
+Beispiel: Erreichen Studierende, die während einer Woche täglich 30 Minuten Statistikübungen machen, bessere Noten in einer Statistikprüfung? Für diese Studie wurden 15 Studierende zufällig ausgewählt und zufällig den Gruppen INT (n = 8) und CON (n = 7) zugeteilt. Beide Gruppen besuchten die Statistikvorlesung. Die Studierenden der Gruppe INT machten zusätzlich während einer Woche täglich 30 Min. Statistikübungen, die Gruppe CON machte keine Statistikübungen. Nach einer Woche wurde ein Statistiktest durchgeführt, der mit 0 bis 100 Punkten bewertet wurde. (Die Daten sind im Datensatz `07_statex.csv` abgelegt) 
 
 ```{r data-statex-tab, fig.cap="Daten Statistikübungen"}
 statex <- tibble(
@@ -915,7 +936,7 @@ statex <- tibble(
   Punkte = c(89, 92, 94, 96, 91, 99, 84, 90, 88, 93, 95, 75, 72, 80, 81)
 )
 
-# write_csv(statex, file = "../Datasets/statex.csv")
+# write_csv(statex, file = "../data/07_statex.csv")
 
 statex %>% 
   pivot_wider(names_from = Gruppe, values_from = Punkte) %>% 
@@ -941,7 +962,8 @@ Die deskriptive Analyse ergibt, dass die Interventionsgruppe im Durchschnitt 8.4
 ```{r statex-bp-fig, fig.cap="Boxplot für Statistikresultate"}
 ggplot(statex, aes(x = Gruppe, y = Punkte, color = Gruppe)) +
   geom_boxplot(show.legend = FALSE) +
-  theme_grey()
+  theme_grey() +
+  ggtitle("Score Statistikexamen", subtitle = "CON keine Übungen (n = 7), INT 30 Min Übungen/Woche (n = 8) ")
 ```
 
 Hypothesen
@@ -1032,7 +1054,7 @@ wilcox.test(
 
 ![jamovi-Output Mann Whitney U-Test](./illustrations/07_jamovi_mannWhitneyU.png){width=60%} 
 
-#### Voraussetzungen für den Wilcoxon-Rangsummen-Test:   
+#### Voraussetzungen für den Mann-Whitney-U-Test:   
 
 - Die Daten sind mindestens qualitativ-ordinal skaliert (Likert-Skalen, visuelle Analogskalen).  
 - Es müssen zwei unabhängige Zufallsstichproben vorliegen.   
@@ -1045,9 +1067,10 @@ notequal <- tibble(
   Wert = c(rchisq(20, df = 2), rchisq(20, df = 3))
 )
 
+value <- rbeta(20, 2, 6)
 equal <- tibble(
   Stichprobe = c(rep("SP1", 20), rep("SP2", 20)),
-  Wert = c(rchisq(20, df = 6), rchisq(20, df = 6) + rnorm(20, mean = 1))
+  Wert = c(value, value + rnorm(20, mean = .1, sd = .02))
 )
 
 p_equal <- ggplot(equal, aes(x = Stichprobe, y = Wert, color = Stichprobe)) +
@@ -1067,5 +1090,24 @@ p_notequal <- ggplot(notequal, aes(x = Stichprobe, y = Wert, color = Stichprobe)
   theme_grey()
 
 p_equal + p_notequal
+
+equal %>% 
+  group_by(Stichprobe) %>% 
+  summarise(
+    M = mean(Wert),
+    Median = median(Wert)) %>% 
+  kbl(digits = 2, caption = "Mittelwert und Median für Abb. links") %>% 
+  kable_classic(full_width = FALSE)
+
+notequal %>% 
+  group_by(Stichprobe) %>% 
+  summarise(
+    M = mean(Wert),
+    Median = median(Wert)) %>% 
+  kbl(digits = 2, caption = "Mittelwert und Median für Abb. rechts") %>% 
+  kable_classic(full_width = FALSE)
 ```
 
+Boxplot und Kennzahlen beider Stichproben in der Abbildung links zeigen eine linksschiefe Verteilung. Die Daten in der rechten Abbildung zeigen für die Gruppe SP1 eine linksschiefe und für die Stichprobe SP2 eine rechtsschiefe Verteilung.   
+
+Übung: Im Beispiel für den t-Test für unabhängige Stichproben haben wir festgestellt, dass die Daten nicht aus einer normalverteilten Population stammen und die korrekte Testwahl wäre der Mann-Whitney-U-Test. Führen Sie diesen durch und vergleichen Sie das Resultat mit dem t-Test für unabhängige Stichproben.   

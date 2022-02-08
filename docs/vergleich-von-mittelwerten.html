@@ -30,7 +30,7 @@ bookdown::gitbook, set in the _output.yml file.</p>" />
 <meta name="author" content="Lukas Stammler" />
 
 
-<meta name="date" content="2022-02-07" />
+<meta name="date" content="2022-02-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -167,7 +167,7 @@ div.csl-indent {
 <li><a href="./">Leitfaden Statistik</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Über diesen Leitfaden</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a></li>
 <li class="chapter" data-level="2" data-path="einführung.html"><a href="einführung.html"><i class="fa fa-check"></i><b>2</b> Einführung</a></li>
 <li class="chapter" data-level="3" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptive Statistik</a>
 <ul>
@@ -267,7 +267,7 @@ div.csl-indent {
 <li class="chapter" data-level="6.4" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-test-für-eine-einfache-stichprobe"><i class="fa fa-check"></i><b>6.4</b> T-Test für eine einfache Stichprobe</a>
 <ul>
 <li class="chapter" data-level="6.4.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vorgehen"><i class="fa fa-check"></i><b>6.4.1</b> Vorgehen</a></li>
-<li class="chapter" data-level="6.4.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vertrauensintervall-für-einen-mittelwert-schritt-für-schritt"><i class="fa fa-check"></i><b>6.4.2</b> Vertrauensintervall für einen Mittelwert Schritt-für-Schritt:</a></li>
+<li class="chapter" data-level="6.4.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#konfidenzintervall-für-einen-mittelwert-schritt-für-schritt"><i class="fa fa-check"></i><b>6.4.2</b> Konfidenzintervall für einen Mittelwert Schritt-für-Schritt:</a></li>
 <li class="chapter" data-level="6.4.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#ein-stichproben-t-test-schritt-für-schritt"><i class="fa fa-check"></i><b>6.4.3</b> Ein-Stichproben-T-Test Schritt-für-Schritt:</a></li>
 <li class="chapter" data-level="6.4.4" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi"><i class="fa fa-check"></i><b>6.4.4</b> R/jamovi</a></li>
 </ul></li>
@@ -286,7 +286,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="6.7.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rang-methoden-rank-tests"><i class="fa fa-check"></i><b>6.7.1</b> Rang-Methoden (rank tests)</a></li>
 <li class="chapter" data-level="6.7.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#wilcoxon-vorzeichenrangtest"><i class="fa fa-check"></i><b>6.7.2</b> Wilcoxon-Vorzeichenrangtest</a></li>
-<li class="chapter" data-level="6.7.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#wilcoxon-rangsummentest"><i class="fa fa-check"></i><b>6.7.3</b> Wilcoxon-Rangsummentest</a></li>
+<li class="chapter" data-level="6.7.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>6.7.3</b> Mann-Whitney-U-Test</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html"><i class="fa fa-check"></i><b>7</b> Korrelation und linearer Zusammenhang</a>
@@ -384,8 +384,8 @@ div.csl-indent {
 <li><p>Identifiziere Daten als <strong>gepaart bzw. verbunden</strong>, wenn zu jeder Beobachtungseinheit zwei Messungen der gleichen Variable vorliegen. Beispiele sind Prä-Post-Messungen (Messwiederholungen) bei einer Interventionsstudie oder die Preise für ein Buch in verschiedenen Buchhandlungen.</p></li>
 <li><p>Berechne bei gepaarten Daten stets die <strong>Differenz zwischen den Datenpaaren</strong> (paarweise Differenzen). Dies ist die Prüfgrösse, mit der anschliessend statistische Tests durchgeführt werden können.</p></li>
 <li><p>Identifiziere Daten als <strong>unabhängig</strong>, wenn die Werte einer Stichprobe keine Informationen über die Werte der anderen Stichprobe enthalten. Dies ist z.B. bei kontrollierten Studien der Fall, bei denen Daten von Interventions- und Kontrollgruppen miteinander verglichen werden: Die Daten der Interventionsgruppe sind unabhängig von den Daten der Kontrollgruppe und enthalten keine Information über die Kontrollgruppe.</p></li>
-<li><p>Beachte, dass beim Vergleich der Differenz von zwei Parametern, die Interpretation von Vertrauensintervallen stets eine vergleichende Aussage beinhaltet; erwähne, welche Gruppe den grösseren Parameterwert hat.</p></li>
-<li><p>Verwerfe die Nullhypothese, wenn ein Vertrauensintervall für eine Differenz zwischen zwei Parametern den Wert 0 enthält.</p></li>
+<li><p>Beachte, dass beim Vergleich der Differenz von zwei Parametern, die Interpretation von Konfidenzintervallen stets eine vergleichende Aussage beinhaltet; erwähne, welche Gruppe den grösseren Parameterwert hat.</p></li>
+<li><p>Verwerfe die Nullhypothese, wenn ein Konfidenzintervall für eine Differenz zwischen zwei Parametern den Wert 0 enthält.</p></li>
 <li><p>Verwende <strong>nichtparametrische Testverfahren</strong>, wenn der Stichprobenumfang klein ist (n &lt; 30, Ausnahme gepaarter t-Test möglich ab n &gt; 12) und/oder Hinweise vorliegen, dass die Populationsdaten nicht normal verteilt sind.</p></li>
 <li><p>Gehe bei Hypothesentests stets systematisch vor:</p></li>
 </ol>
@@ -394,7 +394,7 @@ div.csl-indent {
 </li>
 <li>Prüfe die Voraussetzungen (1) Unabhängigkeit der Daten, (2) Normalverteilung der Prüfgrösse und wähle je nach Ergebnis den richtigen <a href="https://rpubs.com/stammler/739797">Test</a> aus.<br />
 </li>
-<li>Berechne das Vertrauensintervall für die Prüfgrösse.<br />
+<li>Berechne das Konfidenzintervall für die Prüfgrösse.<br />
 </li>
 <li>Berechne die Teststatistik t (t-Test), W (Wilcoxon-Vorzeichen-Test) oder U (Mann-Whitney-U-Test) und den p-Wert.<br />
 </li>
@@ -403,9 +403,9 @@ div.csl-indent {
 </div>
 <div id="t-tests" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> T-Tests</h2>
-<p>T-Tests sind <em>die</em> klassischen Hypothesentests. Sie gehören zur Gruppe der sog. <em>parametrischen</em> Tests. Damit parametrische Tests durchgeführt werden können, müssen die Daten in der annähernd normalverteilt sein. Wenn diese Voraussetzung nicht erfüllt ist, können alternativ <em>nicht-parametrische</em> Tests verwendet werden. Sie werden auch als <em>verteilungsfreie</em> Tests bezeichnet, da sie keine Annahme über die Verteilung der Daten voraussetzen. Nichtparametrische Tests sind in mehr Situationen zulässig als parametrische Tests.</p>
+<p>T-Tests sind <em>die</em> klassischen Hypothesentests. Sie gehören zur Gruppe der sog. <em>parametrischen</em> Tests. Damit parametrische Tests durchgeführt werden können, müssen die Daten in der Population annähernd normalverteilt sein. Wenn diese Voraussetzung nicht erfüllt ist, können alternativ <em>nicht-parametrische</em> Tests verwendet werden. Sie werden auch als <em>verteilungsfreie</em> Tests bezeichnet, da sie keine Annahme über die Verteilung der Daten voraussetzen. Nichtparametrische Tests sind in mehr Situationen zulässig als parametrische Tests.</p>
 <p>Warum sollen wir dann überhaupt parametrische Tests einsetzen? Parametrische Tests haben eine grössere Teststärke (Power) als nicht-parametrische Tests. Mit anderen Worten: Wenn tatsächlich ein Effekt in der Population vorliegt, haben parametrische Tests bessere Chancen, diesen Effekt auch nachzuweisen. Zudem prüfen nicht-parametrische Tests typischerweise eine etwas andere Nullhypothese als die parametrischen Tests.</p>
-<p>Im Zweifel gilt deshalb: <em>Wenn wir Evidenz für normalverteilte Daten haben, verwenden wir einen parametrischen Test. Wenn die Verteilung der Daten aber den Voraussetzungen eines parametrischen Tests widerspricht, weichen wir auf nichtparametrische Tests aus.</em></p>
+<p>Im Zweifel gilt deshalb: <em>Wenn wir keine Evidenz dagegen haben, dass unsere Daten aus einer normalverteilten Population stammen, verwenden wir einen parametrischen Test. Wenn die Verteilung der Daten aber den Voraussetzungen eines parametrischen Tests widerspricht, weichen wir auf nichtparametrische Tests aus.</em></p>
 <p>Nichtparametrische Testverfahren werden am Ende dieses Kapitels vorgestellt.</p>
 </div>
 <div id="t-verteilung-versus-normalverteilung" class="section level2" number="6.3">
@@ -414,9 +414,10 @@ div.csl-indent {
 </div>
 <div id="t-test-für-eine-einfache-stichprobe" class="section level2" number="6.4">
 <h2><span class="header-section-number">6.4</span> T-Test für eine einfache Stichprobe</h2>
-<p>(Im folgenden Beispiel wird auch die Berechnung von Vertrauensintervallen für t-verteilte Daten besprochen. Der eigentliche T-Test ist der letzte Schritt 4.)</p>
-<p>Beispiel: Werden Volksläufer über die Jahre eher schneller oder langsamer? Für die Bearbeitung diese Frage liegen die Daten des Cherryblossom-Volkslaufs der jeweils im Frühjahr in Washington, DC durchgeführt wird, vor. Die Laufstrecke ist 16.1 km (10 Meilen) lang <a href="https://www.cherryblossom.org/">www.cherryblossom.org</a>.</p>
+<p>(Im folgenden Beispiel wird auch die Berechnung von Konfidenzintervallen für t-verteilte Daten besprochen. Der eigentliche T-Test ist der letzte Schritt 4.)</p>
+<p>Beispiel: Werden Volksläufer über die Jahre eher schneller oder langsamer? Für die Bearbeitung diese Frage liegen die Daten des Cherryblossom-Volkslaufs, der jeweils im Frühjahr in Washington, DC durchgeführt wird, vor. Die Laufstrecke ist 16.1 km (10 Meilen) lang <a href="https://www.cherryblossom.org/">www.cherryblossom.org</a>.</p>
 <p>Die durchschnittliche Laufzeit für alle Läufer:innen, die den Lauf 2006 beendet haben betrug 93.29 Minuten. Zum Vergleich liegt uns eine Zufallsstichprobe von 100 Läufer:innen vor, die am Lauf im Jahre 2012 teilgenommen haben (die Teilnehmerzahl betrug im Jahr 2012 16’924 Läufer:innen). Uns interessiert, ob die Läufer:innen zwischen 2006 und 2012 im Durchschnitt schneller oder langsamer geworden sind.</p>
+<p>Falls Sie die folgenden Schritte nachvollziehen wollen, finden Sie die Daten in <code>07_run12_100.csv</code>.</p>
 <div id="vorgehen" class="section level3" number="6.4.1">
 <h3><span class="header-section-number">6.4.1</span> Vorgehen</h3>
 <p><strong>1. Hypothesen formulieren</strong></p>
@@ -424,6 +425,7 @@ div.csl-indent {
 <p><span class="math inline">\(H_0: \mu_{2012} = 93.29\)</span>, es gibt keinen Unterschied in der durchschnittlichen Laufzeit zwischen 2006 und 2012.<br />
 <span class="math inline">\(H_A: \mu_{2012} \neq 93.39\)</span>, es gibt einen Unterschied in der durchschnittlichen Laufzeit zwischen 2006 und 2012.</p>
 <p>Ist das eine einseitige oder eine zweiseitige <span class="math inline">\(H_A\)</span>?</p>
+<p>Das Signifikanzniveau legen wir auf <span class="math inline">\(\alpha = 0.05\)</span> fest.</p>
 <p><strong>2. Test-Voraussetzungen prüfen</strong></p>
 <ul>
 <li>Wir bestimmen Mittelwert und Standardabweichung und erstellen ein Histogramm für die Laufzeit.</li>
@@ -482,91 +484,101 @@ Abbildung 6.1: Cherryblossom-Run 2012: Laufzeiten für die Stichprobe n = 100
 Abbildung 6.2: QQ-Plot fpr Cherryblossom-Run 2012, n = 100
 </p>
 </div>
-<p><strong>3. Berechnung des 95%-Vertrauensintervalls für <span class="math inline">\(\bar{x}\)</span></strong></p>
+<p><strong>3. Berechnung des 95%-Konfidenzintervalls für <span class="math inline">\(\bar{x}\)</span></strong></p>
 <p><span class="math display">\[SE = \frac{s}{\sqrt{n}} = \frac{16.66}{\sqrt{100}}=1.66\]</span></p>
 <p><span class="math display">\[CI_{95} = \bar{x} \pm t_{df} \times SE\]</span></p>
-<p>Wir verwenden hier für die Berechnung des 95%-Intervalls den t-Wert für die Anzahl Freiheitsgrade df = (100 - 1) = 99. Am einfachsten finden Sie den t-Wert mit dem <a href="http://eswf.uni-koeln.de/glossar/surfstat/t.htm">Internet-Rechner Students T-Verteilung</a>.</p>
+<p>Wir verwenden hier für die Berechnung des 95%-Konfidenzintervalls den t-Wert für die Anzahl Freiheitsgrade df = (100 - 1) = 99. Am einfachsten finden Sie den t-Wert mit dem <a href="http://eswf.uni-koeln.de/glossar/surfstat/t.htm">Internet-Rechner Students T-Verteilung</a>.</p>
 <p>Die Berechnung in <code>R/jamovi</code>:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="vergleich-von-mittelwerten.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb54-2"><a href="vergleich-von-mittelwerten.html#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-3"><a href="vergleich-von-mittelwerten.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co"># die Funktion qt() berechnet eine Quantile für eine bestimmte Fläche und </span></span>
-<span id="cb54-4"><a href="vergleich-von-mittelwerten.html#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co"># einen bestimmten Freiheitsgrad (s. unten)</span></span>
-<span id="cb54-5"><a href="vergleich-von-mittelwerten.html#cb54-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-6"><a href="vergleich-von-mittelwerten.html#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="at">df =</span> <span class="dv">99</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="vergleich-von-mittelwerten.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb1-2"><a href="vergleich-von-mittelwerten.html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="vergleich-von-mittelwerten.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># die Funktion qt() berechnet eine Quantile für eine bestimmte Fläche und </span></span>
+<span id="cb1-4"><a href="vergleich-von-mittelwerten.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># einen bestimmten Freiheitsgrad df</span></span>
+<span id="cb1-5"><a href="vergleich-von-mittelwerten.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="vergleich-von-mittelwerten.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="at">df =</span> <span class="dv">99</span>)</span></code></pre></div>
 <pre><code>## [1] 1.984217</code></pre>
-<p>Das 95%-Vertrauensintervall für die durchschnittliche Laufzeit 2012 ist [92.56; 99.18]. Es beinhaltet den Durchschnittswert von 2006 von 93.29 Minuten und wir haben keine Evidenz dafür, die Nullhypothese zu verwerfen.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="vergleich-von-mittelwerten.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code   </span></span>
+<span id="cb3-2"><a href="vergleich-von-mittelwerten.html#cb3-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span>                       <span class="co"># Stichprobenumfang </span></span>
+<span id="cb3-3"><a href="vergleich-von-mittelwerten.html#cb3-3" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fl">95.87</span>                     <span class="co"># Mittelwert</span></span>
+<span id="cb3-4"><a href="vergleich-von-mittelwerten.html#cb3-4" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fl">16.66</span>                     <span class="co"># Standardabweichung</span></span>
+<span id="cb3-5"><a href="vergleich-von-mittelwerten.html#cb3-5" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">&lt;-</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n)                <span class="co"># Standardfehler berechnen</span></span>
+<span id="cb3-6"><a href="vergleich-von-mittelwerten.html#cb3-6" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">qt</span>(.<span class="dv">975</span>, <span class="at">df =</span> <span class="dv">100-1</span>)      <span class="co"># t-Wert für 95%-CI und df = n-1 berechnen</span></span>
+<span id="cb3-7"><a href="vergleich-von-mittelwerten.html#cb3-7" aria-hidden="true" tabindex="-1"></a>CI95 <span class="ot">&lt;-</span> m <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> t <span class="sc">*</span> SE  <span class="co"># Grenzen für 95%-CI berechnen</span></span>
+<span id="cb3-8"><a href="vergleich-von-mittelwerten.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(CI95, <span class="dv">2</span>)                 <span class="co"># 95%-CI gerundet auf 2 Nachkommastellen ausgeben</span></span></code></pre></div>
+<pre><code>## [1] 92.56 99.18</code></pre>
+<p>Das 95%-Konfidenzintervall für die durchschnittliche Laufzeit 2012 ist [92.56; 99.18]. Es beinhaltet den Durchschnittswert von 2006 von 93.29 Minuten und wir haben keine Evidenz gegen die Nullhypothese.</p>
 <p><strong>4. Berechnung des p-Werts: Ein-Stichproben-T-Test</strong></p>
 <p>Die Berechnung des t-Werts erfolgt gleich wie für den z-Wert:</p>
 <p><span class="math display">\[t = \frac{\bar{x} - \mu_0}{SE}\]</span></p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="vergleich-von-mittelwerten.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb56-2"><a href="vergleich-von-mittelwerten.html#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-3"><a href="vergleich-von-mittelwerten.html#cb56-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span>                   <span class="co"># Stichprobenumfang der Stichprobe 2012</span></span>
-<span id="cb56-4"><a href="vergleich-von-mittelwerten.html#cb56-4" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fl">95.87</span>                 <span class="co"># Stichprobenmittelwert 2012</span></span>
-<span id="cb56-5"><a href="vergleich-von-mittelwerten.html#cb56-5" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fl">16.66</span>                 <span class="co"># Standardabweichung 2012</span></span>
-<span id="cb56-6"><a href="vergleich-von-mittelwerten.html#cb56-6" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fl">93.29</span>                <span class="co"># Nullwert 2006</span></span>
-<span id="cb56-7"><a href="vergleich-von-mittelwerten.html#cb56-7" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">&lt;-</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n)            <span class="co"># Standardfehler für den Stichprobenmittelwert 2012</span></span>
-<span id="cb56-8"><a href="vergleich-von-mittelwerten.html#cb56-8" aria-hidden="true" tabindex="-1"></a>t_wert <span class="ot">&lt;-</span> (m <span class="sc">-</span> mu)<span class="sc">/</span>SE      <span class="co"># Berechnung des t-Werts</span></span>
-<span id="cb56-9"><a href="vergleich-von-mittelwerten.html#cb56-9" aria-hidden="true" tabindex="-1"></a>t_wert <span class="ot">&lt;-</span> <span class="fu">round</span>(t_wert, <span class="dv">3</span>) <span class="co"># t-wert auf drei Stellen runden</span></span></code></pre></div>
-<p>Der <span class="math inline">\(t\)</span>-Wert für unsere Punktschätzung ist <span class="math inline">\(t = 1.549\)</span>. Den p-Wert können wir wieder mit dem <a href="http://eswf.uni-koeln.de/glossar/surfstat/t.htm">Internet-Rechner Students T-Verteilung</a> oder mit <code>R/jamovi</code> berechnen.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="vergleich-von-mittelwerten.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb57-2"><a href="vergleich-von-mittelwerten.html#cb57-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-3"><a href="vergleich-von-mittelwerten.html#cb57-3" aria-hidden="true" tabindex="-1"></a>p_wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(t_wert, <span class="at">df =</span> <span class="dv">99</span>)) <span class="co"># Berechnung p-Wert für eine zweiseitige Hypothese</span></span>
-<span id="cb57-4"><a href="vergleich-von-mittelwerten.html#cb57-4" aria-hidden="true" tabindex="-1"></a>p_wert <span class="ot">&lt;-</span> <span class="fu">round</span>(p_wert, <span class="dv">3</span>)            <span class="co"># berechneten p-Wert auf 3 Nachkommastellen runden</span></span>
-<span id="cb57-5"><a href="vergleich-von-mittelwerten.html#cb57-5" aria-hidden="true" tabindex="-1"></a>p_wert                                <span class="co"># berechneten p-Wert anzeigen</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="vergleich-von-mittelwerten.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb5-2"><a href="vergleich-von-mittelwerten.html#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="vergleich-von-mittelwerten.html#cb5-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span>                   <span class="co"># Stichprobenumfang der Stichprobe 2012</span></span>
+<span id="cb5-4"><a href="vergleich-von-mittelwerten.html#cb5-4" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fl">95.87</span>                 <span class="co"># Stichprobenmittelwert 2012</span></span>
+<span id="cb5-5"><a href="vergleich-von-mittelwerten.html#cb5-5" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fl">16.66</span>                 <span class="co"># Standardabweichung 2012</span></span>
+<span id="cb5-6"><a href="vergleich-von-mittelwerten.html#cb5-6" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fl">93.29</span>                <span class="co"># Nullwert 2006</span></span>
+<span id="cb5-7"><a href="vergleich-von-mittelwerten.html#cb5-7" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">&lt;-</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n)            <span class="co"># Standardfehler für den Stichprobenmittelwert 2012</span></span>
+<span id="cb5-8"><a href="vergleich-von-mittelwerten.html#cb5-8" aria-hidden="true" tabindex="-1"></a>t_wert <span class="ot">&lt;-</span> (m <span class="sc">-</span> mu)<span class="sc">/</span>SE      <span class="co"># Berechnung des t-Werts</span></span>
+<span id="cb5-9"><a href="vergleich-von-mittelwerten.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(t_wert, <span class="dv">3</span>)           <span class="co"># t-wert auf drei Stellen runden und ausgeben</span></span></code></pre></div>
+<pre><code>## [1] 1.549</code></pre>
+<p>Die Teststatistik für unsere Punktschätzung ist <span class="math inline">\(t = 1.549\)</span>. Den p-Wert können wir wieder mit dem <a href="http://eswf.uni-koeln.de/glossar/surfstat/t.htm">Internet-Rechner Students T-Verteilung</a> oder mit <code>R/jamovi</code> berechnen.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="vergleich-von-mittelwerten.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb7-2"><a href="vergleich-von-mittelwerten.html#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="vergleich-von-mittelwerten.html#cb7-3" aria-hidden="true" tabindex="-1"></a>p_wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(t_wert, <span class="at">df =</span> <span class="dv">99</span>)) <span class="co"># p-Wert für eine zweiseitige Hypothese</span></span>
+<span id="cb7-4"><a href="vergleich-von-mittelwerten.html#cb7-4" aria-hidden="true" tabindex="-1"></a>p_wert <span class="ot">&lt;-</span> <span class="fu">round</span>(p_wert, <span class="dv">3</span>)            <span class="co"># p-Wert auf 3 Nachkommastellen runden</span></span>
+<span id="cb7-5"><a href="vergleich-von-mittelwerten.html#cb7-5" aria-hidden="true" tabindex="-1"></a>p_wert                                <span class="co"># p-Wert anzeigen</span></span></code></pre></div>
 <pre><code>## [1] 0.125</code></pre>
 <p>Ein <span class="math inline">\(p\)</span>-Wert von <span class="math inline">\(p\)</span> = 0.125 bedeutet, dass unter der Annahme, dass <span class="math inline">\(H_0\)</span> wahr ist, ein Ergebnis wie in unserer Stichprobe oder ein noch extremeres Ergebnis mit einer Wahrscheinlichkeit von 12.5 % vorkommt. <span class="math inline">\(p\)</span> = 0.12 ist grösser als unser Signifikanzniveau <span class="math inline">\(\alpha\)</span> = 0.05 und wir verwerfen die <span class="math inline">\(H_0\)</span> nicht.</p>
 <p><strong>5. Schlussfolgerung formulieren</strong></p>
 <p><em>Untersucht wurde die Frage, ob sich die durchschnittliche Laufzeit von Volksläufer:innen über die Jahre geändert hat. Als Nullwert wurde die durchschnittliche Laufzeit von 2006 von 93.29 Minuten angenommen. In einer Zufallsstichprobe n = 100 der Läufer:innen am Cherryblossom Run 2012 betrug die durchschnittliche Laufzeit 95.87 [92.56, 99.18] Minuten, <span class="math inline">\(t(99)\)</span> = 1.549, <span class="math inline">\(p\)</span> = 0.125. Die vorliegenden Daten liefern keine Evidenz dafür, dass sich die durchschnittlichen Laufzeiten zwischen 2006 und 2012 verändert haben.</em></p>
 </div>
-<div id="vertrauensintervall-für-einen-mittelwert-schritt-für-schritt" class="section level3" number="6.4.2">
-<h3><span class="header-section-number">6.4.2</span> Vertrauensintervall für einen Mittelwert Schritt-für-Schritt:</h3>
+<div id="konfidenzintervall-für-einen-mittelwert-schritt-für-schritt" class="section level3" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Konfidenzintervall für einen Mittelwert Schritt-für-Schritt:</h3>
 <ol style="list-style-type: decimal">
-<li>Vorbereitung: Berechne den <span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(s\)</span> und <span class="math inline">\(n\)</span> und lege das Vertrauensniveau fest (üblicherweise 95% = 0.95)<br />
+<li>Vorbereitung: Berechne den <span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(s\)</span> und <span class="math inline">\(n\)</span> und lege das Konfidenzniveau fest (üblicherweise 95% = 0.95)<br />
 </li>
 <li>Voraussetzungen: Prüfe, ob die Voraussetzungen erfüllt sind, dass die Daten aus einer Normalverteilung stammen (QQ-Plot).<br />
 </li>
-<li>Berechnung: Wenn die Voraussetzungen erfüllt sind, berechne SE und finde <span class="math inline">\(t_{df}\)</span>, um das Intervall zu berechnen.<br />
+<li>Berechnung: Wenn die Voraussetzungen erfüllt sind, berechne SE und finde <span class="math inline">\(t_{df}\)</span>, um die Grenzen des Konfidenzintervalls zu berechnen.<br />
 </li>
-<li>Schlussfolgerung: Interpretiere das Vertrauensintervall im Zusammenhang mit der Fragestellung.</li>
+<li>Schlussfolgerung: Interpretiere das Konfidenzintervall im Zusammenhang mit der Fragestellung.</li>
 </ol>
 <p>Code-Tipp: <span class="math inline">\(t_{df}\)</span> lässt sich in <code>R/jamovi</code> einfach berechnen:</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="vergleich-von-mittelwerten.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb59-2"><a href="vergleich-von-mittelwerten.html#cb59-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-3"><a href="vergleich-von-mittelwerten.html#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy-Paste in R-Konsole: für df muss jeweils n - 1 eingetragen werden</span></span>
-<span id="cb59-4"><a href="vergleich-von-mittelwerten.html#cb59-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-5"><a href="vergleich-von-mittelwerten.html#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="co"># für ein 95%-Vertrauensintervall</span></span>
-<span id="cb59-6"><a href="vergleich-von-mittelwerten.html#cb59-6" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, df)</span>
-<span id="cb59-7"><a href="vergleich-von-mittelwerten.html#cb59-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-8"><a href="vergleich-von-mittelwerten.html#cb59-8" aria-hidden="true" tabindex="-1"></a><span class="co"># für ein 99%-Vertrauensintervall</span></span>
-<span id="cb59-9"><a href="vergleich-von-mittelwerten.html#cb59-9" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">995</span>, df)</span>
-<span id="cb59-10"><a href="vergleich-von-mittelwerten.html#cb59-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-11"><a href="vergleich-von-mittelwerten.html#cb59-11" aria-hidden="true" tabindex="-1"></a><span class="co"># für ein 90%-Vertrauensintervall</span></span>
-<span id="cb59-12"><a href="vergleich-von-mittelwerten.html#cb59-12" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">95</span>, df)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="vergleich-von-mittelwerten.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb9-2"><a href="vergleich-von-mittelwerten.html#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="vergleich-von-mittelwerten.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy-Paste in R-Konsole: für df muss jeweils n - 1 eingetragen werden</span></span>
+<span id="cb9-4"><a href="vergleich-von-mittelwerten.html#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="vergleich-von-mittelwerten.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># für ein 95%-Konfidenzintervall</span></span>
+<span id="cb9-6"><a href="vergleich-von-mittelwerten.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, df)</span>
+<span id="cb9-7"><a href="vergleich-von-mittelwerten.html#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="vergleich-von-mittelwerten.html#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># für ein 99%-Konfidenzintervall</span></span>
+<span id="cb9-9"><a href="vergleich-von-mittelwerten.html#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">995</span>, df)</span>
+<span id="cb9-10"><a href="vergleich-von-mittelwerten.html#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="vergleich-von-mittelwerten.html#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># für ein 90%-Konfidenzintervall</span></span>
+<span id="cb9-12"><a href="vergleich-von-mittelwerten.html#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">95</span>, df)</span></code></pre></div>
 </div>
 <div id="ein-stichproben-t-test-schritt-für-schritt" class="section level3" number="6.4.3">
 <h3><span class="header-section-number">6.4.3</span> Ein-Stichproben-T-Test Schritt-für-Schritt:</h3>
 <ol style="list-style-type: decimal">
 <li>Vorbereitung: Identifiziere den für die Frage relevanten Parameter (die Prüfgrösse), formuliere die Hypothesen, lege das Signifikanzniveau <span class="math inline">\(\alpha\)</span> fest und berechne <span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(s\)</span> und <span class="math inline">\(n\)</span>.<br />
 </li>
-<li>Voraussetzungen: Prüfe, ob die Voraussetzungen erfüllt sind, dass die Daten aus einer Normalverteilung stammen (QQ-Plot).</li>
+<li>Voraussetzungen: Prüfe, ob die Voraussetzungen erfüllt sind, dass die Daten aus einer normalverteilten Population stammen (QQ-Plot).</li>
 <li>Wenn die Voraussetzungen erfüllt sind, berechne SE, den <span class="math inline">\(t_{df}\)</span>-Wert und den p-Wert.<br />
 </li>
 <li>Schlussfolgerung: Beurteile den Hypothesentest, indem du den <span class="math inline">\(p\)</span>-Wert mit dem Signifkanzniveau <span class="math inline">\(\alpha\)</span> vergleichst. Formuliere eine Schlussfolgerung im Zusammenhang mit der Fragestellung in leicht verständlicher Sprache.</li>
 </ol>
 <p>Code-Tipp: Der <span class="math inline">\(p\)</span>-Wert lässt sich in <code>R/jamovi</code> einfach berechnen:</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="vergleich-von-mittelwerten.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb60-2"><a href="vergleich-von-mittelwerten.html#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-3"><a href="vergleich-von-mittelwerten.html#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="co"># p-Wert für eine zweiseitige Hypothese berechnen</span></span>
-<span id="cb60-4"><a href="vergleich-von-mittelwerten.html#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(t_wert, <span class="at">df =</span> n <span class="sc">-</span> <span class="dv">1</span>))  <span class="co"># n - 1 = Stichprobenumfang - 1</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="vergleich-von-mittelwerten.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb10-2"><a href="vergleich-von-mittelwerten.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="vergleich-von-mittelwerten.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># p-Wert für eine zweiseitige Hypothese berechnen</span></span>
+<span id="cb10-4"><a href="vergleich-von-mittelwerten.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(t_wert, <span class="at">df =</span> n <span class="sc">-</span> <span class="dv">1</span>))  <span class="co"># df = n - 1 = Stichprobenumfang - 1</span></span></code></pre></div>
 </div>
 <div id="rjamovi" class="section level3" number="6.4.4">
 <h3><span class="header-section-number">6.4.4</span> R/jamovi</h3>
 <p><code>R</code>-Code und Output</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="vergleich-von-mittelwerten.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb61-2"><a href="vergleich-von-mittelwerten.html#cb61-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-3"><a href="vergleich-von-mittelwerten.html#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> sample<span class="sc">$</span>time,               <span class="co"># sample$time = daten$variable</span></span>
-<span id="cb61-4"><a href="vergleich-von-mittelwerten.html#cb61-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="fl">93.29</span>,                    <span class="co"># mu = Nullwert</span></span>
-<span id="cb61-5"><a href="vergleich-von-mittelwerten.html#cb61-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)     <span class="co"># zweiseitige Alternativhypothese</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="vergleich-von-mittelwerten.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb11-2"><a href="vergleich-von-mittelwerten.html#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="vergleich-von-mittelwerten.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> sample<span class="sc">$</span>time,               <span class="co"># sample$time = daten$variable</span></span>
+<span id="cb11-4"><a href="vergleich-von-mittelwerten.html#cb11-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="fl">93.29</span>,                    <span class="co"># mu = Nullwert</span></span>
+<span id="cb11-5"><a href="vergleich-von-mittelwerten.html#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)     <span class="co"># zweiseitige Alternativhypothese</span></span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -589,7 +601,9 @@ Abbildung 6.2: QQ-Plot fpr Cherryblossom-Run 2012, n = 100
 <div id="t-test-für-verbundene-stichproben" class="section level2" number="6.5">
 <h2><span class="header-section-number">6.5</span> T-Test für verbundene Stichproben</h2>
 <p>Von <em>verbundenen bzw. gepaarten Daten</em> sprechen wir dann, wenn zwei Variablen voneinander abhängig sind: Dies bedeutet, dass die Werte der einen Messung die Werte der anderen Messung beeinflussen. Das ist der Fall, wenn wir z.B. die Preise für ein Buch in verschiedenen Läden vergleichen oder wenn wir Messungen bei Individuen zu verschiedenen Zeitpunkten, z.B. vor und nach einer Intervention (Prä-Post-Messungen), durchführen.</p>
-<p>Beispiel: In einer Studie wird untersucht, ob die Testpersonen mit einem neuen Schlafmittel länger schlafen als ohne Schlafmittel. Die Studie wird mit 20 Personen durchgeführt. Zuerst wird die Schlafdauer ohne Medikament (Baseline-Messung), dann die Schlafdauer mit Medikament (Follow-Up-Messung) gemessen. Die Tabelle zeigt die Daten zu den ersten vier Probanden:</p>
+<p>Beispiel: In einer Studie wird untersucht, ob die Testpersonen mit einem neuen Schlafmittel länger schlafen als ohne Schlafmittel. Die Studie wird mit 20 Personen durchgeführt. Zuerst wird die Schlafdauer ohne Medikament (Baseline-Messung), dann die Schlafdauer mit Medikament (Follow-Up-Messung) gemessen.</p>
+<p>Falls Sie die folgenden Schritte nachvollziehen wollen, finden Sie die Daten in <code>07_schlafmittel.csv</code>.</p>
+<p>Die Tabelle zeigt die Daten zu den ersten vier Probanden:</p>
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:medi-data-tab">Tabelle 6.2: </span>Schlafmitteldaten, erste 4 Zeilen
@@ -661,7 +675,7 @@ mit_Med
 Abbildung 6.3: Zusammenhang zwischen Schlafdauer mit und ohne Medikament
 </p>
 </div>
-<p>Das Punktediagramm zeigt, dass die Schlafdauer mit Medikament in einem Zusammenhang mit der Schlafdauer ohne Medikament steht: Probanden, die ohne Medikament länger schlafen, schlafen auch mit Medikament länger.</p>
+<p>Das Streudiagramm zeigt, dass die Schlafdauer mit Medikament in einem Zusammenhang mit der Schlafdauer ohne Medikament steht: Probanden, die ohne Medikament länger schlafen, schlafen auch mit Medikament länger.</p>
 <p>Wenn wir den Effekt einer Intervention bei gepaarten Daten untersuchen, ist die Prüfgrösse die Differenz der Datenpaare, die sog. <strong>paarweisen Differenzen</strong>. Im vorliegenden Beispiel ist dies die Differenz zwischen der Schlafdauer mit und ohne Medikament. Wenn die Differenzen bei der Datenerhebung noch nicht berechnet wurden, erstellt man eine neue abgeleitete Variable und berechnet für jeden Probanden die paarweisen Differenzen. Dabei ist es wichtig eine konsistente Ordnung einzuhalten: Wenn wir uns für den Effekt des Medikamentes interessieren, berechnen wir die paarweisen Differenzen durch Subtraktion der Schlafdauer ohne Medikament von der Schlafdauer mit Medikament.</p>
 <p><span class="math display">\[paarweise.Differenz = Schlafdauer.mit.Medi - Schlafdauer.ohne.Medi\]</span>
 Wenn das Medikament einen positiven Effekt auf die Schlafdauer hat, erhalten wir eine positive Differenz, wenn das Medikament die Schlafdauer verkürzt, erhalten wir eine negative Differenz. Für die Durchführung des T-Tests für gepaarte Daten verwenden wir als Prüfgrösse den Mittelwert der paarweisen Differenzen. Der Mittelwert der paarweisen Differenzen ist das Mass für den <strong>Effekt</strong> des Medikaments.</p>
@@ -745,7 +759,7 @@ paarweise.Differenzen
 </tr>
 </tbody>
 </table>
-<p>Mit dem Mittelwert für paarweise Differenzen als Prüfgrösse haben wir die gleiche Situation, wie beim Einstichproben-Test, nämlich einen Mittelwert den wir gegen einen Nullwert vergleichen, und das weitere Vorgehen ist wie beim Einstichproben-T-Test.</p>
+<p>Mit dem Mittelwert für paarweise Differenzen als Prüfgrösse haben wir die gleiche Situation, wie beim Einstichproben-T-Test, nämlich einen Mittelwert, den wir gegen einen Nullwert vergleichen, und das weitere Vorgehen ist wie beim Einstichproben-T-Test.</p>
 <div id="vorgehen-1" class="section level3" number="6.5.1">
 <h3><span class="header-section-number">6.5.1</span> Vorgehen</h3>
 <p><strong>1. Hypothesen formulieren</strong></p>
@@ -832,7 +846,7 @@ mit_Med
 <ul>
 <li>Prüfung auf Unabhängigkeit: Es handelt sich um eine Zufallsstichprobe, n &lt; 10% der Population<br />
 </li>
-<li>Prüfung der Prüfgrösse auf Normalverteilung (QQ-Plot unten)<br />
+<li>Prüfung der Prüfgrösse (= paarweise Differenzen!) auf Normalverteilung (QQ-Plot unten)<br />
 </li>
 <li>Stichprobenumfang: Wenn die Prüfgrösse paarweise Differenzen sind, kann der T-Test ab n &gt; 12 angewendet werden, wenn die Daten annähernd normalverteilt sind. Ab n &gt; 100 ist der T-Test nahezu unbeschränkt durchführbar, unabhängig von der zugrundeliegenden Verteilung.</li>
 </ul></li>
@@ -843,46 +857,54 @@ mit_Med
 Abbildung 6.4: Histogramm und QQ-Plot für paarweise Differenzen
 </p>
 </div>
-<p>Im Histogramm sind die Daten leicht rechtssteil verteilt. Im QQ-Plot liegen die Punkte weitgehend auf einer Linie. Daher entscheiden wir für normalverteilte Daten.</p>
+<p>Im Histogramm sind die Daten leicht linksschief verteilt. Im QQ-Plot liegen die Punkte weitgehend auf einer Linie. Daher entscheiden wir für normalverteilte Daten.</p>
 <p><strong>3. SE, <span class="math inline">\(t_{df}\)</span>-Wert p-Wert und 95%-Konfidenzintervall berechnen.</strong></p>
 <p><span class="math display">\[SE = \frac{0.672}{\sqrt{20}}  = 0.15\]</span></p>
-<p><span class="math display">\[t_{19} = \frac{0.395-0}{0.150} = 2.629\]</span></p>
+<p><span class="math display">\[t_{df=19} = \frac{0.395-0}{0.150} = 2.629\]</span></p>
 <p>Den p-Wert für t und df = 20-1 können wir wieder mit dem <a href="http://eswf.uni-koeln.de/glossar/surfstat/t.htm">Internet-Rechner Students T-Verteilung</a> oder mit <code>R/jamovi</code> berechnen.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="vergleich-von-mittelwerten.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb63-2"><a href="vergleich-von-mittelwerten.html#cb63-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb63-3"><a href="vergleich-von-mittelwerten.html#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(t, <span class="at">df =</span> <span class="dv">20-1</span>)) <span class="co"># p-Wert für zweiseitige Hypothese, t-Verteilung, df = 19</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="vergleich-von-mittelwerten.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb13-2"><a href="vergleich-von-mittelwerten.html#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="vergleich-von-mittelwerten.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(t, <span class="at">df =</span> <span class="dv">20-1</span>)) <span class="co"># p-Wert für zweiseitige Hypothese, t-Verteilung, df = 19</span></span></code></pre></div>
 <p>Mit <span class="math inline">\(p\)</span> = 0.017 ist die Wahrscheinlichkeit für den beobachteten Effekt oder einen stärkeren Effekt kleiner als unser Signifkanzniveau <span class="math inline">\(\alpha = 0.05\)</span> und wir haben Evidenz dafür, dass wir die Nullhypothese zugunsten der Alternativhypothese verwerfen können.</p>
-<p><span class="math display">\[CI_{95} =0.395 \pm t_{0.975, df=19} \times 0.15\]</span></p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="vergleich-von-mittelwerten.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb64-2"><a href="vergleich-von-mittelwerten.html#cb64-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-3"><a href="vergleich-von-mittelwerten.html#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 95%-Konfidenzintervall: Quantile für t = 0.975 und df = 20- 1</span></span>
-<span id="cb64-4"><a href="vergleich-von-mittelwerten.html#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="dv">19</span>) </span></code></pre></div>
+<p><span class="math display">\[CI_{95} = \bar{x} \pm t_{0.975, df} \times SE = 0.395 \pm t_{0.975, df=19} \times 0.15\]</span></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="vergleich-von-mittelwerten.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb14-2"><a href="vergleich-von-mittelwerten.html#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="vergleich-von-mittelwerten.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 95%-Konfidenzintervall: Quantile für t = 0.975 und df = 20- 1</span></span>
+<span id="cb14-4"><a href="vergleich-von-mittelwerten.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="dv">19</span>) </span></code></pre></div>
 <pre><code>## [1] 2.093024</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="vergleich-von-mittelwerten.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb66-2"><a href="vergleich-von-mittelwerten.html#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-3"><a href="vergleich-von-mittelwerten.html#cb66-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb66-4"><a href="vergleich-von-mittelwerten.html#cb66-4" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> .<span class="dv">672</span></span>
-<span id="cb66-5"><a href="vergleich-von-mittelwerten.html#cb66-5" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> .<span class="dv">395</span></span>
-<span id="cb66-6"><a href="vergleich-von-mittelwerten.html#cb66-6" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">&lt;-</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n)</span>
-<span id="cb66-7"><a href="vergleich-von-mittelwerten.html#cb66-7" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> (.<span class="dv">395</span> <span class="sc">-</span> <span class="dv">0</span>)<span class="sc">/</span>SE</span>
-<span id="cb66-8"><a href="vergleich-von-mittelwerten.html#cb66-8" aria-hidden="true" tabindex="-1"></a>p_wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(t, <span class="at">df =</span> <span class="dv">20-1</span>))</span>
-<span id="cb66-9"><a href="vergleich-von-mittelwerten.html#cb66-9" aria-hidden="true" tabindex="-1"></a>p_txt <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;p-Wert =&quot;</span>, <span class="fu">round</span>(p_wert, <span class="dv">3</span>))</span>
-<span id="cb66-10"><a href="vergleich-von-mittelwerten.html#cb66-10" aria-hidden="true" tabindex="-1"></a>CI95 <span class="ot">&lt;-</span> m <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">qt</span>(.<span class="dv">975</span>, <span class="dv">19</span>) <span class="sc">*</span> SE</span>
-<span id="cb66-11"><a href="vergleich-von-mittelwerten.html#cb66-11" aria-hidden="true" tabindex="-1"></a>CI95 <span class="ot">&lt;-</span> <span class="fu">round</span>(CI95, <span class="dv">3</span>)</span></code></pre></div>
-<p>Die Berechnung ergibt ein 95%-Konfidenzintervall für den Mittelwert der Differenz in der Schlafdauer von 0.395 [0.08; 0.71] Stunden. Das 95%-Konfidenzintervall enthält den Nullwert nicht und wir verwerfen die Nullhypothese zugunsten der Alternativhypothese.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="vergleich-von-mittelwerten.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb16-2"><a href="vergleich-von-mittelwerten.html#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="vergleich-von-mittelwerten.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># p-Wert und 95%-CI berechnen</span></span>
+<span id="cb16-4"><a href="vergleich-von-mittelwerten.html#cb16-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb16-5"><a href="vergleich-von-mittelwerten.html#cb16-5" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> .<span class="dv">672</span></span>
+<span id="cb16-6"><a href="vergleich-von-mittelwerten.html#cb16-6" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> .<span class="dv">395</span></span>
+<span id="cb16-7"><a href="vergleich-von-mittelwerten.html#cb16-7" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">&lt;-</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n)</span>
+<span id="cb16-8"><a href="vergleich-von-mittelwerten.html#cb16-8" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> (.<span class="dv">395</span> <span class="sc">-</span> <span class="dv">0</span>)<span class="sc">/</span>SE</span>
+<span id="cb16-9"><a href="vergleich-von-mittelwerten.html#cb16-9" aria-hidden="true" tabindex="-1"></a>p_wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(t, <span class="at">df =</span> <span class="dv">20-1</span>))</span>
+<span id="cb16-10"><a href="vergleich-von-mittelwerten.html#cb16-10" aria-hidden="true" tabindex="-1"></a>p_out <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;p-Wert =&quot;</span>, <span class="fu">round</span>(p_wert, <span class="dv">3</span>))</span>
+<span id="cb16-11"><a href="vergleich-von-mittelwerten.html#cb16-11" aria-hidden="true" tabindex="-1"></a>CI95 <span class="ot">&lt;-</span> m <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">qt</span>(.<span class="dv">975</span>, <span class="dv">19</span>) <span class="sc">*</span> SE</span>
+<span id="cb16-12"><a href="vergleich-von-mittelwerten.html#cb16-12" aria-hidden="true" tabindex="-1"></a>CI95 <span class="ot">&lt;-</span> <span class="fu">round</span>(CI95, <span class="dv">3</span>)</span>
+<span id="cb16-13"><a href="vergleich-von-mittelwerten.html#cb16-13" aria-hidden="true" tabindex="-1"></a>CI95_out <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;[&quot;</span>, CI95[<span class="dv">1</span>], <span class="st">&quot;, &quot;</span>, CI95[<span class="dv">2</span>], <span class="st">&quot;]&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb16-14"><a href="vergleich-von-mittelwerten.html#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="vergleich-von-mittelwerten.html#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Output</span></span>
+<span id="cb16-16"><a href="vergleich-von-mittelwerten.html#cb16-16" aria-hidden="true" tabindex="-1"></a>p_out</span></code></pre></div>
+<pre><code>## [1] &quot;p-Wert = 0.017&quot;</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="vergleich-von-mittelwerten.html#cb18-1" aria-hidden="true" tabindex="-1"></a>CI95_out</span></code></pre></div>
+<pre><code>## [1] &quot;[0.08, 0.71]&quot;</code></pre>
+<p>Die Berechnung ergibt ein 95%-Konfidenzintervall für den Mittelwert der Differenz in der Schlafdauer von 0.395 [0.08, 0.71] Stunden. Das 95%-Konfidenzintervall enthält den Nullwert nicht und wir verwerfen die Nullhypothese zugunsten der Alternativhypothese.</p>
 <p><strong>4. Schlussfolgerung formulieren</strong></p>
 <p><em>Untersucht wurde der Einfluss eines Medikaments auf die Schlafdauer bei 20 Probanden. Das Medikament hat die Schlafdauer durchschnittlich um 0.395 [0.08 0.71] Stunden signifikant verlängert, <span class="math inline">\(t(19)\)</span> = 2.629, <span class="math inline">\(p\)</span> = 0.017.</em></p>
 </div>
 <div id="rjamovi-1" class="section level3" number="6.5.2">
 <h3><span class="header-section-number">6.5.2</span> R/jamovi</h3>
 <p><code>R</code> Code und Output</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="vergleich-von-mittelwerten.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb67-2"><a href="vergleich-von-mittelwerten.html#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-3"><a href="vergleich-von-mittelwerten.html#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante 1: Als T-Test für gepaarte Stichproben</span></span>
-<span id="cb67-4"><a href="vergleich-von-mittelwerten.html#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> medi_data<span class="sc">$</span>mit_Med,        <span class="co"># Baseline-Data</span></span>
-<span id="cb67-5"><a href="vergleich-von-mittelwerten.html#cb67-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> medi_data<span class="sc">$</span>ohne_Med,       <span class="co"># Follow-Up-Data</span></span>
-<span id="cb67-6"><a href="vergleich-von-mittelwerten.html#cb67-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">paired =</span> <span class="cn">TRUE</span>,                <span class="co"># gepaarte Daten</span></span>
-<span id="cb67-7"><a href="vergleich-von-mittelwerten.html#cb67-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)    <span class="co"># zweiseitige Alternativhypothese</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="vergleich-von-mittelwerten.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb20-2"><a href="vergleich-von-mittelwerten.html#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="vergleich-von-mittelwerten.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante 1: Als T-Test für gepaarte Stichproben</span></span>
+<span id="cb20-4"><a href="vergleich-von-mittelwerten.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> medi_data<span class="sc">$</span>mit_Med,        <span class="co"># Baseline-Data</span></span>
+<span id="cb20-5"><a href="vergleich-von-mittelwerten.html#cb20-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> medi_data<span class="sc">$</span>ohne_Med,       <span class="co"># Follow-Up-Data</span></span>
+<span id="cb20-6"><a href="vergleich-von-mittelwerten.html#cb20-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">paired =</span> <span class="cn">TRUE</span>,                <span class="co"># gepaarte Daten</span></span>
+<span id="cb20-7"><a href="vergleich-von-mittelwerten.html#cb20-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)    <span class="co"># zweiseitige Alternativhypothese</span></span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 
@@ -894,10 +916,10 @@ Abbildung 6.4: Histogramm und QQ-Plot für paarweise Differenzen
 ## sample estimates:
 ## mean of the differences 
 ##                  0.3945</code></pre>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="vergleich-von-mittelwerten.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante 2: Als Einstichproben-T-Test mit der Variable paarweise.Differenzen</span></span>
-<span id="cb69-2"><a href="vergleich-von-mittelwerten.html#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> medi_data<span class="sc">$</span>paarweise.Differenzen,</span>
-<span id="cb69-3"><a href="vergleich-von-mittelwerten.html#cb69-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="dv">0</span>,</span>
-<span id="cb69-4"><a href="vergleich-von-mittelwerten.html#cb69-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="vergleich-von-mittelwerten.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante 2: Als Einstichproben-T-Test mit der Variable paarweise.Differenzen</span></span>
+<span id="cb22-2"><a href="vergleich-von-mittelwerten.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> medi_data<span class="sc">$</span>paarweise.Differenzen,</span>
+<span id="cb22-3"><a href="vergleich-von-mittelwerten.html#cb22-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="dv">0</span>,</span>
+<span id="cb22-4"><a href="vergleich-von-mittelwerten.html#cb22-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -911,7 +933,7 @@ Abbildung 6.4: Histogramm und QQ-Plot für paarweise Differenzen
 ##    0.3945</code></pre>
 <p>Der T-Test für gepaarte Stichproben berechnet zuerst die paarweisen Differenzen und
 ermittelt anschliessend die Teststatistik. Wenn man die paarweisen Differenzen im
-Datensatz vorhanden sind, kann der Einstichproben-T-Test durchgeführt werden. Beide
+Datensatz berechnet hat, kann der Einstichproben-T-Test durchgeführt werden. Beide
 Varianten kommen zum exakt gleichen Ergebnis.</p>
 <p><code>jamovi</code>-Output</p>
 <p>Wähle <code>jamovi\..\T-Tests\Paired Samples T-Test</code></p>
@@ -923,12 +945,12 @@ Varianten kommen zum exakt gleichen Ergebnis.</p>
 </div>
 <div id="zweistichproben-t-test-für-unabhängige-stichproben" class="section level2" number="6.6">
 <h2><span class="header-section-number">6.6</span> Zweistichproben-T-Test für unabhängige Stichproben</h2>
-<p>In diesem Abschnitt beschäftigen wir uns mit der Differenz von zwei Populationsmittelwerten <span class="math inline">\(\mu_1 - \mu_2\)</span> unter der Voraussetzung, dass die Daten nicht gepaart sind. Typisch sind Vergleiche zwischen zwei Gruppen bzw. Stichproben, z.B. kontrollierte Studien in denen Interventionsgruppe und Kontrollgruppe verglichen werden oder der Vergleich des Gewichts von Neugeborenen von rauchenden und nicht-rauchenden Müttern.</p>
+<p>In diesem Abschnitt beschäftigen wir uns mit der Differenz von zwei Populationsmittelwerten <span class="math inline">\(\mu_1 - \mu_2\)</span> unter der Voraussetzung, dass die Daten nicht gepaart, also unabhängig, sind. Typisch sind Vergleiche zwischen zwei Gruppen bzw. Stichproben, z.B. kontrollierte Studien in denen Interventionsgruppe und Kontrollgruppe verglichen werden oder der Vergleich des Gewichts von Neugeborenen von rauchenden und nicht-rauchenden Müttern.</p>
 <p>Die Formeln in diesem Abschnitt werden etwas komplizierter. In der Regel lassen wir die Software die Berechnungen durchführen und müssen nicht mit ihnen arbeiten. Sie stehen hier als Hintergrundinformation und für diejenigen, die von Hand rechnen wollen.</p>
 <div id="konfidenzintervall-für-einen-mittelwertsunterschied" class="section level3" number="6.6.1">
 <h3><span class="header-section-number">6.6.1</span> Konfidenzintervall für einen Mittelwertsunterschied</h3>
 <p>Im Folgenden werden zuerst die theoretischen Grundlagen erarbeitet, anschliessend folgt ein Schritt-für-Schritt Beispiel für die Durchführung des Zweistichproben-T-Tests für unabhängige Stichproben.</p>
-<p>Beispiel: Hat die Behandlung mit embryonalen Stammzellen (ESC) einen Effekt auf die Pumpfunktion des Herzens nach einem Herzinfarkt?</p>
+<p>Beispiel: Hat die Behandlung mit embryonalen Stammzellen (ESC) einen Effekt auf die Pumpfunktion des Herzens nach einem Herzinfarkt? (Die Daten sind im Datensatz <code>07_stemcell.csv</code> abgelegt)</p>
 <p>Die folgende Tabelle enthält die Kennzahlen aus einem Experiment, bei dem der Effekt von ESC bei Schafen, die einen Herzinfarkt erlitten hatten, geprüft wurde. Jedes dieser Schafe wurde randomisiert der Gruppe ESC oder der Kontrollgruppe zugewiesen, dann wurde ihre Herzkapazität (Auswurffraktion) gemessen. Details zur Studie hier <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(05)67380-1/fulltext">The Lancet</a>. Ein positiver Wert entspricht einer Steigerung der Auswurffraktion, was einer besseren Erholung entspricht. Unsere erste Aufgabe ist es, das 95%-Konfidenzintervall für den Effekt der ESCs auf die Herzfunktion im Vergleich zur Kontrollgruppe zu berechnen.</p>
 <p>Codebook: Datensatz <code>stemcell.csv</code></p>
 <table>
@@ -1231,7 +1253,7 @@ esc
 <li><p><em>Unabhängigkeit:</em> Die Daten müssen sowohl zwischen den Stichproben als auch innerhalb der Stichproben unabhängig sein. Dies wird dadurch sichergestellt, dass die Beobachtungseinheiten randomisiert aus der Population ausgewählt und randomisiert den Gruppen Intervention oder Kontrolle zugeteilt werden.</p></li>
 <li><p><em>Normalverteilung:</em> Die Daten müssen in beiden Stichproben normalverteilt sein.</p></li>
 </ul>
-<p>Die Berechnung des Standardfehlers <span class="math inline">\(SE\)</span> und der Anzahl Freiheitsgrade <span class="math inline">\(df\)</span> ist relativ komplex und wird normalerweise von der Statistiksoftware übernommen. Diejenigen, die von Hand rechnen wollen, können diese - vereinfachte - Formel verwenden:</p>
+<p>Die Berechnung des Standardfehlers <span class="math inline">\(SE\)</span> und der Anzahl Freiheitsgrade <span class="math inline">\(df\)</span> ist in diesem Fall etwas komplizierter und wird normalerweise von der Statistiksoftware übernommen. Diejenigen, die von Hand rechnen wollen, können diese - etwas vereinfachte - Formel verwenden:</p>
 <p><span class="math display">\[SE_{\bar{x_2}-\bar{x_1}} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}\]</span></p>
 <p>Als Freiheitsgrad df für die t-Verteilung verwenden wir den kleineren Wert von <span class="math inline">\(n_1 - 1\)</span> und <span class="math inline">\(n_2 - 1\)</span> (die genaue Berechnung von <span class="math inline">\(df\)</span> ist komplex und wir verwenden hier eine konservative Vereinfachung).</p>
 <p><span class="math display">\[df = min(n_1-1, n_2-1)\]</span></p>
@@ -1251,20 +1273,21 @@ Abbildung 6.5: Histogramm und QQ-Plot für ESC- und Kontrollgruppe
 <p><span class="math display">\[SE = \sqrt{\frac{s_{esc}^2}{n_{esc}} + \frac{s_{ctrl}^2}{n_{ctrl}}} = \sqrt{\frac{5.17^2}{9} + \frac{2.76^2}{9}} = 1.95\]</span></p>
 <p>Für die Bestimmung der Anzahl Freiheitsgrade <span class="math inline">\(df\)</span> der <span class="math inline">\(t\)</span>-Verteilung verwenden wir den kleineren Wert für <span class="math inline">\(n - 1\)</span>. Hier haben beide Gruppen den gleichen Umfang n und wir verwenden <span class="math inline">\(df\)</span> = 8.</p>
 <p>Den kritischen <span class="math inline">\(t\)</span>-Wert für eine <span class="math inline">\(t\)</span>-Verteilung mit <span class="math inline">\(df\)</span> = 8 für ein 95%-Konfidenzintervall erhalten wir in `R``</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="vergleich-von-mittelwerten.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb71-2"><a href="vergleich-von-mittelwerten.html#cb71-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-3"><a href="vergleich-von-mittelwerten.html#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="co"># t-Wert für ein 95%-Konfidenzintervall mit df = 8</span></span>
-<span id="cb71-4"><a href="vergleich-von-mittelwerten.html#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="dv">8</span>)   </span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="vergleich-von-mittelwerten.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb24-2"><a href="vergleich-von-mittelwerten.html#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="vergleich-von-mittelwerten.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># t-Wert für ein 95%-Konfidenzintervall mit df = 8</span></span>
+<span id="cb24-4"><a href="vergleich-von-mittelwerten.html#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="dv">8</span>)   </span></code></pre></div>
 <pre><code>## [1] 2.306004</code></pre>
 <p>Durch Einsetzen können wir jetzt das 95%-Konfidenzintervall für die Differenz des Effekts zwischen den beiden Stichproben berechnen:</p>
 <p><span class="math display">\[CI_{95} = 7.83 \pm 2.31 \times 1.95 = [3.33; 12.33]\]</span></p>
 <p>Das 95%-Konfidenzintervall beinhaltet Null nicht und wir haben Evidenz für einen signifikanten Effekt.</p>
-<p><em>Schlussfolgerung: Die Behandlung mit embryonalen Stammzellen bei Schafen, die einen Herzinfarkt erlitten haben, verbessert die Pumpfunktion des Herzens signifikant im Durchschnitt um 7.83% [3.33% 12.33%] im Vergleich zu keiner Behandlung.</em></p>
+<p><em>Schlussfolgerung: Die Behandlung mit embryonalen Stammzellen bei Schafen, die einen Herzinfarkt erlitten haben, verbessert die Pumpfunktion des Herzens signifikant im Durchschnitt um 7.83% [3.33%, 12.33%] im Vergleich zu keiner Behandlung.</em></p>
 </div>
 <div id="der-zweistichproben-t-test-für-unabhängige-stichproben-schritt-für-schritt" class="section level3" number="6.6.2">
 <h3><span class="header-section-number">6.6.2</span> Der Zweistichproben-T-Test für unabhängige Stichproben Schritt-für-Schritt</h3>
 <p>Für einen T-Test für einen Mittelwertsunterschied ist eine der Voraussetzungen, dass der Stichprobenumfang <span class="math inline">\(n\)</span> gleich oder grösser als 30 ist. Dies ist für das Beispiel mit den Schafen nicht gegeben und wir verwenden ein neues Beispiel.</p>
-<p>Frage: Hat es einen Einfluss auf das Geburtsgewicht von Neugeborenen, wenn schwangere Frauen rauchen? Wir prüfen diese Frage anhand eines Datensatzes, der eine Zufallsstichprobe von 150 Müttern und ihren Neugeborenen umfasst. Die Variable <code>habit</code> erfasst, ob die Mutter während der Schwangerschaft geraucht hat oder nicht und die Variable <code>weight</code>gibt das Geburtsgewicht in g an. Die Raucherinnengruppe umfasst 50 Mütter, die Nichtraucherinnengruppe 100 Mütter. Die Tabelle gibt die ersten 5 Einträge im Datensatz an:</p>
+<p>Frage: Hat es einen Einfluss auf das Geburtsgewicht von Neugeborenen, wenn schwangere Frauen rauchen? Wir prüfen diese Frage anhand eines Datensatzes, der eine Zufallsstichprobe von 150 Müttern und ihren Neugeborenen umfasst. Die Variable <code>smoke</code> erfasst, ob die Mutter während der Schwangerschaft geraucht hat oder nicht und die Variable <code>weight</code>gibt das Geburtsgewicht in g an. Die Raucherinnengruppe umfasst 50 Mütter, die Nichtraucherinnengruppe 100 Mütter. (Die Daten sind im Datensatz <code>07_geburtsgewicht_g.csv</code> abgelegt.)</p>
+<p>Die Tabelle gibt die ersten 5 Einträge im Datensatz an:</p>
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:data-births-tab">Tabelle 6.7: </span>Datensatz Geburtsgewicht (g) und Raucherstatus
@@ -1450,18 +1473,17 @@ smoker
 </table>
 <p>Das Vorgehen für die statistische Analyse ist wie bisher:</p>
 <ol style="list-style-type: decimal">
-<li>Vorbereitung: Identifiziere den für die Frage relevanten Parameter (die Prüfgrösse), formuliere die Hypothesen und lege das Signifikanzniveau <span class="math inline">\(\alpha\)</span> fest<br />
+<li>Vorbereitung: Identifiziere den für die Frage relevanten Parameter (die Prüfgrösse), formuliere die Hypothesen und lege das Signifikanzniveau <span class="math inline">\(\alpha\)</span> fest.<br />
 </li>
-<li>Prüfe, ob die Voraussetzungen erfüllt sind.<br />
+<li>Prüfe, ob die Voraussetzungen (Unabhängigkeit der Daten, Normalverteilung) erfüllt sind.<br />
 </li>
-<li>Wenn die Voraussetzungen erfüllt sind, berechne SE, das 95%-Konfidenzintervall, den <span class="math inline">\(t_{df}\)</span>-Wert und den <span class="math inline">\(p\)</span>-Wert.<br />
+<li>Wenn die Voraussetzungen erfüllt sind, berechne <span class="math inline">\(SE\)</span>, das 95%-Konfidenzintervall, den <span class="math inline">\(t_{df}\)</span>-Wert und den <span class="math inline">\(p\)</span>-Wert.<br />
 </li>
-<li>Schlussfolgerung: Beurteile den Hypothesentest, indem du den p-Wert mit dem Signifkanzniveau <span class="math inline">\(\alpha\)</span> vergleichst. Formuliere eine Schlussfolgerung im Zusammenhang mit der Fragestellung in leicht verständlicher Sprache.</li>
+<li>Schlussfolgerung: Beurteile den Hypothesentest, indem du den <span class="math inline">\(p\)</span>-Wert mit dem Signifkanzniveau <span class="math inline">\(\alpha\)</span> vergleichst. Formuliere eine Schlussfolgerung im Zusammenhang mit der Fragestellung in leicht verständlicher Sprache.</li>
 </ol>
 <p><strong>1. Hypothesen formulieren</strong></p>
 <ul>
-<li>Die Prüfgrösse ist <span class="math inline">\(\mu_s - \mu_{ns}\)</span><br />
-</li>
+<li>Die Prüfgrösse ist <span class="math inline">\(\mu_s - \mu_{ns}\)</span> ($s = smoker, ns = nonsmoker)</li>
 <li>Signifikanzniveau <span class="math inline">\(\alpha = 0.05\)</span></li>
 </ul>
 <p>Hypothesen:<br />
@@ -1471,7 +1493,7 @@ smoker
 <ul>
 <li>Es handelt sich um eine Zufallsstichprobe, die Daten sind unabhängig.<br />
 </li>
-<li>Auf Grund von Histogramm und QQ-Plot entscheiden wir, dass die Daten normalverteilt sind.<br />
+<li>Histogramm und QQ-Plot zeigen eine linksschiefe Verteilung für beide Gruppen. Aus Übungsgründen entscheiden wir jedoch, dass die Daten normalverteilt sind.<br />
 </li>
 <li>Der Stichprobenumfang in jeder Gruppe ist n &gt; 30.<br />
 </li>
@@ -1540,20 +1562,24 @@ smoker
 <p><span class="math display">\[SE = \sqrt{\frac{s_{ns}^2}{n_{ns}} + \frac{s_s^2}{n_s}} = \sqrt{\frac{651^2}{100} + \frac{725^2}{50}} = 121.4\]</span></p>
 <p>Berechnung des 95%-Konfidenzintervalls</p>
 <p>Kritischer t-Wert</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="vergleich-von-mittelwerten.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb73-2"><a href="vergleich-von-mittelwerten.html#cb73-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-3"><a href="vergleich-von-mittelwerten.html#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="at">df =</span> <span class="dv">49</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="vergleich-von-mittelwerten.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb26-2"><a href="vergleich-von-mittelwerten.html#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="vergleich-von-mittelwerten.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="at">df =</span> <span class="dv">49</span>)</span></code></pre></div>
 <pre><code>## [1] 2.009575</code></pre>
 <p><span class="math display">\[CI_{95} = 181.6 \pm 2.01 \times 121.4 = [-62.4; 425.6]\]</span></p>
 <p>Neugeborene von Nichtraucherinnen sind im Durchschnitt um 181.6 [-62.4; 425.6] schwerer als Neugeborene von Raucherinnen. Das 95%-Konfidenzintervall beinhaltet Null, d.h. kein Unterschied im Geburtsgewicht ist ein plausibler Wert, und wir haben keine Evidenz gegen die Nullhypothese.</p>
 <p>Berechnung des t-Werts:</p>
 <p><span class="math display">\[t = \frac{181.6 - 0}{121.4} = 1.496\]</span></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="vergleich-von-mittelwerten.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb28-2"><a href="vergleich-von-mittelwerten.html#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="vergleich-von-mittelwerten.html#cb28-3" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> (<span class="fl">181.6</span> <span class="sc">-</span> <span class="dv">0</span>)<span class="sc">/</span><span class="fl">121.4</span></span>
+<span id="cb28-4"><a href="vergleich-von-mittelwerten.html#cb28-4" aria-hidden="true" tabindex="-1"></a>t</span></code></pre></div>
+<pre><code>## [1] 1.495881</code></pre>
 <p>Berechnung des <span class="math inline">\(p\)</span>-Werts:</p>
 <p>Für die Berechnung des p-Werts verwenden wir für die Anzahl Freiheitsgrade den kleineren Wert für <span class="math inline">\(n_{nonsmoker} - 1 = 99\)</span> und für <span class="math inline">\(n_{smoker} - 1 = 49\)</span> also <span class="math inline">\(df = 49\)</span>: Wir können den p-Wert für <span class="math inline">\(t_{49}\)</span> wieder in einer Tabelle nachschlagen oder mit <code>R/jamovi</code>berechnen:</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="vergleich-von-mittelwerten.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb75-2"><a href="vergleich-von-mittelwerten.html#cb75-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-3"><a href="vergleich-von-mittelwerten.html#cb75-3" aria-hidden="true" tabindex="-1"></a><span class="co"># p-Wert für eine zweiseitige Hyptothese und df = 49</span></span>
-<span id="cb75-4"><a href="vergleich-von-mittelwerten.html#cb75-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(<span class="fl">1.496</span>, <span class="at">df =</span> <span class="dv">49</span>)) </span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="vergleich-von-mittelwerten.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb30-2"><a href="vergleich-von-mittelwerten.html#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="vergleich-von-mittelwerten.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(<span class="fl">1.496</span>, <span class="at">df =</span> <span class="dv">49</span>)) <span class="co"># p-Wert für eine zweiseitige Hypothese und df = 49 </span></span></code></pre></div>
 <pre><code>## [1] 0.1410672</code></pre>
 <p><span class="math inline">\(p = 0.141\)</span>; Dieser <span class="math inline">\(p\)</span>-Wert ist grösser als <span class="math inline">\(\alpha = 0.05\)</span> und wir haben keine ausreichende Evidenz, um die Nullhypothese zu verwerfen.</p>
 <p><em>Schlussfolgerung: Untersucht wurde die Frage, ob Neugeborene von rauchenden Müttern ein anderes Geburtsgewicht haben als Neugeborene von nichtrauchtenden Müttern. Anhand der vorliegenden Daten konnte kein signifikanter Unterschied für deas Geburtsgewicht von Neugeborenen rauchender und nichtrauchender Mütter festgestellt werden: Neugeborene von nichtrauchenden Müttern sind im Durchschnitt 181.6 [-62.4; 425.6] leichter als von nichtrauchenden Müttern, t(49) = 1.496, p = 0.141.</em></p>
@@ -1562,14 +1588,14 @@ smoker
 <div id="rjamovi-2" class="section level3" number="6.6.3">
 <h3><span class="header-section-number">6.6.3</span> R/jamovi</h3>
 <p><code>R</code> Code und Output</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="vergleich-von-mittelwerten.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb77-2"><a href="vergleich-von-mittelwerten.html#cb77-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-3"><a href="vergleich-von-mittelwerten.html#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(</span>
-<span id="cb77-4"><a href="vergleich-von-mittelwerten.html#cb77-4" aria-hidden="true" tabindex="-1"></a>  weight <span class="sc">~</span> smoke, <span class="at">data =</span> births,</span>
-<span id="cb77-5"><a href="vergleich-von-mittelwerten.html#cb77-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,      <span class="co"># Voreinstellung, muss nicht angegeben werden</span></span>
-<span id="cb77-6"><a href="vergleich-von-mittelwerten.html#cb77-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">paired =</span> <span class="cn">FALSE</span>,                 <span class="co"># Voreinstellung, muss nicht angegeben werden</span></span>
-<span id="cb77-7"><a href="vergleich-von-mittelwerten.html#cb77-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">var.equal =</span> <span class="cn">FALSE</span>               <span class="co"># Voreinstellung, muss nicht angegeben werden</span></span>
-<span id="cb77-8"><a href="vergleich-von-mittelwerten.html#cb77-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="vergleich-von-mittelwerten.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb32-2"><a href="vergleich-von-mittelwerten.html#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="vergleich-von-mittelwerten.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(</span>
+<span id="cb32-4"><a href="vergleich-von-mittelwerten.html#cb32-4" aria-hidden="true" tabindex="-1"></a>  weight <span class="sc">~</span> smoke, <span class="at">data =</span> births,</span>
+<span id="cb32-5"><a href="vergleich-von-mittelwerten.html#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,      <span class="co"># Voreinstellung, muss nicht angegeben werden</span></span>
+<span id="cb32-6"><a href="vergleich-von-mittelwerten.html#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">paired =</span> <span class="cn">FALSE</span>,                 <span class="co"># Voreinstellung, muss nicht angegeben werden</span></span>
+<span id="cb32-7"><a href="vergleich-von-mittelwerten.html#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">var.equal =</span> <span class="cn">FALSE</span>               <span class="co"># Voreinstellung, muss nicht angegeben werden</span></span>
+<span id="cb32-8"><a href="vergleich-von-mittelwerten.html#cb32-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -1600,7 +1626,7 @@ smoker
 </li>
 <li>Es handelt sich um quantitative Daten.</li>
 </ol>
-<p>Es stellt sich nun die Frage, wie man Hypothesentests durchführt, wenn diese Bedingungen nicht erfüllt sind.</p>
+<p>Es stellt sich nun die Frage, wie man Hypothesentests durchführt, wenn diese Bedingungen nicht erfüllt sind, wie im Beispiel der rauchenden Mütter und dem Geburtsgewicht ihrer Babies.</p>
 <p>Ist die Verteilung der Daten nicht bekannt, so müssen andere Testverfahren, sog. nicht-parametrische Verfahren verwendet werden. Diese stellen keine Annahme bezüglich der Verteilung der Daten voraus und eignen sich daher besonders für kleine Stichproben, bei denen die Beurteilung von Normalitätstests oft mit einer grossen Unsicherheit verbunden ist. Ein weiterer Vorteil der nichtparametrischen Verfahren besteht darin, dass auch qualitativ-ordinalen Daten, z.B. VAS-Skalen oder Schulnoten, analysiert werden können.</p>
 <div id="rang-methoden-rank-tests" class="section level3" number="6.7.1">
 <h3><span class="header-section-number">6.7.1</span> Rang-Methoden (rank tests)</h3>
@@ -1611,7 +1637,7 @@ smoker
 <h3><span class="header-section-number">6.7.2</span> Wilcoxon-Vorzeichenrangtest</h3>
 <p><code>jamovi\T-Tests\Paired Samples T-Test\Wilcoxon Rank</code></p>
 <p>Der Wilcoxon-Vorzeichenrangtest wird für gepaarte Daten oder den Einstichprobenfall gewählt.</p>
-<p>Beispiel: Wie Lange dauert eine Schwangerschaft? Und hängt die genaue Bestimmung von der Untersuchungsmethode ab? Zur Verfügung stehen zwei Methoden um die Schwangerschaftsdauer zu bestimmen: Einerseits die Methode der letzten Menstruationsperiode (LMP) und andererseits die Ultraschallmethode (US). Zufällig werden zehn schwangere Frauen ausgewählt und nach beiden Methoden die Schwangerschaftsdauer bestimmt. Die Untersuchung wird blindiert durchgeführt, so dass die LMP-Untersucher:innen die Ergebnisse der US-Untersucher:innen nicht kennen und umgekehrt.</p>
+<p>Beispiel: Wie Lange dauert eine Schwangerschaft? Und hängt die genaue Bestimmung von der Untersuchungsmethode ab? Zur Verfügung stehen zwei Methoden um die Schwangerschaftsdauer zu bestimmen: Einerseits die Methode der letzten Menstruationsperiode (LMP) und andererseits die Ultraschallmethode (US). Zufällig werden zehn schwangere Frauen ausgewählt und nach beiden Methoden die Schwangerschaftsdauer bestimmt. Die Untersuchung wird blindiert durchgeführt, so dass die LMP-Untersucher:innen die Ergebnisse der US-Untersucher:innen nicht kennen und umgekehrt. (Die Daten sind im Datensatz <code>07_schwangerschaft.csv</code> abgelegt.)</p>
 <p>Die Bestimmung der Schwangerschaftsdauer bei zehn schwangeren Frauen einer einfachen Stichprobe aus der gegebenen Population liefert folgende LMP und US Daten:</p>
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
@@ -1844,7 +1870,7 @@ Abbildung 6.7: Boxplots für Schwangerschaftsdauer
 </blockquote>
 <p>Signifikanzniveau: <span class="math inline">\(\alpha = 0.05\)</span></p>
 <p><strong>Vorgehen Wilcoxon-Vorzeichenrangtest</strong></p>
-<p>[Das Prinzip des Wilcoxon-Vorzeichen-Rangtests wird hier exemplarisch an einem Beispiel erläutert. Üblicherweise wird der Test in einem Statistikprogramm durchgeführt.]</p>
+<p><em>Das Prinzip des Wilcoxon-Vorzeichen-Rangtests wird hier exemplarisch an einem Beispiel erläutert. Üblicherweise wird der Test in einem Statistikprogramm durchgeführt.</em></p>
 <p>Gilt die Nullhypothese, so kann die Differenz der LMP- und US-Werte einer schwangeren Frau sowohl positiv wie auch negativ sein; weder positive noch negative Werte sollten überwiegen und die Differenzen sollten symmetrisch um Null verteilt sein. Der Wilcoxon-Vorzeichen-Rangtest prüft, ob die paarweisen Differenzen symmetrisch mit dem <em>Median</em> gleich Null verteilt sind.</p>
 <p>Zur Durchführung des Tests werden diese Differenzen passend nach Rängen geordnet (rangiert). Es werden die absoluten Differenzen (Abstände zu Null) rangiert, ohne das Vorzeichen zu beachten. Ist eine Differenz Null, wird sie bei der Rangierung nicht verwendet und vom Stichprobenumfang n abgezogen.</p>
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
@@ -2088,22 +2114,22 @@ Abbildung 6.8: Punktediagramm der Schwangerschaftsdauer, US- und LMP-Werte mit R
 Summe der negativen Ränge: 1 + 7 = 8<br />
 Teststatistik <span class="math inline">\(W\)</span> (in <code>R</code> Teststatistik <span class="math inline">\(V\)</span>) = 47</p>
 <p>Berechnung des p-Werts für <span class="math inline">\(W = 47\)</span> und <span class="math inline">\(n = 10\)</span></p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="vergleich-von-mittelwerten.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb79-2"><a href="vergleich-von-mittelwerten.html#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-3"><a href="vergleich-von-mittelwerten.html#cb79-3" aria-hidden="true" tabindex="-1"></a>W <span class="ot">&lt;-</span> <span class="dv">47</span>                            </span>
-<span id="cb79-4"><a href="vergleich-von-mittelwerten.html#cb79-4" aria-hidden="true" tabindex="-1"></a>p_Wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">psignrank</span>(W, <span class="at">n =</span> <span class="dv">10</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) </span>
-<span id="cb79-5"><a href="vergleich-von-mittelwerten.html#cb79-5" aria-hidden="true" tabindex="-1"></a>p_Wert            </span></code></pre></div>
-<pre><code>## [1] 0.03710938</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="vergleich-von-mittelwerten.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb34-2"><a href="vergleich-von-mittelwerten.html#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="vergleich-von-mittelwerten.html#cb34-3" aria-hidden="true" tabindex="-1"></a>W <span class="ot">&lt;-</span> <span class="dv">47</span>                            </span>
+<span id="cb34-4"><a href="vergleich-von-mittelwerten.html#cb34-4" aria-hidden="true" tabindex="-1"></a>p_Wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">psignrank</span>(W, <span class="at">n =</span> <span class="dv">10</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb34-5"><a href="vergleich-von-mittelwerten.html#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(p_Wert, <span class="dv">3</span>)            </span></code></pre></div>
+<pre><code>## [1] 0.037</code></pre>
 <p><em>Schlussfolgerung: In einer Stichprobe von n = 10 schwangeren Frauen wurde die Frage untersucht, wie lange eine Schwangerschaft dauert und ob die Untersuchungsmethoden US und LMP zum gleichen Ergebnis kommen. Die Methode US ergibt gegenüber der Methode LMP eine um durchschnittlich um 6.2 Tage kürzere Schwangerschaftsdauer, Wilcoxon-Vorzeichenrangtest W = 47, p = 0.037.</em></p>
 <div id="rjamovi-3" class="section level4" number="6.7.2.1">
 <h4><span class="header-section-number">6.7.2.1</span> R/jamovi</h4>
 <p><code>R</code> Code und Output</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="vergleich-von-mittelwerten.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb81-2"><a href="vergleich-von-mittelwerten.html#cb81-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-3"><a href="vergleich-von-mittelwerten.html#cb81-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(ss<span class="sc">$</span>LMP, ss<span class="sc">$</span>US, </span>
-<span id="cb81-4"><a href="vergleich-von-mittelwerten.html#cb81-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">paired =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb81-5"><a href="vergleich-von-mittelwerten.html#cb81-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, </span>
-<span id="cb81-6"><a href="vergleich-von-mittelwerten.html#cb81-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">correct =</span> <span class="cn">TRUE</span>)    <span class="co"># mit Kontinuitätskorrektur</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="vergleich-von-mittelwerten.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb36-2"><a href="vergleich-von-mittelwerten.html#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="vergleich-von-mittelwerten.html#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(ss<span class="sc">$</span>LMP, ss<span class="sc">$</span>US, </span>
+<span id="cb36-4"><a href="vergleich-von-mittelwerten.html#cb36-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">paired =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb36-5"><a href="vergleich-von-mittelwerten.html#cb36-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, </span>
+<span id="cb36-6"><a href="vergleich-von-mittelwerten.html#cb36-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">correct =</span> <span class="cn">TRUE</span>)    <span class="co"># mit Kontinuitätskorrektur</span></span></code></pre></div>
 <pre><code>## 
 ##  Wilcoxon signed rank test with continuity correction
 ## 
@@ -2114,7 +2140,7 @@ Teststatistik <span class="math inline">\(W\)</span> (in <code>R</code> Teststat
 <ul>
 <li>Bei der Berechnung in <code>R</code> kann entspricht die ausgegebene <em>Teststatistik V</em> <span class="math inline">\(W\)</span>.<br />
 </li>
-<li>In <code>R</code> kann entschieden werden, ob die Kontinuitätskorrektur durchgeführt wird oder nicht Bei unterschiedlichen Stichprobenumfängen sollte dies immer geschehen. <code>jamovi</code> führt die Kontinuitätskorrektur immer durch.</li>
+<li>In <code>R</code> kann entschieden werden, ob die Kontinuitätskorrektur durchgeführt wird oder nicht. Bei unterschiedlichen Stichprobenumfängen sollte dies immer geschehen. <code>jamovi</code> führt die Kontinuitätskorrektur immer durch.</li>
 </ul>
 <p><code>jamovi\..\T-Tests\Paired Samples T-Test &gt; Wilcoxon Rank</code></p>
 <div class="figure">
@@ -2123,10 +2149,10 @@ Teststatistik <span class="math inline">\(W\)</span> (in <code>R</code> Teststat
 </div>
 </div>
 </div>
-<div id="wilcoxon-rangsummentest" class="section level3" number="6.7.3">
-<h3><span class="header-section-number">6.7.3</span> Wilcoxon-Rangsummentest</h3>
-<p>Der Wilcoxon-Rangsummentest (= Mann-Whitney-U-Test) wird für den Vergleich von zwei Mittelwerten verwendet, wenn der Stichprobenumfang n &lt; 30 ist oder wenn die Daten nicht normalverteilt sind.</p>
-<p>Beispiel: Erreichen Studierende, die während einer Woche täglich 30 Minuten Statistikübungen machen, bessere Noten in einer Statistikprüfung? Für diese Studie wurden 15 Studierende zufällig ausgewählt und zufällig den Gruppen INT (n = 8) und CON (n = 7) zugeteilt. Beide Gruppen besuchten die Statistikvorlesung. Die Studierenden der Gruppe INT machten zusätzlich während einer Woche täglich 30 Min. Statistikübungen, die Gruppe CON machte keine Statistikübungen. Nach einer Woche wurde ein Statistiktest durchgeführt, der mit 0 bis 100 Punkten bewertet wurde.</p>
+<div id="mann-whitney-u-test" class="section level3" number="6.7.3">
+<h3><span class="header-section-number">6.7.3</span> Mann-Whitney-U-Test</h3>
+<p>Der Mann-Whitney-U-Test (= Wilcoxon-Rangsummentest) wird für den Vergleich von zwei Mittelwerten verwendet, wenn der Stichprobenumfang n &lt; 30 ist oder wenn die Daten nicht normalverteilt sind.</p>
+<p>Beispiel: Erreichen Studierende, die während einer Woche täglich 30 Minuten Statistikübungen machen, bessere Noten in einer Statistikprüfung? Für diese Studie wurden 15 Studierende zufällig ausgewählt und zufällig den Gruppen INT (n = 8) und CON (n = 7) zugeteilt. Beide Gruppen besuchten die Statistikvorlesung. Die Studierenden der Gruppe INT machten zusätzlich während einer Woche täglich 30 Min. Statistikübungen, die Gruppe CON machte keine Statistikübungen. Nach einer Woche wurde ein Statistiktest durchgeführt, der mit 0 bis 100 Punkten bewertet wurde. (Die Daten sind im Datensatz <code>07_statex.csv</code> abgelegt)</p>
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:data-statex-tab">Tabelle 6.12: </span>Daten Statistikresultate
@@ -2456,23 +2482,23 @@ Abbildung 6.10: Punktediagramm der Ränge für Statistikresultate
 <span class="math inline">\(U_2 = 8\times7+\frac{7(7+1)}{2} - 72 = 12\)</span></p>
 <p>Unsere Teststatistik <span class="math inline">\(U\)</span> ist die kleinere der beiden Grössen <span class="math inline">\(U_1\)</span> und <span class="math inline">\(U_2\)</span>: <span class="math inline">\(U = 12\)</span></p>
 <p>Berechnung des p-Werts mit <code>R</code></p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="vergleich-von-mittelwerten.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb83-2"><a href="vergleich-von-mittelwerten.html#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb83-3"><a href="vergleich-von-mittelwerten.html#cb83-3" aria-hidden="true" tabindex="-1"></a>U <span class="ot">&lt;-</span> <span class="dv">12</span></span>
-<span id="cb83-4"><a href="vergleich-von-mittelwerten.html#cb83-4" aria-hidden="true" tabindex="-1"></a>p_Wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pwilcox</span>(U, <span class="at">m =</span> <span class="dv">8</span>, <span class="at">n =</span> <span class="dv">7</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span>
-<span id="cb83-5"><a href="vergleich-von-mittelwerten.html#cb83-5" aria-hidden="true" tabindex="-1"></a>p_Wert</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="vergleich-von-mittelwerten.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb38-2"><a href="vergleich-von-mittelwerten.html#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="vergleich-von-mittelwerten.html#cb38-3" aria-hidden="true" tabindex="-1"></a>U <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb38-4"><a href="vergleich-von-mittelwerten.html#cb38-4" aria-hidden="true" tabindex="-1"></a>p_Wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pwilcox</span>(U, <span class="at">m =</span> <span class="dv">8</span>, <span class="at">n =</span> <span class="dv">7</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb38-5"><a href="vergleich-von-mittelwerten.html#cb38-5" aria-hidden="true" tabindex="-1"></a>p_Wert</span></code></pre></div>
 <pre><code>## [1] 0.07210567</code></pre>
 <p>Da der p-Wert mit 0.0721 grösser als <span class="math inline">\(\alpha = 0.05\)</span> verwerfen wir die Nullhypothese nicht.</p>
 <p><em>Schlussfolgerung: Untersucht wurde die Frage, ob Studierende, die während einer Woche täglich 30 Minuten Statistikübungen machen, bessere Punktzahlen erreichen als Studierende, die das nicht tun. Studierende, die während einer Woche täglich 30 Minunten Statistikübungen machen, erreichten in unserer Studie im Durchschnitt eine um 8.45 Punkte höhere Punktzahl in der Statistikprüfung, Mann-Whitney-U = 12, p = 0.0721. Damit liegt keine Evidenz dafür vor, dass sich die Prüfungsergebnisse im Durchschnitt zwischen den beiden Gruppen unterscheiden.</em></p>
 <div id="rjamovi-4" class="section level4" number="6.7.3.1">
 <h4><span class="header-section-number">6.7.3.1</span> R/jamovi</h4>
 <p><code>R</code> Code und Output</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="vergleich-von-mittelwerten.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb85-2"><a href="vergleich-von-mittelwerten.html#cb85-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-3"><a href="vergleich-von-mittelwerten.html#cb85-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(</span>
-<span id="cb85-4"><a href="vergleich-von-mittelwerten.html#cb85-4" aria-hidden="true" tabindex="-1"></a>  Punkte <span class="sc">~</span> Gruppe, <span class="at">data =</span> statex, </span>
-<span id="cb85-5"><a href="vergleich-von-mittelwerten.html#cb85-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">paired =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb85-6"><a href="vergleich-von-mittelwerten.html#cb85-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="vergleich-von-mittelwerten.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb40-2"><a href="vergleich-von-mittelwerten.html#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="vergleich-von-mittelwerten.html#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(</span>
+<span id="cb40-4"><a href="vergleich-von-mittelwerten.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  Punkte <span class="sc">~</span> Gruppe, <span class="at">data =</span> statex, </span>
+<span id="cb40-5"><a href="vergleich-von-mittelwerten.html#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">paired =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb40-6"><a href="vergleich-von-mittelwerten.html#cb40-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Wilcoxon rank sum exact test
 ## 
@@ -2486,8 +2512,8 @@ Abbildung 6.10: Punktediagramm der Ränge für Statistikresultate
 <p class="caption">jamovi-Output Mann Whitney U-Test</p>
 </div>
 </div>
-<div id="voraussetzungen-für-den-wilcoxon-rangsummen-test" class="section level4" number="6.7.3.2">
-<h4><span class="header-section-number">6.7.3.2</span> Voraussetzungen für den Wilcoxon-Rangsummen-Test:</h4>
+<div id="voraussetzungen-für-den-mann-whitney-u-test" class="section level4" number="6.7.3.2">
+<h4><span class="header-section-number">6.7.3.2</span> Voraussetzungen für den Mann-Whitney-U-Test:</h4>
 <ul>
 <li>Die Daten sind mindestens qualitativ-ordinal skaliert (Likert-Skalen, visuelle Analogskalen).<br />
 </li>
@@ -2501,6 +2527,92 @@ Abbildung 6.10: Punktediagramm der Ränge für Statistikresultate
 Abbildung 6.11: Gleiche versus ungleiche Verteilung
 </p>
 </div>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:plot-equal-notequal">Tabelle 6.15: </span>Mittelwert und Median für Abb. links
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Stichprobe
+</th>
+<th style="text-align:right;">
+M
+</th>
+<th style="text-align:right;">
+Median
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+SP1
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SP2
+</td>
+<td style="text-align:right;">
+0.34
+</td>
+<td style="text-align:right;">
+0.37
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:plot-equal-notequal">Tabelle 6.15: </span>Mittelwert und Median für Abb. rechts
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Stichprobe
+</th>
+<th style="text-align:right;">
+M
+</th>
+<th style="text-align:right;">
+Median
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+SP1
+</td>
+<td style="text-align:right;">
+1.59
+</td>
+<td style="text-align:right;">
+1.83
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SP2
+</td>
+<td style="text-align:right;">
+1.99
+</td>
+<td style="text-align:right;">
+1.62
+</td>
+</tr>
+</tbody>
+</table>
+<p>Boxplot und Kennzahlen beider Stichproben in der Abbildung links zeigen eine linksschiefe Verteilung. Die Daten in der rechten Abbildung zeigen für die Gruppe SP1 eine linksschiefe und für die Stichprobe SP2 eine rechtsschiefe Verteilung.</p>
+<p>Übung: Im Beispiel für den t-Test für unabhängige Stichproben haben wir festgestellt, dass die Daten nicht aus einer normalverteilten Population stammen und die korrekte Testwahl wäre der Mann-Whitney-U-Test. Führen Sie diesen durch und vergleichen Sie das Resultat mit dem t-Test für unabhängige Stichproben.</p>
 
 </div>
 </div>

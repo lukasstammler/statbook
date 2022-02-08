@@ -225,3 +225,8 @@ berechnen-der-erwarteten-werte-unter-der-nullhypothese
 voraussetzungen-1
 interpretation-des-chi2-tests
 referenzen
+tab:plot-equal-notequal
+url-your-book-url-like-httpsbookdown.orgyihuibookdown
+konfidenzintervall-für-einen-mittelwert-schritt-für-schritt
+mann-whitney-u-test
+voraussetzungen-für-den-mann-whitney-u-test
