@@ -225,7 +225,7 @@ bookstore$residuals <- residuals(model1)
 # summary(model1)
 ```
 
-```{r plot-bookstore-residuals, fig.dim=c(5, 5), fig.align='center'}
+```{r plot-bookstore-residuals, fig.dim=c(5, 5), fig.align='center', fig.cap="Anzahl verkaufter Bücher nach der Anzahl der Studierenden"}
 ggplot(bookstore, aes(x = Studierende, y = Buecher)) +
   geom_segment(aes(xend = Studierende, yend = predicted), color = "orange", alpha = 1) +
   geom_point(color = COL[1], size = 3, alpha = .7) +

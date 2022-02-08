@@ -679,8 +679,13 @@ Abbildung 8.3: Welche Gerade ist ein optimales Modell?
 </li>
 <li>Die Gerade beschreibt einen negativen linearen Zusammenhang, das ist Unsinn.</li>
 </ol>
-<p><img src="statbook_files/figure-html/plot-bookstore-residuals-1.png" width="480" style="display: block; margin: auto;" /></p>
-<p>Die Abbildung <a href="#fig:plot-bookstore-residuals"><strong>??</strong></a> zeigt die Gerade (e), die den funktionalen Zusammenhang zwischen Studierenden und verkauften Büchern modelliert. Die blauen Punkte sind die Anzahl effektiv verkaufter Bücher pro Studierendenanzahl und die roten Punkte sind die Anzahl der Bücher, die unser Modell vorhersagt. Die roten Punkte sind die vom Modell berechneten Werte <em>(fitted values)</em> und wir sehen, dass die Gerade die meisten blauen Punkte verfehlt. Die senkrechten Linien zwischen den gemessenen Werten (blau) und den gefitteten Werten (rot) bezeichnen wir als <strong>Residuen</strong>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:plot-bookstore-residuals"></span>
+<img src="statbook_files/figure-html/plot-bookstore-residuals-1.png" alt="Anzahl verkaufter Bücher nach der Anzahl der Studierenden" width="480" />
+<p class="caption">
+Abbildung 8.4: Anzahl verkaufter Bücher nach der Anzahl der Studierenden
+</p>
+</div>
+<p>Die Abbildung <a href="einfache-lineare-regression.html#fig:plot-bookstore-residuals">8.4</a> zeigt die Gerade (e), die den funktionalen Zusammenhang zwischen Studierenden und verkauften Büchern modelliert. Die blauen Punkte sind die Anzahl effektiv verkaufter Bücher pro Studierendenanzahl und die roten Punkte sind die Anzahl der Bücher, die unser Modell vorhersagt. Die roten Punkte sind die vom Modell berechneten Werte <em>(fitted values)</em> und wir sehen, dass die Gerade die meisten blauen Punkte verfehlt. Die senkrechten Linien zwischen den gemessenen Werten (blau) und den gefitteten Werten (rot) bezeichnen wir als <strong>Residuen</strong>.</p>
 <p>Definition <strong>Residuum</strong>: Senkrechte Differenz zwischen dem Modell vorhergesagten Wert <span class="math inline">\(\hat{y}\)</span> (gefitteter Wert) und dem tatsächlich beobachteten Wert <span class="math inline">\(y\)</span>. Das Residuum <span class="math inline">\(e_i\)</span> der i-ten Beobachtung ist die Differenz zwischen dem beobachteten Wert <span class="math inline">\(y_i\)</span> und dem vom Modell vorhergesagten Wert <span class="math inline">\(\hat{y_i}\)</span>.</p>
 <p><span class="math display">\[e_i = y_i-\hat{y_i}\]</span></p>
 <p><span class="math inline">\(\hat{y_i}\)</span> berechnen wir durch Einsetzen von <span class="math inline">\(x_i\)</span> in die Regressionsgleichung.</p>
@@ -700,10 +705,10 @@ Abbildung 8.3: Welche Gerade ist ein optimales Modell?
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:elmhurst-fig"></span>
 <img src="statbook_files/figure-html/elmhurst-fig-1.png" alt="Universitäre Unterstützung nach Familieneinkommen" width="480" />
 <p class="caption">
-Abbildung 8.4: Universitäre Unterstützung nach Familieneinkommen
+Abbildung 8.5: Universitäre Unterstützung nach Familieneinkommen
 </p>
 </div>
-<p>Die Abbildung <a href="einfache-lineare-regression.html#fig:elmhurst-fig">8.4</a> zeigt die finanzielle Unterstützung durch die Universität Elmhurst (Illinois) in Abhängigkeit vom Familieneinkommen <span class="citation">(Quelle <a href="#ref-R-openintro" role="doc-biblioref">Çetinkaya-Rundel et al. 2021</a>)</span>. Die gestrichelte Linie wurde mit der Methode der Summe der Absolutwerte der Residuen und die ausgezogene Linie mit der Kleinst-Quadrat-Methode berechnet. Beide Varianten würden ein plausibles Modell ergeben, aber die Kleinst-Quadrat-Methode hat sich als Standard etabliert.</p>
+<p>Die Abbildung <a href="einfache-lineare-regression.html#fig:elmhurst-fig">8.5</a> zeigt die finanzielle Unterstützung durch die Universität Elmhurst (Illinois) in Abhängigkeit vom Familieneinkommen <span class="citation">(Quelle <a href="#ref-R-openintro" role="doc-biblioref">Çetinkaya-Rundel et al. 2021</a>)</span>. Die gestrichelte Linie wurde mit der Methode der Summe der Absolutwerte der Residuen und die ausgezogene Linie mit der Kleinst-Quadrat-Methode berechnet. Beide Varianten würden ein plausibles Modell ergeben, aber die Kleinst-Quadrat-Methode hat sich als Standard etabliert.</p>
 <p>Die Berechnung der Geradengleichung überlassen wir i.d.R. <code>R</code>. Hier die Formeln für die Berechnung von Hand für die einfache lineare Regression:</p>
 <p><strong>Berechnung der Steigung</strong></p>
 <p><span class="math display">\[\beta_1 = \frac{s_y}{s_x}r\]</span>
@@ -755,7 +760,7 @@ wobei <span class="math inline">\(\bar{y}\)</span> der Mittelwert von <span clas
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:bookstore-33-fig"></span>
 <img src="statbook_files/figure-html/bookstore-33-fig-1.png" alt="Buchhandlung: Vorhersage für 33 Stud." width="480" />
 <p class="caption">
-Abbildung 8.5: Buchhandlung: Vorhersage für 33 Stud.
+Abbildung 8.6: Buchhandlung: Vorhersage für 33 Stud.
 </p>
 </div>
 </div>
@@ -766,14 +771,14 @@ Abbildung 8.5: Buchhandlung: Vorhersage für 33 Stud.
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sprint100m-fig"></span>
 <img src="statbook_files/figure-html/sprint100m-fig-1.png" alt="Olympische Zeit für 100m-Sprint" width="480" />
 <p class="caption">
-Abbildung 8.6: Olympische Zeit für 100m-Sprint
+Abbildung 8.7: Olympische Zeit für 100m-Sprint
 </p>
 </div>
 <p>Die Steigung bei den Frauen ist etwas stärker negativ als bei den Männern (<span class="math inline">\(\beta_{1, f}\)</span> = -0.02, <span class="math inline">\(\beta_{1,m}\)</span> = -0.01). Das heisst, dass die Frauen in den Jahren 1928 bis 2004 ihre Geschwindigkeit im Durchschnitt um 0.01 Sekunden mehr steigern konnten als die Männer: Frauen wurden im Durchschnitt pro Jahr um 0.02 Sekunden schneller, Männer um 0.01 Sekunden.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sprint100m-extrapol-fig"></span>
 <img src="statbook_files/figure-html/sprint100m-extrapol-fig-1.png" alt="Zeit für 100m-Sprint Frauen extrapoliert" width="480" />
 <p class="caption">
-Abbildung 8.7: Zeit für 100m-Sprint Frauen extrapoliert
+Abbildung 8.8: Zeit für 100m-Sprint Frauen extrapoliert
 </p>
 </div>
 <p>Die Autoren des Artikels haben nun berechnet, wie sich die Laufzeiten in Zukunft entwickeln werden. Extrapoliert man die Regressionsgleichung der olympischen Zeiten für 100m-Sprint über den Messzeitraum hinaus, überschneiden sich die Regressionsgeraden im Jahr 2156. Ab dann überholen die Frauen die Männer!</p>
@@ -781,7 +786,7 @@ Abbildung 8.7: Zeit für 100m-Sprint Frauen extrapoliert
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sprint100m-zero-fig"></span>
 <img src="statbook_files/figure-html/sprint100m-zero-fig-1.png" alt="Zeit für 100m-Sprint Frauen bis ins Jahr 2800 extrapoliert" width="480" />
 <p class="caption">
-Abbildung 8.8: Zeit für 100m-Sprint Frauen bis ins Jahr 2800 extrapoliert
+Abbildung 8.9: Zeit für 100m-Sprint Frauen bis ins Jahr 2800 extrapoliert
 </p>
 </div>
 <p>Wir lernen daraus, dass die Regressionsgerade immer nur für den effektiv gemessenen Datenbereich gültig ist.</p>

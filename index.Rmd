@@ -38,7 +38,7 @@ knitr::include_graphics("./illustrations/LS.png")
 
 Version 1.0 (09.02.2022)     
 
-Hinweise auf Fehler gerne an <lukas.stammler@bfh.ch>
+Kommentare und Hinweise auf Fehler gerne an <lukas.stammler@bfh.ch>
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages

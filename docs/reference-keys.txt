@@ -92,6 +92,7 @@ tab:bookstore-tab
 fig:bookstore-fig
 fig:geradengleichung-fig
 fig:bookstore-lines-fig
+fig:plot-bookstore-residuals
 fig:elmhurst-fig
 fig:bookstore-33-fig
 fig:sprint100m-fig
