@@ -167,7 +167,7 @@ div.csl-indent {
 <li><a href="./">Leitfaden Statistik</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Über diesen Leitfaden</a></li>
 <li class="chapter" data-level="2" data-path="einführung.html"><a href="einführung.html"><i class="fa fa-check"></i><b>2</b> Einführung</a></li>
 <li class="chapter" data-level="3" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptive Statistik</a>
 <ul>
@@ -489,42 +489,42 @@ Abbildung 6.2: QQ-Plot fpr Cherryblossom-Run 2012, n = 100
 <p><span class="math display">\[CI_{95} = \bar{x} \pm t_{df} \times SE\]</span></p>
 <p>Wir verwenden hier für die Berechnung des 95%-Konfidenzintervalls den t-Wert für die Anzahl Freiheitsgrade df = (100 - 1) = 99. Am einfachsten finden Sie den t-Wert mit dem <a href="http://eswf.uni-koeln.de/glossar/surfstat/t.htm">Internet-Rechner Students T-Verteilung</a>.</p>
 <p>Die Berechnung in <code>R/jamovi</code>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="vergleich-von-mittelwerten.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb1-2"><a href="vergleich-von-mittelwerten.html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="vergleich-von-mittelwerten.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># die Funktion qt() berechnet eine Quantile für eine bestimmte Fläche und </span></span>
-<span id="cb1-4"><a href="vergleich-von-mittelwerten.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># einen bestimmten Freiheitsgrad df</span></span>
-<span id="cb1-5"><a href="vergleich-von-mittelwerten.html#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="vergleich-von-mittelwerten.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="at">df =</span> <span class="dv">99</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="vergleich-von-mittelwerten.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb54-2"><a href="vergleich-von-mittelwerten.html#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-3"><a href="vergleich-von-mittelwerten.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co"># die Funktion qt() berechnet eine Quantile für eine bestimmte Fläche und </span></span>
+<span id="cb54-4"><a href="vergleich-von-mittelwerten.html#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co"># einen bestimmten Freiheitsgrad df</span></span>
+<span id="cb54-5"><a href="vergleich-von-mittelwerten.html#cb54-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-6"><a href="vergleich-von-mittelwerten.html#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="at">df =</span> <span class="dv">99</span>)</span></code></pre></div>
 <pre><code>## [1] 1.984217</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="vergleich-von-mittelwerten.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code   </span></span>
-<span id="cb3-2"><a href="vergleich-von-mittelwerten.html#cb3-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span>                       <span class="co"># Stichprobenumfang </span></span>
-<span id="cb3-3"><a href="vergleich-von-mittelwerten.html#cb3-3" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fl">95.87</span>                     <span class="co"># Mittelwert</span></span>
-<span id="cb3-4"><a href="vergleich-von-mittelwerten.html#cb3-4" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fl">16.66</span>                     <span class="co"># Standardabweichung</span></span>
-<span id="cb3-5"><a href="vergleich-von-mittelwerten.html#cb3-5" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">&lt;-</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n)                <span class="co"># Standardfehler berechnen</span></span>
-<span id="cb3-6"><a href="vergleich-von-mittelwerten.html#cb3-6" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">qt</span>(.<span class="dv">975</span>, <span class="at">df =</span> <span class="dv">100-1</span>)      <span class="co"># t-Wert für 95%-CI und df = n-1 berechnen</span></span>
-<span id="cb3-7"><a href="vergleich-von-mittelwerten.html#cb3-7" aria-hidden="true" tabindex="-1"></a>CI95 <span class="ot">&lt;-</span> m <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> t <span class="sc">*</span> SE  <span class="co"># Grenzen für 95%-CI berechnen</span></span>
-<span id="cb3-8"><a href="vergleich-von-mittelwerten.html#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(CI95, <span class="dv">2</span>)                 <span class="co"># 95%-CI gerundet auf 2 Nachkommastellen ausgeben</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="vergleich-von-mittelwerten.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code   </span></span>
+<span id="cb56-2"><a href="vergleich-von-mittelwerten.html#cb56-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span>                       <span class="co"># Stichprobenumfang </span></span>
+<span id="cb56-3"><a href="vergleich-von-mittelwerten.html#cb56-3" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fl">95.87</span>                     <span class="co"># Mittelwert</span></span>
+<span id="cb56-4"><a href="vergleich-von-mittelwerten.html#cb56-4" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fl">16.66</span>                     <span class="co"># Standardabweichung</span></span>
+<span id="cb56-5"><a href="vergleich-von-mittelwerten.html#cb56-5" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">&lt;-</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n)                <span class="co"># Standardfehler berechnen</span></span>
+<span id="cb56-6"><a href="vergleich-von-mittelwerten.html#cb56-6" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">qt</span>(.<span class="dv">975</span>, <span class="at">df =</span> <span class="dv">100-1</span>)      <span class="co"># t-Wert für 95%-CI und df = n-1 berechnen</span></span>
+<span id="cb56-7"><a href="vergleich-von-mittelwerten.html#cb56-7" aria-hidden="true" tabindex="-1"></a>CI95 <span class="ot">&lt;-</span> m <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> t <span class="sc">*</span> SE  <span class="co"># Grenzen für 95%-CI berechnen</span></span>
+<span id="cb56-8"><a href="vergleich-von-mittelwerten.html#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(CI95, <span class="dv">2</span>)                 <span class="co"># 95%-CI gerundet auf 2 Nachkommastellen ausgeben</span></span></code></pre></div>
 <pre><code>## [1] 92.56 99.18</code></pre>
 <p>Das 95%-Konfidenzintervall für die durchschnittliche Laufzeit 2012 ist [92.56; 99.18]. Es beinhaltet den Durchschnittswert von 2006 von 93.29 Minuten und wir haben keine Evidenz gegen die Nullhypothese.</p>
 <p><strong>4. Berechnung des p-Werts: Ein-Stichproben-T-Test</strong></p>
 <p>Die Berechnung des t-Werts erfolgt gleich wie für den z-Wert:</p>
 <p><span class="math display">\[t = \frac{\bar{x} - \mu_0}{SE}\]</span></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="vergleich-von-mittelwerten.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb5-2"><a href="vergleich-von-mittelwerten.html#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="vergleich-von-mittelwerten.html#cb5-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span>                   <span class="co"># Stichprobenumfang der Stichprobe 2012</span></span>
-<span id="cb5-4"><a href="vergleich-von-mittelwerten.html#cb5-4" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fl">95.87</span>                 <span class="co"># Stichprobenmittelwert 2012</span></span>
-<span id="cb5-5"><a href="vergleich-von-mittelwerten.html#cb5-5" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fl">16.66</span>                 <span class="co"># Standardabweichung 2012</span></span>
-<span id="cb5-6"><a href="vergleich-von-mittelwerten.html#cb5-6" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fl">93.29</span>                <span class="co"># Nullwert 2006</span></span>
-<span id="cb5-7"><a href="vergleich-von-mittelwerten.html#cb5-7" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">&lt;-</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n)            <span class="co"># Standardfehler für den Stichprobenmittelwert 2012</span></span>
-<span id="cb5-8"><a href="vergleich-von-mittelwerten.html#cb5-8" aria-hidden="true" tabindex="-1"></a>t_wert <span class="ot">&lt;-</span> (m <span class="sc">-</span> mu)<span class="sc">/</span>SE      <span class="co"># Berechnung des t-Werts</span></span>
-<span id="cb5-9"><a href="vergleich-von-mittelwerten.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(t_wert, <span class="dv">3</span>)           <span class="co"># t-wert auf drei Stellen runden und ausgeben</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="vergleich-von-mittelwerten.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb58-2"><a href="vergleich-von-mittelwerten.html#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="vergleich-von-mittelwerten.html#cb58-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span>                   <span class="co"># Stichprobenumfang der Stichprobe 2012</span></span>
+<span id="cb58-4"><a href="vergleich-von-mittelwerten.html#cb58-4" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fl">95.87</span>                 <span class="co"># Stichprobenmittelwert 2012</span></span>
+<span id="cb58-5"><a href="vergleich-von-mittelwerten.html#cb58-5" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fl">16.66</span>                 <span class="co"># Standardabweichung 2012</span></span>
+<span id="cb58-6"><a href="vergleich-von-mittelwerten.html#cb58-6" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fl">93.29</span>                <span class="co"># Nullwert 2006</span></span>
+<span id="cb58-7"><a href="vergleich-von-mittelwerten.html#cb58-7" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">&lt;-</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n)            <span class="co"># Standardfehler für den Stichprobenmittelwert 2012</span></span>
+<span id="cb58-8"><a href="vergleich-von-mittelwerten.html#cb58-8" aria-hidden="true" tabindex="-1"></a>t_wert <span class="ot">&lt;-</span> (m <span class="sc">-</span> mu)<span class="sc">/</span>SE      <span class="co"># Berechnung des t-Werts</span></span>
+<span id="cb58-9"><a href="vergleich-von-mittelwerten.html#cb58-9" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(t_wert, <span class="dv">3</span>)           <span class="co"># t-wert auf drei Stellen runden und ausgeben</span></span></code></pre></div>
 <pre><code>## [1] 1.549</code></pre>
 <p>Die Teststatistik für unsere Punktschätzung ist <span class="math inline">\(t = 1.549\)</span>. Den p-Wert können wir wieder mit dem <a href="http://eswf.uni-koeln.de/glossar/surfstat/t.htm">Internet-Rechner Students T-Verteilung</a> oder mit <code>R/jamovi</code> berechnen.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="vergleich-von-mittelwerten.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb7-2"><a href="vergleich-von-mittelwerten.html#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="vergleich-von-mittelwerten.html#cb7-3" aria-hidden="true" tabindex="-1"></a>p_wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(t_wert, <span class="at">df =</span> <span class="dv">99</span>)) <span class="co"># p-Wert für eine zweiseitige Hypothese</span></span>
-<span id="cb7-4"><a href="vergleich-von-mittelwerten.html#cb7-4" aria-hidden="true" tabindex="-1"></a>p_wert <span class="ot">&lt;-</span> <span class="fu">round</span>(p_wert, <span class="dv">3</span>)            <span class="co"># p-Wert auf 3 Nachkommastellen runden</span></span>
-<span id="cb7-5"><a href="vergleich-von-mittelwerten.html#cb7-5" aria-hidden="true" tabindex="-1"></a>p_wert                                <span class="co"># p-Wert anzeigen</span></span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="vergleich-von-mittelwerten.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb60-2"><a href="vergleich-von-mittelwerten.html#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="vergleich-von-mittelwerten.html#cb60-3" aria-hidden="true" tabindex="-1"></a>p_wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(t_wert, <span class="at">df =</span> <span class="dv">99</span>)) <span class="co"># p-Wert für eine zweiseitige Hypothese</span></span>
+<span id="cb60-4"><a href="vergleich-von-mittelwerten.html#cb60-4" aria-hidden="true" tabindex="-1"></a>p_wert <span class="ot">&lt;-</span> <span class="fu">round</span>(p_wert, <span class="dv">3</span>)            <span class="co"># p-Wert auf 3 Nachkommastellen runden</span></span>
+<span id="cb60-5"><a href="vergleich-von-mittelwerten.html#cb60-5" aria-hidden="true" tabindex="-1"></a>p_wert                                <span class="co"># p-Wert anzeigen</span></span></code></pre></div>
 <pre><code>## [1] 0.125</code></pre>
 <p>Ein <span class="math inline">\(p\)</span>-Wert von <span class="math inline">\(p\)</span> = 0.125 bedeutet, dass unter der Annahme, dass <span class="math inline">\(H_0\)</span> wahr ist, ein Ergebnis wie in unserer Stichprobe oder ein noch extremeres Ergebnis mit einer Wahrscheinlichkeit von 12.5 % vorkommt. <span class="math inline">\(p\)</span> = 0.12 ist grösser als unser Signifikanzniveau <span class="math inline">\(\alpha\)</span> = 0.05 und wir verwerfen die <span class="math inline">\(H_0\)</span> nicht.</p>
 <p><strong>5. Schlussfolgerung formulieren</strong></p>
@@ -542,18 +542,18 @@ Abbildung 6.2: QQ-Plot fpr Cherryblossom-Run 2012, n = 100
 <li>Schlussfolgerung: Interpretiere das Konfidenzintervall im Zusammenhang mit der Fragestellung.</li>
 </ol>
 <p>Code-Tipp: <span class="math inline">\(t_{df}\)</span> lässt sich in <code>R/jamovi</code> einfach berechnen:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="vergleich-von-mittelwerten.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb9-2"><a href="vergleich-von-mittelwerten.html#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="vergleich-von-mittelwerten.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy-Paste in R-Konsole: für df muss jeweils n - 1 eingetragen werden</span></span>
-<span id="cb9-4"><a href="vergleich-von-mittelwerten.html#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="vergleich-von-mittelwerten.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># für ein 95%-Konfidenzintervall</span></span>
-<span id="cb9-6"><a href="vergleich-von-mittelwerten.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, df)</span>
-<span id="cb9-7"><a href="vergleich-von-mittelwerten.html#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="vergleich-von-mittelwerten.html#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># für ein 99%-Konfidenzintervall</span></span>
-<span id="cb9-9"><a href="vergleich-von-mittelwerten.html#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">995</span>, df)</span>
-<span id="cb9-10"><a href="vergleich-von-mittelwerten.html#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="vergleich-von-mittelwerten.html#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># für ein 90%-Konfidenzintervall</span></span>
-<span id="cb9-12"><a href="vergleich-von-mittelwerten.html#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">95</span>, df)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="vergleich-von-mittelwerten.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb62-2"><a href="vergleich-von-mittelwerten.html#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="vergleich-von-mittelwerten.html#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy-Paste in R-Konsole: für df muss jeweils n - 1 eingetragen werden</span></span>
+<span id="cb62-4"><a href="vergleich-von-mittelwerten.html#cb62-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-5"><a href="vergleich-von-mittelwerten.html#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="co"># für ein 95%-Konfidenzintervall</span></span>
+<span id="cb62-6"><a href="vergleich-von-mittelwerten.html#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, df)</span>
+<span id="cb62-7"><a href="vergleich-von-mittelwerten.html#cb62-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-8"><a href="vergleich-von-mittelwerten.html#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="co"># für ein 99%-Konfidenzintervall</span></span>
+<span id="cb62-9"><a href="vergleich-von-mittelwerten.html#cb62-9" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">995</span>, df)</span>
+<span id="cb62-10"><a href="vergleich-von-mittelwerten.html#cb62-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-11"><a href="vergleich-von-mittelwerten.html#cb62-11" aria-hidden="true" tabindex="-1"></a><span class="co"># für ein 90%-Konfidenzintervall</span></span>
+<span id="cb62-12"><a href="vergleich-von-mittelwerten.html#cb62-12" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">95</span>, df)</span></code></pre></div>
 </div>
 <div id="ein-stichproben-t-test-schritt-für-schritt" class="section level3" number="6.4.3">
 <h3><span class="header-section-number">6.4.3</span> Ein-Stichproben-T-Test Schritt-für-Schritt:</h3>
@@ -566,19 +566,19 @@ Abbildung 6.2: QQ-Plot fpr Cherryblossom-Run 2012, n = 100
 <li>Schlussfolgerung: Beurteile den Hypothesentest, indem du den <span class="math inline">\(p\)</span>-Wert mit dem Signifkanzniveau <span class="math inline">\(\alpha\)</span> vergleichst. Formuliere eine Schlussfolgerung im Zusammenhang mit der Fragestellung in leicht verständlicher Sprache.</li>
 </ol>
 <p>Code-Tipp: Der <span class="math inline">\(p\)</span>-Wert lässt sich in <code>R/jamovi</code> einfach berechnen:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="vergleich-von-mittelwerten.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb10-2"><a href="vergleich-von-mittelwerten.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="vergleich-von-mittelwerten.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># p-Wert für eine zweiseitige Hypothese berechnen</span></span>
-<span id="cb10-4"><a href="vergleich-von-mittelwerten.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(t_wert, <span class="at">df =</span> n <span class="sc">-</span> <span class="dv">1</span>))  <span class="co"># df = n - 1 = Stichprobenumfang - 1</span></span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="vergleich-von-mittelwerten.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb63-2"><a href="vergleich-von-mittelwerten.html#cb63-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-3"><a href="vergleich-von-mittelwerten.html#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="co"># p-Wert für eine zweiseitige Hypothese berechnen</span></span>
+<span id="cb63-4"><a href="vergleich-von-mittelwerten.html#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(t_wert, <span class="at">df =</span> n <span class="sc">-</span> <span class="dv">1</span>))  <span class="co"># df = n - 1 = Stichprobenumfang - 1</span></span></code></pre></div>
 </div>
 <div id="rjamovi" class="section level3" number="6.4.4">
 <h3><span class="header-section-number">6.4.4</span> R/jamovi</h3>
 <p><code>R</code>-Code und Output</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="vergleich-von-mittelwerten.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb11-2"><a href="vergleich-von-mittelwerten.html#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="vergleich-von-mittelwerten.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> sample<span class="sc">$</span>time,               <span class="co"># sample$time = daten$variable</span></span>
-<span id="cb11-4"><a href="vergleich-von-mittelwerten.html#cb11-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="fl">93.29</span>,                    <span class="co"># mu = Nullwert</span></span>
-<span id="cb11-5"><a href="vergleich-von-mittelwerten.html#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)     <span class="co"># zweiseitige Alternativhypothese</span></span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="vergleich-von-mittelwerten.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb64-2"><a href="vergleich-von-mittelwerten.html#cb64-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-3"><a href="vergleich-von-mittelwerten.html#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> sample<span class="sc">$</span>time,               <span class="co"># sample$time = daten$variable</span></span>
+<span id="cb64-4"><a href="vergleich-von-mittelwerten.html#cb64-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="fl">93.29</span>,                    <span class="co"># mu = Nullwert</span></span>
+<span id="cb64-5"><a href="vergleich-von-mittelwerten.html#cb64-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)     <span class="co"># zweiseitige Alternativhypothese</span></span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -862,34 +862,34 @@ Abbildung 6.4: Histogramm und QQ-Plot für paarweise Differenzen
 <p><span class="math display">\[SE = \frac{0.672}{\sqrt{20}}  = 0.15\]</span></p>
 <p><span class="math display">\[t_{df=19} = \frac{0.395-0}{0.150} = 2.629\]</span></p>
 <p>Den p-Wert für t und df = 20-1 können wir wieder mit dem <a href="http://eswf.uni-koeln.de/glossar/surfstat/t.htm">Internet-Rechner Students T-Verteilung</a> oder mit <code>R/jamovi</code> berechnen.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="vergleich-von-mittelwerten.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb13-2"><a href="vergleich-von-mittelwerten.html#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="vergleich-von-mittelwerten.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(t, <span class="at">df =</span> <span class="dv">20-1</span>)) <span class="co"># p-Wert für zweiseitige Hypothese, t-Verteilung, df = 19</span></span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="vergleich-von-mittelwerten.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb66-2"><a href="vergleich-von-mittelwerten.html#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-3"><a href="vergleich-von-mittelwerten.html#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(t, <span class="at">df =</span> <span class="dv">20-1</span>)) <span class="co"># p-Wert für zweiseitige Hypothese, t-Verteilung, df = 19</span></span></code></pre></div>
 <p>Mit <span class="math inline">\(p\)</span> = 0.017 ist die Wahrscheinlichkeit für den beobachteten Effekt oder einen stärkeren Effekt kleiner als unser Signifkanzniveau <span class="math inline">\(\alpha = 0.05\)</span> und wir haben Evidenz dafür, dass wir die Nullhypothese zugunsten der Alternativhypothese verwerfen können.</p>
 <p><span class="math display">\[CI_{95} = \bar{x} \pm t_{0.975, df} \times SE = 0.395 \pm t_{0.975, df=19} \times 0.15\]</span></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="vergleich-von-mittelwerten.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb14-2"><a href="vergleich-von-mittelwerten.html#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="vergleich-von-mittelwerten.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 95%-Konfidenzintervall: Quantile für t = 0.975 und df = 20- 1</span></span>
-<span id="cb14-4"><a href="vergleich-von-mittelwerten.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="dv">19</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="vergleich-von-mittelwerten.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb67-2"><a href="vergleich-von-mittelwerten.html#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-3"><a href="vergleich-von-mittelwerten.html#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 95%-Konfidenzintervall: Quantile für t = 0.975 und df = 20- 1</span></span>
+<span id="cb67-4"><a href="vergleich-von-mittelwerten.html#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="dv">19</span>) </span></code></pre></div>
 <pre><code>## [1] 2.093024</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="vergleich-von-mittelwerten.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb16-2"><a href="vergleich-von-mittelwerten.html#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="vergleich-von-mittelwerten.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># p-Wert und 95%-CI berechnen</span></span>
-<span id="cb16-4"><a href="vergleich-von-mittelwerten.html#cb16-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb16-5"><a href="vergleich-von-mittelwerten.html#cb16-5" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> .<span class="dv">672</span></span>
-<span id="cb16-6"><a href="vergleich-von-mittelwerten.html#cb16-6" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> .<span class="dv">395</span></span>
-<span id="cb16-7"><a href="vergleich-von-mittelwerten.html#cb16-7" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">&lt;-</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n)</span>
-<span id="cb16-8"><a href="vergleich-von-mittelwerten.html#cb16-8" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> (.<span class="dv">395</span> <span class="sc">-</span> <span class="dv">0</span>)<span class="sc">/</span>SE</span>
-<span id="cb16-9"><a href="vergleich-von-mittelwerten.html#cb16-9" aria-hidden="true" tabindex="-1"></a>p_wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(t, <span class="at">df =</span> <span class="dv">20-1</span>))</span>
-<span id="cb16-10"><a href="vergleich-von-mittelwerten.html#cb16-10" aria-hidden="true" tabindex="-1"></a>p_out <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;p-Wert =&quot;</span>, <span class="fu">round</span>(p_wert, <span class="dv">3</span>))</span>
-<span id="cb16-11"><a href="vergleich-von-mittelwerten.html#cb16-11" aria-hidden="true" tabindex="-1"></a>CI95 <span class="ot">&lt;-</span> m <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">qt</span>(.<span class="dv">975</span>, <span class="dv">19</span>) <span class="sc">*</span> SE</span>
-<span id="cb16-12"><a href="vergleich-von-mittelwerten.html#cb16-12" aria-hidden="true" tabindex="-1"></a>CI95 <span class="ot">&lt;-</span> <span class="fu">round</span>(CI95, <span class="dv">3</span>)</span>
-<span id="cb16-13"><a href="vergleich-von-mittelwerten.html#cb16-13" aria-hidden="true" tabindex="-1"></a>CI95_out <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;[&quot;</span>, CI95[<span class="dv">1</span>], <span class="st">&quot;, &quot;</span>, CI95[<span class="dv">2</span>], <span class="st">&quot;]&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb16-14"><a href="vergleich-von-mittelwerten.html#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-15"><a href="vergleich-von-mittelwerten.html#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Output</span></span>
-<span id="cb16-16"><a href="vergleich-von-mittelwerten.html#cb16-16" aria-hidden="true" tabindex="-1"></a>p_out</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="vergleich-von-mittelwerten.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb69-2"><a href="vergleich-von-mittelwerten.html#cb69-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-3"><a href="vergleich-von-mittelwerten.html#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="co"># p-Wert und 95%-CI berechnen</span></span>
+<span id="cb69-4"><a href="vergleich-von-mittelwerten.html#cb69-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb69-5"><a href="vergleich-von-mittelwerten.html#cb69-5" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> .<span class="dv">672</span></span>
+<span id="cb69-6"><a href="vergleich-von-mittelwerten.html#cb69-6" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> .<span class="dv">395</span></span>
+<span id="cb69-7"><a href="vergleich-von-mittelwerten.html#cb69-7" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">&lt;-</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n)</span>
+<span id="cb69-8"><a href="vergleich-von-mittelwerten.html#cb69-8" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> (.<span class="dv">395</span> <span class="sc">-</span> <span class="dv">0</span>)<span class="sc">/</span>SE</span>
+<span id="cb69-9"><a href="vergleich-von-mittelwerten.html#cb69-9" aria-hidden="true" tabindex="-1"></a>p_wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(t, <span class="at">df =</span> <span class="dv">20-1</span>))</span>
+<span id="cb69-10"><a href="vergleich-von-mittelwerten.html#cb69-10" aria-hidden="true" tabindex="-1"></a>p_out <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;p-Wert =&quot;</span>, <span class="fu">round</span>(p_wert, <span class="dv">3</span>))</span>
+<span id="cb69-11"><a href="vergleich-von-mittelwerten.html#cb69-11" aria-hidden="true" tabindex="-1"></a>CI95 <span class="ot">&lt;-</span> m <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">qt</span>(.<span class="dv">975</span>, <span class="dv">19</span>) <span class="sc">*</span> SE</span>
+<span id="cb69-12"><a href="vergleich-von-mittelwerten.html#cb69-12" aria-hidden="true" tabindex="-1"></a>CI95 <span class="ot">&lt;-</span> <span class="fu">round</span>(CI95, <span class="dv">3</span>)</span>
+<span id="cb69-13"><a href="vergleich-von-mittelwerten.html#cb69-13" aria-hidden="true" tabindex="-1"></a>CI95_out <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;[&quot;</span>, CI95[<span class="dv">1</span>], <span class="st">&quot;, &quot;</span>, CI95[<span class="dv">2</span>], <span class="st">&quot;]&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb69-14"><a href="vergleich-von-mittelwerten.html#cb69-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-15"><a href="vergleich-von-mittelwerten.html#cb69-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Output</span></span>
+<span id="cb69-16"><a href="vergleich-von-mittelwerten.html#cb69-16" aria-hidden="true" tabindex="-1"></a>p_out</span></code></pre></div>
 <pre><code>## [1] &quot;p-Wert = 0.017&quot;</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="vergleich-von-mittelwerten.html#cb18-1" aria-hidden="true" tabindex="-1"></a>CI95_out</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="vergleich-von-mittelwerten.html#cb71-1" aria-hidden="true" tabindex="-1"></a>CI95_out</span></code></pre></div>
 <pre><code>## [1] &quot;[0.08, 0.71]&quot;</code></pre>
 <p>Die Berechnung ergibt ein 95%-Konfidenzintervall für den Mittelwert der Differenz in der Schlafdauer von 0.395 [0.08, 0.71] Stunden. Das 95%-Konfidenzintervall enthält den Nullwert nicht und wir verwerfen die Nullhypothese zugunsten der Alternativhypothese.</p>
 <p><strong>4. Schlussfolgerung formulieren</strong></p>
@@ -898,13 +898,13 @@ Abbildung 6.4: Histogramm und QQ-Plot für paarweise Differenzen
 <div id="rjamovi-1" class="section level3" number="6.5.2">
 <h3><span class="header-section-number">6.5.2</span> R/jamovi</h3>
 <p><code>R</code> Code und Output</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="vergleich-von-mittelwerten.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb20-2"><a href="vergleich-von-mittelwerten.html#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="vergleich-von-mittelwerten.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante 1: Als T-Test für gepaarte Stichproben</span></span>
-<span id="cb20-4"><a href="vergleich-von-mittelwerten.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> medi_data<span class="sc">$</span>mit_Med,        <span class="co"># Baseline-Data</span></span>
-<span id="cb20-5"><a href="vergleich-von-mittelwerten.html#cb20-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> medi_data<span class="sc">$</span>ohne_Med,       <span class="co"># Follow-Up-Data</span></span>
-<span id="cb20-6"><a href="vergleich-von-mittelwerten.html#cb20-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">paired =</span> <span class="cn">TRUE</span>,                <span class="co"># gepaarte Daten</span></span>
-<span id="cb20-7"><a href="vergleich-von-mittelwerten.html#cb20-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)    <span class="co"># zweiseitige Alternativhypothese</span></span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="vergleich-von-mittelwerten.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb73-2"><a href="vergleich-von-mittelwerten.html#cb73-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-3"><a href="vergleich-von-mittelwerten.html#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante 1: Als T-Test für gepaarte Stichproben</span></span>
+<span id="cb73-4"><a href="vergleich-von-mittelwerten.html#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> medi_data<span class="sc">$</span>mit_Med,        <span class="co"># Baseline-Data</span></span>
+<span id="cb73-5"><a href="vergleich-von-mittelwerten.html#cb73-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> medi_data<span class="sc">$</span>ohne_Med,       <span class="co"># Follow-Up-Data</span></span>
+<span id="cb73-6"><a href="vergleich-von-mittelwerten.html#cb73-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">paired =</span> <span class="cn">TRUE</span>,                <span class="co"># gepaarte Daten</span></span>
+<span id="cb73-7"><a href="vergleich-von-mittelwerten.html#cb73-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)    <span class="co"># zweiseitige Alternativhypothese</span></span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 
@@ -916,10 +916,10 @@ Abbildung 6.4: Histogramm und QQ-Plot für paarweise Differenzen
 ## sample estimates:
 ## mean of the differences 
 ##                  0.3945</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="vergleich-von-mittelwerten.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante 2: Als Einstichproben-T-Test mit der Variable paarweise.Differenzen</span></span>
-<span id="cb22-2"><a href="vergleich-von-mittelwerten.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> medi_data<span class="sc">$</span>paarweise.Differenzen,</span>
-<span id="cb22-3"><a href="vergleich-von-mittelwerten.html#cb22-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="dv">0</span>,</span>
-<span id="cb22-4"><a href="vergleich-von-mittelwerten.html#cb22-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="vergleich-von-mittelwerten.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante 2: Als Einstichproben-T-Test mit der Variable paarweise.Differenzen</span></span>
+<span id="cb75-2"><a href="vergleich-von-mittelwerten.html#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> medi_data<span class="sc">$</span>paarweise.Differenzen,</span>
+<span id="cb75-3"><a href="vergleich-von-mittelwerten.html#cb75-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="dv">0</span>,</span>
+<span id="cb75-4"><a href="vergleich-von-mittelwerten.html#cb75-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -1273,10 +1273,10 @@ Abbildung 6.5: Histogramm und QQ-Plot für ESC- und Kontrollgruppe
 <p><span class="math display">\[SE = \sqrt{\frac{s_{esc}^2}{n_{esc}} + \frac{s_{ctrl}^2}{n_{ctrl}}} = \sqrt{\frac{5.17^2}{9} + \frac{2.76^2}{9}} = 1.95\]</span></p>
 <p>Für die Bestimmung der Anzahl Freiheitsgrade <span class="math inline">\(df\)</span> der <span class="math inline">\(t\)</span>-Verteilung verwenden wir den kleineren Wert für <span class="math inline">\(n - 1\)</span>. Hier haben beide Gruppen den gleichen Umfang n und wir verwenden <span class="math inline">\(df\)</span> = 8.</p>
 <p>Den kritischen <span class="math inline">\(t\)</span>-Wert für eine <span class="math inline">\(t\)</span>-Verteilung mit <span class="math inline">\(df\)</span> = 8 für ein 95%-Konfidenzintervall erhalten wir in `R``</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="vergleich-von-mittelwerten.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb24-2"><a href="vergleich-von-mittelwerten.html#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="vergleich-von-mittelwerten.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># t-Wert für ein 95%-Konfidenzintervall mit df = 8</span></span>
-<span id="cb24-4"><a href="vergleich-von-mittelwerten.html#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="dv">8</span>)   </span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="vergleich-von-mittelwerten.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb77-2"><a href="vergleich-von-mittelwerten.html#cb77-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-3"><a href="vergleich-von-mittelwerten.html#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="co"># t-Wert für ein 95%-Konfidenzintervall mit df = 8</span></span>
+<span id="cb77-4"><a href="vergleich-von-mittelwerten.html#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="dv">8</span>)   </span></code></pre></div>
 <pre><code>## [1] 2.306004</code></pre>
 <p>Durch Einsetzen können wir jetzt das 95%-Konfidenzintervall für die Differenz des Effekts zwischen den beiden Stichproben berechnen:</p>
 <p><span class="math display">\[CI_{95} = 7.83 \pm 2.31 \times 1.95 = [3.33; 12.33]\]</span></p>
@@ -1562,24 +1562,24 @@ smoker
 <p><span class="math display">\[SE = \sqrt{\frac{s_{ns}^2}{n_{ns}} + \frac{s_s^2}{n_s}} = \sqrt{\frac{651^2}{100} + \frac{725^2}{50}} = 121.4\]</span></p>
 <p>Berechnung des 95%-Konfidenzintervalls</p>
 <p>Kritischer t-Wert</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="vergleich-von-mittelwerten.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb26-2"><a href="vergleich-von-mittelwerten.html#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="vergleich-von-mittelwerten.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="at">df =</span> <span class="dv">49</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="vergleich-von-mittelwerten.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb79-2"><a href="vergleich-von-mittelwerten.html#cb79-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-3"><a href="vergleich-von-mittelwerten.html#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(.<span class="dv">975</span>, <span class="at">df =</span> <span class="dv">49</span>)</span></code></pre></div>
 <pre><code>## [1] 2.009575</code></pre>
 <p><span class="math display">\[CI_{95} = 181.6 \pm 2.01 \times 121.4 = [-62.4; 425.6]\]</span></p>
 <p>Neugeborene von Nichtraucherinnen sind im Durchschnitt um 181.6 [-62.4; 425.6] schwerer als Neugeborene von Raucherinnen. Das 95%-Konfidenzintervall beinhaltet Null, d.h. kein Unterschied im Geburtsgewicht ist ein plausibler Wert, und wir haben keine Evidenz gegen die Nullhypothese.</p>
 <p>Berechnung des t-Werts:</p>
 <p><span class="math display">\[t = \frac{181.6 - 0}{121.4} = 1.496\]</span></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="vergleich-von-mittelwerten.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb28-2"><a href="vergleich-von-mittelwerten.html#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="vergleich-von-mittelwerten.html#cb28-3" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> (<span class="fl">181.6</span> <span class="sc">-</span> <span class="dv">0</span>)<span class="sc">/</span><span class="fl">121.4</span></span>
-<span id="cb28-4"><a href="vergleich-von-mittelwerten.html#cb28-4" aria-hidden="true" tabindex="-1"></a>t</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="vergleich-von-mittelwerten.html#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb81-2"><a href="vergleich-von-mittelwerten.html#cb81-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-3"><a href="vergleich-von-mittelwerten.html#cb81-3" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> (<span class="fl">181.6</span> <span class="sc">-</span> <span class="dv">0</span>)<span class="sc">/</span><span class="fl">121.4</span></span>
+<span id="cb81-4"><a href="vergleich-von-mittelwerten.html#cb81-4" aria-hidden="true" tabindex="-1"></a>t</span></code></pre></div>
 <pre><code>## [1] 1.495881</code></pre>
 <p>Berechnung des <span class="math inline">\(p\)</span>-Werts:</p>
 <p>Für die Berechnung des p-Werts verwenden wir für die Anzahl Freiheitsgrade den kleineren Wert für <span class="math inline">\(n_{nonsmoker} - 1 = 99\)</span> und für <span class="math inline">\(n_{smoker} - 1 = 49\)</span> also <span class="math inline">\(df = 49\)</span>: Wir können den p-Wert für <span class="math inline">\(t_{49}\)</span> wieder in einer Tabelle nachschlagen oder mit <code>R/jamovi</code>berechnen:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="vergleich-von-mittelwerten.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb30-2"><a href="vergleich-von-mittelwerten.html#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="vergleich-von-mittelwerten.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(<span class="fl">1.496</span>, <span class="at">df =</span> <span class="dv">49</span>)) <span class="co"># p-Wert für eine zweiseitige Hypothese und df = 49 </span></span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="vergleich-von-mittelwerten.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb83-2"><a href="vergleich-von-mittelwerten.html#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-3"><a href="vergleich-von-mittelwerten.html#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">pt</span>(<span class="fl">1.496</span>, <span class="at">df =</span> <span class="dv">49</span>)) <span class="co"># p-Wert für eine zweiseitige Hypothese und df = 49 </span></span></code></pre></div>
 <pre><code>## [1] 0.1410672</code></pre>
 <p><span class="math inline">\(p = 0.141\)</span>; Dieser <span class="math inline">\(p\)</span>-Wert ist grösser als <span class="math inline">\(\alpha = 0.05\)</span> und wir haben keine ausreichende Evidenz, um die Nullhypothese zu verwerfen.</p>
 <p><em>Schlussfolgerung: Untersucht wurde die Frage, ob Neugeborene von rauchenden Müttern ein anderes Geburtsgewicht haben als Neugeborene von nichtrauchtenden Müttern. Anhand der vorliegenden Daten konnte kein signifikanter Unterschied für deas Geburtsgewicht von Neugeborenen rauchender und nichtrauchender Mütter festgestellt werden: Neugeborene von nichtrauchenden Müttern sind im Durchschnitt 181.6 [-62.4; 425.6] leichter als von nichtrauchenden Müttern, t(49) = 1.496, p = 0.141.</em></p>
@@ -1588,14 +1588,14 @@ smoker
 <div id="rjamovi-2" class="section level3" number="6.6.3">
 <h3><span class="header-section-number">6.6.3</span> R/jamovi</h3>
 <p><code>R</code> Code und Output</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="vergleich-von-mittelwerten.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb32-2"><a href="vergleich-von-mittelwerten.html#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="vergleich-von-mittelwerten.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(</span>
-<span id="cb32-4"><a href="vergleich-von-mittelwerten.html#cb32-4" aria-hidden="true" tabindex="-1"></a>  weight <span class="sc">~</span> smoke, <span class="at">data =</span> births,</span>
-<span id="cb32-5"><a href="vergleich-von-mittelwerten.html#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,      <span class="co"># Voreinstellung, muss nicht angegeben werden</span></span>
-<span id="cb32-6"><a href="vergleich-von-mittelwerten.html#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">paired =</span> <span class="cn">FALSE</span>,                 <span class="co"># Voreinstellung, muss nicht angegeben werden</span></span>
-<span id="cb32-7"><a href="vergleich-von-mittelwerten.html#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">var.equal =</span> <span class="cn">FALSE</span>               <span class="co"># Voreinstellung, muss nicht angegeben werden</span></span>
-<span id="cb32-8"><a href="vergleich-von-mittelwerten.html#cb32-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="vergleich-von-mittelwerten.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb85-2"><a href="vergleich-von-mittelwerten.html#cb85-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-3"><a href="vergleich-von-mittelwerten.html#cb85-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(</span>
+<span id="cb85-4"><a href="vergleich-von-mittelwerten.html#cb85-4" aria-hidden="true" tabindex="-1"></a>  weight <span class="sc">~</span> smoke, <span class="at">data =</span> births,</span>
+<span id="cb85-5"><a href="vergleich-von-mittelwerten.html#cb85-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,      <span class="co"># Voreinstellung, muss nicht angegeben werden</span></span>
+<span id="cb85-6"><a href="vergleich-von-mittelwerten.html#cb85-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">paired =</span> <span class="cn">FALSE</span>,                 <span class="co"># Voreinstellung, muss nicht angegeben werden</span></span>
+<span id="cb85-7"><a href="vergleich-von-mittelwerten.html#cb85-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">var.equal =</span> <span class="cn">FALSE</span>               <span class="co"># Voreinstellung, muss nicht angegeben werden</span></span>
+<span id="cb85-8"><a href="vergleich-von-mittelwerten.html#cb85-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -2114,22 +2114,22 @@ Abbildung 6.8: Punktediagramm der Schwangerschaftsdauer, US- und LMP-Werte mit R
 Summe der negativen Ränge: 1 + 7 = 8<br />
 Teststatistik <span class="math inline">\(W\)</span> (in <code>R</code> Teststatistik <span class="math inline">\(V\)</span>) = 47</p>
 <p>Berechnung des p-Werts für <span class="math inline">\(W = 47\)</span> und <span class="math inline">\(n = 10\)</span></p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="vergleich-von-mittelwerten.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb34-2"><a href="vergleich-von-mittelwerten.html#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="vergleich-von-mittelwerten.html#cb34-3" aria-hidden="true" tabindex="-1"></a>W <span class="ot">&lt;-</span> <span class="dv">47</span>                            </span>
-<span id="cb34-4"><a href="vergleich-von-mittelwerten.html#cb34-4" aria-hidden="true" tabindex="-1"></a>p_Wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">psignrank</span>(W, <span class="at">n =</span> <span class="dv">10</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) </span>
-<span id="cb34-5"><a href="vergleich-von-mittelwerten.html#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(p_Wert, <span class="dv">3</span>)            </span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="vergleich-von-mittelwerten.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb87-2"><a href="vergleich-von-mittelwerten.html#cb87-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-3"><a href="vergleich-von-mittelwerten.html#cb87-3" aria-hidden="true" tabindex="-1"></a>W <span class="ot">&lt;-</span> <span class="dv">47</span>                            </span>
+<span id="cb87-4"><a href="vergleich-von-mittelwerten.html#cb87-4" aria-hidden="true" tabindex="-1"></a>p_Wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">psignrank</span>(W, <span class="at">n =</span> <span class="dv">10</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb87-5"><a href="vergleich-von-mittelwerten.html#cb87-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(p_Wert, <span class="dv">3</span>)            </span></code></pre></div>
 <pre><code>## [1] 0.037</code></pre>
 <p><em>Schlussfolgerung: In einer Stichprobe von n = 10 schwangeren Frauen wurde die Frage untersucht, wie lange eine Schwangerschaft dauert und ob die Untersuchungsmethoden US und LMP zum gleichen Ergebnis kommen. Die Methode US ergibt gegenüber der Methode LMP eine um durchschnittlich um 6.2 Tage kürzere Schwangerschaftsdauer, Wilcoxon-Vorzeichenrangtest W = 47, p = 0.037.</em></p>
 <div id="rjamovi-3" class="section level4" number="6.7.2.1">
 <h4><span class="header-section-number">6.7.2.1</span> R/jamovi</h4>
 <p><code>R</code> Code und Output</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="vergleich-von-mittelwerten.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb36-2"><a href="vergleich-von-mittelwerten.html#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-3"><a href="vergleich-von-mittelwerten.html#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(ss<span class="sc">$</span>LMP, ss<span class="sc">$</span>US, </span>
-<span id="cb36-4"><a href="vergleich-von-mittelwerten.html#cb36-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">paired =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb36-5"><a href="vergleich-von-mittelwerten.html#cb36-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, </span>
-<span id="cb36-6"><a href="vergleich-von-mittelwerten.html#cb36-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">correct =</span> <span class="cn">TRUE</span>)    <span class="co"># mit Kontinuitätskorrektur</span></span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="vergleich-von-mittelwerten.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb89-2"><a href="vergleich-von-mittelwerten.html#cb89-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-3"><a href="vergleich-von-mittelwerten.html#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(ss<span class="sc">$</span>LMP, ss<span class="sc">$</span>US, </span>
+<span id="cb89-4"><a href="vergleich-von-mittelwerten.html#cb89-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">paired =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb89-5"><a href="vergleich-von-mittelwerten.html#cb89-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, </span>
+<span id="cb89-6"><a href="vergleich-von-mittelwerten.html#cb89-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">correct =</span> <span class="cn">TRUE</span>)    <span class="co"># mit Kontinuitätskorrektur</span></span></code></pre></div>
 <pre><code>## 
 ##  Wilcoxon signed rank test with continuity correction
 ## 
@@ -2482,23 +2482,23 @@ Abbildung 6.10: Punktediagramm der Ränge für Statistikresultate
 <span class="math inline">\(U_2 = 8\times7+\frac{7(7+1)}{2} - 72 = 12\)</span></p>
 <p>Unsere Teststatistik <span class="math inline">\(U\)</span> ist die kleinere der beiden Grössen <span class="math inline">\(U_1\)</span> und <span class="math inline">\(U_2\)</span>: <span class="math inline">\(U = 12\)</span></p>
 <p>Berechnung des p-Werts mit <code>R</code></p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="vergleich-von-mittelwerten.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb38-2"><a href="vergleich-von-mittelwerten.html#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-3"><a href="vergleich-von-mittelwerten.html#cb38-3" aria-hidden="true" tabindex="-1"></a>U <span class="ot">&lt;-</span> <span class="dv">12</span></span>
-<span id="cb38-4"><a href="vergleich-von-mittelwerten.html#cb38-4" aria-hidden="true" tabindex="-1"></a>p_Wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pwilcox</span>(U, <span class="at">m =</span> <span class="dv">8</span>, <span class="at">n =</span> <span class="dv">7</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span>
-<span id="cb38-5"><a href="vergleich-von-mittelwerten.html#cb38-5" aria-hidden="true" tabindex="-1"></a>p_Wert</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="vergleich-von-mittelwerten.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb91-2"><a href="vergleich-von-mittelwerten.html#cb91-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-3"><a href="vergleich-von-mittelwerten.html#cb91-3" aria-hidden="true" tabindex="-1"></a>U <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb91-4"><a href="vergleich-von-mittelwerten.html#cb91-4" aria-hidden="true" tabindex="-1"></a>p_Wert <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pwilcox</span>(U, <span class="at">m =</span> <span class="dv">8</span>, <span class="at">n =</span> <span class="dv">7</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb91-5"><a href="vergleich-von-mittelwerten.html#cb91-5" aria-hidden="true" tabindex="-1"></a>p_Wert</span></code></pre></div>
 <pre><code>## [1] 0.07210567</code></pre>
 <p>Da der p-Wert mit 0.0721 grösser als <span class="math inline">\(\alpha = 0.05\)</span> verwerfen wir die Nullhypothese nicht.</p>
 <p><em>Schlussfolgerung: Untersucht wurde die Frage, ob Studierende, die während einer Woche täglich 30 Minuten Statistikübungen machen, bessere Punktzahlen erreichen als Studierende, die das nicht tun. Studierende, die während einer Woche täglich 30 Minunten Statistikübungen machen, erreichten in unserer Studie im Durchschnitt eine um 8.45 Punkte höhere Punktzahl in der Statistikprüfung, Mann-Whitney-U = 12, p = 0.0721. Damit liegt keine Evidenz dafür vor, dass sich die Prüfungsergebnisse im Durchschnitt zwischen den beiden Gruppen unterscheiden.</em></p>
 <div id="rjamovi-4" class="section level4" number="6.7.3.1">
 <h4><span class="header-section-number">6.7.3.1</span> R/jamovi</h4>
 <p><code>R</code> Code und Output</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="vergleich-von-mittelwerten.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb40-2"><a href="vergleich-von-mittelwerten.html#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-3"><a href="vergleich-von-mittelwerten.html#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(</span>
-<span id="cb40-4"><a href="vergleich-von-mittelwerten.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  Punkte <span class="sc">~</span> Gruppe, <span class="at">data =</span> statex, </span>
-<span id="cb40-5"><a href="vergleich-von-mittelwerten.html#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">paired =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb40-6"><a href="vergleich-von-mittelwerten.html#cb40-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="vergleich-von-mittelwerten.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb93-2"><a href="vergleich-von-mittelwerten.html#cb93-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-3"><a href="vergleich-von-mittelwerten.html#cb93-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(</span>
+<span id="cb93-4"><a href="vergleich-von-mittelwerten.html#cb93-4" aria-hidden="true" tabindex="-1"></a>  Punkte <span class="sc">~</span> Gruppe, <span class="at">data =</span> statex, </span>
+<span id="cb93-5"><a href="vergleich-von-mittelwerten.html#cb93-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">paired =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb93-6"><a href="vergleich-von-mittelwerten.html#cb93-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Wilcoxon rank sum exact test
 ## 

@@ -60,7 +60,7 @@ Den linearen Zusammenhang zwischen zwei Variablen bezeichnen wir als **Korrelati
 
 Eine Korrelation beschreibt eine Beziehung zwischen zwei oder mehreren quantitativen Merkmalen (Variablen). Dabei muss diese Beziehung nicht kausal sein, d.h. die Variablen müssen sich nicht gegenseitig beeinflussen und der Zusammenhang kann völlig zufällig sein.
 
-Beispiel: Gibt es einen Zusammenhang zwischen der Laufgeschwindigkeit und dem Kalorienverbrauch pro Stunde? Wir verwenden die Stichprobendaten von $n$ = 11 durchschnittlich 59 kg schweren Läuferinnen:
+Beispiel: Gibt es einen Zusammenhang zwischen der Laufgeschwindigkeit und dem Kalorienverbrauch pro Stunde? Wir verwenden die Stichprobendaten von $n$ = 11 durchschnittlich 59 kg schweren Läuferinnen. (Datensatz `05_running2.csv`)
 
 ```{r running-tab}
 # dataset from https://www.kaggle.com/aadhavvignesh/calories-burned-during-exercise-and-activities
@@ -77,7 +77,7 @@ Der Tabelle entnehmen wir, dass mit zunehmender Laufgeschwindigkeit auch der Kal
 
 ```{r running-scatp-fig, fig.align='center', fig.dim=c(6, 5), fig.cap="Kalorienverbrauch nach Laufgeschwindigkeit, n = 11"}
 ggplot(running, aes(x = kmh, y = kg59)) +
-  geom_smooth(method = "lm", se = FALSE, color = "black") +
+  # geom_smooth(method = "lm", se = FALSE, color = "black") +
   geom_point(color = COL[1], size = 4, alpha = .7) +
   xlab("Geschwindigkeit (km/h)") +
   ylab("Kalorienverbrauch (kCal/h)") +
@@ -85,7 +85,7 @@ ggplot(running, aes(x = kmh, y = kg59)) +
   theme_grey()
 ```
 
-Jeder Punkt im Streudiagramm \@rer(fig:running-scatp-fig) repräsentiert eine Kombination von Geschwindigkeit (x-Achse) und Kalorienverbrauch (y-Achse). Wenn wir die Punkte visuell miteinander verbinden, entsteht eine - nicht ganz perfekte - Gerade. In diesem Fall sprechen wir von einem *linearen* Zusammenhang.   
+Jeder Punkt im Streudiagramm \@ref(fig:running-scatp-fig) repräsentiert eine Kombination von Geschwindigkeit (x-Achse) und Kalorienverbrauch (y-Achse). Wenn wir die Punkte visuell miteinander verbinden, entsteht eine - nicht ganz perfekte - Gerade. In diesem Fall sprechen wir von einem *linearen* Zusammenhang.   
 
 ### Eigenschaften von Zusammenhängen
 
@@ -250,7 +250,13 @@ Als Faustregel für die Beurteilung der Stärke einer Korrelation kann man sich 
 
 ### Berechnung von $r$   
 
-Die Details zur Berechnung des Korrelationskoeffizienten ersparen wir uns. Das übernimmt die Statistiksoftware.
+Der Korrelationskoeffizient nach Pearson wird berechnet nach der Formel  
+
+$$r = \frac{1}{n-1}\sum_{i=1}^n \lgroup \frac{x_i-\bar{x}}{s_x} \rgroup \lgroup \frac{y_i - \bar{y}}{s_y} \rgroup$$
+
+$(x_1, y_1), (x_2, y_2),..., (x_n, y_n)$ sind die $n$ Datenpaare für $x$ und $y$ und $s_x$ und $s_y$ sind die Standardabweichungen von $x$ und $y$ in der Stichprobe.  
+
+Wir lernen das nicht und ersparen uns die Berechnung von Korrelationskoeffizienten von Hand (aber die Formel finde ich trotzdem cool). Das übernimmt die Statistiksoftware.
 
 Die Funktion in `R` [@R-base] für die Berechnung des Korrelationskoeffizienten ist  
 
@@ -287,14 +293,14 @@ r <- round(cor(running$kmh, running$kg59), 3)
 
 ggplot(running, aes(x = kmh, y = kg59)) +
   geom_point(color = COL[1], size = 3) +
-  geom_smooth(method = "lm", se = FALSE, color = "darkgrey") +
+  # geom_smooth(method = "lm", se = FALSE, color = "darkgrey") +
   xlab("Geschwindigkeit (km/h)") +
   ylab("Kalorienverbrauch (kCal/h)") +
   ggtitle(paste("r =", r)) +
   theme_grey()
 ```
 
-Wir sehen, dass eine sehr starke positive lineare Korrelation zwischen der Laufgeschwindigkeit und dem Kalorienverbrauch besteht. Der Korrelationskoeffizient nach Pearson $r$ ist 0.997. 
+Wir sehen, dass eine starke positive lineare Korrelation zwischen der Laufgeschwindigkeit und dem Kalorienverbrauch besteht. Der Korrelationskoeffizient nach Pearson $r$ ist 0.997. 
 
 ```{r, echo=TRUE}
 ### R-Code
@@ -750,7 +756,7 @@ text(x=6, y=0.5, labels="r = 0.8", col = "dodgerblue3")
 # cor(x, y, method = "spearman")
 ```
 
-Wir sehen links zwischen x = -2 und x = 2.8 eine Punktewolke, die einen starken positiven linearen Zusammenhang zwischen x und y zeigt. Bei x = 10, y = 6.2 befindet sich ein Ausreisser. Der Korrelationskoeffizient für alle Daten beträgt $r = 0.8$. Wenn wir den Ausreisser entfernen, erhöht sich der Korrelationskoeffizient auf $r = 0.925$, was vermutlich eher dem wahren Zusammenhang zwischen den Variablen entspricht. Unsere Schlussfolgerung: *Der Korrelationskoeffizient nach Pearson $r$ ist empfindlich für Ausreisser!*
+Wir sehen links zwischen x = -2.3 und x = 1.8 eine Punktewolke, die einen starken positiven linearen Zusammenhang zwischen x und y zeigt. Bei x = 10, y = 6.2 befindet sich ein Ausreisser. Der Korrelationskoeffizient für alle Daten beträgt $r = 0.8$. Wenn wir den Ausreisser entfernen, erhöht sich der Korrelationskoeffizient auf $r = 0.925$, was vermutlich eher dem wahren Zusammenhang zwischen den Variablen entspricht. Unsere Schlussfolgerung: *Der Korrelationskoeffizient nach Pearson $r$ ist empfindlich für Extremwerte!*
 
 ### Rangkorrelationskoeffizient nach Spearman
 
@@ -810,7 +816,7 @@ Das folgende Beispiel soll zeigen, dass bei der Interpretation von Korrelationen
 
 Frage: Besteht ein Zusammenhang zwischen der Schuhgrösse und dem Einkommen?  
 
-Wir überprüfen diese Frage anhand der Angaben einer Stichprobe von $n$ = 1000. Die Proband:innen wurden nach ihrer Schuhgrösse (nur ganze Grössen) und ihrem monatlichen Bruttoeinkommen befragt. 
+Wir überprüfen diese Frage anhand der Angaben einer Stichprobe von $n$ = 1000. Die Proband:innen wurden nach ihrer Schuhgrösse (nur ganze Grössen) und ihrem monatlichen Bruttoeinkommen befragt. (Datensatz `05_shoesize.csv`) 
 
 ```{r shoesizeSalary-fig, fig.cap="Einkommen nach Schuhgrösse, n = 1000"}
 # https://gunhanb.github.io/blog/2016/12/06/confounding.html

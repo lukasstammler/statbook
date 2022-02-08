@@ -39,29 +39,29 @@ Hat man einen linearen Zusammenhang zwischen zwei Variablen entdeckt, möchte ma
 2. Erstelle Streudiagramme so, dass die unabhängige Variable auf der x-Achse und die abhängige Variable auf der y-Achse liegt.   
 3. Wenn x die unabhängige und y die abhängige Variable ist, wird das lineare Regressionsmodell gebildet als  
 $$y = \beta_0 + \beta_1x$$
-   wobei $\beta_0$ den Schnittpunkt mit der y-Achse (Achsenabschnitt, engl. intercept) und $\beta_1$ die Steigung der Geraden beschreibt. Die Punktschätzungen (aus den beobachteten Daten) für $\beta_0$ und $\beta_1$ sind $b_0$ bzw. $b_1$.   
-4. Definiere Residuen $e$ als Differenz zwischen den beobachteten $y$ und den durch das Modell vorhergesagten $\hat{y}$ Werten der abhängigen Variablen.  
-5. Definiere die Kleinstquadratlinie (Regressionsgerade) als die Linie, welche die Summe der quadrierten Residuen minimiert. Du kannst die Bedingungen dafür nennen, dass die Kleinstquadratlinie gültig ist:   
+   wobei der Koeffizient $\beta_0$ den Schnittpunkt mit der y-Achse (Achsenabschnitt, engl. intercept) und der Koeffizient $\beta_1$ die Steigung der Geraden beschreibt. Die Punktschätzungen (aus den beobachteten Daten) für $\beta_0$ und $\beta_1$ sind $b_0$ bzw. $b_1$.   
+4. Definiere Residuen $e$ als Differenz zwischen den beobachteten $y$ und den durch das Modell vorhergesagten (gefitteten) $\hat{y}$ Werten der abhängigen Variablen.  
+5. Definiere die Kleinstquadratlinie (Regressionsgerade) als die Linie, welche die Summe der quadrierten Residuen minimiert. Du kannst die Bedingungen dafür nennen, dass die Konfidenzintervalle und Hypothesentests für die Koeffizienten der Kleinstquadratlinie gültig sind:   
    a) Linearität   
    b) Normalverteilung der Residuen   
    c) Konstante Variabilität (Homoskedastizität)   
 6. Interpretiere die Steigung $b_1$ wie folgt      
-    - "Für jede Einheit um die sich der Wert x erhöht erwarten wir, dass y im Durchschnitt um $|b_1|$ Einheiten grösser bzw. kleiner wird."   
+    - "Für jede Einheit um die sich der Wert x erhöht, erwarten wir, dass y im Durchschnitt um $|b_1|$ Einheiten grösser bzw. kleiner wird."   
     - Beachte dass es vom Vorzeichen von $b_1$ abhängig ist, ob der Wert der abhängigen Variable zu- oder abnimmt.   
 7. Beachte, dass die Kleinstquadratlinie stets durch den Mittelwert der abhängigen $\bar{y}$ und der unabhängigen Variable $\bar{x}$ verläuft.  
 8. Interpretiere $b_0$ (intercept) folgendermassen: "Wenn x = 0, erwarten wir dass y im Durchschnitt den Wert von $b_0$ annimmt."  
 9. Berechne den Wert der abhängigen Variablen für einen bestimmten Wert der unabhängigen Variablen, $x^*$, durch Einsetzen von $x^*$ in das lineare Modell:   
 $$\hat{y} = b_0 + b_1x^*$$  
-    - Verwende nur Werte für $x^*$, die in der Variationsbreite der beobachteten Daten liegen.  
+    - Verwende nur Werte für $x^*$, die im Bereich der beobachteten Daten liegen.  
     - Extrapoliere nicht über die Variationsbreite hinaus, ausser du bist dir sicher, dass das lineare Muster darüber hinaus gültig ist.   
-10. Definiere das Bestimmtheitmass $R^2$ als prozentualer Anteil der Variabilität der abhängigen Variablen, der durch die unabhängige Variable erklärt wird.   
+10. Definiere das Bestimmtheitmass $R^2$ als prozentualen Anteil der Variabilität der abhängigen Variablen, der durch die unabhängige Variable erklärt wird.   
     - Für ein gutes Modell erwarten wir, dass dieser Wert nahe bei 1 (100%) liegt.  
     - Das Bestimmtheitsmass wird berechnet als das Quadrat des Korrelationskoeffizienten nach Pearson: $R^2 = r^2$ 
 11. Entscheide anhand des Outputs im Statistikprogramm (t-Wert und p-Wert), ob die unabhängige Variable ein signifikanter Prädiktor für die abhängige Variable ist.   
 
 ## Eine Bücherbestellung
 
-Ein Buchhändler muss jeweils einen Monat bevor das Semester beginnt die Statistik-Bücher für die Studierenden im Statistik-Kurs bestellen. Er geht davon aus, dass die Anzahl Statistik-Bücher, die er in diesem Semester verkaufen wird, davon abhängt, wieviele Studierende für den Statistik-Kurs angemeldet sind. Aus den vergangenen 12 Semestern besitzt der Buchhändler die Listen mit der Anzahl der eingeschriebenen Studierenden und mit der Anzahl der pro Semester verkauften Bücher. 
+Ein Buchhändler muss jeweils einen Monat bevor das Semester beginnt die Statistik-Bücher für die Studierenden im Statistik-Kurs bestellen. Er geht davon aus, dass die Anzahl Statistik-Bücher, die er in diesem Semester verkaufen wird, davon abhängt, wieviele Studierende für den Statistik-Kurs angemeldet sind. Aus den vergangenen 12 Semestern besitzt der Buchhändler die Listen mit der Anzahl der eingeschriebenen Studierenden und mit der Anzahl der pro Semester verkauften Bücher. (Datensatz `06_bookstore.csv`)
 
 ```{r bookstore-tab}
 # https://www.nku.edu/~statistics/Simple_Linear_Regression.htm
@@ -114,7 +114,7 @@ Die Regressionsanalyse liefert das Werkzeug dafür: Sie liefert uns ein Modell -
 
 ### Die Regressionsgerade
 
-#### Kurzes Repe Mathematik - Lineare Funktion: Gerade   
+**Kurzes Repe Mathematik - Lineare Funktion: Geradengleichung**   
 
 - Eine lineare Funktion kann grafisch durch eine Gerade dargestellt werden.  
 - Die allgemeine Formel für eine Gerade im zweidimensionalen Koordinatensystem lautet: $y = ax + b$.  
@@ -162,7 +162,7 @@ Lineare Regression ist die statistische Methode, eine Gerade für zwei Variablen
 
 $$y = \beta_0 + \beta_1x$$
 
-$\beta_0$ und $beta_1$ sind die Parameter des Modells. Diese werden in der Regel mit Stichprobendaten geschätzt und wir schreiben wir die Formel als
+$\beta_0$ und $\beta_1$ sind die Parameter des Modells. Diese werden in der Regel mit Stichprobendaten geschätzt und wir schreiben wir die Formel als
 
 $$y = b_0 + b_1x$$
 
@@ -225,7 +225,7 @@ bookstore$residuals <- residuals(model1)
 # summary(model1)
 ```
 
-```{r plot_bookstore_residuals, fig.dim=c(5, 5), fig.align='center'}
+```{r plot-bookstore-residuals, fig.dim=c(5, 5), fig.align='center'}
 ggplot(bookstore, aes(x = Studierende, y = Buecher)) +
   geom_segment(aes(xend = Studierende, yend = predicted), color = "orange", alpha = 1) +
   geom_point(color = COL[1], size = 3, alpha = .7) +
@@ -234,7 +234,7 @@ ggplot(bookstore, aes(x = Studierende, y = Buecher)) +
   theme_grey()
 ```
 
-Die Abbildung zeigt die Gerade (e), die den funktionalen Zusammenhang zwischen Studierenden und verkauften Büchern modelliert. Die blauen Punkte sind die Anzahl effektiv verkaufter Bücher pro Studierendenanzahl und die roten Punkte sind die Anzahl der Bücher, die unser Modell vorhersagt. Die roten Punkte sind die vom Modell berechneten Werte *(fitted values)* und wir sehen, dass die Gerade die meisten blauen Punkte verfehlt. Die senkrechten Linien zwischen den gemessenen Werten (blau) und den gefitteten Werten (rot) bezeichnen wir als **Residuen**.  
+Die Abbildung \@ref(fig:plot-bookstore-residuals) zeigt die Gerade (e), die den funktionalen Zusammenhang zwischen Studierenden und verkauften Büchern modelliert. Die blauen Punkte sind die Anzahl effektiv verkaufter Bücher pro Studierendenanzahl und die roten Punkte sind die Anzahl der Bücher, die unser Modell vorhersagt. Die roten Punkte sind die vom Modell berechneten Werte *(fitted values)* und wir sehen, dass die Gerade die meisten blauen Punkte verfehlt. Die senkrechten Linien zwischen den gemessenen Werten (blau) und den gefitteten Werten (rot) bezeichnen wir als **Residuen**.  
 
 Definition **Residuum**: Senkrechte Differenz zwischen dem Modell vorhergesagten Wert $\hat{y}$ (gefitteter Wert) und dem tatsächlich beobachteten Wert $y$. Das Residuum $e_i$ der i-ten Beobachtung ist die Differenz zwischen dem beobachteten Wert $y_i$ und dem vom Modell vorhergesagten Wert $\hat{y_i}$.
 
@@ -305,7 +305,7 @@ abline(mins[1], mins[2], lty=2, lwd=2)
 abline(g, lwd = 2)
 ```
 
-Die Grafik zeigt die universitäre Unterstützung in Abhängigkeit vom Familieneinkommen [Quelle @R-openintro]. Die gestrichelte Linie wurde mit der Methode der Summe der Absolutwerte der Residuen und die ausgezogene Linie mit der Kleinst-Quadrat-Methode berechnet. Beide Varianten würden ein plausibles Modell ergeben, aber die Kleinst-Quadrat-Methode hat sich als Standard etabliert.   
+Die Abbildung \@ref(fig:elmhurst-fig) zeigt die finanzielle Unterstützung durch die Universität Elmhurst (Illinois) in Abhängigkeit vom Familieneinkommen [Quelle @R-openintro]. Die gestrichelte Linie wurde mit der Methode der Summe der Absolutwerte der Residuen und die ausgezogene Linie mit der Kleinst-Quadrat-Methode berechnet. Beide Varianten würden ein plausibles Modell ergeben, aber die Kleinst-Quadrat-Methode hat sich als Standard etabliert.   
 
 Die Berechnung der Geradengleichung überlassen wir i.d.R. `R`. Hier die Formeln für die Berechnung von Hand für die einfache lineare Regression:
 
@@ -413,7 +413,7 @@ ggplot(sprint100m, aes(x = year, y = win_sec)) +
   theme_grey()
 ```
 
-Die Steigung bei den Frauen ist etwas stärker negativ als bei den Männern ($\beta_{1, f}$ = -0.02, $beta_{1,m}$ = -0.01). Das heisst, dass die Frauen in den Jahren 1928 bis 2004 ihre Geschwindigkeit schneller steigern konnten als die Männer: Frauen wurden im Durchschnitt pro Jahr um 0.02 Sekunden schneller, Männer um 0.01 Sekunden. 
+Die Steigung bei den Frauen ist etwas stärker negativ als bei den Männern ($\beta_{1, f}$ = -0.02, $\beta_{1,m}$ = -0.01). Das heisst, dass die Frauen in den Jahren 1928 bis 2004 ihre Geschwindigkeit im Durchschnitt um 0.01 Sekunden mehr steigern konnten als die Männer: Frauen wurden im Durchschnitt pro Jahr um 0.02 Sekunden schneller, Männer um 0.01 Sekunden. 
 
 ```{r sprint100m-extrapol-fig, fig.cap="Zeit für 100m-Sprint Frauen extrapoliert"}
 # extrapolate for years 2004 to 2200
@@ -474,7 +474,7 @@ Wir lernen daraus, dass die Regressionsgerade immer nur für den effektiv gemess
 
 Das Bestimmtheitsmass $R^2$ ...  
 
-- sagt uns, wieviel Prozent der Streuung der abhängigen Variable y durch die unabhängige Variable x erklärt wird. Anders formuliert: Wieviel Prozent der Änderung in y von einem Datenpunkt zum anderen durch x erklärbar ist.  
+- sagt uns, wieviel Prozent der Streuung der abhängigen Variable $y$ durch die unabhängige Variable $x$ erklärt wird. Anders formuliert: Wieviel Prozent der Änderung in $y$ von einem Datenpunkt zum anderen durch $x$ erklärbar ist.  
 - kann Werte zwischen 0 und 1 annehmen (0 bis 100%).  
 - ist bei der einfachen linearen Regression das Quadrat des Korrelationskoeffizienten nach Pearson: $R^2 = r^2$.   
 - ist umso grösser, je geringer Daten um die Regressionsgerade streuen.   
@@ -528,7 +528,7 @@ p3 <- ggplot(d3, aes(x = x, y = y)) +
 (p1 | p2 | p3)
 ```
 
-Eine Variable y kann folglich umso besser durch die Variable x erklärt werden, je größer die Korrelation $r$ zwischen beiden Variablen dem Betrag nach ist. Anders formuliert: Je größer $R^2$ ist, desto besser ist die Anpassung der Regressionsgeraden an die Daten.   
+Eine Variable $y$ kann folglich umso besser durch die Variable $x$ erklärt werden, je größer die Korrelation $r$ zwischen beiden Variablen dem Betrag nach ist. Anders formuliert: Je größer $R^2$ ist, desto besser ist die Anpassung der Regressionsgeraden an die Daten.   
 
 
 

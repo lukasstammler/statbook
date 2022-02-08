@@ -30,7 +30,7 @@ bookdown::gitbook, set in the _output.yml file.</p>" />
 <meta name="author" content="Lukas Stammler" />
 
 
-<meta name="date" content="2022-02-07" />
+<meta name="date" content="2022-02-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -267,7 +267,7 @@ div.csl-indent {
 <li class="chapter" data-level="6.4" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-test-für-eine-einfache-stichprobe"><i class="fa fa-check"></i><b>6.4</b> T-Test für eine einfache Stichprobe</a>
 <ul>
 <li class="chapter" data-level="6.4.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vorgehen"><i class="fa fa-check"></i><b>6.4.1</b> Vorgehen</a></li>
-<li class="chapter" data-level="6.4.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vertrauensintervall-für-einen-mittelwert-schritt-für-schritt"><i class="fa fa-check"></i><b>6.4.2</b> Vertrauensintervall für einen Mittelwert Schritt-für-Schritt:</a></li>
+<li class="chapter" data-level="6.4.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#konfidenzintervall-für-einen-mittelwert-schritt-für-schritt"><i class="fa fa-check"></i><b>6.4.2</b> Konfidenzintervall für einen Mittelwert Schritt-für-Schritt:</a></li>
 <li class="chapter" data-level="6.4.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#ein-stichproben-t-test-schritt-für-schritt"><i class="fa fa-check"></i><b>6.4.3</b> Ein-Stichproben-T-Test Schritt-für-Schritt:</a></li>
 <li class="chapter" data-level="6.4.4" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi"><i class="fa fa-check"></i><b>6.4.4</b> R/jamovi</a></li>
 </ul></li>
@@ -286,7 +286,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="6.7.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rang-methoden-rank-tests"><i class="fa fa-check"></i><b>6.7.1</b> Rang-Methoden (rank tests)</a></li>
 <li class="chapter" data-level="6.7.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#wilcoxon-vorzeichenrangtest"><i class="fa fa-check"></i><b>6.7.2</b> Wilcoxon-Vorzeichenrangtest</a></li>
-<li class="chapter" data-level="6.7.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#wilcoxon-rangsummentest"><i class="fa fa-check"></i><b>6.7.3</b> Wilcoxon-Rangsummentest</a></li>
+<li class="chapter" data-level="6.7.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>6.7.3</b> Mann-Whitney-U-Test</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html"><i class="fa fa-check"></i><b>7</b> Korrelation und linearer Zusammenhang</a>
@@ -431,7 +431,7 @@ div.csl-indent {
 <div id="korrelation" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Korrelation</h2>
 <p>Eine Korrelation beschreibt eine Beziehung zwischen zwei oder mehreren quantitativen Merkmalen (Variablen). Dabei muss diese Beziehung nicht kausal sein, d.h. die Variablen müssen sich nicht gegenseitig beeinflussen und der Zusammenhang kann völlig zufällig sein.</p>
-<p>Beispiel: Gibt es einen Zusammenhang zwischen der Laufgeschwindigkeit und dem Kalorienverbrauch pro Stunde? Wir verwenden die Stichprobendaten von <span class="math inline">\(n\)</span> = 11 durchschnittlich 59 kg schweren Läuferinnen:</p>
+<p>Beispiel: Gibt es einen Zusammenhang zwischen der Laufgeschwindigkeit und dem Kalorienverbrauch pro Stunde? Wir verwenden die Stichprobendaten von <span class="math inline">\(n\)</span> = 11 durchschnittlich 59 kg schweren Läuferinnen. (Datensatz <code>05_running2.csv</code>)</p>
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:running-tab">Tabelle 7.1: </span>11 Läuferinnen
@@ -544,7 +544,7 @@ kCal/h
 Abbildung 7.1: Kalorienverbrauch nach Laufgeschwindigkeit, n = 11
 </p>
 </div>
-<p>Jeder Punkt im Streudiagramm @rer(fig:running-scatp-fig) repräsentiert eine Kombination von Geschwindigkeit (x-Achse) und Kalorienverbrauch (y-Achse). Wenn wir die Punkte visuell miteinander verbinden, entsteht eine - nicht ganz perfekte - Gerade. In diesem Fall sprechen wir von einem <em>linearen</em> Zusammenhang.</p>
+<p>Jeder Punkt im Streudiagramm <a href="korrelation-und-linearer-zusammenhang.html#fig:running-scatp-fig">7.1</a> repräsentiert eine Kombination von Geschwindigkeit (x-Achse) und Kalorienverbrauch (y-Achse). Wenn wir die Punkte visuell miteinander verbinden, entsteht eine - nicht ganz perfekte - Gerade. In diesem Fall sprechen wir von einem <em>linearen</em> Zusammenhang.</p>
 <div id="eigenschaften-von-zusammenhängen" class="section level3" number="7.3.1">
 <h3><span class="header-section-number">7.3.1</span> Eigenschaften von Zusammenhängen</h3>
 <p>Die folgenden acht Punktdiagramme zeigen verschiedene Zusammenhänge zwischen der X- und der Y-Variablen.</p>
@@ -645,12 +645,15 @@ Abbildung 7.2: Zusammenhänge identifizieren
 </div>
 <div id="berechnung-von-r" class="section level3" number="7.3.3">
 <h3><span class="header-section-number">7.3.3</span> Berechnung von <span class="math inline">\(r\)</span></h3>
-<p>Die Details zur Berechnung des Korrelationskoeffizienten ersparen wir uns. Das übernimmt die Statistiksoftware.</p>
+<p>Der Korrelationskoeffizient nach Pearson wird berechnet nach der Formel</p>
+<p><span class="math display">\[r = \frac{1}{n-1}\sum_{i=1}^n \lgroup \frac{x_i-\bar{x}}{s_x} \rgroup \lgroup \frac{y_i - \bar{y}}{s_y} \rgroup\]</span></p>
+<p><span class="math inline">\((x_1, y_1), (x_2, y_2),..., (x_n, y_n)\)</span> sind die <span class="math inline">\(n\)</span> Datenpaare für <span class="math inline">\(x\)</span> und <span class="math inline">\(y\)</span> und <span class="math inline">\(s_x\)</span> und <span class="math inline">\(s_y\)</span> sind die Standardabweichungen von <span class="math inline">\(x\)</span> und <span class="math inline">\(y\)</span> in der Stichprobe.</p>
+<p>Wir lernen das nicht und ersparen uns die Berechnung von Korrelationskoeffizienten von Hand (aber die Formel finde ich trotzdem cool). Das übernimmt die Statistiksoftware.</p>
 <p>Die Funktion in <code>R</code> <span class="citation">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2021</a>)</span> für die Berechnung des Korrelationskoeffizienten ist</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="korrelation-und-linearer-zusammenhang.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb87-2"><a href="korrelation-und-linearer-zusammenhang.html#cb87-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb87-3"><a href="korrelation-und-linearer-zusammenhang.html#cb87-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Korrelationskoeffizient nach Pearson   </span></span>
-<span id="cb87-4"><a href="korrelation-und-linearer-zusammenhang.html#cb87-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y)        </span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="korrelation-und-linearer-zusammenhang.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb95-2"><a href="korrelation-und-linearer-zusammenhang.html#cb95-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-3"><a href="korrelation-und-linearer-zusammenhang.html#cb95-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Korrelationskoeffizient nach Pearson   </span></span>
+<span id="cb95-4"><a href="korrelation-und-linearer-zusammenhang.html#cb95-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y)        </span></code></pre></div>
 </div>
 <div id="hypothesentest-für-r" class="section level3" number="7.3.4">
 <h3><span class="header-section-number">7.3.4</span> Hypothesentest für <span class="math inline">\(r\)</span></h3>
@@ -659,10 +662,10 @@ Abbildung 7.2: Zusammenhänge identifizieren
 <span class="math inline">\(H_A: \rho \neq 0\)</span> Es besteht ein linearer Zusammenhnag zwischen zwei Variablen.</p>
 <p><span class="math inline">\(\rho\)</span> (gr. Rho) ist der Korrelationskoeffizient auf Populationsebene.</p>
 <p>Die Funktion in <code>R</code> für diesen Hypothesentest ist</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="korrelation-und-linearer-zusammenhang.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb88-2"><a href="korrelation-und-linearer-zusammenhang.html#cb88-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb88-3"><a href="korrelation-und-linearer-zusammenhang.html#cb88-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Hypothesentest für r</span></span>
-<span id="cb88-4"><a href="korrelation-und-linearer-zusammenhang.html#cb88-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="korrelation-und-linearer-zusammenhang.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb96-2"><a href="korrelation-und-linearer-zusammenhang.html#cb96-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-3"><a href="korrelation-und-linearer-zusammenhang.html#cb96-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Hypothesentest für r</span></span>
+<span id="cb96-4"><a href="korrelation-und-linearer-zusammenhang.html#cb96-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(x, y)</span></code></pre></div>
 </div>
 <div id="interpretation-des-beispiels-für-laufgeschwindigkeit-und-kalorienverbrauch" class="section level3" number="7.3.5">
 <h3><span class="header-section-number">7.3.5</span> Interpretation des Beispiels für Laufgeschwindigkeit und Kalorienverbrauch</h3>
@@ -672,10 +675,10 @@ Abbildung 7.2: Zusammenhänge identifizieren
 Abbildung 7.3: Zusammenhang von Kalorienverbrauch und Laufgeschwindigkeit
 </p>
 </div>
-<p>Wir sehen, dass eine sehr starke positive lineare Korrelation zwischen der Laufgeschwindigkeit und dem Kalorienverbrauch besteht. Der Korrelationskoeffizient nach Pearson <span class="math inline">\(r\)</span> ist 0.997.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="korrelation-und-linearer-zusammenhang.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb89-2"><a href="korrelation-und-linearer-zusammenhang.html#cb89-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb89-3"><a href="korrelation-und-linearer-zusammenhang.html#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(running<span class="sc">$</span>kmh, running<span class="sc">$</span>kg59)</span></code></pre></div>
+<p>Wir sehen, dass eine starke positive lineare Korrelation zwischen der Laufgeschwindigkeit und dem Kalorienverbrauch besteht. Der Korrelationskoeffizient nach Pearson <span class="math inline">\(r\)</span> ist 0.997.</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="korrelation-und-linearer-zusammenhang.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb97-2"><a href="korrelation-und-linearer-zusammenhang.html#cb97-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb97-3"><a href="korrelation-und-linearer-zusammenhang.html#cb97-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(running<span class="sc">$</span>kmh, running<span class="sc">$</span>kg59)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -708,7 +711,7 @@ Abbildung 7.4: 16 Varianten von Zusammenhängen, alle <span class="math inline">
 Abbildung 7.5: Einfluss eines Ausreissers auf <span class="math inline">\(r\)</span>
 </p>
 </div>
-<p>Wir sehen links zwischen x = -2 und x = 2.8 eine Punktewolke, die einen starken positiven linearen Zusammenhang zwischen x und y zeigt. Bei x = 10, y = 6.2 befindet sich ein Ausreisser. Der Korrelationskoeffizient für alle Daten beträgt <span class="math inline">\(r = 0.8\)</span>. Wenn wir den Ausreisser entfernen, erhöht sich der Korrelationskoeffizient auf <span class="math inline">\(r = 0.925\)</span>, was vermutlich eher dem wahren Zusammenhang zwischen den Variablen entspricht. Unsere Schlussfolgerung: <em>Der Korrelationskoeffizient nach Pearson <span class="math inline">\(r\)</span> ist empfindlich für Ausreisser!</em></p>
+<p>Wir sehen links zwischen x = -2.3 und x = 1.8 eine Punktewolke, die einen starken positiven linearen Zusammenhang zwischen x und y zeigt. Bei x = 10, y = 6.2 befindet sich ein Ausreisser. Der Korrelationskoeffizient für alle Daten beträgt <span class="math inline">\(r = 0.8\)</span>. Wenn wir den Ausreisser entfernen, erhöht sich der Korrelationskoeffizient auf <span class="math inline">\(r = 0.925\)</span>, was vermutlich eher dem wahren Zusammenhang zwischen den Variablen entspricht. Unsere Schlussfolgerung: <em>Der Korrelationskoeffizient nach Pearson <span class="math inline">\(r\)</span> ist empfindlich für Extremwerte!</em></p>
 </div>
 <div id="rangkorrelationskoeffizient-nach-spearman" class="section level3" number="7.3.7">
 <h3><span class="header-section-number">7.3.7</span> Rangkorrelationskoeffizient nach Spearman</h3>
@@ -721,17 +724,17 @@ Abbildung 7.6: Zwei perfekte monotone Zusammenhänge
 </p>
 </div>
 <p>Die Funktion in <code>R</code> für die Berechnung von <span class="math inline">\(r_S\)</span> ist</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="korrelation-und-linearer-zusammenhang.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb91-2"><a href="korrelation-und-linearer-zusammenhang.html#cb91-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb91-3"><a href="korrelation-und-linearer-zusammenhang.html#cb91-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Rangkorrelationskoeffizient nach Spearman</span></span>
-<span id="cb91-4"><a href="korrelation-und-linearer-zusammenhang.html#cb91-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="korrelation-und-linearer-zusammenhang.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb99-2"><a href="korrelation-und-linearer-zusammenhang.html#cb99-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-3"><a href="korrelation-und-linearer-zusammenhang.html#cb99-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Rangkorrelationskoeffizient nach Spearman</span></span>
+<span id="cb99-4"><a href="korrelation-und-linearer-zusammenhang.html#cb99-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
 <p>Die Berechnung von <span class="math inline">\(r_s\)</span> für das Beispiel 12 (alle Daten inkl. Ausreisser) ergibt <span class="math inline">\(r_S = 0.938\)</span>. Der Wert von <span class="math inline">\(r_s\)</span> liegt nahe am Wert für <span class="math inline">\(r = 0.925\)</span> für die Daten ohne den Ausreisser.</p>
 </div>
 <div id="scheinkorrelationen" class="section level3" number="7.3.8">
 <h3><span class="header-section-number">7.3.8</span> Scheinkorrelationen</h3>
 <p>Das folgende Beispiel soll zeigen, dass bei der Interpretation von Korrelationen Vorsicht geboten ist.</p>
 <p>Frage: Besteht ein Zusammenhang zwischen der Schuhgrösse und dem Einkommen?</p>
-<p>Wir überprüfen diese Frage anhand der Angaben einer Stichprobe von <span class="math inline">\(n\)</span> = 1000. Die Proband:innen wurden nach ihrer Schuhgrösse (nur ganze Grössen) und ihrem monatlichen Bruttoeinkommen befragt.</p>
+<p>Wir überprüfen diese Frage anhand der Angaben einer Stichprobe von <span class="math inline">\(n\)</span> = 1000. Die Proband:innen wurden nach ihrer Schuhgrösse (nur ganze Grössen) und ihrem monatlichen Bruttoeinkommen befragt. (Datensatz <code>05_shoesize.csv</code>)</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:shoesizeSalary-fig"></span>
 <img src="statbook_files/figure-html/shoesizeSalary-fig-1.png" alt="Einkommen nach Schuhgrösse, n = 1000" width="480" />
 <p class="caption">
@@ -767,20 +770,20 @@ Abbildung 7.8: Einkommen nach Schuhgrösse
 <div id="r-code-und-output" class="section level3" number="7.5.1">
 <h3><span class="header-section-number">7.5.1</span> <code>R</code> Code und Output</h3>
 <p>Pearsons’s Korrelationskoeffizient</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="korrelation-und-linearer-zusammenhang.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb92-2"><a href="korrelation-und-linearer-zusammenhang.html#cb92-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb92-3"><a href="korrelation-und-linearer-zusammenhang.html#cb92-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulierte Daten</span></span>
-<span id="cb92-4"><a href="korrelation-und-linearer-zusammenhang.html#cb92-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="fl">1.5</span>, <span class="sc">-</span>.<span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb92-5"><a href="korrelation-und-linearer-zusammenhang.html#cb92-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="fl">4.5</span>, <span class="dv">6</span>, <span class="fl">5.5</span>, <span class="dv">6</span>, <span class="fl">6.5</span>, <span class="fl">7.5</span>)</span>
-<span id="cb92-6"><a href="korrelation-und-linearer-zusammenhang.html#cb92-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb92-7"><a href="korrelation-und-linearer-zusammenhang.html#cb92-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Streudiagramm erstellen</span></span>
-<span id="cb92-8"><a href="korrelation-und-linearer-zusammenhang.html#cb92-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="korrelation-und-linearer-zusammenhang.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb100-2"><a href="korrelation-und-linearer-zusammenhang.html#cb100-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-3"><a href="korrelation-und-linearer-zusammenhang.html#cb100-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulierte Daten</span></span>
+<span id="cb100-4"><a href="korrelation-und-linearer-zusammenhang.html#cb100-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="fl">1.5</span>, <span class="sc">-</span>.<span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb100-5"><a href="korrelation-und-linearer-zusammenhang.html#cb100-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="fl">4.5</span>, <span class="dv">6</span>, <span class="fl">5.5</span>, <span class="dv">6</span>, <span class="fl">6.5</span>, <span class="fl">7.5</span>)</span>
+<span id="cb100-6"><a href="korrelation-und-linearer-zusammenhang.html#cb100-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-7"><a href="korrelation-und-linearer-zusammenhang.html#cb100-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Streudiagramm erstellen</span></span>
+<span id="cb100-8"><a href="korrelation-und-linearer-zusammenhang.html#cb100-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span></code></pre></div>
 <p><img src="statbook_files/figure-html/rcode-pearson-1.png" width="480" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="korrelation-und-linearer-zusammenhang.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pearson&#39;s Korrelationskoeffizient</span></span>
-<span id="cb93-2"><a href="korrelation-und-linearer-zusammenhang.html#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="korrelation-und-linearer-zusammenhang.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pearson&#39;s Korrelationskoeffizient</span></span>
+<span id="cb101-2"><a href="korrelation-und-linearer-zusammenhang.html#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y)</span></code></pre></div>
 <pre><code>## [1] 0.9262154</code></pre>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="korrelation-und-linearer-zusammenhang.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hypothesentest für Pearson&#39;s Korrelationskoeffizient</span></span>
-<span id="cb95-2"><a href="korrelation-und-linearer-zusammenhang.html#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="korrelation-und-linearer-zusammenhang.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hypothesentest für Pearson&#39;s Korrelationskoeffizient</span></span>
+<span id="cb103-2"><a href="korrelation-und-linearer-zusammenhang.html#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(x, y)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -793,20 +796,20 @@ Abbildung 7.8: Einkommen nach Schuhgrösse
 ##       cor 
 ## 0.9262154</code></pre>
 <p>Rangkorrelationskoeffizient nach Spearman</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="korrelation-und-linearer-zusammenhang.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb97-2"><a href="korrelation-und-linearer-zusammenhang.html#cb97-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-3"><a href="korrelation-und-linearer-zusammenhang.html#cb97-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulierte Daten</span></span>
-<span id="cb97-4"><a href="korrelation-und-linearer-zusammenhang.html#cb97-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="fl">1.5</span>, <span class="sc">-</span>.<span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb97-5"><a href="korrelation-und-linearer-zusammenhang.html#cb97-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="fl">4.5</span>, <span class="dv">6</span>, <span class="fl">5.5</span>, <span class="dv">6</span>, <span class="fl">6.5</span>, <span class="fl">7.5</span>)</span>
-<span id="cb97-6"><a href="korrelation-und-linearer-zusammenhang.html#cb97-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-7"><a href="korrelation-und-linearer-zusammenhang.html#cb97-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Streudiagramm erstellen</span></span>
-<span id="cb97-8"><a href="korrelation-und-linearer-zusammenhang.html#cb97-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="korrelation-und-linearer-zusammenhang.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb105-2"><a href="korrelation-und-linearer-zusammenhang.html#cb105-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb105-3"><a href="korrelation-und-linearer-zusammenhang.html#cb105-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulierte Daten</span></span>
+<span id="cb105-4"><a href="korrelation-und-linearer-zusammenhang.html#cb105-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="fl">1.5</span>, <span class="sc">-</span>.<span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb105-5"><a href="korrelation-und-linearer-zusammenhang.html#cb105-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="fl">4.5</span>, <span class="dv">6</span>, <span class="fl">5.5</span>, <span class="dv">6</span>, <span class="fl">6.5</span>, <span class="fl">7.5</span>)</span>
+<span id="cb105-6"><a href="korrelation-und-linearer-zusammenhang.html#cb105-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb105-7"><a href="korrelation-und-linearer-zusammenhang.html#cb105-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Streudiagramm erstellen</span></span>
+<span id="cb105-8"><a href="korrelation-und-linearer-zusammenhang.html#cb105-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y)</span></code></pre></div>
 <p><img src="statbook_files/figure-html/rcode-spearman-1.png" width="480" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="korrelation-und-linearer-zusammenhang.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rangkorrelationskoeffizient nach Spearman</span></span>
-<span id="cb98-2"><a href="korrelation-und-linearer-zusammenhang.html#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="korrelation-und-linearer-zusammenhang.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rangkorrelationskoeffizient nach Spearman</span></span>
+<span id="cb106-2"><a href="korrelation-und-linearer-zusammenhang.html#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] 0.9009375</code></pre>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="korrelation-und-linearer-zusammenhang.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hypothesentest für Rangkorrelationskoeffizienten nach Spearman</span></span>
-<span id="cb100-2"><a href="korrelation-und-linearer-zusammenhang.html#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(x, y, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="korrelation-und-linearer-zusammenhang.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hypothesentest für Rangkorrelationskoeffizienten nach Spearman</span></span>
+<span id="cb108-2"><a href="korrelation-und-linearer-zusammenhang.html#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(x, y, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Spearman&#39;s rank correlation rho
 ## 

@@ -30,7 +30,7 @@ bookdown::gitbook, set in the _output.yml file.</p>" />
 <meta name="author" content="Lukas Stammler" />
 
 
-<meta name="date" content="2022-02-07" />
+<meta name="date" content="2022-02-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -267,7 +267,7 @@ div.csl-indent {
 <li class="chapter" data-level="6.4" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-test-für-eine-einfache-stichprobe"><i class="fa fa-check"></i><b>6.4</b> T-Test für eine einfache Stichprobe</a>
 <ul>
 <li class="chapter" data-level="6.4.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vorgehen"><i class="fa fa-check"></i><b>6.4.1</b> Vorgehen</a></li>
-<li class="chapter" data-level="6.4.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vertrauensintervall-für-einen-mittelwert-schritt-für-schritt"><i class="fa fa-check"></i><b>6.4.2</b> Vertrauensintervall für einen Mittelwert Schritt-für-Schritt:</a></li>
+<li class="chapter" data-level="6.4.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#konfidenzintervall-für-einen-mittelwert-schritt-für-schritt"><i class="fa fa-check"></i><b>6.4.2</b> Konfidenzintervall für einen Mittelwert Schritt-für-Schritt:</a></li>
 <li class="chapter" data-level="6.4.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#ein-stichproben-t-test-schritt-für-schritt"><i class="fa fa-check"></i><b>6.4.3</b> Ein-Stichproben-T-Test Schritt-für-Schritt:</a></li>
 <li class="chapter" data-level="6.4.4" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi"><i class="fa fa-check"></i><b>6.4.4</b> R/jamovi</a></li>
 </ul></li>
@@ -286,7 +286,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="6.7.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rang-methoden-rank-tests"><i class="fa fa-check"></i><b>6.7.1</b> Rang-Methoden (rank tests)</a></li>
 <li class="chapter" data-level="6.7.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#wilcoxon-vorzeichenrangtest"><i class="fa fa-check"></i><b>6.7.2</b> Wilcoxon-Vorzeichenrangtest</a></li>
-<li class="chapter" data-level="6.7.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#wilcoxon-rangsummentest"><i class="fa fa-check"></i><b>6.7.3</b> Wilcoxon-Rangsummentest</a></li>
+<li class="chapter" data-level="6.7.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>6.7.3</b> Mann-Whitney-U-Test</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html"><i class="fa fa-check"></i><b>7</b> Korrelation und linearer Zusammenhang</a>
@@ -384,11 +384,11 @@ div.csl-indent {
 </li>
 <li>Wenn x die unabhängige und y die abhängige Variable ist, wird das lineare Regressionsmodell gebildet als<br />
 <span class="math display">\[y = \beta_0 + \beta_1x\]</span>
-wobei <span class="math inline">\(\beta_0\)</span> den Schnittpunkt mit der y-Achse (Achsenabschnitt, engl. intercept) und <span class="math inline">\(\beta_1\)</span> die Steigung der Geraden beschreibt. Die Punktschätzungen (aus den beobachteten Daten) für <span class="math inline">\(\beta_0\)</span> und <span class="math inline">\(\beta_1\)</span> sind <span class="math inline">\(b_0\)</span> bzw. <span class="math inline">\(b_1\)</span>.<br />
+wobei der Koeffizient <span class="math inline">\(\beta_0\)</span> den Schnittpunkt mit der y-Achse (Achsenabschnitt, engl. intercept) und der Koeffizient <span class="math inline">\(\beta_1\)</span> die Steigung der Geraden beschreibt. Die Punktschätzungen (aus den beobachteten Daten) für <span class="math inline">\(\beta_0\)</span> und <span class="math inline">\(\beta_1\)</span> sind <span class="math inline">\(b_0\)</span> bzw. <span class="math inline">\(b_1\)</span>.<br />
 </li>
-<li>Definiere Residuen <span class="math inline">\(e\)</span> als Differenz zwischen den beobachteten <span class="math inline">\(y\)</span> und den durch das Modell vorhergesagten <span class="math inline">\(\hat{y}\)</span> Werten der abhängigen Variablen.<br />
+<li>Definiere Residuen <span class="math inline">\(e\)</span> als Differenz zwischen den beobachteten <span class="math inline">\(y\)</span> und den durch das Modell vorhergesagten (gefitteten) <span class="math inline">\(\hat{y}\)</span> Werten der abhängigen Variablen.<br />
 </li>
-<li>Definiere die Kleinstquadratlinie (Regressionsgerade) als die Linie, welche die Summe der quadrierten Residuen minimiert. Du kannst die Bedingungen dafür nennen, dass die Kleinstquadratlinie gültig ist:
+<li>Definiere die Kleinstquadratlinie (Regressionsgerade) als die Linie, welche die Summe der quadrierten Residuen minimiert. Du kannst die Bedingungen dafür nennen, dass die Konfidenzintervalle und Hypothesentests für die Koeffizienten der Kleinstquadratlinie gültig sind:
 <ol style="list-style-type: lower-alpha">
 <li>Linearität<br />
 </li>
@@ -399,7 +399,7 @@ wobei <span class="math inline">\(\beta_0\)</span> den Schnittpunkt mit der y-Ac
 </ol></li>
 <li>Interpretiere die Steigung <span class="math inline">\(b_1\)</span> wie folgt
 <ul>
-<li>“Für jede Einheit um die sich der Wert x erhöht erwarten wir, dass y im Durchschnitt um <span class="math inline">\(|b_1|\)</span> Einheiten grösser bzw. kleiner wird.”<br />
+<li>“Für jede Einheit um die sich der Wert x erhöht, erwarten wir, dass y im Durchschnitt um <span class="math inline">\(|b_1|\)</span> Einheiten grösser bzw. kleiner wird.”<br />
 </li>
 <li>Beachte dass es vom Vorzeichen von <span class="math inline">\(b_1\)</span> abhängig ist, ob der Wert der abhängigen Variable zu- oder abnimmt.<br />
 </li>
@@ -411,12 +411,12 @@ wobei <span class="math inline">\(\beta_0\)</span> den Schnittpunkt mit der y-Ac
 <li>Berechne den Wert der abhängigen Variablen für einen bestimmten Wert der unabhängigen Variablen, <span class="math inline">\(x^*\)</span>, durch Einsetzen von <span class="math inline">\(x^*\)</span> in das lineare Modell:<br />
 <span class="math display">\[\hat{y} = b_0 + b_1x^*\]</span>
 <ul>
-<li>Verwende nur Werte für <span class="math inline">\(x^*\)</span>, die in der Variationsbreite der beobachteten Daten liegen.<br />
+<li>Verwende nur Werte für <span class="math inline">\(x^*\)</span>, die im Bereich der beobachteten Daten liegen.<br />
 </li>
 <li>Extrapoliere nicht über die Variationsbreite hinaus, ausser du bist dir sicher, dass das lineare Muster darüber hinaus gültig ist.<br />
 </li>
 </ul></li>
-<li>Definiere das Bestimmtheitmass <span class="math inline">\(R^2\)</span> als prozentualer Anteil der Variabilität der abhängigen Variablen, der durch die unabhängige Variable erklärt wird.
+<li>Definiere das Bestimmtheitmass <span class="math inline">\(R^2\)</span> als prozentualen Anteil der Variabilität der abhängigen Variablen, der durch die unabhängige Variable erklärt wird.
 <ul>
 <li>Für ein gutes Modell erwarten wir, dass dieser Wert nahe bei 1 (100%) liegt.<br />
 </li>
@@ -427,7 +427,7 @@ wobei <span class="math inline">\(\beta_0\)</span> den Schnittpunkt mit der y-Ac
 </div>
 <div id="eine-bücherbestellung" class="section level2" number="8.2">
 <h2><span class="header-section-number">8.2</span> Eine Bücherbestellung</h2>
-<p>Ein Buchhändler muss jeweils einen Monat bevor das Semester beginnt die Statistik-Bücher für die Studierenden im Statistik-Kurs bestellen. Er geht davon aus, dass die Anzahl Statistik-Bücher, die er in diesem Semester verkaufen wird, davon abhängt, wieviele Studierende für den Statistik-Kurs angemeldet sind. Aus den vergangenen 12 Semestern besitzt der Buchhändler die Listen mit der Anzahl der eingeschriebenen Studierenden und mit der Anzahl der pro Semester verkauften Bücher.</p>
+<p>Ein Buchhändler muss jeweils einen Monat bevor das Semester beginnt die Statistik-Bücher für die Studierenden im Statistik-Kurs bestellen. Er geht davon aus, dass die Anzahl Statistik-Bücher, die er in diesem Semester verkaufen wird, davon abhängt, wieviele Studierende für den Statistik-Kurs angemeldet sind. Aus den vergangenen 12 Semestern besitzt der Buchhändler die Listen mit der Anzahl der eingeschriebenen Studierenden und mit der Anzahl der pro Semester verkauften Bücher. (Datensatz <code>06_bookstore.csv</code>)</p>
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:bookstore-tab">Tabelle 8.1: </span>Buchhandlung
@@ -602,9 +602,9 @@ Abbildung 8.1: Zusammenhang Anzahl verkaufte Bücher und Anzahl Studierende
 </p>
 </div>
 <p>Die Daten zeigen einen moderaten bis starken positiven linearen Zusammenhang zwischen der abhängigen und der unabhängigen Variablen. Mit der Berechnung des Korrelationskoeffizienten können wir die Stärke des Zusammenhangs quantifizieren (das Signifikanzniveau legen wir auf <span class="math inline">\(\alpha = 0.05\)</span> fest):</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="einfache-lineare-regression.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb102-2"><a href="einfache-lineare-regression.html#cb102-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb102-3"><a href="einfache-lineare-regression.html#cb102-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(bookstore<span class="sc">$</span>Studierende, bookstore<span class="sc">$</span>Buecher)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="einfache-lineare-regression.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb110-2"><a href="einfache-lineare-regression.html#cb110-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-3"><a href="einfache-lineare-regression.html#cb110-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(bookstore<span class="sc">$</span>Studierende, bookstore<span class="sc">$</span>Buecher)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -625,8 +625,7 @@ Abbildung 8.1: Zusammenhang Anzahl verkaufte Bücher und Anzahl Studierende
 <p>Die Regressionsanalyse liefert das Werkzeug dafür: Sie liefert uns ein Modell - nämlich eine Gerade und die zugehörige Gleichung - welches unsere Daten so gut wie möglich beschreibt. Im vorliegenden Fall hilft uns die Gleichung vorherzusagen, wieviele Bücher wir für jede zusätzliche Studierende verkaufen werden.</p>
 <div id="die-regressionsgerade" class="section level3" number="8.4.1">
 <h3><span class="header-section-number">8.4.1</span> Die Regressionsgerade</h3>
-<div id="kurzes-repe-mathematik---lineare-funktion-gerade" class="section level4" number="8.4.1.1">
-<h4><span class="header-section-number">8.4.1.1</span> Kurzes Repe Mathematik - Lineare Funktion: Gerade</h4>
+<p><strong>Kurzes Repe Mathematik - Lineare Funktion: Geradengleichung</strong></p>
 <ul>
 <li><p>Eine lineare Funktion kann grafisch durch eine Gerade dargestellt werden.<br />
 </p></li>
@@ -646,12 +645,11 @@ Abbildung 8.2: Geradengleichung
 <p>Unsere Geradengleichung lautet somit:</p>
 <p><span class="math display">\[y = 2x + 4\]</span></p>
 </div>
-</div>
 <div id="lineares-modell" class="section level3" number="8.4.2">
 <h3><span class="header-section-number">8.4.2</span> Lineares Modell</h3>
 <p>Lineare Regression ist die statistische Methode, eine Gerade für zwei Variablen X und Y zu konstruieren, wenn die Beziehung dieser beiden Variablen einigermassen linear ist, also durch eine Gerade beschrieben werden kann. Die Gerade dient als Modell und wird so konstruiert, dass sie die Daten möglichst passend beschreibt. Die allgemeine Formel für ein lineares Modell lautet:</p>
 <p><span class="math display">\[y = \beta_0 + \beta_1x\]</span></p>
-<p><span class="math inline">\(\beta_0\)</span> und <span class="math inline">\(beta_1\)</span> sind die Parameter des Modells. Diese werden in der Regel mit Stichprobendaten geschätzt und wir schreiben wir die Formel als</p>
+<p><span class="math inline">\(\beta_0\)</span> und <span class="math inline">\(\beta_1\)</span> sind die Parameter des Modells. Diese werden in der Regel mit Stichprobendaten geschätzt und wir schreiben wir die Formel als</p>
 <p><span class="math display">\[y = b_0 + b_1x\]</span></p>
 <ul>
 <li><span class="math inline">\(b_0\)</span> Achsenabschnitt, gibt den Wert für y an, wenn x = 0 (in Statistikprogrammen als <em>intercept</em> bezeichnet).<br />
@@ -681,8 +679,8 @@ Abbildung 8.3: Welche Gerade ist ein optimales Modell?
 </li>
 <li>Die Gerade beschreibt einen negativen linearen Zusammenhang, das ist Unsinn.</li>
 </ol>
-<p><img src="statbook_files/figure-html/plot_bookstore_residuals-1.png" width="480" style="display: block; margin: auto;" /></p>
-<p>Die Abbildung zeigt die Gerade (e), die den funktionalen Zusammenhang zwischen Studierenden und verkauften Büchern modelliert. Die blauen Punkte sind die Anzahl effektiv verkaufter Bücher pro Studierendenanzahl und die roten Punkte sind die Anzahl der Bücher, die unser Modell vorhersagt. Die roten Punkte sind die vom Modell berechneten Werte <em>(fitted values)</em> und wir sehen, dass die Gerade die meisten blauen Punkte verfehlt. Die senkrechten Linien zwischen den gemessenen Werten (blau) und den gefitteten Werten (rot) bezeichnen wir als <strong>Residuen</strong>.</p>
+<p><img src="statbook_files/figure-html/plot-bookstore-residuals-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Die Abbildung <a href="#fig:plot-bookstore-residuals"><strong>??</strong></a> zeigt die Gerade (e), die den funktionalen Zusammenhang zwischen Studierenden und verkauften Büchern modelliert. Die blauen Punkte sind die Anzahl effektiv verkaufter Bücher pro Studierendenanzahl und die roten Punkte sind die Anzahl der Bücher, die unser Modell vorhersagt. Die roten Punkte sind die vom Modell berechneten Werte <em>(fitted values)</em> und wir sehen, dass die Gerade die meisten blauen Punkte verfehlt. Die senkrechten Linien zwischen den gemessenen Werten (blau) und den gefitteten Werten (rot) bezeichnen wir als <strong>Residuen</strong>.</p>
 <p>Definition <strong>Residuum</strong>: Senkrechte Differenz zwischen dem Modell vorhergesagten Wert <span class="math inline">\(\hat{y}\)</span> (gefitteter Wert) und dem tatsächlich beobachteten Wert <span class="math inline">\(y\)</span>. Das Residuum <span class="math inline">\(e_i\)</span> der i-ten Beobachtung ist die Differenz zwischen dem beobachteten Wert <span class="math inline">\(y_i\)</span> und dem vom Modell vorhergesagten Wert <span class="math inline">\(\hat{y_i}\)</span>.</p>
 <p><span class="math display">\[e_i = y_i-\hat{y_i}\]</span></p>
 <p><span class="math inline">\(\hat{y_i}\)</span> berechnen wir durch Einsetzen von <span class="math inline">\(x_i\)</span> in die Regressionsgleichung.</p>
@@ -705,7 +703,7 @@ Abbildung 8.3: Welche Gerade ist ein optimales Modell?
 Abbildung 8.4: Universitäre Unterstützung nach Familieneinkommen
 </p>
 </div>
-<p>Die Grafik zeigt die universitäre Unterstützung in Abhängigkeit vom Familieneinkommen <span class="citation">(Quelle <a href="#ref-R-openintro" role="doc-biblioref">Çetinkaya-Rundel et al. 2021</a>)</span>. Die gestrichelte Linie wurde mit der Methode der Summe der Absolutwerte der Residuen und die ausgezogene Linie mit der Kleinst-Quadrat-Methode berechnet. Beide Varianten würden ein plausibles Modell ergeben, aber die Kleinst-Quadrat-Methode hat sich als Standard etabliert.</p>
+<p>Die Abbildung <a href="einfache-lineare-regression.html#fig:elmhurst-fig">8.4</a> zeigt die finanzielle Unterstützung durch die Universität Elmhurst (Illinois) in Abhängigkeit vom Familieneinkommen <span class="citation">(Quelle <a href="#ref-R-openintro" role="doc-biblioref">Çetinkaya-Rundel et al. 2021</a>)</span>. Die gestrichelte Linie wurde mit der Methode der Summe der Absolutwerte der Residuen und die ausgezogene Linie mit der Kleinst-Quadrat-Methode berechnet. Beide Varianten würden ein plausibles Modell ergeben, aber die Kleinst-Quadrat-Methode hat sich als Standard etabliert.</p>
 <p>Die Berechnung der Geradengleichung überlassen wir i.d.R. <code>R</code>. Hier die Formeln für die Berechnung von Hand für die einfache lineare Regression:</p>
 <p><strong>Berechnung der Steigung</strong></p>
 <p><span class="math display">\[\beta_1 = \frac{s_y}{s_x}r\]</span>
@@ -714,11 +712,11 @@ wobei <span class="math inline">\(s_y\)</span> die Standardabweichung von <span 
 <p><span class="math display">\[\beta_0 = \bar{y} - \beta_1 \bar{x}\]</span><br />
 wobei <span class="math inline">\(\bar{y}\)</span> der Mittelwert von <span class="math inline">\(y\)</span> und <span class="math inline">\(\bar{x}\)</span> der Mittelwert von <span class="math inline">\(x\)</span> ist.</p>
 <p>in <code>R</code> benutzen wir die Funktion <code>lm()</code>:</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="einfache-lineare-regression.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb104-2"><a href="einfache-lineare-regression.html#cb104-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb104-3"><a href="einfache-lineare-regression.html#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="co"># lineares Modell erstellen und Zusammenfassung ausgeben</span></span>
-<span id="cb104-4"><a href="einfache-lineare-regression.html#cb104-4" aria-hidden="true" tabindex="-1"></a>lm_bookstore <span class="ot">&lt;-</span> <span class="fu">lm</span>(Buecher <span class="sc">~</span> Studierende, <span class="at">data =</span> bookstore)</span>
-<span id="cb104-5"><a href="einfache-lineare-regression.html#cb104-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_bookstore)</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="einfache-lineare-regression.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb112-2"><a href="einfache-lineare-regression.html#cb112-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-3"><a href="einfache-lineare-regression.html#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="co"># lineares Modell erstellen und Zusammenfassung ausgeben</span></span>
+<span id="cb112-4"><a href="einfache-lineare-regression.html#cb112-4" aria-hidden="true" tabindex="-1"></a>lm_bookstore <span class="ot">&lt;-</span> <span class="fu">lm</span>(Buecher <span class="sc">~</span> Studierende, <span class="at">data =</span> bookstore)</span>
+<span id="cb112-5"><a href="einfache-lineare-regression.html#cb112-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_bookstore)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = Buecher ~ Studierende, data = bookstore)
@@ -771,7 +769,7 @@ Abbildung 8.5: Buchhandlung: Vorhersage für 33 Stud.
 Abbildung 8.6: Olympische Zeit für 100m-Sprint
 </p>
 </div>
-<p>Die Steigung bei den Frauen ist etwas stärker negativ als bei den Männern (<span class="math inline">\(\beta_{1, f}\)</span> = -0.02, <span class="math inline">\(beta_{1,m}\)</span> = -0.01). Das heisst, dass die Frauen in den Jahren 1928 bis 2004 ihre Geschwindigkeit schneller steigern konnten als die Männer: Frauen wurden im Durchschnitt pro Jahr um 0.02 Sekunden schneller, Männer um 0.01 Sekunden.</p>
+<p>Die Steigung bei den Frauen ist etwas stärker negativ als bei den Männern (<span class="math inline">\(\beta_{1, f}\)</span> = -0.02, <span class="math inline">\(\beta_{1,m}\)</span> = -0.01). Das heisst, dass die Frauen in den Jahren 1928 bis 2004 ihre Geschwindigkeit im Durchschnitt um 0.01 Sekunden mehr steigern konnten als die Männer: Frauen wurden im Durchschnitt pro Jahr um 0.02 Sekunden schneller, Männer um 0.01 Sekunden.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sprint100m-extrapol-fig"></span>
 <img src="statbook_files/figure-html/sprint100m-extrapol-fig-1.png" alt="Zeit für 100m-Sprint Frauen extrapoliert" width="480" />
 <p class="caption">
@@ -792,7 +790,7 @@ Abbildung 8.8: Zeit für 100m-Sprint Frauen bis ins Jahr 2800 extrapoliert
 <h3><span class="header-section-number">8.4.5</span> Das Bestimmtheitsmass <span class="math inline">\(R^2\)</span></h3>
 <p>Das Bestimmtheitsmass <span class="math inline">\(R^2\)</span> …</p>
 <ul>
-<li>sagt uns, wieviel Prozent der Streuung der abhängigen Variable y durch die unabhängige Variable x erklärt wird. Anders formuliert: Wieviel Prozent der Änderung in y von einem Datenpunkt zum anderen durch x erklärbar ist.<br />
+<li>sagt uns, wieviel Prozent der Streuung der abhängigen Variable <span class="math inline">\(y\)</span> durch die unabhängige Variable <span class="math inline">\(x\)</span> erklärt wird. Anders formuliert: Wieviel Prozent der Änderung in <span class="math inline">\(y\)</span> von einem Datenpunkt zum anderen durch <span class="math inline">\(x\)</span> erklärbar ist.<br />
 </li>
 <li>kann Werte zwischen 0 und 1 annehmen (0 bis 100%).<br />
 </li>
@@ -801,7 +799,7 @@ Abbildung 8.8: Zeit für 100m-Sprint Frauen bis ins Jahr 2800 extrapoliert
 <li>ist umso grösser, je geringer Daten um die Regressionsgerade streuen.</li>
 </ul>
 <p><img src="statbook_files/figure-html/Rsquared-1.png" width="864" style="display: block; margin: auto;" /></p>
-<p>Eine Variable y kann folglich umso besser durch die Variable x erklärt werden, je größer die Korrelation <span class="math inline">\(r\)</span> zwischen beiden Variablen dem Betrag nach ist. Anders formuliert: Je größer <span class="math inline">\(R^2\)</span> ist, desto besser ist die Anpassung der Regressionsgeraden an die Daten.</p>
+<p>Eine Variable <span class="math inline">\(y\)</span> kann folglich umso besser durch die Variable <span class="math inline">\(x\)</span> erklärt werden, je größer die Korrelation <span class="math inline">\(r\)</span> zwischen beiden Variablen dem Betrag nach ist. Anders formuliert: Je größer <span class="math inline">\(R^2\)</span> ist, desto besser ist die Anpassung der Regressionsgeraden an die Daten.</p>
 </div>
 </div>
 <div id="einfache-lineare-regression-in-rjamovi" class="section level2" number="8.5">
@@ -853,13 +851,13 @@ Abbildung 8.8: Zeit für 100m-Sprint Frauen bis ins Jahr 2800 extrapoliert
 <p>In <code>R</code> kann über die Funktion <code>plot(model)</code> eine Serie von 4 diagnostischen Plots
 ausgegeben werden. Der erste Plot erlaubt die Beurteilung der Homoskedastizität, der
 zweite Plot ist ein QQ-Plot.</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="einfache-lineare-regression.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
-<span id="cb106-2"><a href="einfache-lineare-regression.html#cb106-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb106-3"><a href="einfache-lineare-regression.html#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Modell erstellen, wenn nicht schon gemacht</span></span>
-<span id="cb106-4"><a href="einfache-lineare-regression.html#cb106-4" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(Buecher <span class="sc">~</span> Studierende, <span class="at">data =</span> bookstore)</span>
-<span id="cb106-5"><a href="einfache-lineare-regression.html#cb106-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb106-6"><a href="einfache-lineare-regression.html#cb106-6" aria-hidden="true" tabindex="-1"></a><span class="co"># über &#39;which&#39; wählen wir die ersten beiden Plots </span></span>
-<span id="cb106-7"><a href="einfache-lineare-regression.html#cb106-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model, <span class="at">which =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="einfache-lineare-regression.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="do">### R-Code</span></span>
+<span id="cb114-2"><a href="einfache-lineare-regression.html#cb114-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-3"><a href="einfache-lineare-regression.html#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Modell erstellen, wenn nicht schon gemacht</span></span>
+<span id="cb114-4"><a href="einfache-lineare-regression.html#cb114-4" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(Buecher <span class="sc">~</span> Studierende, <span class="at">data =</span> bookstore)</span>
+<span id="cb114-5"><a href="einfache-lineare-regression.html#cb114-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-6"><a href="einfache-lineare-regression.html#cb114-6" aria-hidden="true" tabindex="-1"></a><span class="co"># über &#39;which&#39; wählen wir die ersten beiden Plots </span></span>
+<span id="cb114-7"><a href="einfache-lineare-regression.html#cb114-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model, <span class="at">which =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span></code></pre></div>
 <p><img src="statbook_files/figure-html/unnamed-chunk-29-1.png" width="480" style="display: block; margin: auto;" /><img src="statbook_files/figure-html/unnamed-chunk-29-2.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Im <code>jamovi</code>-Dialogfenster zur Linearen Regression kann unter <code>Assuption Checks</code> ein Q-Q-Plot der Residuen (Q-Q plot of residuals) gewählt werden. Jamovi erstellt ein Streudiagramm in dem auf der x-Achse die theoretischen Quantile einer Normalverteilung dargestellt werden und auf der y-Achse die Quantile der standardisierten Residuen.</p>
 <p>Weiter kann unter <code>Assuption Checks</code> &gt; <code>Residual Plots</code> gewählt werden. Jamovi erstellt mehrere Streudiagramme, von denen uns nur das erste interessiert: Auf der y-Achse werden die Residuen dargestellt und auf der x-Achse die gefitteten Werte. Wenn die Punkte gleichmässig verteilt sind, liegt Homoskedastizität vor.</p>

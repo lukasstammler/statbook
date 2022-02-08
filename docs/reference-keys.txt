@@ -78,6 +78,7 @@ fig:statex-bp-fig
 tab:statex-ranks
 fig:statex-dots-fig
 fig:plot-equal-notequal
+tab:plot-equal-notequal
 tab:running-tab
 fig:running-scatp-fig
 fig:relationshipsR-fig
@@ -164,7 +165,7 @@ t-tests
 t-verteilung-versus-normalverteilung
 t-test-für-eine-einfache-stichprobe
 vorgehen
-vertrauensintervall-für-einen-mittelwert-schritt-für-schritt
+konfidenzintervall-für-einen-mittelwert-schritt-für-schritt
 ein-stichproben-t-test-schritt-für-schritt
 rjamovi
 t-test-für-verbundene-stichproben
@@ -178,9 +179,9 @@ nicht-parametrische-tests
 rang-methoden-rank-tests
 wilcoxon-vorzeichenrangtest
 rjamovi-3
-wilcoxon-rangsummentest
+mann-whitney-u-test
 rjamovi-4
-voraussetzungen-für-den-wilcoxon-rangsummen-test
+voraussetzungen-für-den-mann-whitney-u-test
 korrelation-und-linearer-zusammenhang
 einleitung-1
 lernziele-4
@@ -204,7 +205,6 @@ unabhängige-und-abhängige-variable
 zusammenhang-zwischen-den-variablen
 einfache-lineare-regression-1
 die-regressionsgerade
-kurzes-repe-mathematik---lineare-funktion-gerade
 lineares-modell
 die-kleinst-quadrat-linie
 warum-man-nicht-über-die-gemessenen-daten-hinaus-extrapolieren-sollte
@@ -225,8 +225,3 @@ berechnen-der-erwarteten-werte-unter-der-nullhypothese
 voraussetzungen-1
 interpretation-des-chi2-tests
 referenzen
-tab:plot-equal-notequal
-url-your-book-url-like-httpsbookdown.orgyihuibookdown
-konfidenzintervall-für-einen-mittelwert-schritt-für-schritt
-mann-whitney-u-test
-voraussetzungen-für-den-mann-whitney-u-test
