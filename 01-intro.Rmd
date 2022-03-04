@@ -23,4 +23,4 @@ Jede wissenschaftliche Theorie ist ein Modell des beobachteten Aspekts der Wirkl
 
 In der Statistik geht es darum, aus vorhandenen Daten auf den datengenerierenden Mechanismus zu schliessen. Wir sehen ein paar (wenige) Datenpunkte (z.B. Blutdruckmessungen) und versuchen mit diesem beschränkten Wissen herauszufinden, was wohl ein gutes Modell dafür ist. 
 
-Auch wenn wir Experimente durchführen, erhalten wir Daten, die angemessen ausgewertet werden müssen. Wenn wir also einen wissenschaftlichen Fachartikel beurteilen sollen, dann kommt darin wohl fast immer auch eine Datenanalyse vor. Um  Fehlschlüsse zu vermeiden und Fehlinterpretationen zu durchschauen benötigen wir ein Verständnis der theoretischen Grundlagen. 
+Auch wenn wir Experimente durchführen, erhalten wir Daten, die angemessen ausgewertet werden müssen. Wenn wir also einen wissenschaftlichen Fachartikel beurteilen sollen, dann kommt darin wohl fast immer auch eine Datenanalyse vor. Um  Fehlschlüsse zu vermeiden und Fehlinterpretationen zu durchschauen, benötigen wir ein Verständnis der theoretischen Grundlagen. 

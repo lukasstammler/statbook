@@ -1,3 +1,9 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
 ```{r setup-03, include=FALSE}
 rm(list = ls())
 
@@ -31,181 +37,204 @@ show_col(COL[1:20])
 
 # Wahrscheinlichkeitsverteilungen
 
-## Lernziele  
+## Lernziele
 
-1. Definiere **Zufallsvariable** als Beobachtungsmerkmal, dessen Ausprägung variiert 
-und daher nicht exakt vorhergesagt werden kann.  
+1.  Definiere **Zufallsvariable** als Beobachtungsmerkmal, dessen
+    Ausprägung variiert und daher nicht exakt vorhergesagt werden kann.
 
-2. Interpretiere die **Wahrscheinlichkeitsverteilung** einer Variable als Modell, 
-das sich auf eine Grundpopulation bezieht. 
+2.  Interpretiere die **Wahrscheinlichkeitsverteilung** einer Variable
+    als Modell, das sich auf eine Grundpopulation bezieht.
 
-3. Beachte, dass die **Wahrscheinlichkeit $P$** für ein Ereignis stets zwischen 
-0% und 100% liegt. $P$ kann daher nur Werte zwischen 0 und 1 annehmen.  
+3.  Beachte, dass die **Wahrscheinlichkeit** $P$ für ein Ereignis stets
+    zwischen 0% und 100% liegt. $P$ kann daher nur Werte zwischen 0 und
+    1 annehmen.
 
-4. Interpretiere die **Normalverteilung** als eine kontinuierliche Verteilung.  
+4.  Interpretiere die **Normalverteilung** als eine kontinuierliche
+    Verteilung.
 
-* In kontinuierlichen Verteilungen ist die Wahrscheinlichkeit für ein ganz 
-bestimmtes Ereignis stets Null. Es ist aber möglich Wahrscheinlichkeiten für 
-Wertebereiche (Intervalle) zu berechnen.   
+-   In kontinuierlichen Verteilungen ist die Wahrscheinlichkeit für ein
+    ganz bestimmtes Ereignis stets Null. Es ist aber möglich
+    Wahrscheinlichkeiten für Wertebereiche (Intervalle) zu berechnen.
 
-* Die Normalverteilung ist symmetrisch um den Mittelwert und kann durch die 
-Parameter Mittelwert $\mu$ und Standardabweichung $\sigma$ vollständig beschrieben 
-werden. Mittelwert und Median sind in diesem Fall annähernd identisch.  
+-   Die Normalverteilung ist symmetrisch um den Mittelwert und kann
+    durch die Parameter Mittelwert $\mu$ und Standardabweichung $\sigma$
+    vollständig beschrieben werden. Mittelwert und Median sind in diesem
+    Fall annähernd identisch.
 
-5. Interpretiere die **Standardnormalverteilung** als eine Normalverteilung mit 
-dem Mittelwert $\mu = 0$ und der Standardabweichung $\sigma = 1$.   
+5.  Interpretiere die **Standardnormalverteilung** als eine
+    Normalverteilung mit dem Mittelwert $\mu = 0$ und der
+    Standardabweichung $\sigma = 1$.
 
-* Jede Normalverteilung kann durch *$z$-Transformation* in die Standardnormalverteilung 
-umgewandelt werden.  
+-   Jede Normalverteilung kann durch $z$-Transformation in die
+    Standardnormalverteilung umgewandelt werden.
 
 $$z_n=\frac{x_n - \bar{x}}{s}$$
 
-6. Interpretiere den **$z$-Wert** als Abstand eines Datenpunktes vom Mittelwert 
-in Anzahl Standardabweichungen. Punkte mit negativen z-Werten liegen links vom 
-Mittelwert und Punkte mit positiven z-Werten liegen rechts vom Mittelwert.  
+6.  Interpretiere den $z$-Wert als Abstand eines Datenpunktes vom
+    Mittelwert in Anzahl Standardabweichungen. Punkte mit negativen
+    z-Werten liegen links vom Mittelwert und Punkte mit positiven
+    z-Werten liegen rechts vom Mittelwert.
 
-7. Verwende den $z$-Wert,   
+7.  Verwende den $z$-Wert,
 
-* ... um die Perzentile eines Datenpunktes zu bestimmen (z.B. bei der Berechnung 
-von Konfidenzintervallen).   
-* ... um zu bestimmen, ob ein Datenpunkt als ungewöhnlich beurteilt werden muss 
-(Faustregel: $z$ > 2 ist ungewöhnlich).  
+-   ... um die Perzentile eines Datenpunktes zu bestimmen (z.B. bei der
+    Berechnung von Konfidenzintervallen).\
+-   ... um zu bestimmen, ob ein Datenpunkt als ungewöhnlich beurteilt
+    werden muss (Faustregel: $z$ \> \|2\| ist ungewöhnlich).
 
-8. Beurteile die Form einer Verteilung nach dem $z$-Wert des Medians (für den 
-Mittelwert gilt immer $z$ = 0)   
+8.  Beurteile die Form einer Verteilung nach dem $z$-Wert des Medians
+    (für den Mittelwert gilt immer $z$ = 0)
 
-* Bei rechtsschiefen Verteilungen hat der Median einen negativen $z$-Wert.   
-* Bei linksschiefen Verteilungen hat der Median einen postiven $z$-Wert. 
+-   Bei rechtsschiefen Verteilungen hat der Median einen negativen
+    $z$-Wert.\
+-   Bei linksschiefen Verteilungen hat der Median einen postiven
+    $z$-Wert.
 
-9. Die **68-95-99.7%-Regel** ist eine Faustregel die besagt, dass unter der 
-Normalverteilungskurve 68% der Fläche innerhalb von $\bar{x} \pm 1s$, 95% der 
-Fläche innerhalb von $\bar{x} \pm 2s$ und 99.7% der Fläche innerhalb von 
-$\bar{x} \pm 3s$ liegen.  
+9.  Die **68-95-99.7%-Regel** ist eine Faustregel die besagt, dass unter
+    der Normalverteilungskurve 68% der Fläche innerhalb von
+    $\bar{x} \pm 1s$, 95% der Fläche innerhalb von $\bar{x} \pm 2s$ und
+    99.7% der Fläche innerhalb von $\bar{x} \pm 3s$ liegen.
 
-10. Beurteile anhand eines Histogramms, eines Boxplots oder eines **QQ-Plots**, 
-ob die beobachteten Daten aus einer normalverteilten Population stammen oder nicht.  
+10. Beurteile anhand eines Histogramms, eines Boxplots oder eines
+    **QQ-Plots**, ob die beobachteten Daten aus einer normalverteilten
+    Population stammen oder nicht.
 
-12. Interpretiere die **$t$-Verteilung** als Anpassung der Normalverteilung, 
-wenn die Standardabweichung $\sigma$ einer Population unbekannt ist (was fast 
-immer der Fall ist).   
+11. Interpretiere die $t$-Verteilung als Anpassung der Normalverteilung,
+    wenn die Standardabweichung $\sigma$ einer Population unbekannt ist
+    (was fast immer der Fall ist).
 
-* Die Form der $t$-Verteilung ist nur abhängig vom Stichprobenumfang. Dieser 
-wird in Freiheitsgraden df angegeben, wobei $df = n-1$.  
-* Ist der Stichprobenumfang $n$ > 30, nähert sich die Form der $t$-Verteilung der 
-Normalverteilung an.
-* Die $t$-Verteilung wird mit dem Parameter **$df$** vollständig beschrieben.  
-* Interpretiere $t$-Werte, die von Statistikprogrammen angegeben werden, gleich wie z-Werte.
+-   Die Form der $t$-Verteilung ist nur abhängig vom Stichprobenumfang.
+    Dieser wird in Freiheitsgraden $df$ angegeben, wobei $df = n-1$.\
+-   Ist der Stichprobenumfang $n$ \> 30, nähert sich die Form der
+    $t$-Verteilung der Normalverteilung an.
+-   Die $t$-Verteilung wird mit dem Parameter $df$ vollständig
+    beschrieben.\
+-   Interpretiere $t$-Werte, die von Statistikprogrammen angegeben
+    werden, gleich wie z-Werte.
 
 ## Zufallsvariablen
 
-Unter einer Zufallsvariable verstehen wir ein Beobachtungsmerkmal, dessen 
-Ausprägung in gewissem Umfang vom Zufall abhängig ist, d.h. dessen Ausprägung 
-variiert und daher nicht exakt vorhergesagt werden kann. 
+Unter einer Zufallsvariable verstehen wir ein Beobachtungsmerkmal,
+dessen Ausprägung in gewissem Umfang vom Zufall abhängig ist, d.h.
+dessen Ausprägung variiert und daher nicht exakt vorhergesagt werden
+kann.
 
 ## Wahrscheinlichkeitsverteilungen
 
-Eine Wahrscheinlichkeitsverteilung ist eine mathematische Funktion (ein Modell), 
-welche die Wahrscheinlichkeiten für alle möglichen Werte einer Zufallsvariable beschreibt.
+Eine Wahrscheinlichkeitsverteilung ist eine mathematische Funktion (ein
+Modell), welche die Wahrscheinlichkeiten für alle möglichen Werte einer
+Zufallsvariable beschreibt.
 
-Das tönt recht technisch, ist aber anhand von einem Beispiel leicht zu verstehen: 
-Stell dir vor, du möchtest wissen, wie gross deine Kolleginnen in der Klasse sind. 
-Dazu misst du von jeder Person die Körpergrösse und stellst fest, dass gewisse 
-Körpergrössen häufig und andere eher selten sind. Wahrscheinlichkeitsverteilungen 
-helfen dir, wenn es darum geht zu verstehen, welche Merkmalsausprägungen eher 
-häufig und welche eher selten zu erwarten sind. Sie erlauben auch die 
-Beantwortung von Fragen wie: "Wie gross ist die Wahrscheinlichkeit, dass die 
-nächste Person, die ich messe, grösser als zwei Meter ist?".
+Das tönt recht technisch, ist aber anhand von einem Beispiel leicht zu
+verstehen: Stell dir vor, du möchtest wissen, wie gross deine
+Kolleginnen in der Klasse sind. Dazu misst du von jeder Person die
+Körpergrösse und stellst fest, dass gewisse Körpergrössen häufig und
+andere eher selten sind. Wahrscheinlichkeitsverteilungen helfen dir,
+wenn es darum geht zu verstehen, welche Merkmalsausprägungen eher häufig
+und welche eher selten zu erwarten sind. Sie erlauben auch die
+Beantwortung von Fragen wie: "Wie gross ist die Wahrscheinlichkeit, dass
+die nächste Person, die ich messe, grösser als zwei Meter ist?".
 
-In der deskriptiven Statistik haben wir bereits Verteilungen von Zufallsvariablen 
-kennen gelernt: Sie lassen sich durch Form (symmetrisch, links- oder rechtsschief, 
-irregulär), Kennzahlen der zentralen Tendenz und Kennzahlen der Streuung beschreiben.   
+In der deskriptiven Statistik haben wir bereits Verteilungen von
+Zufallsvariablen kennen gelernt: Sie lassen sich durch Form
+(symmetrisch, links- oder rechtsschief, irregulär), Kennzahlen der
+zentralen Tendenz und Kennzahlen der Streuung beschreiben.
 
-> Beachte, dass Histogramme, Boxplots und Streudiagramme die Verteilung von 
-Stichprobendaten beschreiben, während Wahrscheinlichkeitsverteilungen Modelle 
-für die Verteilung von Daten in Populationen sind.
+> Beachte, dass Histogramme, Boxplots und Streudiagramme die Verteilung
+> von Stichprobendaten beschreiben, während
+> Wahrscheinlichkeitsverteilungen Modelle für die Verteilung von Daten
+> in Populationen sind.
 
-In der mathematischen Schreibweise wird die Wahrscheinlichkeit für ein Ereignis 
-$X$ geschrieben als
+In der mathematischen Schreibweise wird die Wahrscheinlichkeit für ein
+Ereignis $X$ geschrieben als
 
 $$p(X) = Zahl~zwischen~0~und~1$$
 
-Die Summe für alle möglichen Ausprägungen von $X$ ist stets 1. Ausserdem ist die 
-Wahrscheinlichkeit für eine bestimmte Merkmalsausprägung $X$ ein Wert zwischen 
-0 (0%) und 1 (100%). Wenn wir also eine Münze werfen, dann ist die Wahrscheinlichkeit 
+Die Summe für alle möglichen Ausprägungen von $X$ ist stets 1. Ausserdem
+ist die Wahrscheinlichkeit für eine bestimmte Merkmalsausprägung $X$ ein
+Wert zwischen 0 (0%) und 1 (100%). Wenn wir also eine Münze werfen, dann
+ist die Wahrscheinlichkeit
 
 $$p(Kopf) = 0.5$$
 
 $$p(Zahl) = 0.5$$
 
-Eine andere Möglichkeit für das Ereignis $X$ existiert nicht. Die Summe aller 
-möglichen Ereignisse $X$ für den Münzwurf ist daher     
+Eine andere Möglichkeit für das Ereignis $X$ existiert nicht. Die Summe
+aller möglichen Ereignisse $X$ für den Münzwurf ist daher
 
 $$p(Kopf) + p(Zahl) = 1$$
 
-Wahrscheinlichkeitsverteilungen beschreiben also die Verteilung der Werte 
-(Merkmalsausprägungen) einer bestimmten Zufallsvariable (Beobachtungsmerkmal). 
-Daher ist es naheliegend, dass die Art der Variable einen Einfluss auf den 
-Verteilungstyp hat. In der Statistik unterscheidet man zwischen
+Wahrscheinlichkeitsverteilungen beschreiben also die Verteilung der
+Werte (Merkmalsausprägungen) einer bestimmten Zufallsvariable
+(Beobachtungsmerkmal). Daher ist es naheliegend, dass die Art der
+Variable einen Einfluss auf den Verteilungstyp hat. In der Statistik
+unterscheidet man zwischen
 
--	Verteilungen für diskrete Variablen (z.B. Binomialverteilung) und 
--	Verteilungen für kontinuierliche Variablen (z.B. Normalverteilung)
+-   Verteilungen für diskrete Variablen (z.B. Binomialverteilung) und
+-   Verteilungen für kontinuierliche Variablen (z.B. Normalverteilung)
 
-Wir beschränken uns im Folgenden auf die  *Normalverteilung*, die für 
-zahlreiche statistische Verfahren von zentraler Bedeutung ist. 
+Wir beschränken uns im Folgenden auf die *Normalverteilung*, die für
+zahlreiche statistische Verfahren von zentraler Bedeutung ist.
 
 ## Die Normalverteilung
 
-Wenn eine Variable innerhalb eines Bereichs unendlich viele Werte annehmen kann, 
-kann diese mittels einer kontinuierlichen Verteilung modelliert werden.  
+Wenn eine Variable innerhalb eines Bereichs unendlich viele Werte
+annehmen kann, kann diese mittels einer kontinuierlichen Verteilung
+modelliert werden.
 
-Mathematisch ausgedrückt ist die Wahrscheinlichkeit, dass eine kontinuierliche 
-Variable einen ganz bestimmten Wert annimmt gleich null. Z.B. die Wahrscheinlichkeit, 
-dass eine Temperaturmessung exakt 37° C ergibt ist gleich null. Warum? In einem 
-unendlichen Wertespektrum kann die aktuelle Temperatur unendlich viele kleinere 
-oder grössere Werte annehmen, z.B. 36.99999999 oder 36.999999998 oder 37.000000001 
-etc. (es sind unendlich viele Nachkommastellen möglich).  
-
+Mathematisch ausgedrückt ist die Wahrscheinlichkeit, dass eine
+kontinuierliche Variable einen ganz bestimmten Wert annimmt gleich null.
+Z.B. die Wahrscheinlichkeit, dass eine Temperaturmessung exakt 37° C
+ergibt ist gleich null. Warum? In einem unendlichen Wertespektrum kann
+die aktuelle Temperatur unendlich viele kleinere oder grössere Werte
+annehmen, z.B. 36.99999999 oder 36.999999998 oder 37.000000001 etc. (es
+sind unendlich viele Nachkommastellen möglich).
 
 ### Wahrscheinlichkeiten für kontinuierliche Daten?
 
-Da es unmöglich ist, die Wahrscheinlichkeit für einen bestimmten Wert in einem 
-kontinuierlichen Datenspektrum anzugeben, werden Wahrscheinlichkeiten für 
-kontinuierliche Daten für Wertebereiche (Werteintervalle) berechnet und nicht für 
-einzelne Werte. Was berechnet werden kann, ist die Wahrscheinlichkeit, dass ein 
-gesuchter Wert in einem bestimmten Intervall liegt. 
+Da es unmöglich ist, die Wahrscheinlichkeit für einen bestimmten Wert in
+einem kontinuierlichen Datenspektrum anzugeben, werden
+Wahrscheinlichkeiten für kontinuierliche Daten für Wertebereiche
+(Werteintervalle) berechnet und nicht für einzelne Werte. Was berechnet
+werden kann, ist die Wahrscheinlichkeit, dass ein gesuchter Wert in
+einem bestimmten Intervall liegt.
 
-In einem Wahrscheinlichkeitsdiagramm ist die Fläche unter der Kurve gleich 1. 
-Dies entspricht der Summe der Wahrscheinlichkeiten für alle möglichen Ausprägungen 
-einer Variablen $X$.  
+In einem Wahrscheinlichkeitsdiagramm ist die Fläche unter der Kurve
+gleich 1. Dies entspricht der Summe der Wahrscheinlichkeiten für alle
+möglichen Ausprägungen einer Variablen $X$.
 
 ```{r normdist-fig, cache=TRUE, fig.align='center', fig.cap="Die Fläche unter der Kurve ist gleich 1"}
 par(mar=c(2, 2, 2, 2))
 normTail(M = c(-5, 5), col = COL[1], axes = 0)
 ```
 
-In der Statistik nimmt die Normalverteilung (auch Gauss-Verteilung, Glockenkurve)
-eine zentrale Stellung ein. Diese symmetrische Wahrscheinlichkeitsverteilung 
-erlaubt es, eine Vielzahl von kontinuierlichen Variablen wie z.B. Körpergrösse 
-oder Ergebnisse von Intelligenztests (IQ-Scores) zu modellieren.  
+In der Statistik nimmt die Normalverteilung (auch Gauss-Verteilung,
+Glockenkurve) eine zentrale Stellung ein. Diese symmetrische
+Wahrscheinlichkeitsverteilung erlaubt es, eine Vielzahl von
+kontinuierlichen Variablen wie z.B. Körpergrösse oder Ergebnisse von
+Intelligenztests (IQ-Scores) zu modellieren.
 
-Eine Normalverteilung wird durch die Parameter *Mittelwert $\bar{x}$* und 
-*Standardabweichung $\sigma$* vollständig beschrieben: Während eine Änderung des 
-Mittelwerts die Glockenkurve nach links oder nach rechts verschiebt, führt eine
-Änderung der Standardabweichung dazu, dass die Kurve breiter oder schmaler wird.   
+Eine Normalverteilung wird durch die Parameter *Mittelwert* $\bar{x}$
+und *Standardabweichung* $\sigma$ vollständig beschrieben: Während eine
+Änderung des Mittelwerts die Glockenkurve nach links oder nach rechts
+verschiebt, führt eine Änderung der Standardabweichung dazu, dass die
+Kurve breiter oder schmaler wird.
 
-Die Normalverteilung von Daten ist eine wichtige Voraussetzung für zahlreiche 
-statistische Verfahren. Üblicherweise kennt man die wahre Verteilung einer 
-Variablen in einer Population jedoch nicht und man muss aus den Stichprobendaten 
-ermitteln, ob Evidenz dafür vorliegt, dass die Daten aus einer normalverteilten 
-Population stammen. Wie man dabei vorgeht, wird weiter unten beschrieben. 
+Die Normalverteilung von Daten ist eine wichtige Voraussetzung für
+zahlreiche statistische Verfahren. Üblicherweise kennt man die wahre
+Verteilung einer Variablen in einer Population jedoch nicht und man muss
+aus den Stichprobendaten ermitteln, ob Evidenz dafür vorliegt, dass die
+Daten aus einer normalverteilten Population stammen. Wie man dabei
+vorgeht, wird weiter unten beschrieben.
 
-### Anwendung der Normalverteilung   
+### Anwendung der Normalverteilung
 
-Beispiel: Der Intelligenzquotient (IQ-Score) ist normalverteilt. Er hat einen 
-Mittelwert $\mu$ = 100 und eine Standardabweichung $\sigma$ = 15. Die Abbildung 
-zeigt die Wahrscheinlichkeitsverteilung für den IQ-Score. Uns interessiert z.B. 
-die Frage, wie gross ist die Wahrscheinlichkeit, dass bei einem Test der IQ-Score 
-zwischen 120 und 140 (also in ein bestimmtes Werteintervall) fällt.
+Beispiel: Der Intelligenzquotient (IQ-Score) ist normalverteilt. Er hat
+einen Mittelwert $\mu$ = 100 und eine Standardabweichung $\sigma$ = 15.
+Die Abbildung zeigt die Wahrscheinlichkeitsverteilung für den IQ-Score.
+Uns interessiert z.B. die Frage, wie gross ist die Wahrscheinlichkeit,
+dass bei einem Test der IQ-Score zwischen 120 und 140 (also in ein
+bestimmtes Werteintervall) fällt.
 
 ```{r normal-iq-fig, cache=TRUE, fig.align='center', fig.cap="Wahrscheinlichkeit für IQ-Score zwischen 120 und 140"}
 u <- pnorm(140, mean = 100, sd = 15)
@@ -220,13 +249,37 @@ normTail(m = 100, s = 15, M = c(120, 140), col = COL[1],
 arrows(x0 = 46, y0 = 0.005, x1 = 46, y1 = .02)
 ```
 
-Die Abbildung \@ref(fig:normal-iq-fig) zeigt, dass die Verteilung des IQ-Score symmetrisch ist. Die Höhe der Kurve in einem bestimmten Abschnitt gibt die Wahrscheinlichkeit an. Die Kurve hat ihr Maximum Werte um 100, also beim Mittelwert. Je weiter wir uns nach links oder rechts vom Mittelwert entfernen, desto geringer wird die Wahrscheinlichkeit für den IQ-Score. Die blaue Fläche zwischen den IQ-Scores 120 und 140 macht 8.7% der Gesamtfläche unter der Kurve aus. Damit ist die Wahrscheinlichkeit, dass der IQ-Score zwischen 120 und 140 fällt $p$ = 0.087 bzw. 8.7%. Wir sehen also, dass ein IQ-Score zwischen 120 und 140 ein nicht sehr häufiges Ereignis ist. 
+Die Abbildung \@ref(fig:normal-iq-fig) zeigt, dass die Verteilung des
+IQ-Score symmetrisch ist. Die Höhe der Kurve in einem bestimmten
+Abschnitt gibt die Wahrscheinlichkeit für einen bestimmten Wertebereich
+an. Die Kurve hat ihr Maximum im Wertebereich um 100, also beim
+Mittelwert. Je weiter wir uns nach links oder rechts vom Mittelwert
+entfernen, desto geringer wird die Wahrscheinlichkeit für einen
+bestimmten IQ-Score. Die blaue Fläche zwischen den IQ-Scores 120 und 140
+macht 8.7% der Gesamtfläche unter der Kurve aus. Damit ist die
+Wahrscheinlichkeit, dass der IQ-Score zwischen 120 und 140 fällt $p$ =
+0.087 bzw. 8.7%. Wir sehen also, dass ein IQ-Score zwischen 120 und 140
+ein nicht sehr häufiges Ereignis ist.
 
 ### Normalverteilung Vertiefung
 
-Wie bereits erwähnt ist die Normalverteilung ist eine wichtige Wahrscheinlichkeitsverteilung in der Statistik, weil sie die Modellierung zahlreicher natürlicher Phänomene erlaubt. So sind z.B. Körpergrösse, Blutdruck, Messfehler von Instrumenten und Hämoglobin-Gehalt im Blut annähernd normal verteilt. Als Wahrscheinlichkeitsfunktion beschreibt sie, wie die Werte (Merkmalsausprägungen) einer Variablen (Beobachtungsmerkmal) verteilt sind. Die Kurve hat die Form einer Glocke (Gauss'sche Glockenkurve) und ist symmetrisch bezüglich des Mittelwerts, d.h. die häufigsten Merkmalsausprägugen liegen in der Nähe des Mittelwerts. Mit zunehmendem Abstand vom Mittelwert nach links oder rechts nimmt die Wahrscheinlichkeit für Werte ab und die Verteilungskurve nähert sich dem Wert 0 (den sie aber nie erreicht!).  
+Wie bereits erwähnt ist die Normalverteilung ist eine wichtige
+Wahrscheinlichkeitsverteilung in der Statistik, weil sie die
+Modellierung zahlreicher natürlicher Phänomene erlaubt. So sind z.B.
+Körpergrösse, Blutdruck, Messfehler von Instrumenten und
+Hämoglobin-Gehalt im Blut annähernd normal verteilt. Als
+Wahrscheinlichkeitsfunktion beschreibt sie, wie die Werte
+(Merkmalsausprägungen) einer Variablen (Beobachtungsmerkmal) verteilt
+sind. Die Kurve hat die Form einer Glocke (Gauss'sche Glockenkurve) und
+ist symmetrisch bezüglich des Mittelwerts, d.h. die häufigsten
+Merkmalsausprägugen liegen in der Nähe des Mittelwerts. Mit zunehmendem
+Abstand vom Mittelwert nach links oder rechts nimmt die
+Wahrscheinlichkeit für Werte ab und die Verteilungskurve nähert sich dem
+Wert 0 (den sie aber nie erreicht!).
 
-Beispiel: Körpergrösse ist eine normalverteilte Variable ist. Die Abbildung zeigt die Verteilung der Körpergrösse von 14-jährigen Frauen aus einer Stichprobe von n = 800. 
+Beispiel: Körpergrösse ist eine normalverteilte Variable ist. Die
+Abbildung zeigt die Verteilung der Körpergrösse von 14-jährigen Frauen
+aus einer Stichprobe von n = 800.
 
 ```{r normal-14j-frauen-fig, cache=TRUE, fig.align='center', fig.cap="Körpergrösse 14-jähriger Mädchen in m (n = 800)"}
 set.seed(0)
@@ -235,7 +288,7 @@ girls <- tibble(height = rnorm(800, mean = 1.52, s = .0741))
 
 m <- round(mean(girls$height), 3)
 s <- round(sd(girls$height), 3)
-txt <- paste("m =", m, "\ns = ", s)
+txt <- paste("M =", m, "\ns = ", s)
 
 # Histogramm
 p_girls_height <- ggplot(girls, aes(x = height)) +
@@ -255,13 +308,28 @@ p_girls_height +
   annotate("text", x = 1.67, y = 4, label = txt)
 ```
 
-Das Histogramm in Abb. \@ref(fig:normal-14j-frauen-fig) zeigt die Verteilung der Daten in der Stichprobe und wir erkennen, dass die meisten Werte um den Mittelwert $\bar{x}$ = 1.52m liegen. Werte über 1.65m oder unter 1.4m sind vergleichsweise selten anzutreffen. Die rote Kurve ist die Normalverteilungskurve mit dem Mittelwert $\bar{x}$ = 1.52 und der Standardabweichung $s$ = 0.07. Obwohl die Kurve das Histogramm nicht exakt abbildet, scheint sie ein akzeptables Modell für die Häufigkeitsverteilung zu liefern und wir dürfen annehmen, dass unsere Stichprobe aus einer annähernd normalverteilten Population stammt. 
+Das Histogramm in Abb. \@ref(fig:normal-14j-frauen-fig) zeigt die
+Verteilung der Daten in der Stichprobe und wir erkennen, dass die
+meisten Werte um den Mittelwert $\bar{x}$ = 1.52 m liegen. Werte über
+1.65 m oder unter 1.4 m sind vergleichsweise selten anzutreffen. Die
+rote Kurve ist die Normalverteilungskurve mit dem Mittelwert $\bar{x}$ =
+1.52 m und der Standardabweichung $s$ = 0.07 m. Obwohl die Kurve das
+Histogramm nicht exakt abbildet, scheint sie ein akzeptables Modell für
+die Häufigkeitsverteilung zu liefern und wir dürfen annehmen, dass
+unsere Stichprobe aus einer annähernd normalverteilten Population
+stammt.
 
-### Parameter der Normalverteilung   
+### Parameter der Normalverteilung
 
-Eine Normalverteilung wird mit den Parametern *Mittelwert $\mu$* und *Standardabweichung $\sigma$* vollständig beschrieben. Die Form einer Normalverteilung variiert jedoch in Abhängigkeit von diesen Parametern.   
+Eine Normalverteilung wird mit den Parametern *Mittelwert* $\mu$ und
+*Standardabweichung* $\sigma$ vollständig beschrieben. Die Form einer
+Normalverteilung variiert jedoch in Abhängigkeit von diesen Parametern.
 
-Der Mittelwert ist die Kennzahl der zentralen Lage. Er  gibt den Wert an, an dem die Glockenkurve ihr Maximum hat. Die meisten Werte gruppieren sich um den Mittelwert herum. Eine Veränderung des Mittelwerts verschiebt die Kurve nach links oder nach rechts auf der x-Achse einer Grafik.
+Der Mittelwert ist die Kennzahl der zentralen Lage. Er gibt den Wert an,
+an dem die Glockenkurve ihr Maximum hat. Die meisten Werte gruppieren
+sich um den Mittelwert herum. Eine Veränderung des Mittelwerts
+verschiebt die Kurve nach links oder nach rechts auf der x-Achse einer
+Grafik.
 
 ```{r normal-mean-influence-fig, fig.align='center', fig.cap="Der Mittelwert beeinflusst die Lage der Verteilung auf der x-Achse"}
 mean_sim <- 10
@@ -296,7 +364,8 @@ ggplot(data = data.frame(u = c(lcb, ucb)),
   theme_grey()
 ```
 
-Die Standardabweichung ist eine Kennzahl der Streuung. Unterschiedliche Standardabweichungen beeinflussen Breite der Glockenkurve. 
+Die Standardabweichung ist eine Kennzahl der Streuung. Unterschiedliche
+Standardabweichungen beeinflussen Breite der Glockenkurve.
 
 ```{r normal-sd-influence-fig, fig.align='center', fig.cap="Die Standardabweichung beeinflusst die Breite der Glockenkurve"}
 mean_sim <- 10
@@ -333,32 +402,53 @@ ggplot(data = data.frame(u = c(lcb, ucb)),
   theme_grey()
 ```
 
-### Kennzahlen der Population vs. Kennzahlen von Stichproben 
-   
-Wie oben ausgeführt, beschreibt das Normalverteilungsmodell die Verteilung der Daten in der Population. Um Stichprobenkennzahlen und Populationparameter leicht zu unterschieden, ist es gebräuchlich, Populationskennzahlen mit griechischen Buchstaben und Stichprobenkennzahlen mit römischen Buchstaben anzugeben. Daher wird ein Populationsmittelwert mit dem griechischen Symbol $\mu$ und eine Populationsstandardabweichung stets mit dem griechischen Symbol $\sigma$ angegeben.  
+### Kennzahlen der Population vs. Kennzahlen von Stichproben
 
-Üblicherweise sind $\mu$ und $\sigma$ einer Population jedoch unbekannt, da es in der Regel unmöglich ist, eine gesamte Population zu messen. Wir können jedoch Zufallsstichproben ziehen um diese Parameter zu *schätzen*. Die Stichprobenkennzahlen, die als Punktschätzer (engl. point estimate) für die Populationsparameter dienen, werden mit den Symbolen $\bar{x}$ für den Stichprobenmittelwert und $s$ für die Stichprobenstandardabweichung angegeben. (Aus technischen Gründen wird in Grafiken für den Stichprobenmittelwert gelegentlich der Buchstabe **$M$** verwendet)  
+Wie oben ausgeführt, beschreibt das Normalverteilungsmodell die
+Verteilung der Daten in der Population. Um Stichprobenkennzahlen und
+Populationparameter leicht zu unterschieden, ist es gebräuchlich,
+Populationskennzahlen mit griechischen Buchstaben und
+Stichprobenkennzahlen mit römischen Buchstaben anzugeben. Daher wird ein
+Populationsmittelwert mit dem griechischen Symbol $\mu$ und eine
+Populationsstandardabweichung stets mit dem griechischen Symbol $\sigma$
+angegeben.
 
-### Eigenschaften von Normalverteilungen  
+Üblicherweise sind $\mu$ und $\sigma$ einer Population jedoch unbekannt,
+da es in der Regel unmöglich ist, eine gesamte Population zu messen. Wir
+können jedoch Zufallsstichproben ziehen um diese Parameter zu
+*schätzen*. Die Stichprobenkennzahlen, die als Punktschätzer (engl.
+point estimate) für die Populationsparameter dienen, werden mit den
+Symbolen $\bar{x}$ für den Stichprobenmittelwert und $s$ für die
+Stichprobenstandardabweichung angegeben. (Aus technischen Gründen wird
+in Grafiken für den Stichprobenmittelwert gelegentlich der Buchstabe $M$
+verwendet)
 
-Trotz ihrer unterschiedlichen Formen haben alle Normalverteilungen folgende gemeinsamen Eigenschaften:   
+### Eigenschaften von Normalverteilungen
 
-* Alle Normalverteilungen sind symmetrisch.   
-* Median und Mittelwert sind identisch.   
-* Eine Hälfte der Werte liegt unter und eine Hälfte über dem Mittelwert.  
-* Die 68-95-99.7 Regel erlaubt es, den Anteil der Werte innerhalb einer bestimmten Distanz vom Mittelwert zu bestimmen.  
- 
-### Die 68 – 95 – 99.7 – Regel   
-  
-Die 68-95-99.7 Regel ist eine empirische Regel der angewandten Statistik, die einen anschaulichen Zusammenhang zwischen Mittelwert und Standardabweichung eines normalverteilten Zufallsereignisses ermöglicht. Sie gibt an, wie viel Prozent der Daten innerhalb einer, zwei bzw. drei Standardabweichungen $\sigma$ vom Mittelwert $\mu$ entfernt sind.    
+Trotz ihrer unterschiedlichen Formen haben alle Normalverteilungen
+folgende gemeinsamen Eigenschaften:
 
+-   Alle Normalverteilungen sind symmetrisch.\
+-   Median und Mittelwert sind identisch.\
+-   Eine Hälfte der Werte liegt unter und eine Hälfte über dem
+    Mittelwert.\
+-   Die 68-95-99.7 Regel erlaubt es, den Anteil der Werte innerhalb
+    einer bestimmten Distanz vom Mittelwert zu bestimmen.
 
-Als Faustregel gilt:   
+### Die 68 -- 95 -- 99.7 -- Regel
 
-- Mittelwert +/- 1 Standardabweichung: 68% der Daten   
-- Mittelwert +/- 2 Standardabweichungen: 95% der Daten   
-- Mittelwert +/- 3 Standardabweichungen: 99.7% der Daten   
-   
+Die 68-95-99.7 Regel ist eine empirische Regel der angewandten
+Statistik, die einen anschaulichen Zusammenhang zwischen Mittelwert und
+Standardabweichung eines normalverteilten Zufallsereignisses ermöglicht.
+Sie gibt an, wie viel Prozent der Daten innerhalb einer, zwei bzw. drei
+Standardabweichungen $\sigma$ vom Mittelwert $\mu$ entfernt sind.
+
+Als Faustregel gilt:
+
+-   Mittelwert +/- 1 Standardabweichung: 68% der Daten\
+-   Mittelwert +/- 2 Standardabweichungen: 95% der Daten\
+-   Mittelwert +/- 3 Standardabweichungen: 99.7% der Daten
+
 ```{r n699599-rule-fig, fig.align='center', fig.cap="68-95-99.7-Regel"}
 p <- ggplot(data.frame(x = c(-4, 4)), aes(x)) +
   stat_function(fun = dnorm,
@@ -410,30 +500,58 @@ p +
 # ggsave("empirical_rule.png")
 ```
 
-Beispiel: Dein Lieblingspizzakurier wirbt damit, dass er innerhalb von durchschnittlich $\bar{x}$ = 30 Minuten, mit einer Standardabweichung von $s$ = 5 Minuten die bestellte Pizza liefern kann. Unter Anwendung der 68-95-99.7-Regel bedeutet dies, dass die Auslieferung  
+Beispiel: Dein Lieblingspizzakurier wirbt damit, dass er innerhalb von
+durchschnittlich $\bar{x}$ = 30 Minuten, mit einer Standardabweichung
+von $s$ = 5 Minuten die bestellte Pizza liefern kann. Unter Anwendung
+der 68-95-99.7-Regel bedeutet dies, dass die Auslieferung
 
-- in 68% der Bestellungen innerhalb von 25 bis 35 Minuten,  
-- in 95% der Bestellungen innerhalb von 20 bis 40 Minuten und  
-- in 99.7% der Bestellungen innerhalb von 15 bis 45 Minuten erfolgt.
+-   in 68% der Bestellungen innerhalb von 25 bis 35 Minuten,\
+-   in 95% der Bestellungen innerhalb von 20 bis 40 Minuten und\
+-   in 99.7% der Bestellungen innerhalb von 15 bis 45 Minuten erfolgt.
 
-## Die Standardnormalverteilung  
+## Die Standardnormalverteilung
 
-Wenn wir beliebige, normalverteilte Merkmale messen, werden wir immer wieder neue Normalverteilungen mit jeweils ihrem eigenen Mittelwert und ihrer eigenen Standardabweichung erhalten. D.h. die Normalverteilungskurve wird manchmal breiter, manchmal schmaler, manchmal höher, manchmal tiefer sein. Jedes Merkmal weist seine charakteristische Verteilung auf. In der Statistik interessieren wir uns oft für die Wahrscheinlichkeit, dass ein bestimmtes Ereignis eintritt (z.B. das Ereignis, dass eine Studentin 168 cm gross ist). Bei Daten aus normalverteilten Populationen erfolgt die Berechnung von Wahrscheinlichkeiten über die Berechnung von Flächeninhalten unter der Normalverteilungskurve. Allerdings ist diese Berechnung von Flächen unter Kurven eine nicht ganz triviale Angelegenheit (Schule Analysis!). Um diese Berechnungen zu erleichtern, wurde die **Standardnormalverteilung** “erfunden”. Diese ist eine Normalverteilung mit dem Mittelwert $\mu$ = 0 und der Standardabweichung $\sigma$ = 1. Jede beliebige Normalverteilung kann durch Transformation in eine Standardnormalverteilung umgewandelt werden, was Flächenberechnungen erheblich erleichtert.  
+Wenn wir beliebige, normalverteilte Merkmale messen, werden wir immer
+wieder neue Normalverteilungen mit jeweils ihrem eigenen Mittelwert und
+ihrer eigenen Standardabweichung erhalten. D.h. die
+Normalverteilungskurve wird manchmal breiter, manchmal schmaler,
+manchmal höher, manchmal tiefer sein. Jedes Merkmal weist seine
+charakteristische Verteilung auf. In der Statistik interessieren wir uns
+oft für die Wahrscheinlichkeit, dass ein bestimmtes Ereignis eintritt
+(z.B. das Ereignis, dass eine Studentin 168 cm gross ist). Bei Daten aus
+normalverteilten Populationen erfolgt die Berechnung von
+Wahrscheinlichkeiten über die Berechnung von Flächeninhalten unter der
+Normalverteilungskurve. Allerdings ist diese Berechnung von Flächen
+unter Kurven eine nicht ganz triviale Angelegenheit (Schule Analysis!).
+Um diese Berechnungen zu erleichtern, wurde die
+**Standardnormalverteilung** "erfunden". Diese ist eine Normalverteilung
+mit dem Mittelwert $\mu$ = 0 und der Standardabweichung $\sigma$ = 1.
+Jede beliebige Normalverteilung kann durch Transformation in eine
+Standardnormalverteilung umgewandelt werden, was Flächenberechnungen
+erheblich erleichtert.
 
-Eine bestimmte Merkmalsausprägung in der Standardnormalverteilung wird als **$z$-Wert** bezeichnet. Der $z$-Wert gibt an, *um wieviel Standardabweichungen diese Merkmalsausprägung vom Mittelwert entfernt ist*. Ist der $z$-Wert negativ, liegt der Wert links vom Mittelwert, d.h. er ist kleiner als der Mittelwert. Ist der $z$-Wert positiv, liegt der Wert rechts vom Mittelwert und ist somit grösser. Der Mittelwert selber hat stets den $z$-Wert 0. 
-
+Eine bestimmte Merkmalsausprägung in der Standardnormalverteilung wird
+als $z$-Wert bezeichnet. Der $z$-Wert gibt an, *um wieviel
+Standardabweichungen diese Merkmalsausprägung vom Mittelwert entfernt
+ist*. Ist der $z$-Wert negativ, liegt der Wert links vom Mittelwert,
+d.h. er ist kleiner als der Mittelwert. Ist der $z$-Wert positiv, liegt
+der Wert rechts vom Mittelwert und ist somit grösser. Der Mittelwert
+selber hat stets den $z$-Wert 0.
 
 ### Berechnung von $z$-Werten ($z$-Transformation)
 
-Um Stichprobendaten zu standardisieren, müssen die Rohdaten in $z$-Werte umgerechnet werden. Die Umwandlung einer beliebigen Normalverteilung in die Standardnormalverteilung erfolgt nach der Formel:  
+Um Stichprobendaten zu standardisieren, müssen die Rohdaten in $z$-Werte
+umgerechnet werden. Die Umwandlung einer beliebigen Normalverteilung in
+die Standardnormalverteilung erfolgt nach der Formel:
 
 $$z_n=\frac{x_n - \bar{x}}{s}$$
 
-Beispiel: Du hast zwei Äpfel, der eine wiegt 85g, der andere wiegt 110 g. Das durchschnittliche Gewicht von Äpfeln beträgt $\bar{x}$ = 100g mit einer Standardabweichung $s$ = 10 g.
+Beispiel: Du hast zwei Äpfel, der eine wiegt 85g, der andere wiegt 110
+g. Das durchschnittliche Gewicht von Äpfeln beträgt $\bar{x}$ = 100g mit
+einer Standardabweichung $s$ = 10 g.
 
-* z-Wert für den 85g-Apfel: $z_{85}=\frac{85-100}{10} = -1.5$   
-* z-Wert für den 110g-Apfel: $z_{110}=\frac{110-100}{10} = 1$  
-
+-   z-Wert für den 85g-Apfel: $z_{85}=\frac{85-100}{10} = -1.5$\
+-   z-Wert für den 110g-Apfel: $z_{110}=\frac{110-100}{10} = 1$
 
 ```{r apfel-rohdaten-fig, fig.dim=c(7, 4), fig.align='center', fig.cap="Gewicht von Äpfeln (g), roh und standardisiert"}
 m <- 100
@@ -448,7 +566,6 @@ points(x = 0, y = 0, pch = 19, cex = 2.5, col = c(ggreen))
 par(mfrow = c(1, 1))
 ```
 
-
 ```{r apfel-z-werte-fig, fig.dim = c(7, 5), fig.align='center', fig.cap="$z$-Werte der beiden Äpfel"}
 z70 <- (85 - m)/s
 z110 <- (110 - m)/s
@@ -458,11 +575,17 @@ text(x=1.5, y=.35, labels="110g, z = 1", col = COL[1], cex = .8)
 text(x=-2.2, y=.35, labels="85g, z = -1.5", col = COL[4], cex = .8)
 ```
 
-Der $z$-Wert für den 85g Apfel ist negativ da er leichter ist als ein durchschnittlicher Apfel. Um wie viel leichter? Um -1.5 Standardabweichungen = -1.5 $\times$ 10 = -15g. Der $z$-Wert für den 110g-Apfel ist positiv, d.h. er ist schwerer als ein durchschnittlicher Apfel. Um wie viel schwerer? Um 1 Standardabweichung = 1 $\times$ 10 = 10g.  
+Der $z$-Wert für den 85g Apfel ist negativ da er leichter ist als ein
+durchschnittlicher Apfel. Um wie viel leichter? Um -1.5
+Standardabweichungen = -1.5 $\times$ 10 = -15g. Der $z$-Wert für den
+110g-Apfel ist positiv, d.h. er ist schwerer als ein durchschnittlicher
+Apfel. Um wie viel schwerer? Um 1 Standardabweichung = 1 $\times$ 10 =
+10g.
 
-### Interpretation von z-Werten 
+### Interpretation von z-Werten
 
-Uns interessiert jetzt die Frage: Wie wahrscheinlich ist es, dass ein Apfel 85g schwer oder leichter ist? 
+Uns interessiert jetzt die Frage: Wie wahrscheinlich ist es, dass ein
+Apfel 85g schwer oder leichter ist?
 
 ```{r flaeche-kleiner-z-fig, fig.align = "center", fig.dim = c(7, 5), fig.cap="Wahrscheinlichkeit für $z$ gleich -1.5 oder kleiner"}
 normTail(m = 0, s = 1, cex.axis = .6, xLab = "number",
@@ -471,19 +594,32 @@ abline(v = -1.5, col = COL[4])
 text(x=-1.1, y=.35, labels="z = -1.5", col = COL[4], cex = .8)
 ```
 
-Die blaue Fläche unter der Kurve in Abbildung \@ref(fig:flaeche-kleiner-z-fig) entspricht der Wahrscheinlichkeit für $z \leq -1.5$. Normalerweise verwenden wir den Computer, um Wahrscheinlichkeiten unter der Normalverteilungskurve zu berechnen. Vor dem Computerzeitalter erlaubte die z-Werte-Tabelle für beliebige Normalverteilungen beliebige Flächeninhalte und somit Wahrscheinlichkeiten zu berechnen. 
+Die blaue Fläche unter der Kurve in Abbildung
+\@ref(fig:flaeche-kleiner-z-fig) entspricht der Wahrscheinlichkeit für
+$z \leq -1.5$. Normalerweise verwenden wir den Computer, um
+Wahrscheinlichkeiten unter der Normalverteilungskurve zu berechnen. Vor
+dem Computerzeitalter erlaubte die z-Werte-Tabelle für beliebige
+Normalverteilungen beliebige Flächeninhalte und somit
+Wahrscheinlichkeiten zu berechnen.
 
-[z-Werte-Tabelle](http://eswf.uni-koeln.de/glossar/zvert.htm) 
+[z-Werte-Tabelle](http://eswf.uni-koeln.de/glossar/zvert.htm)
 
-Mit der Funktion `pnorm()` [@R-base] können wir in `R/jamovi` [@jamovi] diese Arbeit machen lassen:
+Mit der Funktion `pnorm()` [@R-base] können wir in `R/jamovi` [@jamovi]
+diese Arbeit machen lassen:
 
 ```{r, echo=TRUE}
 pnorm(-1.5)
 ```
 
-`R/jamovi` gibt eine Wahrscheinlichkeit von $p$ = 0.067 für $z \leq -1.5$ an. Das bedeutet, dass wir erwarten können, dass die Wahrscheinlichkeit einen Apfel von 85g oder einen leichteren Apfel zu erhalten bei 6.7% liegt. Umgekehrt heisst es auch, dass die Wahrscheinlichkeit, einen Apfel zu erhalten, der schwerer als 85g ist, ist gleich $p = 1-0.067 = 0.933$ bzw 93.3%.  
+`R/jamovi` gibt eine Wahrscheinlichkeit von $p$ = 0.067 für
+$z \leq -1.5$ an. Das bedeutet, dass wir erwarten können, dass die
+Wahrscheinlichkeit einen Apfel von 85g oder einen leichteren Apfel zu
+erhalten bei 6.7% liegt. Umgekehrt heisst es auch, dass die
+Wahrscheinlichkeit, einen Apfel zu erhalten, der schwerer als 85g ist,
+ist gleich $p = 1-0.067 = 0.933$ bzw 93.3%.
 
-Auch folgende Frage können wir stellen: Wie wahrscheinlich ist es, dass Ein Apfel 110g oder mehr wiegt?  
+Auch folgende Frage können wir stellen: Wie wahrscheinlich ist es, dass
+Ein Apfel 110g oder mehr wiegt?
 
 ```{r flaeche-groesser-z-fig, fig.align = "center", fig.dim = c(7, 5), fig.cap="Wahrscheinlichkeit für $z$ = 1 oder grösser"}
 normTail(m = 0, s = 1, cex.axis = .6, xLab = "number",
@@ -492,21 +628,35 @@ abline(v = 1, col = COL[4])
 text(x=1.3, y=.35, labels="z = 1", col = COL[4], cex = .8)
 ```
 
-Die blaue Fläche in Abbildung \@ref(fig:flaeche-groesser-z-fig) entspricht der Wahrscheinlichkeit für $z\geq1$. Wiederum hilft uns die z-Werte-Tabelle oder die Funktion `pnorm()` in `R/jamovi`:
+Die blaue Fläche in Abbildung \@ref(fig:flaeche-groesser-z-fig)
+entspricht der Wahrscheinlichkeit für $z\geq1$. Wiederum hilft uns die
+z-Werte-Tabelle oder die Funktion `pnorm()` in `R/jamovi`:
 
 ```{r, echo=TRUE}
 pnorm(1)
 ```
 
-Aber dieses Ergebnis kann nicht richtig sein! Die Wahrscheinlichkeit $p$ muss kleiner als 50% sein, da ja nicht die ganze Fläche rechts vom Mittelwert blau eingefärbt ist. Der "Fehler" kommt daher, dass die Funktion `pnorm()` stets die Fläche unterhalb des angegebenen $z$-Werts, also die Fläche links vom $z$-Wert, berechnet. Daher müssen wir in diesem Fall eine kleine Anpassung vornehmen und wir ziehen den $p$-Wert einfach von 1 ab:
+Aber dieses Ergebnis kann nicht richtig sein! Die Wahrscheinlichkeit $p$
+muss kleiner als 50% sein, da ja nicht die ganze Fläche rechts vom
+Mittelwert blau eingefärbt ist. Der "Fehler" kommt daher, dass die
+Funktion `pnorm()` stets die Fläche unterhalb des angegebenen $z$-Werts,
+also die Fläche links vom $z$-Wert, berechnet. Daher müssen wir in
+diesem Fall eine kleine Anpassung vornehmen und wir ziehen den $p$-Wert
+einfach von 1 ab:
 
 ```{r, echo=TRUE}
 1 - pnorm(1)
 ```
 
-Unsere Berechnungen haben ergeben, dass die Wahrscheinlichkeit $p$, einen Apfel von 110g oder schwerer zu erhalten bei 15.8% liegt.   
+Unsere Berechnungen haben ergeben, dass die Wahrscheinlichkeit $p$,
+einen Apfel von 110g oder schwerer zu erhalten bei 15.8% liegt.
 
-Zum Schluss noch folgende Übung: Wie gross ist die Wahrscheinlichkeit dafür, dass das Gewicht eines Apfels zwischen 85g und 110g liegt (c)? Auch diese Berechnung ist kein Problem: Zuerst berechnen wir, wie gross die Wahrscheinlichkeit ist, dass ein Apfel 110g schwer ist (a) und ziehen von diesem Wert die Wahrscheinlichkeit ab, dass ein Apfel 85g oder leichter ist (b).  
+Zum Schluss noch folgende Übung: Wie gross ist die Wahrscheinlichkeit
+dafür, dass das Gewicht eines Apfels zwischen 85g und 110g liegt (c)?
+Auch diese Berechnung ist kein Problem: Zuerst berechnen wir, wie gross
+die Wahrscheinlichkeit ist, dass ein Apfel 110g schwer ist (a) und
+ziehen von diesem Wert die Wahrscheinlichkeit ab, dass ein Apfel 85g
+oder leichter ist (b).
 
 ```{r, zwei-z-fig, fig.align = "center", fig.dim=c(7, 3)}
 par(mfrow = c(1, 3))
@@ -516,7 +666,7 @@ normTail(M = c(-1.5, 1), col = COL[1], xlab = "c) -1.5 <= z <= 1")
 par(mfrow = c(1, 1))
 ```
 
-Die Berechnung in `R/jamovi` folgt genau diesem Prinzip:   
+Die Berechnung in `R/jamovi` folgt genau diesem Prinzip:
 
 ```{r, echo=TRUE}
 ### R-Code
@@ -531,26 +681,33 @@ b <- pnorm(-1.5)
 a - b             
 ```
 
-Die Wahrscheinlichkeit, dass ein Apfel zwischen 85g und 110g wiegt beträgt 77.5% ($p = 0.775$).   
+Die Wahrscheinlichkeit, dass ein Apfel zwischen 85g und 110g wiegt
+beträgt 77.5% ($p = 0.775$).
 
 ## Prüfung auf Normalverteilung
 
-Üblicherweise ist die die Verteilung der Daten in der Populationsdaten unbekannt Daher müssen wir anhand von Stichprobendaten abschätzen, ob eine Normalverteilung zu Grunde liegt. Dazu existieren mehrere Verfahren:   
+Üblicherweise ist die die Verteilung der Daten in der Populationsdaten
+unbekannt Daher müssen wir anhand von Stichprobendaten abschätzen, ob
+eine Normalverteilung zu Grunde liegt. Dazu existieren mehrere
+Verfahren:
 
-- Visuelle Verfahren zur Prüfung auf Normalverteilung   
-  -	Histogramm   
-  - Boxplot   
-  -	QQ-Plot  
-  
-- Mathematische Verfahren    
-  -	Vergleich von Mittelwert und Median  
+-   Visuelle Verfahren zur Prüfung auf Normalverteilung
+    -   Histogramm\
+    -   Boxplot\
+    -   QQ-Plot
+-   Mathematische Verfahren
+    -   Vergleich von Mittelwert und Median
 
-  
-### QQ-Plot {-}
+### QQ-Plot {.unnumbered}
 
-Der **QQ-Plot** (Quantile-Quantile-Plot) ist ein wichtiges visuelles Hilfsmittel um zwei Wahrscheinlichkeitsverteilungen miteinander zu vergleichen. Wenn diese beiden Verteilungen identisch sind, liegen im QQ-Plot alle Punkte auf einer Linie.  
-  
-Im QQ-Plot für Normalverteilung werden auf der x-Achse die Quantile einer  Normalverteilung (theoretisch erwartete Werte) eingetragen und auf der y-Achse die Quantile der beobachteten Daten (Stichprobendaten).   
+Der **QQ-Plot** (Quantile-Quantile-Plot) ist ein wichtiges visuelles
+Hilfsmittel um zwei Wahrscheinlichkeitsverteilungen miteinander zu
+vergleichen. Wenn diese beiden Verteilungen identisch sind, liegen im
+QQ-Plot alle Punkte auf einer Linie.
+
+Im QQ-Plot für Normalverteilung werden auf der x-Achse die Quantile
+einer Normalverteilung (theoretisch erwartete Werte) eingetragen und auf
+der y-Achse die Quantile der beobachteten Daten (Stichprobendaten).
 
 ```{r qq-norm-fig, fig.align='center', fig.dim=c(7, 3), fig.cap="Histogramm, Boxplot und QQ-Plot für eine Normalverteilung."}
 set.seed(1)
@@ -580,13 +737,16 @@ p3 <- ggplot(norm_data, aes(y = data)) +
 p1 + p3 + p2
 ```
 
-Liegt Normalverteilung vor hat  
+Liegt Normalverteilung vor hat
 
-- das Histogramm annähernd die Form einer symmetrischen Glockenkurve.    
-- ist der Boxplot symmetrisch, Median und Mittelwert (roter Punkt) sind annähernd identisch.   
-- Liegen die Punkte im QQ-Plot annähernd auf einer Geraden.   
+-   das Histogramm annähernd die Form einer symmetrischen Glockenkurve.\
+-   ist der Boxplot symmetrisch, Median und Mittelwert (roter Punkt)
+    sind annähernd identisch.\
+-   Liegen die Punkte im QQ-Plot annähernd auf einer Geraden.
 
-```{r qq-leftskewed-fig, fig.align='center', fig.dim=c(7, 3), fig.cap="Histogramm und QQ-Plot für eine rechtssteile Verteilung."}
+<br/> <br/>
+
+```{r qq-leftskewed-fig, fig.align='center', fig.dim=c(7, 3), fig.cap="Histogramm und QQ-Plot für eine linksschiefe Verteilung."}
 set.seed(1)
 left_data <- tibble(data = rbeta(1000,10,2))
 
@@ -614,13 +774,16 @@ p3 <- ggplot(left_data, aes(y = data)) +
 p1 + p3 + p2
 ```
 
-Beispiel für eine linksschiefe Verteilung: 
+Beispiel für eine linksschiefe Verteilung:
 
-- Im Histogramm sind die Daten linksschief verteilt.    
-- Der Boxplot ist asymmetrisch, der Mittelwert (roter Punkt) ist kleiner als der Median.   
-- Der QQ-Plot weist eine deutliche, nach oben konvexe Krümmung auf.  
+-   Im Histogramm sind die Daten linksschief verteilt.\
+-   Der Boxplot ist asymmetrisch, der Mittelwert (roter Punkt) ist
+    kleiner als der Median.\
+-   Der QQ-Plot weist eine deutliche, nach oben konvexe Krümmung auf.
 
-```{r qq-rightskewed-fig, fig.align='center', fig.dim=c(7, 3), fig.cap="Histogramm und QQ-Plot für eine linkssteile Verteilung."}
+<br/> <br/>
+
+```{r qq-rightskewed-fig, fig.align='center', fig.dim=c(7, 3), fig.cap="Histogramm und QQ-Plot für eine rechtsschiefe Verteilung."}
 set.seed(1)
 right_data <- tibble(data = rbeta(1000,2,10))
 
@@ -649,14 +812,17 @@ p3 <- ggplot(right_data, aes(y = data)) +
 p1 + p3 + p2
 ```
 
-Beispiel für eine rechtsschiefe Verteilung: 
+Beispiel für eine rechtsschiefe Verteilung:
 
-- Im Histogramm sind die Daten rechtsschief verteilt.    
-- Der Boxplot ist asymmetrisch, der Mittelwert (roter Punkt) ist grösser als der Median.   
-- Der QQ-Plot weist eine deutliche, nach unten konvexe Krümmung auf.  
+-   Im Histogramm sind die Daten rechtsschief verteilt.\
+-   Der Boxplot ist asymmetrisch, der Mittelwert (roter Punkt) ist
+    grösser als der Median.\
+-   Der QQ-Plot weist eine deutliche, nach unten konvexe Krümmung auf.
 
-Die Interpretation von QQ-Plots für kleine Stichproben ist schwierig und nicht 
-immer ganz eindeutig möglich.
+<br/>
+
+Die Interpretation von QQ-Plots für kleine Stichproben ist schwierig und
+nicht immer ganz eindeutig möglich.
 
 ```{r qq-small-sample-fig, fig.dim=c(7, 3), fig.cap="QQ-Plots für Stichproben (n = 28) aus einer perfekten Normalverteilung"}
 library(bayestestR)
@@ -688,7 +854,10 @@ ggplot(qq_small_tib, aes(sample = values)) +
   facet_wrap(.~set, nrow = 2, ncol = 5)
 ```
 
-In der Abbildung \@ref(fig:qq-small-sample-fig) wurden zehn Stichproben im Umfang von $n$ = 28 aus einer perfekt normalverteilten Population gezogen. Die Grafiken 3, 6 und 8 könnten auch zur Einschätzung führen, dass die Daten nicht normal verteilt sind.   
+In der Abbildung \@ref(fig:qq-small-sample-fig) wurden zehn Stichproben
+im Umfang von $n$ = 28 aus einer perfekt normalverteilten Population
+gezogen. Die Grafiken 3, 6 und 8 könnten auch zur Einschätzung führen,
+dass die Daten nicht normal verteilt sind.
 
 ```{r qq-real-fig, fig.align='center', fig.dim=c(7, 3), fig.cap="."}
 set.seed(1)
@@ -715,25 +884,54 @@ p3 <- ggplot(real_data, aes(y = data)) +
 p1 + p3 + p2
 ```
 
-Diese Abbildung \@ref(fig:qq-real-fig) zeigt reale Daten zur Körpergrösse aus einer Stichprobe $n$ = 50 Personen. Obwohl wir theoretisch wissen, dass Körpergrösse eine normalverteilte Variable ist, würden wir aus den Stichprobendaten vermutlich einen anderen Schluss ziehen. 
+Diese Abbildung \@ref(fig:qq-real-fig) zeigt reale Daten zur
+Körpergrösse aus einer Stichprobe $n$ = 50 Personen. Obwohl wir
+theoretisch wissen, dass Körpergrösse eine normalverteilte Variable ist,
+würden wir aus den Stichprobendaten vermutlich einen anderen Schluss
+ziehen.
 
-Wenn wir mit den Grafiken gar nicht weiterkommen, kann der **Shapiro-Wilk-Test** 
-weiter helfen. Dieser Test ist ein Hypothesentest (s. Kapitel Grundlagen der Inferenzstatistik) 
-auf Normalverteilung. Die Nullhypothese des Shapiro-Tests ist, dass die Population 
-normalverteilt ist.   
+Wenn wir mit den Grafiken gar nicht weiterkommen, kann der
+**Shapiro-Wilk-Test** weiter helfen. Dieser Test ist ein Hypothesentest
+(s. Kapitel Grundlagen der Inferenzstatistik) auf Normalverteilung. Die
+Nullhypothese des Shapiro-Tests ist, dass die Population normalverteilt
+ist.
 
-- Wenn der p-Wert des Tests gleich oder kleiner als 0.05 ist, dann wird die Normalitätshypothese durch den Shapiro-Test abgelehnt. Das heisst, dass die Daten mit mindestens 95%iger Sicherheit nicht der Normalverteilung entsprechen.  
-- Ist der p-Wert des Tests grösser als 0.05 ist der Test bestanden und es besteht keine Evidenz für eine signifikante Abweichung von der Normalverteilung. 
+-   Wenn der p-Wert des Tests gleich oder kleiner als 0.05 ist, dann
+    wird die Normalitätshypothese durch den Shapiro-Test abgelehnt. Das
+    heisst, dass die Daten mit mindestens 95%iger Sicherheit nicht der
+    Normalverteilung entsprechen.\
+-   Ist der p-Wert des Tests grösser als 0.05 ist der Test bestanden und
+    es besteht keine Evidenz für eine signifikante Abweichung von der
+    Normalverteilung.
 
-> Die Normalverteilung ist ein Konstrukt, das in seiner mathematisch reinen Form in der Natur nicht
-vorkommt. Keine Variable ist exakt normalverteilt. Es ist daher sinnlos zu fragen "Sind meine Daten normalverteilt?", weil die Antwort immer "NEIN" ist. Als Modell leistet die Normalverteilung jedoch gute Dienste und die bessere Fragestellung lautet "Habe ich Hinweise, die dagegen sprechen, dass meine Daten annähernd normalverteilt sind?" bzw. "Liegt Evidenz dafür vor, dass ich nicht von normalverteilten Daten ausgehen kann?".   
+> Die Normalverteilung ist ein Konstrukt, das in seiner mathematisch
+> reinen Form in der Natur nicht vorkommt. Keine Variable ist exakt
+> normalverteilt. Es ist daher sinnlos zu fragen "Sind meine Daten
+> normalverteilt?", weil die Antwort immer "NEIN" ist. Als Modell
+> leistet die Normalverteilung jedoch gute Dienste und die bessere
+> Fragestellung lautet "Habe ich Hinweise, die dagegen sprechen, dass
+> meine Daten annähernd normalverteilt sind?" bzw. "Liegt Evidenz dafür
+> vor, dass ich nicht von normalverteilten Daten ausgehen kann?".
 
+## Die $t$-Verteilung
 
-## Die $t$-Verteilung  
+Die $t$-Verteilung wird hier eingeführt, weil Statistikprogramme wie `R`
+oder `jamovi` bei den Hypothesentests als Teststatistik nicht einen
+$z$-Wert angeben, sondern einen $t$-Wert, was bei den Studierenden immer
+wieder zu Verwirrung führt. Es würde für diesen Kurs zu weit gehen, die
+$t$-Verteilung detailliert zu besprechen.
 
-Die $t$-Verteilung wird hier eingeführt, weil Statistikprogramme wie `R` oder `jamovi` bei den Hypothesentests als Teststatistik nicht einen $z$-Wert angeben, sondern einen $t$-Wert, was bei den Studierenden immer wieder zu Verwirrung führt. Es würde für diesen Kurs zu weit gehen, die $t$-Verteilung detailliert zu besprechen.  
-
-Die **$t$-Verteilung** ist eine *Variante der Normalverteilung*, die in der Statistik eine grosse Rolle spielt [William S. Gosset, Pseudonym: Student](https://higherlogicdownload.s3.amazonaws.com/AMSTAT/1484431b-3202-461e-b7e6-ebce10ca8bcd/UploadedImages/Classroom_Activities/HS_7__t-ditribution_and_GOSSET.pdf) hatte festgestellt, dass die standardisierte Schätzfunktion des Stichproben-Mittelwerts normalverteilter Daten nicht mehr normalverteilt, sondern eben $t$-verteilt ist, wenn die zur Standardisierung des Mittelwerts benötigte Varianz des Merkmals in der Population unbekannt ist und mit der Stichprobenvarianz geschätzt werden muss. Seine $t$-Verteilung erlaubt – insbesondere für kleine Stichprobenumfänge – die  Berechnung der Verteilung der Differenz vom Mittelwert der Stichprobe zum wahren Mittelwert der Grundgesamtheit.  
+Die $t$-Verteilung ist eine *Variante der Normalverteilung*, die in der
+Statistik eine grosse Rolle spielt [William S. Gosset, Pseudonym:
+Student](https://higherlogicdownload.s3.amazonaws.com/AMSTAT/1484431b-3202-461e-b7e6-ebce10ca8bcd/UploadedImages/Classroom_Activities/HS_7__t-ditribution_and_GOSSET.pdf)
+hatte festgestellt, dass die standardisierte Schätzfunktion des
+Stichproben-Mittelwerts normalverteilter Daten nicht mehr
+normalverteilt, sondern eben $t$-verteilt ist, wenn die zur
+Standardisierung des Mittelwerts benötigte Varianz des Merkmals in der
+Population unbekannt ist und mit der Stichprobenvarianz geschätzt werden
+muss. Seine $t$-Verteilung erlaubt -- insbesondere für kleine
+Stichprobenumfänge -- die Berechnung der Verteilung der Differenz vom
+Mittelwert der Stichprobe zum wahren Mittelwert der Grundgesamtheit.
 
 ```{r t-distribution-fig, fig.align='center', fig.cap="t-Verteilung für df = 1, 2, 4 und 8; Normalverteilung rot"}
 ggplot(data.frame(x = c(-5,5)), aes(x = x)) +
@@ -765,9 +963,25 @@ ggplot(data.frame(x = c(-5,5)), aes(x = x)) +
   theme_void() 
 ```
 
-Was muss ich zur t-Verteilung wissen?  
+Was muss ich zur t-Verteilung wissen?
 
-- Für die praktische Arbeit gilt, dass die $t$-Verteilung als Anpassung der Normalverteilung für kleine Stichprobenumfänge aufgefasst werden kann. Ab einem Stichprobenumfang von n > 30 entspricht sie annähernd der Normalverteilung (diese Grenze ist bei den Statistikern umstritten, für uns ist sie jedoch als Faustregel gültig). *Der $t$-Wert, den Statistikprogramme berechnen, wird gleich wie ein $z$-Wert interpretiert.*   
-- Die Form der $t$-Verteilung ist abhängig vom Stichprobenumfang $n$. Dieser wird in Freiheitsgraden (degrees of freedom, $df$ angegeben), wobei $df = n−1$. Je grösser die Anzahl Freiheitsgrade $df$ ist, desto mehr nähert sich die $t$-Verteilung der Normalverteilung an.  
-- Aktuelle Statistikprogramme verwenden, unabhängig vom Stichprobenumfang, als Testsstatistik stets $t$-Werte anstelle von  $z$-Werten.  
-- Wie für die $z$-Werte können auch Flächen für $t$-Werte unter der Kurve bestimmt werden. Dafür existieren Tabellen, z.B. hier [Tabelle T-Verteilung](http://eswf.uni-koeln.de/glossar/tvert.htm). Genauer sind Internet-Rechner, z.B. hier [Internet-Rechner T-Verteilung](http://eswf.uni-koeln.de/glossar/surfstat/t.htm) oder Statistikprogramme wie `R/jamovi`.   
+-   Für die praktische Arbeit gilt, dass die $t$-Verteilung als
+    Anpassung der Normalverteilung für kleine Stichprobenumfänge
+    aufgefasst werden kann. Ab einem Stichprobenumfang von n \> 30
+    entspricht sie annähernd der Normalverteilung (diese Grenze ist bei
+    den Statistikern umstritten, für uns ist sie jedoch als Faustregel
+    gültig). *Der* $t$-Wert, den Statistikprogramme berechnen, wird
+    gleich wie ein $z$-Wert interpretiert.\
+-   Die Form der $t$-Verteilung ist abhängig vom Stichprobenumfang $n$.
+    Dieser wird in Freiheitsgraden (degrees of freedom, $df$ angegeben),
+    wobei $df = n−1$. Je grösser die Anzahl Freiheitsgrade $df$ ist,
+    desto mehr nähert sich die $t$-Verteilung der Normalverteilung an.\
+-   Aktuelle Statistikprogramme verwenden, unabhängig vom
+    Stichprobenumfang, als Testsstatistik stets $t$-Werte anstelle von
+    $z$-Werten.\
+-   Wie für die $z$-Werte können auch Flächen für $t$-Werte unter der
+    Kurve bestimmt werden. Dafür existieren Tabellen, z.B. hier [Tabelle
+    T-Verteilung](http://eswf.uni-koeln.de/glossar/tvert.htm). Genauer
+    sind Internet-Rechner, z.B. hier [Internet-Rechner
+    T-Verteilung](http://eswf.uni-koeln.de/glossar/surfstat/t.htm) oder
+    Statistikprogramme wie `R/jamovi`.

@@ -30,7 +30,7 @@ bookdown::gitbook, set in the _output.yml file.</p>" />
 <meta name="author" content="Lukas Stammler" />
 
 
-<meta name="date" content="2022-02-08" />
+<meta name="date" content="2022-03-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -664,7 +664,7 @@ SE
 <p>Da ein Punktschätzer aus einer Stichprobe der überzeugendste Wert für einen gesuchten Populationsparameter ist, macht es Sinn, dass ein Konfidenzintervall um diese Schätzung herum konstruiert wird. Der Standardfehler, als Mass für die Ungenauigkeit des Punktschätzers, liefert die Angabe, wie breit das Konfidenzintervall konstruiert werden soll.</p>
 <p>Der Standardfehler ist die Standardabweichung der Punktschätzung. Aus der 68-95-99.7-Regel wissen wir, dass ca. 95% der Daten innerhalb von zwei Standardabweichungen liegen. Damit können wir davon ausgehen, dass in ca. 95% der Fälle, der Punktschätzer innerhalb von plus/minus 2 Standardfehlern des Populationsparameters liegt. Wenn also die Breite eines Konfidenzintervalls plus/minus 2 Standardfehler zum Punktschätzer umfasst, dürfen wir zu 95% darauf vertrauen, dass dieses den wahren Populationsparameter enthält.</p>
 <p><span class="math display">\[CI_{95} = Punktschätzung \pm 2 \times SE\]</span></p>
-<p>Was bedeutet aber “zu 95% darauf vertrauen können?” Wenn viele Stichproben mit dem gleichen Stichprobenumfang aus einer Population gezogen werden und für jede Stichprobe das 95%-Konfidenzintervall bestimmt wird, dann werden im Durchschnitt 95% aller dieser Konfidenzintervalle den wahren Populationsparamter enthalten.</p>
+<p>Was bedeutet aber “zu 95% darauf vertrauen können”? Wenn viele Stichproben mit dem gleichen Stichprobenumfang aus einer Population gezogen werden und für jede Stichprobe das 95%-Konfidenzintervall bestimmt wird, dann werden im Durchschnitt 95% aller dieser Konfidenzintervalle den wahren Populationsparamter enthalten.</p>
 <p>Kommen wir auf unser IQ-Score-Experiment zurück. Wir ziehen nochmals 25 Stichproben im Umfang <span class="math inline">\(n\)</span> = 50 und konstruieren für jede Stichprobe das 95%-Konfidenzintervall für den IQ-Score.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ci95-fig"></span>
 <img src="statbook_files/figure-html/ci95-fig-1.png" alt="IQ-Score: 95%-Vertrauensintervalle für 25 Zufallsstichproben, $n$ = 50" width="672" />
@@ -700,6 +700,11 @@ Stichprobenumfang <span class="math inline">\(n\)</span> einen grossen Einfluss 
 <p><span class="math display">\[CI_{1-\alpha} =\bar{x} \pm z_{1-\frac{\alpha}{2}} \times SE\]</span></p>
 <p>Das <span class="math inline">\(z\)</span> erinnert an die <span class="math inline">\(z\)</span>-Werte der Standardverteilung und effektiv ist es das auch. Aus der 68-95-99.7-Regel wissen wir, dass wenn wir für <span class="math inline">\(z\)</span> = 1 einsetzen ca. 68%, wenn wir für <span class="math inline">\(z\)</span> = 2 einsetzen ca. 95% und für <span class="math inline">\(z\)</span> = 3 ca. 99.7% der Daten enthalten sind. Üblich sind Konfidenzintervalle von 90%, 95% und 99%.</p>
 <table>
+<colgroup>
+<col width="28%" />
+<col width="51%" />
+<col width="20%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center"><span class="math inline">\(\alpha/2\)</span></th>
@@ -779,7 +784,7 @@ Abbildung 5.4: Flächen für 95%-CI und 99%-CI
 </div>
 <div id="hypothesen-in-der-statistik" class="section level2" number="5.8">
 <h2><span class="header-section-number">5.8</span> Hypothesen in der Statistik</h2>
-<p>Wir beginnen mit der Frage, ob Studierende heute öfter ins Krafttrainig gehen als vor 10 Jahren. Es liegen uns Daten von Studien aus den Jahren 2010 und 2020 vor, welche u.a. die Frage bearbeitet haben “Wie oft pro Woche gehen Studierende ins Krafttraining.” Unsere Hypothesen könnten lauten:</p>
+<p>Wir beginnen mit der Frage, ob Studierende heute öfter ins Krafttrainig gehen als vor 10 Jahren. Es liegen uns Daten von Studien aus den Jahren 2010 und 2020 vor, welche u.a. die Frage bearbeitet haben “Wie oft pro Woche gehen Studierende ins Krafttraining”. Unsere Hypothesen könnten lauten:</p>
 <ul>
 <li><p><span class="math inline">\(H_0:\)</span> Die durchschnittliche Anzahl Krafttrainings der Studierenden ist in den Jahren 2010 und 2020 die gleiche. Es gibt keinen Unterschied in der durchschnittlichen Anzahl Krafttrainings pro Woche zwischen den Studierenden 2010 und 2020.</p></li>
 <li><p><span class="math inline">\(H_A:\)</span> Die durchschnittliche Anzahl Krafttrainings der Studierenden ist in den Jahren 2010 und 2020 nicht gleich. Es gibt einen Unterschied in der durchschnittlichen Anzahl Krafttrainings pro Woche zwischen den Studierenden 2010 und 2020.</p></li>
@@ -1136,7 +1141,7 @@ Abbildung 5.11: Einseitiger Hypothesentest: Die Fläche rechts vom z-Wert 2.47 (
 </div>
 <div id="zweiseitige-hypothesentests" class="section level3" number="5.10.2">
 <h3><span class="header-section-number">5.10.2</span> Zweiseitige Hypothesentests</h3>
-<p>In einseitigen Tests interessieren wir uns für den Bereich der Verteilung in der Richtung der Alternativhypothese. Im vorangehenden Beispiel war dies <span class="math inline">\(H_A: \mu &gt; 7\)</span>. Somit liegt unser Verwerfungsbereich rechts vom Mittelwert unter <span class="math inline">\(H_0\)</span>. Die Alternativhypothese kann auch in die andere Richtung zeigen <span class="math inline">\(H_A: \mu &lt; 7\)</span>, dann liegt unser Verwerfungsbereich links vom Mittelwert unter <span class="math inline">\(H_0\)</span>. Bei zweiseitigen Tests, interessieren uns beide Seiten der Verteilung und die Alternativhypothese ist symmetrisch formuliert <span class="math inline">\(H_A: \mu \neq 7\)</span>. Diese Formulierung lässt offen, ob der Populationsmittelwert gemäss unserer Stichproben nach oben oder nach unten abweicht. Die Frage lautet dann: “Unterscheidet sich unserer Mittelwert von dem der Population <span class="math inline">\(H_0\)</span>?” wobei der Mittelwert aus der Stichprobe sowohl kleiner als auch grösser als der Mittelwert unter <span class="math inline">\(H_0\)</span> sein kann.</p>
+<p>In einseitigen Tests interessieren wir uns für den Bereich der Verteilung in der Richtung der Alternativhypothese. Im vorangehenden Beispiel war dies <span class="math inline">\(H_A: \mu &gt; 7\)</span>. Somit liegt unser Verwerfungsbereich rechts vom Mittelwert unter <span class="math inline">\(H_0\)</span>. Die Alternativhypothese kann auch in die andere Richtung zeigen <span class="math inline">\(H_A: \mu &lt; 7\)</span>, dann liegt unser Verwerfungsbereich links vom Mittelwert unter <span class="math inline">\(H_0\)</span>. Bei zweiseitigen Tests, interessieren uns beide Seiten der Verteilung und die Alternativhypothese ist symmetrisch formuliert <span class="math inline">\(H_A: \mu \neq 7\)</span>. Diese Formulierung lässt offen, ob der Populationsmittelwert gemäss unserer Stichproben nach oben oder nach unten abweicht. Die Frage lautet dann: “Unterscheidet sich unserer Mittelwert von dem der Population <span class="math inline">\(H_0\)</span>?”, wobei der Mittelwert aus der Stichprobe sowohl kleiner als auch grösser als der Mittelwert unter <span class="math inline">\(H_0\)</span> sein kann.</p>
 <p>Wie wir gesehen haben, hat die National Sleep Foundation festgestellt, dass Schülerinnen im Durchschnitt 7 Stunden schlafen. Eine andere Forschungsgruppe wollte wissen, ob sich die Schlafdauer der Schülerinnen an ihrer Schule von dieser Norm unterscheidet. Sie formulierten die Hypothesen:</p>
 <p><span class="math inline">\(H_0: \mu = 7\)</span>, die durchschnittliche Schlafdauer beträgt 7 Stunden.<br />
 <span class="math inline">\(H_A: \mu \neq 7\)</span>, die durchschnittliche Schlafdauer unterscheidet sich von 7 Stunden.</p>
