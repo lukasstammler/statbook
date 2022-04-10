@@ -38,7 +38,7 @@ Deskriptive Statistik und Inferenzstatistik sind die zwei Hauptkategorien in der
 Deskriptive Statistik …   
 
 - dient der Beschreibung von Daten in einen Datensatz, der z.B. durch eine Zufallsstichprobe entstanden ist. Die Ergebnisse werden nicht verallgemeinert.  
-- berechnet Kennzahlen zu den Daten aus einem Datensatzes und stellt die Daten grafisch dar; verwendet zur Beschreibung der Daten Kennzahlen wie Mittelwert, Median, Standardabweichung, Interquartilsabstand oder Korrelationskoeffizient.  
+- berechnet Kennzahlen zu den Daten aus einem Datensatz und stellt die Daten grafisch dar; verwendet zur Beschreibung der Daten Kennzahlen wie Mittelwert, Median, Standardabweichung, Interquartilsabstand oder Korrelationskoeffizient.  
 -	arbeitet nur mit den vorliegenden Daten im Datensatz; daher besteht keine Unsicherheit im Hinblick auf die Gültigkeit von Kennzahlen.
 
 Inferenzstatistik …  
@@ -48,7 +48,7 @@ Inferenzstatistik …
 - schätzt die wahren Kennzahlen in der Population auf Grundlage der Stichproben-Kennzahlen. Da Schätzungen immer mit einer gewissen Ungenauigkeit verbunden sind interessiert die Frage «Wie sicher können wir sein, dass der geschätzte Mittelwert $\bar{x}$ dem wahren Populationsmittelwert $\mu$ entspricht?».  
 - liefert Angaben, bis zu welchem Grad bzw. mit welcher Wahrscheinlichkeit wir unseren Schätzungen vertrauen können.  
 
-Die diesem Kapitel vorgestellten Grundlagen der Inferenzstatistik sind absolut essentiell für das Verständnis der nachfolgenden Themen. Es lohnt sich daher, für das Verständnis dieser Inhalte genügend Zeit zu investieren.
+Die diesem Kapitel vorgestellten Grundlagen der Inferenzstatistik sind absolut essentiell für das Verständnis der nachfolgenden Themen. Es lohnt sich daher, für das Verständnis dieser Inhalte, genügend Zeit zu investieren.
 
 ## Lernziele  
 
@@ -64,7 +64,7 @@ $$SE = \frac{\sigma}{\sqrt{n}}$$
 
 4. Unterscheide zwischen Standardabweichung ($s$ oder $\sigma$) und Standardfehler $SE$: Die Standardabweichung misst die Variabilität in den Stichprobendaten, während der Standardfehler die Variabilität von Punktschätzern aus verschiedenen Stichproben der gleichen Grösse und aus der gleichen Population misst. Mit anderen Worten: Der Standardfehler ist ein Mass für die die Stichprobenvariation.  
 
-5. Erwarte, dass mit steigendem Stichprobenumfang die Stichprobenvariation abnimmt, da in der Formel zur Berechnung des Standardfehlers der Stichprobenumfang $n$ im Nenner ist.   
+5. Erwarte, dass mit steigendem Stichprobenumfang die Stichprobenvariation abnimmt, da in der Formel zur Berechnung des Standardfehlers der Stichprobenumfang $n$ im Nenner steht.   
 
 6. Intepretiere ein **Konfidenzintervall** (Vertrauensintervall, engl. confidence interval, Abk. $CI$) als glaubhaften Wertebereich für einen Populationsparameter.   
 
@@ -78,7 +78,7 @@ $$SE = \frac{\sigma}{\sqrt{n}}$$
 
   * Stichprobenumfang $n$ > 30. Je grösser der Stichprobenumfang $n$, desto unbedeutender wird die Verteilung, d.h. wenn $n$ sehr gross ist, wird die Stichprobenverteilung nahezu normal sein, unabhängig von der Form der Verteilung in der Population.   
   
-  * Unabhängigkeit der Beobachtungseinheiten in einer Stichprobe: Die Unabhänigkeit der Beobachtungseinheiten kann sicher gestellt werden, indem diese zufällig ausgewählt werden (random sampling) und zufällig zu Gruppen zugeordnet werden (random assignment).   
+  * Unabhängigkeit der Beobachtungseinheiten in einer Stichprobe: Die Unabhängigkeit der Beobachtungseinheiten kann sicher gestellt werden, indem diese zufällig ausgewählt werden (random sampling) und zufällig zu Gruppen zugeordnet werden (random assignment).   
 
 9.  Merke, dass die Normalverteilung der Punktschätzer bedeutet, dass ein Konfidenzintervall berechnet werden kann: 
 
@@ -93,13 +93,14 @@ $$Punktschätzer \pm z_{1-\frac{\alpha}{2}} \times SE$$
 11.  Definiere bei der Berechnung des Konfidenzintervalls den **Fehlerbereich** (engl. margin of error, Abk. $ME$) als Abstand in beide Richtung vom Punktschätzer, d.h.
 
 $$ME = z_{1-\frac{\alpha}{2}} \times SE$$
+
 * $ME$ entspricht genau einer Hälfte der Breite des Vertrauensintervalls.   
 
 12. Interpretiere ein Konfidenzintervall als "Wir können zu XX% darauf vertrauen, dass der wahre Populationsparameter innerhalb dieses Intervalls liegt" (XX% ist das gewünschte Vertrauensniveau). 
 
 * Beachte, dass die Interpretation immer im Kontext der Daten erfolgen sollte; erwähne immer, auf welche Population und welchen Parameter sich eine Aussage bezieht.   
 
-13. Erkläre, inwiefern das Prinzip von Hypothesentests mit dem Vorgehen am Gericht vergleichbar ist.  
+13. Erläutere, inwiefern das Prinzip von Hypothesentests mit dem Vorgehen am Gericht vergleichbar ist.  
 
 14. Denke daran, dass wir bei Hypothesentests immer zwei sich gegenseitig ausschliessende Aussagen untersuchen:  
 
@@ -201,7 +202,7 @@ p1 <- ggplot(daten, aes(x = value)) +
 
 p2 <- ggplot(daten, aes(x = value, color = name)) +
   geom_density(stat = "density", show.legend = FALSE) +
-  ggtitle("Körpergrösse Erwachsene (cm)", subtitle = "Männer: M = 177.4cm, s = 18.5cm\nFrauen: M = 164.7, s = 18.14") +
+  ggtitle("Körpergrösse Erwachsene (cm)", subtitle = "Männer: M = 177.4cm, s = 18.5cm\nFrauen: M = 164.7cm, s = 18.14cm") +
   ylab("") +
   xlab("Grösse") +
   theme(
@@ -1053,7 +1054,7 @@ Wir bevorzugen grundsätzlich die Verwendung von zweiseitigen Arbeitshypothesen.
 2. Identifiziere die korrekte Prüfgrösse für die Fragestellung.  
 3. Prüfe die Voraussetzungen für die Durchführung der Tests (Unabhängigkeit, $n$ > 30, Normalverteilung)  
 4. Berechne die Kennzahlen und den Standardfehler. Erstelle eine Skizze für die Verteilung unter $H_0$. Markiere die Verwerfungsbereiche.  
-5. Berechne den $z$-Wert und den zugehörigen p-Wert.  
+5. Berechne die Teststatistik (z.B. den $z$-Wert) und den zugehörigen p-Wert.  
 6. Berechne das 95%-Konfidenzintervall für den Populationsparameter.
 7. Schreibe eine Schlussfolgerung in einer Sprache, sie auch für Nichtstatistiker:innen verständlich ist. Vermeide es, nur einen $p$-Wert ohne Kennzahlen für Punktschätzer und 95%-Konfidenzintervall anzugeben. 
 

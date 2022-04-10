@@ -8,11 +8,10 @@
   <meta name="description" content="<p>Leitfaden Statstik für den Unterricht am BSc Physiotherapie
 der Berner Fachhochschule BFH. The HTML output format for this example is
 bookdown::gitbook, set in the _output.yml file.</p>" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Einfache lineare Regression | Leitfaden Statistik" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="<p>Leitfaden Statstik für den Unterricht am BSc Physiotherapie
 der Berner Fachhochschule BFH. The HTML output format for this example is
@@ -30,7 +29,7 @@ bookdown::gitbook, set in the _output.yml file.</p>" />
 <meta name="author" content="Lukas Stammler" />
 
 
-<meta name="date" content="2022-03-04" />
+<meta name="date" content="2022-04-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -39,7 +38,6 @@ bookdown::gitbook, set in the _output.yml file.</p>" />
   
 <link rel="prev" href="korrelation-und-linearer-zusammenhang.html"/>
 <link rel="next" href="inferenz-für-nominale-daten.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -57,8 +55,9 @@ bookdown::gitbook, set in the _output.yml file.</p>" />
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -167,190 +166,190 @@ div.csl-indent {
 <li><a href="./">Leitfaden Statistik</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Über diesen Leitfaden</a></li>
-<li class="chapter" data-level="2" data-path="einführung.html"><a href="einführung.html"><i class="fa fa-check"></i><b>2</b> Einführung</a></li>
-<li class="chapter" data-level="3" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptive Statistik</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Über diesen Leitfaden<span></span></a></li>
+<li class="chapter" data-level="2" data-path="einführung.html"><a href="einführung.html"><i class="fa fa-check"></i><b>2</b> Einführung<span></span></a></li>
+<li class="chapter" data-level="3" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html"><i class="fa fa-check"></i><b>3</b> Deskriptive Statistik<span></span></a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#lernziele"><i class="fa fa-check"></i><b>3.1</b> Lernziele</a></li>
-<li class="chapter" data-level="3.2" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#grundbegriffe"><i class="fa fa-check"></i><b>3.2</b> Grundbegriffe</a></li>
-<li class="chapter" data-level="3.3" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#quantitative-und-qualitative-daten"><i class="fa fa-check"></i><b>3.3</b> Quantitative und qualitative Daten</a></li>
-<li class="chapter" data-level="3.4" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#quantitative-daten-zusammenfassen"><i class="fa fa-check"></i><b>3.4</b> Quantitative Daten zusammenfassen</a>
+<li class="chapter" data-level="3.1" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#lernziele"><i class="fa fa-check"></i><b>3.1</b> Lernziele<span></span></a></li>
+<li class="chapter" data-level="3.2" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#grundbegriffe"><i class="fa fa-check"></i><b>3.2</b> Grundbegriffe<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#quantitative-und-qualitative-daten"><i class="fa fa-check"></i><b>3.3</b> Quantitative und qualitative Daten<span></span></a></li>
+<li class="chapter" data-level="3.4" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#quantitative-daten-zusammenfassen"><i class="fa fa-check"></i><b>3.4</b> Quantitative Daten zusammenfassen<span></span></a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#kennzahlen-der-zentralen-tendenz-lagemasse"><i class="fa fa-check"></i><b>3.4.1</b> Kennzahlen der zentralen Tendenz (Lagemasse)</a></li>
-<li class="chapter" data-level="3.4.2" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#exkurs-der-mittelwert-als-kleinst-quadrat-modell"><i class="fa fa-check"></i><b>3.4.2</b> Exkurs: Der Mittelwert als Kleinst-Quadrat-Modell</a></li>
-<li class="chapter" data-level="3.4.3" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#kennzahlen-der-streuung-streuungsmasse"><i class="fa fa-check"></i><b>3.4.3</b> Kennzahlen der Streuung (Streuungsmasse)</a></li>
-<li class="chapter" data-level="3.4.4" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#grafiken-für-quantitative-daten"><i class="fa fa-check"></i><b>3.4.4</b> Grafiken für quantitative Daten</a></li>
+<li class="chapter" data-level="3.4.1" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#kennzahlen-der-zentralen-tendenz-lagemasse"><i class="fa fa-check"></i><b>3.4.1</b> Kennzahlen der zentralen Tendenz (Lagemasse)<span></span></a></li>
+<li class="chapter" data-level="3.4.2" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#exkurs-der-mittelwert-als-kleinst-quadrat-modell"><i class="fa fa-check"></i><b>3.4.2</b> Exkurs: Der Mittelwert als Kleinst-Quadrat-Modell<span></span></a></li>
+<li class="chapter" data-level="3.4.3" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#kennzahlen-der-streuung-streuungsmasse"><i class="fa fa-check"></i><b>3.4.3</b> Kennzahlen der Streuung (Streuungsmasse)<span></span></a></li>
+<li class="chapter" data-level="3.4.4" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#grafiken-für-quantitative-daten"><i class="fa fa-check"></i><b>3.4.4</b> Grafiken für quantitative Daten<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#qualitative-daten-zusammenfassen"><i class="fa fa-check"></i><b>3.5</b> Qualitative Daten zusammenfassen</a>
+<li class="chapter" data-level="3.5" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#qualitative-daten-zusammenfassen"><i class="fa fa-check"></i><b>3.5</b> Qualitative Daten zusammenfassen<span></span></a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#kreuztabellen"><i class="fa fa-check"></i><b>3.5.1</b> Kreuztabellen</a></li>
-<li class="chapter" data-level="3.5.2" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#balkendiagramme"><i class="fa fa-check"></i><b>3.5.2</b> Balkendiagramme</a></li>
+<li class="chapter" data-level="3.5.1" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#kreuztabellen"><i class="fa fa-check"></i><b>3.5.1</b> Kreuztabellen<span></span></a></li>
+<li class="chapter" data-level="3.5.2" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#balkendiagramme"><i class="fa fa-check"></i><b>3.5.2</b> Balkendiagramme<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#grundregeln-für-die-erstellung-von-grafiken"><i class="fa fa-check"></i><b>3.6</b> Grundregeln für die Erstellung von Grafiken</a></li>
+<li class="chapter" data-level="3.6" data-path="deskriptive-statistik.html"><a href="deskriptive-statistik.html#grundregeln-für-die-erstellung-von-grafiken"><i class="fa fa-check"></i><b>3.6</b> Grundregeln für die Erstellung von Grafiken<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html"><i class="fa fa-check"></i><b>4</b> Wahrscheinlichkeitsverteilungen</a>
+<li class="chapter" data-level="4" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html"><i class="fa fa-check"></i><b>4</b> Wahrscheinlichkeitsverteilungen<span></span></a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#lernziele-1"><i class="fa fa-check"></i><b>4.1</b> Lernziele</a></li>
-<li class="chapter" data-level="4.2" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#zufallsvariablen"><i class="fa fa-check"></i><b>4.2</b> Zufallsvariablen</a></li>
-<li class="chapter" data-level="4.3" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#wahrscheinlichkeitsverteilungen-1"><i class="fa fa-check"></i><b>4.3</b> Wahrscheinlichkeitsverteilungen</a></li>
-<li class="chapter" data-level="4.4" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-normalverteilung"><i class="fa fa-check"></i><b>4.4</b> Die Normalverteilung</a>
+<li class="chapter" data-level="4.1" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#lernziele-1"><i class="fa fa-check"></i><b>4.1</b> Lernziele<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#zufallsvariablen"><i class="fa fa-check"></i><b>4.2</b> Zufallsvariablen<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#wahrscheinlichkeitsverteilungen-1"><i class="fa fa-check"></i><b>4.3</b> Wahrscheinlichkeitsverteilungen<span></span></a></li>
+<li class="chapter" data-level="4.4" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-normalverteilung"><i class="fa fa-check"></i><b>4.4</b> Die Normalverteilung<span></span></a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#wahrscheinlichkeiten-für-kontinuierliche-daten"><i class="fa fa-check"></i><b>4.4.1</b> Wahrscheinlichkeiten für kontinuierliche Daten?</a></li>
-<li class="chapter" data-level="4.4.2" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#anwendung-der-normalverteilung"><i class="fa fa-check"></i><b>4.4.2</b> Anwendung der Normalverteilung</a></li>
-<li class="chapter" data-level="4.4.3" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#normalverteilung-vertiefung"><i class="fa fa-check"></i><b>4.4.3</b> Normalverteilung Vertiefung</a></li>
-<li class="chapter" data-level="4.4.4" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#parameter-der-normalverteilung"><i class="fa fa-check"></i><b>4.4.4</b> Parameter der Normalverteilung</a></li>
-<li class="chapter" data-level="4.4.5" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#kennzahlen-der-population-vs.-kennzahlen-von-stichproben"><i class="fa fa-check"></i><b>4.4.5</b> Kennzahlen der Population vs. Kennzahlen von Stichproben</a></li>
-<li class="chapter" data-level="4.4.6" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#eigenschaften-von-normalverteilungen"><i class="fa fa-check"></i><b>4.4.6</b> Eigenschaften von Normalverteilungen</a></li>
-<li class="chapter" data-level="4.4.7" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-68-95-99.7-regel"><i class="fa fa-check"></i><b>4.4.7</b> Die 68 – 95 – 99.7 – Regel</a></li>
+<li class="chapter" data-level="4.4.1" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#wahrscheinlichkeiten-für-kontinuierliche-daten"><i class="fa fa-check"></i><b>4.4.1</b> Wahrscheinlichkeiten für kontinuierliche Daten?<span></span></a></li>
+<li class="chapter" data-level="4.4.2" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#anwendung-der-normalverteilung"><i class="fa fa-check"></i><b>4.4.2</b> Anwendung der Normalverteilung<span></span></a></li>
+<li class="chapter" data-level="4.4.3" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#normalverteilung-vertiefung"><i class="fa fa-check"></i><b>4.4.3</b> Normalverteilung Vertiefung<span></span></a></li>
+<li class="chapter" data-level="4.4.4" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#parameter-der-normalverteilung"><i class="fa fa-check"></i><b>4.4.4</b> Parameter der Normalverteilung<span></span></a></li>
+<li class="chapter" data-level="4.4.5" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#kennzahlen-der-population-vs.-kennzahlen-von-stichproben"><i class="fa fa-check"></i><b>4.4.5</b> Kennzahlen der Population vs. Kennzahlen von Stichproben<span></span></a></li>
+<li class="chapter" data-level="4.4.6" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#eigenschaften-von-normalverteilungen"><i class="fa fa-check"></i><b>4.4.6</b> Eigenschaften von Normalverteilungen<span></span></a></li>
+<li class="chapter" data-level="4.4.7" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-68-95-99.7-regel"><i class="fa fa-check"></i><b>4.4.7</b> Die 68 – 95 – 99.7 – Regel<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-standardnormalverteilung"><i class="fa fa-check"></i><b>4.5</b> Die Standardnormalverteilung</a>
+<li class="chapter" data-level="4.5" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-standardnormalverteilung"><i class="fa fa-check"></i><b>4.5</b> Die Standardnormalverteilung<span></span></a>
 <ul>
-<li class="chapter" data-level="4.5.1" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#berechnung-von-z-werten-z-transformation"><i class="fa fa-check"></i><b>4.5.1</b> Berechnung von <span class="math inline">\(z\)</span>-Werten (<span class="math inline">\(z\)</span>-Transformation)</a></li>
-<li class="chapter" data-level="4.5.2" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#interpretation-von-z-werten"><i class="fa fa-check"></i><b>4.5.2</b> Interpretation von z-Werten</a></li>
+<li class="chapter" data-level="4.5.1" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#berechnung-von-z-werten-z-transformation"><i class="fa fa-check"></i><b>4.5.1</b> Berechnung von <span class="math inline">\(z\)</span>-Werten (<span class="math inline">\(z\)</span>-Transformation)<span></span></a></li>
+<li class="chapter" data-level="4.5.2" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#interpretation-von-z-werten"><i class="fa fa-check"></i><b>4.5.2</b> Interpretation von z-Werten<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#prüfung-auf-normalverteilung"><i class="fa fa-check"></i><b>4.6</b> Prüfung auf Normalverteilung</a>
+<li class="chapter" data-level="4.6" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#prüfung-auf-normalverteilung"><i class="fa fa-check"></i><b>4.6</b> Prüfung auf Normalverteilung<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#qq-plot"><i class="fa fa-check"></i>QQ-Plot</a></li>
+<li><a href="wahrscheinlichkeitsverteilungen.html#qq-plot">QQ-Plot<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-t-verteilung"><i class="fa fa-check"></i><b>4.7</b> Die <span class="math inline">\(t\)</span>-Verteilung</a></li>
+<li class="chapter" data-level="4.7" data-path="wahrscheinlichkeitsverteilungen.html"><a href="wahrscheinlichkeitsverteilungen.html#die-t-verteilung"><i class="fa fa-check"></i><b>4.7</b> Die <span class="math inline">\(t\)</span>-Verteilung<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html"><i class="fa fa-check"></i><b>5</b> Grundlagen der Inferenzstatistik</a>
+<li class="chapter" data-level="5" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html"><i class="fa fa-check"></i><b>5</b> Grundlagen der Inferenzstatistik<span></span></a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einleitung"><i class="fa fa-check"></i><b>5.1</b> Einleitung</a></li>
-<li class="chapter" data-level="5.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#lernziele-2"><i class="fa fa-check"></i><b>5.2</b> Lernziele</a></li>
-<li class="chapter" data-level="5.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#grundbegriffe-1"><i class="fa fa-check"></i><b>5.3</b> Grundbegriffe</a>
+<li class="chapter" data-level="5.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einleitung"><i class="fa fa-check"></i><b>5.1</b> Einleitung<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#lernziele-2"><i class="fa fa-check"></i><b>5.2</b> Lernziele<span></span></a></li>
+<li class="chapter" data-level="5.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#grundbegriffe-1"><i class="fa fa-check"></i><b>5.3</b> Grundbegriffe<span></span></a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#population"><i class="fa fa-check"></i><b>5.3.1</b> Population</a></li>
-<li class="chapter" data-level="5.3.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#populationsparameter-vs.-stichprobenkennzahl"><i class="fa fa-check"></i><b>5.3.2</b> Populationsparameter vs. Stichprobenkennzahl</a></li>
+<li class="chapter" data-level="5.3.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#population"><i class="fa fa-check"></i><b>5.3.1</b> Population<span></span></a></li>
+<li class="chapter" data-level="5.3.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#populationsparameter-vs.-stichprobenkennzahl"><i class="fa fa-check"></i><b>5.3.2</b> Populationsparameter vs. Stichprobenkennzahl<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#methoden-der-inferenzstatistik"><i class="fa fa-check"></i><b>5.4</b> Methoden der Inferenzstatistik</a></li>
-<li class="chapter" data-level="5.5" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#stichprobenumfang-und-fehlergrenze"><i class="fa fa-check"></i><b>5.5</b> Stichprobenumfang und Fehlergrenze</a>
+<li class="chapter" data-level="5.4" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#methoden-der-inferenzstatistik"><i class="fa fa-check"></i><b>5.4</b> Methoden der Inferenzstatistik<span></span></a></li>
+<li class="chapter" data-level="5.5" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#stichprobenumfang-und-fehlergrenze"><i class="fa fa-check"></i><b>5.5</b> Stichprobenumfang und Fehlergrenze<span></span></a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#verteilung-von-stichprobenkennzahlen"><i class="fa fa-check"></i><b>5.5.1</b> Verteilung von Stichprobenkennzahlen</a></li>
+<li class="chapter" data-level="5.5.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#verteilung-von-stichprobenkennzahlen"><i class="fa fa-check"></i><b>5.5.1</b> Verteilung von Stichprobenkennzahlen<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="5.6" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#standardfehler-engl.-standard-error-abk.-se"><i class="fa fa-check"></i><b>5.6</b> Standardfehler (engl. standard error, Abk. <span class="math inline">\(SE\)</span>)</a>
+<li class="chapter" data-level="5.6" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#standardfehler-engl.-standard-error-abk.-se"><i class="fa fa-check"></i><b>5.6</b> Standardfehler (engl. standard error, Abk. <span class="math inline">\(SE\)</span>)<span></span></a>
 <ul>
-<li class="chapter" data-level="5.6.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#das-wurzel-n-gesetz"><i class="fa fa-check"></i><b>5.6.1</b> Das Wurzel-n-Gesetz</a></li>
+<li class="chapter" data-level="5.6.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#das-wurzel-n-gesetz"><i class="fa fa-check"></i><b>5.6.1</b> Das Wurzel-n-Gesetz<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="5.7" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#konfidenzintervalle-auch-vertrauensintervalle-engl.-confidence-intervalls-abk.-ci"><i class="fa fa-check"></i><b>5.7</b> Konfidenzintervalle (auch Vertrauensintervalle, engl. confidence intervalls, Abk. <span class="math inline">\(CI\)</span>)</a>
+<li class="chapter" data-level="5.7" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#konfidenzintervalle-auch-vertrauensintervalle-engl.-confidence-intervalls-abk.-ci"><i class="fa fa-check"></i><b>5.7</b> Konfidenzintervalle (auch Vertrauensintervalle, engl. confidence intervalls, Abk. <span class="math inline">\(CI\)</span>)<span></span></a>
 <ul>
-<li class="chapter" data-level="5.7.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#anpassung-des-konfidenzniveaus"><i class="fa fa-check"></i><b>5.7.1</b> Anpassung des Konfidenzniveaus</a></li>
-<li class="chapter" data-level="5.7.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#präzision-versus-sicherheit"><i class="fa fa-check"></i><b>5.7.2</b> Präzision versus Sicherheit</a></li>
-<li class="chapter" data-level="5.7.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#voraussetzungen"><i class="fa fa-check"></i><b>5.7.3</b> Voraussetzungen</a></li>
-<li class="chapter" data-level="5.7.4" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#interpretation-von-konfidenzintervallen"><i class="fa fa-check"></i><b>5.7.4</b> Interpretation von Konfidenzintervallen</a></li>
+<li class="chapter" data-level="5.7.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#anpassung-des-konfidenzniveaus"><i class="fa fa-check"></i><b>5.7.1</b> Anpassung des Konfidenzniveaus<span></span></a></li>
+<li class="chapter" data-level="5.7.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#präzision-versus-sicherheit"><i class="fa fa-check"></i><b>5.7.2</b> Präzision versus Sicherheit<span></span></a></li>
+<li class="chapter" data-level="5.7.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#voraussetzungen"><i class="fa fa-check"></i><b>5.7.3</b> Voraussetzungen<span></span></a></li>
+<li class="chapter" data-level="5.7.4" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#interpretation-von-konfidenzintervallen"><i class="fa fa-check"></i><b>5.7.4</b> Interpretation von Konfidenzintervallen<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="5.8" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#hypothesen-in-der-statistik"><i class="fa fa-check"></i><b>5.8</b> Hypothesen in der Statistik</a>
+<li class="chapter" data-level="5.8" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#hypothesen-in-der-statistik"><i class="fa fa-check"></i><b>5.8</b> Hypothesen in der Statistik<span></span></a>
 <ul>
-<li class="chapter" data-level="5.8.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#mathematische-formulierung-von-hypothesen"><i class="fa fa-check"></i><b>5.8.1</b> Mathematische Formulierung von Hypothesen</a></li>
-<li class="chapter" data-level="5.8.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#hypothesen-mittels-konfidenzintervallen-prüfen"><i class="fa fa-check"></i><b>5.8.2</b> Hypothesen mittels Konfidenzintervallen prüfen</a></li>
-<li class="chapter" data-level="5.8.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#entscheidungsfehler"><i class="fa fa-check"></i><b>5.8.3</b> Entscheidungsfehler</a></li>
-<li class="chapter" data-level="5.8.4" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#signifkanzniveau"><i class="fa fa-check"></i><b>5.8.4</b> Signifkanzniveau</a></li>
+<li class="chapter" data-level="5.8.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#mathematische-formulierung-von-hypothesen"><i class="fa fa-check"></i><b>5.8.1</b> Mathematische Formulierung von Hypothesen<span></span></a></li>
+<li class="chapter" data-level="5.8.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#hypothesen-mittels-konfidenzintervallen-prüfen"><i class="fa fa-check"></i><b>5.8.2</b> Hypothesen mittels Konfidenzintervallen prüfen<span></span></a></li>
+<li class="chapter" data-level="5.8.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#entscheidungsfehler"><i class="fa fa-check"></i><b>5.8.3</b> Entscheidungsfehler<span></span></a></li>
+<li class="chapter" data-level="5.8.4" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#signifkanzniveau"><i class="fa fa-check"></i><b>5.8.4</b> Signifkanzniveau<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="5.9" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#der-p-wert"><i class="fa fa-check"></i><b>5.9</b> Der p-Wert</a>
+<li class="chapter" data-level="5.9" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#der-p-wert"><i class="fa fa-check"></i><b>5.9</b> Der p-Wert<span></span></a>
 <ul>
-<li class="chapter" data-level="5.9.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#statistische-macht-power"><i class="fa fa-check"></i><b>5.9.1</b> Statistische Macht (Power)</a></li>
+<li class="chapter" data-level="5.9.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#statistische-macht-power"><i class="fa fa-check"></i><b>5.9.1</b> Statistische Macht (Power)<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="5.10" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einseitige-und-zweiseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10</b> Einseitige und zweiseitige Hypothesentests</a>
+<li class="chapter" data-level="5.10" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einseitige-und-zweiseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10</b> Einseitige und zweiseitige Hypothesentests<span></span></a>
 <ul>
-<li class="chapter" data-level="5.10.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10.1</b> Einseitige Hypothesentests</a></li>
-<li class="chapter" data-level="5.10.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#zweiseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10.2</b> Zweiseitige Hypothesentests</a></li>
-<li class="chapter" data-level="5.10.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einseitige-vs.-zweiseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10.3</b> Einseitige vs. zweiseitige Hypothesentests</a></li>
+<li class="chapter" data-level="5.10.1" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10.1</b> Einseitige Hypothesentests<span></span></a></li>
+<li class="chapter" data-level="5.10.2" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#zweiseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10.2</b> Zweiseitige Hypothesentests<span></span></a></li>
+<li class="chapter" data-level="5.10.3" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#einseitige-vs.-zweiseitige-hypothesentests"><i class="fa fa-check"></i><b>5.10.3</b> Einseitige vs. zweiseitige Hypothesentests<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="5.11" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#hypothesentests-schritt-für-schritt"><i class="fa fa-check"></i><b>5.11</b> Hypothesentests Schritt für Schritt</a></li>
-<li class="chapter" data-level="5.12" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#statistische-signifikanz-versus-praktische-relevanz"><i class="fa fa-check"></i><b>5.12</b> Statistische Signifikanz versus praktische Relevanz</a></li>
+<li class="chapter" data-level="5.11" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#hypothesentests-schritt-für-schritt"><i class="fa fa-check"></i><b>5.11</b> Hypothesentests Schritt für Schritt<span></span></a></li>
+<li class="chapter" data-level="5.12" data-path="grundlagen-der-inferenzstatistik.html"><a href="grundlagen-der-inferenzstatistik.html#statistische-signifikanz-versus-praktische-relevanz"><i class="fa fa-check"></i><b>5.12</b> Statistische Signifikanz versus praktische Relevanz<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html"><i class="fa fa-check"></i><b>6</b> Vergleich von Mittelwerten</a>
+<li class="chapter" data-level="6" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html"><i class="fa fa-check"></i><b>6</b> Vergleich von Mittelwerten<span></span></a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#lernziele-3"><i class="fa fa-check"></i><b>6.1</b> Lernziele</a></li>
-<li class="chapter" data-level="6.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-tests"><i class="fa fa-check"></i><b>6.2</b> T-Tests</a></li>
-<li class="chapter" data-level="6.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-verteilung-versus-normalverteilung"><i class="fa fa-check"></i><b>6.3</b> T-Verteilung versus Normalverteilung</a></li>
-<li class="chapter" data-level="6.4" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-test-für-eine-einfache-stichprobe"><i class="fa fa-check"></i><b>6.4</b> T-Test für eine einfache Stichprobe</a>
+<li class="chapter" data-level="6.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#lernziele-3"><i class="fa fa-check"></i><b>6.1</b> Lernziele<span></span></a></li>
+<li class="chapter" data-level="6.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-tests"><i class="fa fa-check"></i><b>6.2</b> T-Tests<span></span></a></li>
+<li class="chapter" data-level="6.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-verteilung-versus-normalverteilung"><i class="fa fa-check"></i><b>6.3</b> T-Verteilung versus Normalverteilung<span></span></a></li>
+<li class="chapter" data-level="6.4" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-test-für-eine-einfache-stichprobe"><i class="fa fa-check"></i><b>6.4</b> T-Test für eine einfache Stichprobe<span></span></a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vorgehen"><i class="fa fa-check"></i><b>6.4.1</b> Vorgehen</a></li>
-<li class="chapter" data-level="6.4.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#konfidenzintervall-für-einen-mittelwert-schritt-für-schritt"><i class="fa fa-check"></i><b>6.4.2</b> Konfidenzintervall für einen Mittelwert Schritt-für-Schritt:</a></li>
-<li class="chapter" data-level="6.4.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#ein-stichproben-t-test-schritt-für-schritt"><i class="fa fa-check"></i><b>6.4.3</b> Ein-Stichproben-T-Test Schritt-für-Schritt:</a></li>
-<li class="chapter" data-level="6.4.4" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi"><i class="fa fa-check"></i><b>6.4.4</b> R/jamovi</a></li>
+<li class="chapter" data-level="6.4.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vorgehen"><i class="fa fa-check"></i><b>6.4.1</b> Vorgehen<span></span></a></li>
+<li class="chapter" data-level="6.4.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#konfidenzintervall-für-einen-mittelwert-schritt-für-schritt"><i class="fa fa-check"></i><b>6.4.2</b> Konfidenzintervall für einen Mittelwert Schritt-für-Schritt:<span></span></a></li>
+<li class="chapter" data-level="6.4.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#ein-stichproben-t-test-schritt-für-schritt"><i class="fa fa-check"></i><b>6.4.3</b> Ein-Stichproben-T-Test Schritt-für-Schritt:<span></span></a></li>
+<li class="chapter" data-level="6.4.4" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi"><i class="fa fa-check"></i><b>6.4.4</b> R/jamovi<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-test-für-verbundene-stichproben"><i class="fa fa-check"></i><b>6.5</b> T-Test für verbundene Stichproben</a>
+<li class="chapter" data-level="6.5" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#t-test-für-verbundene-stichproben"><i class="fa fa-check"></i><b>6.5</b> T-Test für verbundene Stichproben<span></span></a>
 <ul>
-<li class="chapter" data-level="6.5.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vorgehen-1"><i class="fa fa-check"></i><b>6.5.1</b> Vorgehen</a></li>
-<li class="chapter" data-level="6.5.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi-1"><i class="fa fa-check"></i><b>6.5.2</b> R/jamovi</a></li>
+<li class="chapter" data-level="6.5.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#vorgehen-1"><i class="fa fa-check"></i><b>6.5.1</b> Vorgehen<span></span></a></li>
+<li class="chapter" data-level="6.5.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi-1"><i class="fa fa-check"></i><b>6.5.2</b> R/jamovi<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#zweistichproben-t-test-für-unabhängige-stichproben"><i class="fa fa-check"></i><b>6.6</b> Zweistichproben-T-Test für unabhängige Stichproben</a>
+<li class="chapter" data-level="6.6" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#zweistichproben-t-test-für-unabhängige-stichproben"><i class="fa fa-check"></i><b>6.6</b> Zweistichproben-T-Test für unabhängige Stichproben<span></span></a>
 <ul>
-<li class="chapter" data-level="6.6.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#konfidenzintervall-für-einen-mittelwertsunterschied"><i class="fa fa-check"></i><b>6.6.1</b> Konfidenzintervall für einen Mittelwertsunterschied</a></li>
-<li class="chapter" data-level="6.6.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#der-zweistichproben-t-test-für-unabhängige-stichproben-schritt-für-schritt"><i class="fa fa-check"></i><b>6.6.2</b> Der Zweistichproben-T-Test für unabhängige Stichproben Schritt-für-Schritt</a></li>
-<li class="chapter" data-level="6.6.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi-2"><i class="fa fa-check"></i><b>6.6.3</b> R/jamovi</a></li>
+<li class="chapter" data-level="6.6.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#konfidenzintervall-für-einen-mittelwertsunterschied"><i class="fa fa-check"></i><b>6.6.1</b> Konfidenzintervall für einen Mittelwertsunterschied<span></span></a></li>
+<li class="chapter" data-level="6.6.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#der-zweistichproben-t-test-für-unabhängige-stichproben-schritt-für-schritt"><i class="fa fa-check"></i><b>6.6.2</b> Der Zweistichproben-T-Test für unabhängige Stichproben Schritt-für-Schritt<span></span></a></li>
+<li class="chapter" data-level="6.6.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rjamovi-2"><i class="fa fa-check"></i><b>6.6.3</b> R/jamovi<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#nicht-parametrische-tests"><i class="fa fa-check"></i><b>6.7</b> Nicht-parametrische Tests</a>
+<li class="chapter" data-level="6.7" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#nicht-parametrische-tests"><i class="fa fa-check"></i><b>6.7</b> Nicht-parametrische Tests<span></span></a>
 <ul>
-<li class="chapter" data-level="6.7.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rang-methoden-rank-tests"><i class="fa fa-check"></i><b>6.7.1</b> Rang-Methoden (rank tests)</a></li>
-<li class="chapter" data-level="6.7.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#wilcoxon-vorzeichenrangtest"><i class="fa fa-check"></i><b>6.7.2</b> Wilcoxon-Vorzeichenrangtest</a></li>
-<li class="chapter" data-level="6.7.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>6.7.3</b> Mann-Whitney-U-Test</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html"><i class="fa fa-check"></i><b>7</b> Korrelation und linearer Zusammenhang</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#einleitung-1"><i class="fa fa-check"></i><b>7.1</b> Einleitung</a></li>
-<li class="chapter" data-level="7.2" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#lernziele-4"><i class="fa fa-check"></i><b>7.2</b> Lernziele</a></li>
-<li class="chapter" data-level="7.3" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#korrelation"><i class="fa fa-check"></i><b>7.3</b> Korrelation</a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#eigenschaften-von-zusammenhängen"><i class="fa fa-check"></i><b>7.3.1</b> Eigenschaften von Zusammenhängen</a></li>
-<li class="chapter" data-level="7.3.2" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#korrelationskoeffizient-r"><i class="fa fa-check"></i><b>7.3.2</b> Korrelationskoeffizient <span class="math inline">\(r\)</span></a></li>
-<li class="chapter" data-level="7.3.3" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#berechnung-von-r"><i class="fa fa-check"></i><b>7.3.3</b> Berechnung von <span class="math inline">\(r\)</span></a></li>
-<li class="chapter" data-level="7.3.4" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#hypothesentest-für-r"><i class="fa fa-check"></i><b>7.3.4</b> Hypothesentest für <span class="math inline">\(r\)</span></a></li>
-<li class="chapter" data-level="7.3.5" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#interpretation-des-beispiels-für-laufgeschwindigkeit-und-kalorienverbrauch"><i class="fa fa-check"></i><b>7.3.5</b> Interpretation des Beispiels für Laufgeschwindigkeit und Kalorienverbrauch</a></li>
-<li class="chapter" data-level="7.3.6" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#datenmuster-und-r"><i class="fa fa-check"></i><b>7.3.6</b> Datenmuster und <span class="math inline">\(r\)</span></a></li>
-<li class="chapter" data-level="7.3.7" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#rangkorrelationskoeffizient-nach-spearman"><i class="fa fa-check"></i><b>7.3.7</b> Rangkorrelationskoeffizient nach Spearman</a></li>
-<li class="chapter" data-level="7.3.8" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#scheinkorrelationen"><i class="fa fa-check"></i><b>7.3.8</b> Scheinkorrelationen</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#zusammenfassung"><i class="fa fa-check"></i><b>7.4</b> Zusammenfassung</a></li>
-<li class="chapter" data-level="7.5" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#korrelation-in-rjamovi"><i class="fa fa-check"></i><b>7.5</b> Korrelation in R/jamovi</a>
-<ul>
-<li class="chapter" data-level="7.5.1" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#r-code-und-output"><i class="fa fa-check"></i><b>7.5.1</b> <code>R</code> Code und Output</a></li>
-<li class="chapter" data-level="7.5.2" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#jamovi-output"><i class="fa fa-check"></i><b>7.5.2</b> <code>jamovi</code> Output</a></li>
+<li class="chapter" data-level="6.7.1" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#rang-methoden-rank-tests"><i class="fa fa-check"></i><b>6.7.1</b> Rang-Methoden (rank tests)<span></span></a></li>
+<li class="chapter" data-level="6.7.2" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#wilcoxon-vorzeichenrangtest"><i class="fa fa-check"></i><b>6.7.2</b> Wilcoxon-Vorzeichenrangtest<span></span></a></li>
+<li class="chapter" data-level="6.7.3" data-path="vergleich-von-mittelwerten.html"><a href="vergleich-von-mittelwerten.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>6.7.3</b> Mann-Whitney-U-Test<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html"><i class="fa fa-check"></i><b>8</b> Einfache lineare Regression</a>
+<li class="chapter" data-level="7" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html"><i class="fa fa-check"></i><b>7</b> Korrelation und linearer Zusammenhang<span></span></a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#lernziele-5"><i class="fa fa-check"></i><b>8.1</b> Lernziele</a></li>
-<li class="chapter" data-level="8.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#eine-bücherbestellung"><i class="fa fa-check"></i><b>8.2</b> Eine Bücherbestellung</a></li>
-<li class="chapter" data-level="8.3" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#unabhängige-und-abhängige-variable"><i class="fa fa-check"></i><b>8.3</b> Unabhängige und abhängige Variable</a>
+<li class="chapter" data-level="7.1" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#einleitung-1"><i class="fa fa-check"></i><b>7.1</b> Einleitung<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#lernziele-4"><i class="fa fa-check"></i><b>7.2</b> Lernziele<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#korrelation"><i class="fa fa-check"></i><b>7.3</b> Korrelation<span></span></a>
 <ul>
-<li class="chapter" data-level="8.3.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#zusammenhang-zwischen-den-variablen"><i class="fa fa-check"></i><b>8.3.1</b> Zusammenhang zwischen den Variablen</a></li>
+<li class="chapter" data-level="7.3.1" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#eigenschaften-von-zusammenhängen"><i class="fa fa-check"></i><b>7.3.1</b> Eigenschaften von Zusammenhängen<span></span></a></li>
+<li class="chapter" data-level="7.3.2" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#korrelationskoeffizient-r"><i class="fa fa-check"></i><b>7.3.2</b> Korrelationskoeffizient <span class="math inline">\(r\)</span><span></span></a></li>
+<li class="chapter" data-level="7.3.3" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#berechnung-von-r"><i class="fa fa-check"></i><b>7.3.3</b> Berechnung von <span class="math inline">\(r\)</span><span></span></a></li>
+<li class="chapter" data-level="7.3.4" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#hypothesentest-für-r"><i class="fa fa-check"></i><b>7.3.4</b> Hypothesentest für <span class="math inline">\(r\)</span><span></span></a></li>
+<li class="chapter" data-level="7.3.5" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#interpretation-des-beispiels-für-laufgeschwindigkeit-und-kalorienverbrauch"><i class="fa fa-check"></i><b>7.3.5</b> Interpretation des Beispiels für Laufgeschwindigkeit und Kalorienverbrauch<span></span></a></li>
+<li class="chapter" data-level="7.3.6" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#datenmuster-und-r"><i class="fa fa-check"></i><b>7.3.6</b> Datenmuster und <span class="math inline">\(r\)</span><span></span></a></li>
+<li class="chapter" data-level="7.3.7" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#rangkorrelationskoeffizient-nach-spearman"><i class="fa fa-check"></i><b>7.3.7</b> Rangkorrelationskoeffizient nach Spearman<span></span></a></li>
+<li class="chapter" data-level="7.3.8" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#scheinkorrelationen"><i class="fa fa-check"></i><b>7.3.8</b> Scheinkorrelationen<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#einfache-lineare-regression-1"><i class="fa fa-check"></i><b>8.4</b> Einfache lineare Regression</a>
+<li class="chapter" data-level="7.4" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#zusammenfassung"><i class="fa fa-check"></i><b>7.4</b> Zusammenfassung<span></span></a></li>
+<li class="chapter" data-level="7.5" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#korrelation-in-rjamovi"><i class="fa fa-check"></i><b>7.5</b> Korrelation in R/jamovi<span></span></a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#die-regressionsgerade"><i class="fa fa-check"></i><b>8.4.1</b> Die Regressionsgerade</a></li>
-<li class="chapter" data-level="8.4.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#lineares-modell"><i class="fa fa-check"></i><b>8.4.2</b> Lineares Modell</a></li>
-<li class="chapter" data-level="8.4.3" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#die-kleinst-quadrat-linie"><i class="fa fa-check"></i><b>8.4.3</b> Die Kleinst-Quadrat-Linie</a></li>
-<li class="chapter" data-level="8.4.4" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#warum-man-nicht-über-die-gemessenen-daten-hinaus-extrapolieren-sollte"><i class="fa fa-check"></i><b>8.4.4</b> Warum man nicht über die gemessenen Daten hinaus extrapolieren sollte</a></li>
-<li class="chapter" data-level="8.4.5" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#das-bestimmtheitsmass-r2"><i class="fa fa-check"></i><b>8.4.5</b> Das Bestimmtheitsmass <span class="math inline">\(R^2\)</span></a></li>
-</ul></li>
-<li class="chapter" data-level="8.5" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#einfache-lineare-regression-in-rjamovi"><i class="fa fa-check"></i><b>8.5</b> Einfache lineare Regression in <code>R/jamovi</code></a>
-<ul>
-<li class="chapter" data-level="8.5.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#r-modell-erstellen-und-output-interpretieren"><i class="fa fa-check"></i><b>8.5.1</b> <code>R</code> Modell erstellen und Output interpretieren</a></li>
-<li class="chapter" data-level="8.5.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#jamovi-modell-erstellen-und-output-interpretieren"><i class="fa fa-check"></i><b>8.5.2</b> <code>jamovi</code> Modell erstellen und Output interpretieren</a></li>
-</ul></li>
-<li class="chapter" data-level="8.6" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#voraussetzungen-für-die-gültigkeit-des-linearen-modells"><i class="fa fa-check"></i><b>8.6</b> Voraussetzungen für die Gültigkeit des linearen Modells</a>
-<ul>
-<li class="chapter" data-level="8.6.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#diagnostische-plots"><i class="fa fa-check"></i><b>8.6.1</b> Diagnostische Plots</a></li>
-<li class="chapter" data-level="8.6.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#interpretation-der-plots"><i class="fa fa-check"></i><b>8.6.2</b> Interpretation der Plots:</a></li>
-<li class="chapter" data-level="8.6.3" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#was-bedeutet-es-wenn-die-voraussetzungen-nicht-erfüllt-sind"><i class="fa fa-check"></i><b>8.6.3</b> Was bedeutet es, wenn die Voraussetzungen nicht erfüllt sind?</a></li>
-<li class="chapter" data-level="8.6.4" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#beispielplots-zu-homo--und-heteroskedastizität"><i class="fa fa-check"></i><b>8.6.4</b> Beispielplots zu Homo- und Heteroskedastizität</a></li>
+<li class="chapter" data-level="7.5.1" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#r-code-und-output"><i class="fa fa-check"></i><b>7.5.1</b> <code>R</code> Code und Output<span></span></a></li>
+<li class="chapter" data-level="7.5.2" data-path="korrelation-und-linearer-zusammenhang.html"><a href="korrelation-und-linearer-zusammenhang.html#jamovi-output"><i class="fa fa-check"></i><b>7.5.2</b> <code>jamovi</code> Output<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html"><i class="fa fa-check"></i><b>9</b> Inferenz für nominale Daten</a>
+<li class="chapter" data-level="8" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html"><i class="fa fa-check"></i><b>8</b> Einfache lineare Regression<span></span></a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#lernziele-6"><i class="fa fa-check"></i><b>9.1</b> Lernziele</a></li>
-<li class="chapter" data-level="9.2" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#der-chi2-test"><i class="fa fa-check"></i><b>9.2</b> Der <span class="math inline">\(\chi^2\)</span>-Test</a>
+<li class="chapter" data-level="8.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#lernziele-5"><i class="fa fa-check"></i><b>8.1</b> Lernziele<span></span></a></li>
+<li class="chapter" data-level="8.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#eine-bücherbestellung"><i class="fa fa-check"></i><b>8.2</b> Eine Bücherbestellung<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#unabhängige-und-abhängige-variable"><i class="fa fa-check"></i><b>8.3</b> Unabhängige und abhängige Variable<span></span></a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#hypothesen-und-signifikanzniveau"><i class="fa fa-check"></i><b>9.2.1</b> Hypothesen und Signifikanzniveau</a></li>
-<li class="chapter" data-level="9.2.2" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#berechnen-der-erwarteten-werte-unter-der-nullhypothese"><i class="fa fa-check"></i><b>9.2.2</b> Berechnen der erwarteten Werte unter der Nullhypothese</a></li>
-<li class="chapter" data-level="9.2.3" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#voraussetzungen-1"><i class="fa fa-check"></i><b>9.2.3</b> Voraussetzungen</a></li>
-<li class="chapter" data-level="9.2.4" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#interpretation-des-chi2-tests"><i class="fa fa-check"></i><b>9.2.4</b> Interpretation des <span class="math inline">\(\chi^2\)</span>-Tests</a></li>
+<li class="chapter" data-level="8.3.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#zusammenhang-zwischen-den-variablen"><i class="fa fa-check"></i><b>8.3.1</b> Zusammenhang zwischen den Variablen<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#referenzen"><i class="fa fa-check"></i><b>9.3</b> Referenzen</a></li>
+<li class="chapter" data-level="8.4" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#einfache-lineare-regression-1"><i class="fa fa-check"></i><b>8.4</b> Einfache lineare Regression<span></span></a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#die-regressionsgerade"><i class="fa fa-check"></i><b>8.4.1</b> Die Regressionsgerade<span></span></a></li>
+<li class="chapter" data-level="8.4.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#lineares-modell"><i class="fa fa-check"></i><b>8.4.2</b> Lineares Modell<span></span></a></li>
+<li class="chapter" data-level="8.4.3" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#die-kleinst-quadrat-linie"><i class="fa fa-check"></i><b>8.4.3</b> Die Kleinst-Quadrat-Linie<span></span></a></li>
+<li class="chapter" data-level="8.4.4" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#warum-man-nicht-über-die-gemessenen-daten-hinaus-extrapolieren-sollte"><i class="fa fa-check"></i><b>8.4.4</b> Warum man nicht über die gemessenen Daten hinaus extrapolieren sollte<span></span></a></li>
+<li class="chapter" data-level="8.4.5" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#das-bestimmtheitsmass-r2"><i class="fa fa-check"></i><b>8.4.5</b> Das Bestimmtheitsmass <span class="math inline">\(R^2\)</span><span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#einfache-lineare-regression-in-rjamovi"><i class="fa fa-check"></i><b>8.5</b> Einfache lineare Regression in <code>R/jamovi</code><span></span></a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#r-modell-erstellen-und-output-interpretieren"><i class="fa fa-check"></i><b>8.5.1</b> <code>R</code> Modell erstellen und Output interpretieren<span></span></a></li>
+<li class="chapter" data-level="8.5.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#jamovi-modell-erstellen-und-output-interpretieren"><i class="fa fa-check"></i><b>8.5.2</b> <code>jamovi</code> Modell erstellen und Output interpretieren<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#voraussetzungen-für-die-gültigkeit-des-linearen-modells"><i class="fa fa-check"></i><b>8.6</b> Voraussetzungen für die Gültigkeit des linearen Modells<span></span></a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#diagnostische-plots"><i class="fa fa-check"></i><b>8.6.1</b> Diagnostische Plots<span></span></a></li>
+<li class="chapter" data-level="8.6.2" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#interpretation-der-plots"><i class="fa fa-check"></i><b>8.6.2</b> Interpretation der Plots:<span></span></a></li>
+<li class="chapter" data-level="8.6.3" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#was-bedeutet-es-wenn-die-voraussetzungen-nicht-erfüllt-sind"><i class="fa fa-check"></i><b>8.6.3</b> Was bedeutet es, wenn die Voraussetzungen nicht erfüllt sind?<span></span></a></li>
+<li class="chapter" data-level="8.6.4" data-path="einfache-lineare-regression.html"><a href="einfache-lineare-regression.html#beispielplots-zu-homo--und-heteroskedastizität"><i class="fa fa-check"></i><b>8.6.4</b> Beispielplots zu Homo- und Heteroskedastizität<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html"><i class="fa fa-check"></i><b>9</b> Inferenz für nominale Daten<span></span></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#lernziele-6"><i class="fa fa-check"></i><b>9.1</b> Lernziele<span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#der-chi2-test"><i class="fa fa-check"></i><b>9.2</b> Der <span class="math inline">\(\chi^2\)</span>-Test<span></span></a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#hypothesen-und-signifikanzniveau"><i class="fa fa-check"></i><b>9.2.1</b> Hypothesen und Signifikanzniveau<span></span></a></li>
+<li class="chapter" data-level="9.2.2" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#berechnen-der-erwarteten-werte-unter-der-nullhypothese"><i class="fa fa-check"></i><b>9.2.2</b> Berechnen der erwarteten Werte unter der Nullhypothese<span></span></a></li>
+<li class="chapter" data-level="9.2.3" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#voraussetzungen-1"><i class="fa fa-check"></i><b>9.2.3</b> Voraussetzungen<span></span></a></li>
+<li class="chapter" data-level="9.2.4" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#interpretation-des-chi2-tests"><i class="fa fa-check"></i><b>9.2.4</b> Interpretation des <span class="math inline">\(\chi^2\)</span>-Tests<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="inferenz-für-nominale-daten.html"><a href="inferenz-für-nominale-daten.html#referenzen"><i class="fa fa-check"></i><b>9.3</b> Referenzen<span></span></a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -372,11 +371,11 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="einfache-lineare-regression" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Einfache lineare Regression</h1>
+<div id="einfache-lineare-regression" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Einfache lineare Regression<a href="einfache-lineare-regression.html#einfache-lineare-regression" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Hat man einen linearen Zusammenhang zwischen zwei Variablen entdeckt, möchte man diesen Zusammenhang präzise beschreiben und quantifizieren. Das Ziel der Regressionsanalyse ist es, die Gerade anzugeben, die den linearen Zusammenhang am besten beschreibt. Im Unterschied zur Korrelation wird hier ein gerichteter Zusammenhang untersucht. Wir möchten eine Variable y, in unserem Beispiel der Kalorienverbrauch, durch eine Variable x, die Laufgeschwindigkeit vorhersagen.</p>
-<div id="lernziele-5" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> Lernziele</h2>
+<div id="lernziele-5" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Lernziele<a href="einfache-lineare-regression.html#lernziele-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Definiere die erklärende Variable als unabhängige Variable (Prädiktor) und die Antwortvariable als abhängige Variable.<br />
 </li>
@@ -425,8 +424,8 @@ wobei der Koeffizient <span class="math inline">\(\beta_0\)</span> den Schnittpu
 <li>Entscheide anhand des Outputs im Statistikprogramm (t-Wert und p-Wert), ob die unabhängige Variable ein signifikanter Prädiktor für die abhängige Variable ist.</li>
 </ol>
 </div>
-<div id="eine-bücherbestellung" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Eine Bücherbestellung</h2>
+<div id="eine-bücherbestellung" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Eine Bücherbestellung<a href="einfache-lineare-regression.html#eine-bücherbestellung" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ein Buchhändler muss jeweils einen Monat bevor das Semester beginnt die Statistik-Bücher für die Studierenden im Statistik-Kurs bestellen. Er geht davon aus, dass die Anzahl Statistik-Bücher, die er in diesem Semester verkaufen wird, davon abhängt, wieviele Studierende für den Statistik-Kurs angemeldet sind. Aus den vergangenen 12 Semestern besitzt der Buchhändler die Listen mit der Anzahl der eingeschriebenen Studierenden und mit der Anzahl der pro Semester verkauften Bücher. (Datensatz <code>06_bookstore.csv</code>)</p>
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
@@ -582,12 +581,12 @@ Buecher
 </table>
 <p>Für das kommende Semester haben sich 33 Studierende für den Statistikkurs angemeldet. Um möglichst nicht zu viele oder zu wenige Bücher zu bestellen, bittet er uns um Hilfe.</p>
 </div>
-<div id="unabhängige-und-abhängige-variable" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> Unabhängige und abhängige Variable</h2>
+<div id="unabhängige-und-abhängige-variable" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Unabhängige und abhängige Variable<a href="einfache-lineare-regression.html#unabhängige-und-abhängige-variable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Im vorliegenden Fall können wir davon ausgehen, dass ein kausaler Zusammenhang zwischen der Anzahl der Studierenden und der Anzahl der verkauften Bücher vorliegt: Der Wert der Variablen <code>Studierende</code> erlaubt eine Vorhersage über den Wert der Variablen <code>Buecher</code> oder m.a.W. der Wert der Variablen <code>Buecher</code> hängt vom Wert der Variablen <code>Studierende</code>ab. Damit können wir die Variable <code>Buecher</code>als <strong>abhängige Variable</strong> und die Variable <code>Studierende</code> als <strong>unabhängige Variable</strong> bzw. als <strong>Prädiktor</strong> bezeichnen.<br />
 <br></p>
-<div id="zusammenhang-zwischen-den-variablen" class="section level3" number="8.3.1">
-<h3><span class="header-section-number">8.3.1</span> Zusammenhang zwischen den Variablen</h3>
+<div id="zusammenhang-zwischen-den-variablen" class="section level3 hasAnchor" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> Zusammenhang zwischen den Variablen<a href="einfache-lineare-regression.html#zusammenhang-zwischen-den-variablen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Wie bereits gewohnt, formulieren wir zuerst die Hypothesen:</p>
 <ul>
 <li><span class="math inline">\(H_0: \rho = 0\)</span> Es gibt keinen Zusammenhang zwischen der Anzahl Studierender und der verkauften Anzahl Bücher.<br />
@@ -619,12 +618,12 @@ Abbildung 8.1: Zusammenhang Anzahl verkaufte Bücher und Anzahl Studierende
 <p><em>Die Daten liefern Evidenz für einen signifikanten, starken, positiven und linearen Zusammenhang zwischen der Anzahl an Studierenden und der Anzahl verkaufter Bücher (<span class="math inline">\(r\)</span> = 0.918, p &lt; 0.001)</em></p>
 </div>
 </div>
-<div id="einfache-lineare-regression-1" class="section level2" number="8.4">
-<h2><span class="header-section-number">8.4</span> Einfache lineare Regression</h2>
+<div id="einfache-lineare-regression-1" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Einfache lineare Regression<a href="einfache-lineare-regression.html#einfache-lineare-regression-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Mit der Korrelation konnten wir die Annahme eines Zusammenhangs zwischen Anzahl Studierender und der Anzahl verkaufter Bücher bestätigen. Die Frage ist allerdings nicht beantwortet, wieviele Bücher der Buchhändler für dieses Semester, an dem 33 Studierende für den Statistik-Kurs eingeschrieben sind, bestellen muss. Es wäre ideal, wenn wir auf Grundlage der vorliegenden Daten ein funktionelles Modell erstellen könnten, das uns bei der Schätzung der Anzahl Bücher helfen würde.</p>
 <p>Die Regressionsanalyse liefert das Werkzeug dafür: Sie liefert uns ein Modell - nämlich eine Gerade und die zugehörige Gleichung - welches unsere Daten so gut wie möglich beschreibt. Im vorliegenden Fall hilft uns die Gleichung vorherzusagen, wieviele Bücher wir für jede zusätzliche Studierende verkaufen werden.</p>
-<div id="die-regressionsgerade" class="section level3" number="8.4.1">
-<h3><span class="header-section-number">8.4.1</span> Die Regressionsgerade</h3>
+<div id="die-regressionsgerade" class="section level3 hasAnchor" number="8.4.1">
+<h3><span class="header-section-number">8.4.1</span> Die Regressionsgerade<a href="einfache-lineare-regression.html#die-regressionsgerade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Kurzes Repe Mathematik - Lineare Funktion: Geradengleichung</strong></p>
 <ul>
 <li><p>Eine lineare Funktion kann grafisch durch eine Gerade dargestellt werden.<br />
@@ -645,8 +644,8 @@ Abbildung 8.2: Geradengleichung
 <p>Unsere Geradengleichung lautet somit:</p>
 <p><span class="math display">\[y = 2x + 4\]</span></p>
 </div>
-<div id="lineares-modell" class="section level3" number="8.4.2">
-<h3><span class="header-section-number">8.4.2</span> Lineares Modell</h3>
+<div id="lineares-modell" class="section level3 hasAnchor" number="8.4.2">
+<h3><span class="header-section-number">8.4.2</span> Lineares Modell<a href="einfache-lineare-regression.html#lineares-modell" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Lineare Regression ist die statistische Methode, eine Gerade für zwei Variablen X und Y zu konstruieren, wenn die Beziehung dieser beiden Variablen einigermassen linear ist, also durch eine Gerade beschrieben werden kann. Die Gerade dient als Modell und wird so konstruiert, dass sie die Daten möglichst passend beschreibt. Die allgemeine Formel für ein lineares Modell lautet:</p>
 <p><span class="math display">\[y = \beta_0 + \beta_1x\]</span></p>
 <p><span class="math inline">\(\beta_0\)</span> und <span class="math inline">\(\beta_1\)</span> sind die Parameter des Modells. Diese werden in der Regel mit Stichprobendaten geschätzt und wir schreiben wir die Formel als</p>
@@ -657,8 +656,8 @@ Abbildung 8.2: Geradengleichung
 <li><span class="math inline">\(b_1\)</span> gibt die Steigung der Geraden an.</li>
 </ul>
 </div>
-<div id="die-kleinst-quadrat-linie" class="section level3" number="8.4.3">
-<h3><span class="header-section-number">8.4.3</span> Die Kleinst-Quadrat-Linie</h3>
+<div id="die-kleinst-quadrat-linie" class="section level3 hasAnchor" number="8.4.3">
+<h3><span class="header-section-number">8.4.3</span> Die Kleinst-Quadrat-Linie<a href="einfache-lineare-regression.html#die-kleinst-quadrat-linie" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Leider ist es in Wirklichkeit selten so, dass die Daten so genau einem linearen Modell entsprechen und es stellt sich die Frage, auf welche Weise eine Gerade konstruiert werden kann, welche die Daten zwar nicht perfekt, aber doch möglichst genau modelliert.</p>
 <p>Betrachten wir noch einmal das Streudiagramm unseres Buchhändlers: Wie würden Sie die Gerade einzeichnen, welche die Daten am ehesten repräsentieren? Welche der vorgeschlagenen Geraden würden Sie als das am besten zutreffende Modell wählen?</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:bookstore-lines-fig"></span>
@@ -764,8 +763,8 @@ Abbildung 8.6: Buchhandlung: Vorhersage für 33 Stud.
 </p>
 </div>
 </div>
-<div id="warum-man-nicht-über-die-gemessenen-daten-hinaus-extrapolieren-sollte" class="section level3" number="8.4.4">
-<h3><span class="header-section-number">8.4.4</span> Warum man nicht über die gemessenen Daten hinaus extrapolieren sollte</h3>
+<div id="warum-man-nicht-über-die-gemessenen-daten-hinaus-extrapolieren-sollte" class="section level3 hasAnchor" number="8.4.4">
+<h3><span class="header-section-number">8.4.4</span> Warum man nicht über die gemessenen Daten hinaus extrapolieren sollte<a href="einfache-lineare-regression.html#warum-man-nicht-über-die-gemessenen-daten-hinaus-extrapolieren-sollte" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Die Regressionsgleichung ist nur für den gemessenen Datenbereich gültig. Was dabei herauskommt, wenn man die Vorhersage über den gemessenen Datenbereich hinaus extrapoliert zeigt das folgende Beispiel.</p>
 <p>Im September 2004 publizierte das Magazin <a href="https://www.nature.com/articles/431525a#MOESM1">Nature</a> einen Artikel, in dem die Entwicklung der olympischen Siegerzeiten über 100m Sprint zwischen Männern und Frauen seit 1900 verglichen wurden. Die Autoren machten die Vorhersage, dass im Jahre 2156 die Frauen die 100m-Distanz schneller laufen werden als die Männer.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:sprint100m-fig"></span>
@@ -791,8 +790,8 @@ Abbildung 8.9: Zeit für 100m-Sprint Frauen bis ins Jahr 2800 extrapoliert
 </div>
 <p>Wir lernen daraus, dass die Regressionsgerade immer nur für den effektiv gemessenen Datenbereich gültig ist.</p>
 </div>
-<div id="das-bestimmtheitsmass-r2" class="section level3" number="8.4.5">
-<h3><span class="header-section-number">8.4.5</span> Das Bestimmtheitsmass <span class="math inline">\(R^2\)</span></h3>
+<div id="das-bestimmtheitsmass-r2" class="section level3 hasAnchor" number="8.4.5">
+<h3><span class="header-section-number">8.4.5</span> Das Bestimmtheitsmass <span class="math inline">\(R^2\)</span><a href="einfache-lineare-regression.html#das-bestimmtheitsmass-r2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Das Bestimmtheitsmass <span class="math inline">\(R^2\)</span> …</p>
 <ul>
 <li>sagt uns, wieviel Prozent der Streuung der abhängigen Variable <span class="math inline">\(y\)</span> durch die unabhängige Variable <span class="math inline">\(x\)</span> erklärt wird. Anders formuliert: Wieviel Prozent der Änderung in <span class="math inline">\(y\)</span> von einem Datenpunkt zum anderen durch <span class="math inline">\(x\)</span> erklärbar ist.<br />
@@ -807,10 +806,10 @@ Abbildung 8.9: Zeit für 100m-Sprint Frauen bis ins Jahr 2800 extrapoliert
 <p>Eine Variable <span class="math inline">\(y\)</span> kann folglich umso besser durch die Variable <span class="math inline">\(x\)</span> erklärt werden, je größer die Korrelation <span class="math inline">\(r\)</span> zwischen beiden Variablen dem Betrag nach ist. Anders formuliert: Je größer <span class="math inline">\(R^2\)</span> ist, desto besser ist die Anpassung der Regressionsgeraden an die Daten.</p>
 </div>
 </div>
-<div id="einfache-lineare-regression-in-rjamovi" class="section level2" number="8.5">
-<h2><span class="header-section-number">8.5</span> Einfache lineare Regression in <code>R/jamovi</code></h2>
-<div id="r-modell-erstellen-und-output-interpretieren" class="section level3" number="8.5.1">
-<h3><span class="header-section-number">8.5.1</span> <code>R</code> Modell erstellen und Output interpretieren</h3>
+<div id="einfache-lineare-regression-in-rjamovi" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Einfache lineare Regression in <code>R/jamovi</code><a href="einfache-lineare-regression.html#einfache-lineare-regression-in-rjamovi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="r-modell-erstellen-und-output-interpretieren" class="section level3 hasAnchor" number="8.5.1">
+<h3><span class="header-section-number">8.5.1</span> <code>R</code> Modell erstellen und Output interpretieren<a href="einfache-lineare-regression.html#r-modell-erstellen-und-output-interpretieren" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Zur Erläuterung des R-Outputs verwenden wir die Fragestellung aus der Buchhandlung. Es werden nur die wichtigsten Angaben erläutert. Eine detaillierte Beschreibung des Outputs findet man z.B. <a href="https://feliperego.github.io/blog/2015/10/23/Interpreting-Model-Output-In-R">hier</a></p>
 <div class="figure">
 <img src="illustrations/06_lm_R_output.png" alt="" />
@@ -826,8 +825,8 @@ Abbildung 8.9: Zeit für 100m-Sprint Frauen bis ins Jahr 2800 extrapoliert
 <p>Das Statistikprogramm führt immer einen t-Test für eine einfache Stichprobe durch und ermittelt den <span class="math inline">\(t\)</span>-Wert und den <span class="math inline">\(p\)</span>-Wert für die Koeffizienten. Ist der <span class="math inline">\(p\)</span>-Wert kleiner als das Signifikanzniveau, das meist auf <span class="math inline">\(\alpha\)</span> &lt; 0.05 festgelegt wird, liegt Evidenz dafür vor, dass die Nullhypothese, dass kein Zusammenhang zwischen abhängiger und unabhängiger Variable vorlieg, verworfen werden kann.</p>
 <p>Meist interessiert nur der <span class="math inline">\(p\)</span>-Wert für die Steigung <span class="math inline">\(b_1\)</span>. Im vorliegenden Fall ist <span class="math inline">\(p &lt; 0.001\)</span>, was uns schlussfolgern lässt, dass ein signifikanter Zusammenhang zwischen der Anzahl verkaufter Bücher und der Anzahl Studierenden vorliegt.</p>
 </div>
-<div id="jamovi-modell-erstellen-und-output-interpretieren" class="section level3" number="8.5.2">
-<h3><span class="header-section-number">8.5.2</span> <code>jamovi</code> Modell erstellen und Output interpretieren</h3>
+<div id="jamovi-modell-erstellen-und-output-interpretieren" class="section level3 hasAnchor" number="8.5.2">
+<h3><span class="header-section-number">8.5.2</span> <code>jamovi</code> Modell erstellen und Output interpretieren<a href="einfache-lineare-regression.html#jamovi-modell-erstellen-und-output-interpretieren" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>jamovi\Analyses\Regression\Linear Regression</code></p>
 <ul>
 <li>Dependent Variable: <code>Bücher</code><br />
@@ -840,8 +839,8 @@ Abbildung 8.9: Zeit für 100m-Sprint Frauen bis ins Jahr 2800 extrapoliert
 </div>
 </div>
 </div>
-<div id="voraussetzungen-für-die-gültigkeit-des-linearen-modells" class="section level2" number="8.6">
-<h2><span class="header-section-number">8.6</span> Voraussetzungen für die Gültigkeit des linearen Modells</h2>
+<div id="voraussetzungen-für-die-gültigkeit-des-linearen-modells" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> Voraussetzungen für die Gültigkeit des linearen Modells<a href="einfache-lineare-regression.html#voraussetzungen-für-die-gültigkeit-des-linearen-modells" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Die Residuen sind voneinander unabhängig (schwierig zu prüfen, abhängig vom Studiendesign)<br />
 </li>
@@ -850,8 +849,8 @@ Abbildung 8.9: Zeit für 100m-Sprint Frauen bis ins Jahr 2800 extrapoliert
 <li>Die Streuung <span class="math inline">\(\sigma\)</span> der Residuen ist über den Bereich von x konstant (Homoskedastizität).</li>
 </ol>
 <p><strong>Achtung: Die lineare Regression macht keinerlei Annahmen bezügliche der Verteilung der Variablen selber! die Annahme einer Normalverteilung bezieht sich nur auf die Residuen!</strong></p>
-<div id="diagnostische-plots" class="section level3" number="8.6.1">
-<h3><span class="header-section-number">8.6.1</span> Diagnostische Plots</h3>
+<div id="diagnostische-plots" class="section level3 hasAnchor" number="8.6.1">
+<h3><span class="header-section-number">8.6.1</span> Diagnostische Plots<a href="einfache-lineare-regression.html#diagnostische-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Die Verteilung der Residuen wird anhand eines QQ-Plots der Residuen geprüft. Die Streung der Residuen anhand eines Plots, der die gefitteten Werte auf der x-Achse und die Residuen auf der y-Achse darstellt.</p>
 <p>In <code>R</code> kann über die Funktion <code>plot(model)</code> eine Serie von 4 diagnostischen Plots
 ausgegeben werden. Der erste Plot erlaubt die Beurteilung der Homoskedastizität, der
@@ -893,24 +892,24 @@ zweite Plot ist ein QQ-Plot.</p>
 ##  ASSUMPTION CHECKS</code></pre>
 <p><img src="statbook_files/figure-html/unnamed-chunk-30-1.png" width="480" style="display: block; margin: auto;" /><img src="statbook_files/figure-html/unnamed-chunk-30-2.png" width="480" style="display: block; margin: auto;" /><img src="statbook_files/figure-html/unnamed-chunk-30-3.png" width="480" style="display: block; margin: auto;" /><img src="statbook_files/figure-html/unnamed-chunk-30-4.png" width="480" style="display: block; margin: auto;" /></p>
 </div>
-<div id="interpretation-der-plots" class="section level3" number="8.6.2">
-<h3><span class="header-section-number">8.6.2</span> Interpretation der Plots:</h3>
+<div id="interpretation-der-plots" class="section level3 hasAnchor" number="8.6.2">
+<h3><span class="header-section-number">8.6.2</span> Interpretation der Plots:<a href="einfache-lineare-regression.html#interpretation-der-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>QQ-Plot: Die Punkte sind einigermassen auf der Linie und wir entscheiden auf Normalverteilung der Residuen. (Bei kleinen Stichproben wie im vorliegenden Fall ist die Entscheidung meist nicht ganz sicher möglich)<br />
 </li>
 <li>Residuen vs. gefittete Werte: Die Streuung der Residuen wird von links nach rechts, d.h. mit zunehmender geschätzter Zahl an verkauften Büchern grösser. Damit ist die Voraussetzung nicht erfüllt, dass die Streuung der Residuen über den gesamten Messbereich gleich ist und es liegt Heteroskedastizität vor.</li>
 </ul>
 </div>
-<div id="was-bedeutet-es-wenn-die-voraussetzungen-nicht-erfüllt-sind" class="section level3" number="8.6.3">
-<h3><span class="header-section-number">8.6.3</span> Was bedeutet es, wenn die Voraussetzungen nicht erfüllt sind?</h3>
+<div id="was-bedeutet-es-wenn-die-voraussetzungen-nicht-erfüllt-sind" class="section level3 hasAnchor" number="8.6.3">
+<h3><span class="header-section-number">8.6.3</span> Was bedeutet es, wenn die Voraussetzungen nicht erfüllt sind?<a href="einfache-lineare-regression.html#was-bedeutet-es-wenn-die-voraussetzungen-nicht-erfüllt-sind" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Signifikanztests und Konfidenzintervalle für die Koeffizienten haben nicht die erwarteten Eigenschaften und werden dadurch schlecht interpretierbar.<br />
 </li>
 <li>Die Koeffizienten sind immer noch gültig!</li>
 </ul>
 </div>
-<div id="beispielplots-zu-homo--und-heteroskedastizität" class="section level3" number="8.6.4">
-<h3><span class="header-section-number">8.6.4</span> Beispielplots zu Homo- und Heteroskedastizität</h3>
+<div id="beispielplots-zu-homo--und-heteroskedastizität" class="section level3 hasAnchor" number="8.6.4">
+<h3><span class="header-section-number">8.6.4</span> Beispielplots zu Homo- und Heteroskedastizität<a href="einfache-lineare-regression.html#beispielplots-zu-homo--und-heteroskedastizität" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><img src="statbook_files/figure-html/heteroscedasticity-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Nur Abb. c) erfüllt die Bedingung für Homoskedastizität. In Abb. a) bilden die Residuen ein Muster, was die Annahme verletzt, dass die Residuen zufällig um die Null-Linie herum streuen. In Abb. b) und d) ist die Verteilung heteroskedastisch; mit zunehmendem x nimmt auch die Streuung der Residuen um die Null-Linie herum zu.</p>
 

@@ -143,7 +143,7 @@ ggplot(sample, aes(sample = time)) +
 
 $$SE = \frac{s}{\sqrt{n}} = \frac{16.66}{\sqrt{100}}=1.66$$
 
-$$CI_{95} = \bar{x} \pm t_{df} \times SE$$
+$$CI_{95} = \bar{x} \pm t_{1-\frac{\alpha}{2}, df} \times SE$$
 
 Wir verwenden hier für die Berechnung des 95%-Konfidenzintervalls den t-Wert für die Anzahl Freiheitsgrade df = (100 - 1) = 99. Am einfachsten finden Sie den t-Wert mit dem [Internet-Rechner Students T-Verteilung](http://eswf.uni-koeln.de/glossar/surfstat/t.htm).
 
@@ -399,7 +399,7 @@ Den p-Wert für t und df = 20-1 können wir wieder mit dem [Internet-Rechner Stu
 
 Mit $p$ = 0.017 ist die Wahrscheinlichkeit für den beobachteten Effekt oder einen stärkeren Effekt kleiner als unser Signifkanzniveau $\alpha = 0.05$ und wir haben Evidenz dafür, dass wir die Nullhypothese zugunsten der Alternativhypothese verwerfen können.   
 
-$$CI_{95} = \bar{x} \pm t_{0.975, df} \times SE = 0.395 \pm t_{0.975, df=19} \times 0.15$$
+$$CI_{95} = \bar{x} \pm t_{1-\frac{\alpha}{2}, df} \times SE = 0.395 \pm 2.093 \times 0.15$$
 ```{r, echo=TRUE}
 ### R-Code
 
@@ -531,11 +531,15 @@ Für die Prüfung, ob wir für diese Differenz die t-Verteilung anwenden können
 
 Die Berechnung des Standardfehlers $SE$ und der Anzahl Freiheitsgrade $df$ ist in diesem Fall etwas komplizierter und wird normalerweise von der Statistiksoftware übernommen. Diejenigen, die von Hand rechnen wollen, können diese - etwas vereinfachte - Formel verwenden:   
 
-$$SE_{\bar{x_2}-\bar{x_1}} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}$$
+$$SE_{\bar{x}_2-\bar{x1}_1} = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}$$
 
-Als Freiheitsgrad df für die t-Verteilung verwenden wir den kleineren Wert von $n_1 - 1$ und $n_2 - 1$ (die genaue Berechnung von $df$ ist komplex und wir verwenden hier eine konservative Vereinfachung).   
+beziehungsweise, bei unbekanntem $\sigma$   
 
-$$df = min(n_1-1, n_2-1)$$
+$$SE_{\bar{x}_2 - \bar{x}_1} = \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}} = SE_{x_1} + SE_{x_2}$$
+
+Als Freiheitsgrad df für die t-Verteilung verwenden wir    
+
+$$df = n_1 + n_2 - 2$$
 
 **Prüfung der Voraussetzungen**  
 
@@ -568,7 +572,7 @@ $$SE = \sqrt{\frac{s_{esc}^2}{n_{esc}} + \frac{s_{ctrl}^2}{n_{ctrl}}} = \sqrt{\f
 SE <- sqrt((5.17^2/9) + (2.76^2/9))
 ```
 
-Für die Bestimmung der Anzahl Freiheitsgrade $df$ der $t$-Verteilung verwenden wir den kleineren Wert für $n - 1$. Hier haben beide Gruppen den gleichen Umfang n und wir verwenden $df$ = 8.  
+Die Anzahl Freiheitsgrade $df$ der $t$-Verteilung ist $(n_1 + n_2 - 2) = (8 + 8 - 2) = 14$ 
 
 Den kritischen $t$-Wert für eine $t$-Verteilung mit $df$ = 8 für ein 95%-Konfidenzintervall erhalten wir in `R``
 
@@ -576,19 +580,19 @@ Den kritischen $t$-Wert für eine $t$-Verteilung mit $df$ = 8 für ein 95%-Konfi
 ### R-Code
 
 # t-Wert für ein 95%-Konfidenzintervall mit df = 8
-qt(.975, 8)   
+qt(.975, 14)   
 ```
 
 Durch Einsetzen können wir jetzt das 95%-Konfidenzintervall für die Differenz des Effekts zwischen den beiden Stichproben berechnen:
 
-$$CI_{95} = 7.83 \pm 2.31 \times 1.95 = [3.33; 12.33]$$
+$$CI_{95} = 7.83 \pm 2.145 \times 1.95 = [3.33; 12.33]$$
 ```{r stemcell-ci}
-CI95 <- 7.83 + c(-1, 1) * 2.31 * 1.95
+CI95 <- 7.83 + c(-1, 1) * 2.145 * 1.95
 ```
 
 Das 95%-Konfidenzintervall beinhaltet Null nicht und wir haben Evidenz für einen signifikanten Effekt.
 
-*Schlussfolgerung: Die Behandlung mit embryonalen Stammzellen bei Schafen, die einen Herzinfarkt erlitten haben, verbessert die Pumpfunktion des Herzens signifikant im Durchschnitt um 7.83% [3.33%, 12.33%] im Vergleich zu keiner Behandlung.*  
+*Schlussfolgerung: Die Behandlung mit embryonalen Stammzellen bei Schafen, die einen Herzinfarkt erlitten haben, verbessert die Pumpfunktion des Herzens signifikant im Durchschnitt um 7.83% [3.647%, 12.013%] im Vergleich zu keiner Behandlung.*  
 
 ### Der Zweistichproben-T-Test für unabhängige Stichproben Schritt-für-Schritt
 
@@ -617,7 +621,7 @@ Das Vorgehen für die statistische Analyse ist wie bisher:
 
 **1. Hypothesen formulieren**   
 
-- Die Prüfgrösse ist $\mu_s - \mu_{ns}$  ($s = smoker, ns = nonsmoker)
+- Die Prüfgrösse ist $\mu_s - \mu_{ns}$  ($s$ = smoker, $ns$ = nonsmoker)
 - Signifikanzniveau $\alpha = 0.05$   
 
 Hypothesen:  
@@ -696,16 +700,16 @@ Kritischer t-Wert
 ```{r, echo=TRUE}
 ### R-Code
 
-qt(.975, df = 49)
+qt(.975, df = 148)
 ```
 
 
-$$CI_{95} = 181.6 \pm 2.01 \times 121.4 = [-62.4; 425.6]$$
+$$CI_{95} = 181.6 \pm 1.976 \times 121.4 = [-62.4; 425.6]$$
 ```{r}
-ci95 <- 181.6 + c(-1, 1) * 2.01 * 121.4
+ci95 <- 181.6 + c(-1, 1) * 1.976 * 121.4
 ```
 
-Neugeborene von Nichtraucherinnen sind im Durchschnitt um 181.6 [-62.4; 425.6] schwerer als Neugeborene von Raucherinnen. Das 95%-Konfidenzintervall beinhaltet Null, d.h. kein Unterschied im Geburtsgewicht ist ein plausibler Wert, und wir haben keine Evidenz gegen die Nullhypothese.   
+Neugeborene von Nichtraucherinnen sind im Durchschnitt um 181.6 [-58.286; 421.486] schwerer als Neugeborene von Raucherinnen. Das 95%-Konfidenzintervall beinhaltet Null, d.h. kein Unterschied im Geburtsgewicht ist ein plausibler Wert, und wir haben keine Evidenz gegen die Nullhypothese.   
 
 Berechnung des t-Werts: 
 
@@ -719,17 +723,17 @@ t
 
 Berechnung des $p$-Werts:  
 
-Für die Berechnung des p-Werts verwenden wir für die Anzahl Freiheitsgrade den kleineren Wert für $n_{nonsmoker} - 1 = 99$ und für $n_{smoker} - 1 = 49$ also $df = 49$: Wir können den p-Wert für $t_{49}$ wieder in einer Tabelle nachschlagen oder mit `R/jamovi`berechnen: 
+Die Anzahl Freiheitsgrade $df = n_{ns} + n_{s} - 2 = 100 + 50 - 2 = 148$: Wir können den p-Wert für $t$ wieder in einer Tabelle nachschlagen oder mit `R/jamovi`berechnen: 
 
 ```{r pvalue-births, echo=TRUE}
 ### R-Code
 
-2 * (1-pt(1.496, df = 49)) # p-Wert für eine zweiseitige Hypothese und df = 49 
+2 * (1 - pt(1.496, df = 148)) # p-Wert für eine zweiseitige Hypothese und df = 148
 ```
 
-$p = 0.141$; Dieser $p$-Wert ist grösser als $\alpha = 0.05$ und wir haben keine ausreichende Evidenz, um die Nullhypothese zu verwerfen.
+$p = 0.137$; Dieser $p$-Wert ist grösser als $\alpha = 0.05$ und wir haben keine ausreichende Evidenz, um die Nullhypothese zu verwerfen.
 
-*Schlussfolgerung:  Untersucht wurde die Frage, ob Neugeborene von rauchenden Müttern ein anderes Geburtsgewicht haben als Neugeborene von nichtrauchtenden Müttern. Anhand der vorliegenden Daten konnte kein signifikanter Unterschied für deas Geburtsgewicht von Neugeborenen rauchender und nichtrauchender Mütter festgestellt werden: Neugeborene von nichtrauchenden Müttern sind im Durchschnitt 181.6 [-62.4; 425.6] leichter als von nichtrauchenden Müttern, t(49) = 1.496, p = 0.141.*   
+*Schlussfolgerung:  Untersucht wurde die Frage, ob Neugeborene von rauchenden Müttern ein anderes Geburtsgewicht haben als Neugeborene von nichtrauchtenden Müttern. Anhand der vorliegenden Daten konnte kein signifikanter Unterschied für deas Geburtsgewicht von Neugeborenen rauchender und nichtrauchender Mütter festgestellt werden: Neugeborene von nichtrauchenden Müttern sind im Durchschnitt 181.6 [-58.286; 421.486] leichter als von nichtrauchenden Müttern, t(49) = 1.496, p = 0.137.*   
 
 Anmerkung: Dies ist ein vergleichsweise kleiner Datensatz; grössere Datensätze in aktuellen Studien liefern Evidenz dafür, dass Neugeborene von rauchenden Müttern ein geringeres Geburtsgewicht aufweisen als von nichtrauchenden Müttern. In den 70er-Jahren hat die Tabak-Industrie diese Tatsache sogar als Werbung mit dem Argument benutzt, dass Mütter kleinere Babies bei der Geburt bevorzugen. [@reeves2008]  
 
